@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/cover.css' %}" />
+{% endblock %}
+{% block body %}
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">ANU</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li><a href="{% url 'home:index' %}">Home</a></li>
+                  <li class="active"><a href="{% url 'home:about' %}">About HCC</a></li>
+                  <li><a href="#">Login</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="inner cover">
+            <h2>What is Human Centred Computing (HCC)?</h2>
+            <p class="text-justify">When we interact and cooperate with other humans, they usually understand and predict what we will do. The same cannot be said of computers, which usually wait to be told what to do next. Using the latest technology, our research explores computer-human interactions with data and the world. We want computers to understand what users’ goals are when they perform specific tasks, and to enhance their user experience. Our goal is to make computers to 'think ahead', and be responsive in their interactions with humans.</p>
+            <h2>What do we research?</h2>
+            <p class="text-justify">We conduct interdisciplinary research, combining computing, art, science, music, security, psychology, social network analysis, digital humanities and biologically inspired computing.</p>
+            <p class="text-justify">We are particularly interested in: interactive tools for supporting creativity in music and art; the use of wearable and mobile devices; control gestures for computer systems; health applications; virtual and augmented reality; and the use of eye-gaze and physiological signals to infer humans’ mental states.</p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}HCC Workshop | Dashboard{% endblock %}
+
+{% block head %}	
+{% endblock %}
+
+{% block body %}
+    <div id="wrapper" class="toggled"> 
+        <div class="overlay"></div>
+        <!-- Sidebar -->
+        <!-- Sidebar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="">
+                       HCC Workshop
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">The Thatcher Effect</a>
+                </li>
+                <li>
+                    <a href="#">Cyber Security</a>
+                </li>
+                <li>
+                    <a href="#">Fake or Real Smiles</a>
+                </li>
+                <li>
+                    <a href="">Images: Believe em or Not</a>
+                </li>
+                <li>
+                    <a href="">Creating Mondrian-like Art</a>
+                </li>
+                <li>
+                    <a href="">Further Research</a>
+                </li>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Generate Website</a>
+            </ul>
+            
+        </nav> 
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+    			<span class="hamb-middle"></span>
+				<span class="hamb-bottom"></span>
+            </button>
+            <div class="jumbotron text-left">
+					<h1>Welcome!</h1>
+					<p>Click one of the activities to get started.</p>
+				</div>
+                <div class="row">
+					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a class="thumbnail" href="{#{% url 'thatchereffect:index' %}#}"><img src="" alt=""></a></p></div>
+					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a class="thumbnail" href="{#{% url 'cybersecurity:index' %}#}"><img src="" alt=""></a></p></div>
+					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a class="thumbnail" href="{#{% url 'fakeorrealsmiles:index' %}#}"><img src="" alt="">Fake or Real Smiles</a></p></div>
+					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a class="thumbnail" href="{#{% url 'manipulatedimages:index' %}#}"><img src="" alt="">Images: Believe &rsquo;em or Not</a></p></div>
+					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a class="thumbnail" href="{#{% url 'mondriandrawer:index' %}#}"><img src="" alt="">Creating Mondrian-like Art</a></p></div>
+					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a class="thumbnail" href="{#{% url 'furtherresearch:index' %}#}"><img src="" alt="">Further Research</a></p></div>
+				</div>
+				<br/>
+				<div class="row">
+					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a href="{#{% url 'facialsymmetry:index' %}#}">Facial Symmetry</a></p></div>
+					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a href="{#{% url 'eyetrackingreading:index' %}#}">Eye Tracking for Reading</a></p></div>
+					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a href="{#{% url 'eyetrackingimages:index' %}#}">Eye Tracking for Images</a></p></div>
+				</div>
+
+                      </div>
+           
+        </div><!-- /#page-content-wrapper -->
+
+    </div><!-- /#wrapper -->
+				
+{% endblock %}
+
+
+{% block script %}
+    <script src="{% static 'main.js' %}"></script>
+
+{% endblock %}
