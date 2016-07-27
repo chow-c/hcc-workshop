@@ -35,7 +35,7 @@ docker-compose up --build
 5. Now you can load up your favourite text editor to make changes to the code. You can verify that the docker containers are running by viewing the output in the terminal, or opening up a new terminal and typing
 ```
 docker ps
-```  
+```
 
 ### Creating a new application
 Once you have started the development environment, you must create your application. This will generate the necessary starter code that you will use. 
