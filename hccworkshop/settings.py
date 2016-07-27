@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
     'bootstrap3',
+    'channels',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -70,6 +71,16 @@ TEMPLATES = [
         },
     },
 ]
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "asgi_redis.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("redis",6379)],
+        },
+        "ROUTING": "hccworkshop.routing.channel_routing",
+    },
+}
 
 WSGI_APPLICATION = 'hccworkshop.wsgi.application'
 
