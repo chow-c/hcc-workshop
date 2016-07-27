@@ -204,6 +204,7 @@ develop-eggs/
 .installed.cfg
 *.pyc
 *.pyo
+__pycache__/*
 
 # Installer logs
 pip-log.txt
