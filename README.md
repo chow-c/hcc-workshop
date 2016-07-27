@@ -1,6 +1,6 @@
 # HCC Workshop
 The HCC Workshop is an interactive web application that showcases research undertaken by the Human Centred Computing research group within the Research School of Computer Science at The Australian National University.
-Students and staff can develop and contribute toward new applications, host experiments to collect ata, and promote research ideas.
+Students and staff can develop and contribute toward new applications, host experiments to collect data, and promote research ideas.
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.  
 A step-by-step tutorial is available at ***REMOVED***.
@@ -35,7 +35,8 @@ docker-compose up --build
 5. Now you can load up your favourite text editor to make changes to the code. You can verify that the docker containers are running by viewing the output in the terminal, or opening up a new terminal and typing
 ```
 docker ps
-```
+```  
+
 ### Creating a new application
 Once you have started the development environment, you must create your application. This will generate the necessary starter code that you will use. 
 1. Launch a new terminal and navigate to the root folder of the project. 
@@ -46,7 +47,8 @@ cd path/to/some/directory/workshop
 ```
 docker-compose run -d web python manage.py startapp yourapp
 ```
-3. A new subfolder with all the necessary starter files will be generated in the root workshop directory. Open this folder and edit these files to start building your application.
+3. A new subfolder with all the necessary starter files will be generated in the root workshop directory. Open this folder and edit these files to start building your application.   
+
 ### Viewing progress
 You are able to run the HCC workshop on your development machine to view and test it as you develop.  
 1. If you installed the workshop via Docker, ensure that the Docker containers are running.
@@ -57,13 +59,17 @@ docker-compose up --build
 ```
 http://localhost:8000
 ```
-3. You can use the Docker console to help you debug the application. To shut down the development server, press Ctrl+C in the console.
+3. You can use the Docker console to help you debug the application. To shut down the development server, press Ctrl+C in the console.   
+
 ## Documentation
-Documentation for running participants through the HCC Workshop is available upon request from [Leana Copeland](leana.copeland@anu.edu.au).
+Documentation for running participants through the HCC Workshop is available upon request from [Leana Copeland](leana.copeland@anu.edu.au).   
+
 ## Live Deployment
-Installation and setup instructions for deploying the HCC Workshop on a web server is available upon request from [Christopher Chow](***REMOVED***).
-## Developing and Contributing
-Development for the HCC Workshop is only open to members of the ANU HCC research group. Please take a look at the [Contributing Guidelines](CONTRIBUTING.md) for basic instructions on contributing to this project. For all other queries, please contact the project maintainers.
+Installation and setup instructions for deploying the HCC Workshop on a web server is available upon request from [Christopher Chow](***REMOVED***).   
+
+## Developing and Contributing 
+Development for the HCC Workshop is only open to members of the ANU HCC research group. Please take a look at the [Contributing Guidelines](CONTRIBUTING.md) for basic instructions on contributing to this project. For all other queries, please contact the project maintainers.   
+
 ## Maintainers
 * Leana Copeland, leana.copeland@anu.edu.au
 * Christopher Chow, ***REMOVED***
