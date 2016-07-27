@@ -14,7 +14,7 @@
                 <ul class="nav masthead-nav">
                   <li><a href="{% url 'home:index' %}">Home</a></li>
                   <li class="active"><a href="{% url 'home:about' %}">About HCC</a></li>
-                  <li><a href="#">Login</a></li>
+                  <li><a href="{% url 'django.contrib.auth.views.login' %}">Login</a></li>
                 </ul>
               </nav>
             </div>

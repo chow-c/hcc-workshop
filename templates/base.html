@@ -36,6 +36,9 @@
                 {% block menu %}
                 {% endblock %}
                 <a class="btn btn-primary btn-lg" href="#" role="button">Generate Website</a>
+                <li>
+                    <a href="{% url 'django.contrib.auth.views.logout' %}">Logout</a>
+                </li>
             </ul>
         </nav> 
                 <!-- Page Content -->
