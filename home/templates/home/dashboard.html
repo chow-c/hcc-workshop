@@ -6,52 +6,10 @@
 {% block head %}	
 {% endblock %}
 
-{% block body %}
-    <div id="wrapper" class="toggled"> 
-        <div class="overlay"></div>
-        <!-- Sidebar -->
-        <!-- Sidebar -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
-            <ul class="nav sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="">
-                       HCC Workshop
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Dashboard</a>
-                </li>
-                <li>
-                    <a href="#">The Thatcher Effect</a>
-                </li>
-                <li>
-                    <a href="#">Cyber Security</a>
-                </li>
-                <li>
-                    <a href="#">Fake or Real Smiles</a>
-                </li>
-                <li>
-                    <a href="">Images: Believe em or Not</a>
-                </li>
-                <li>
-                    <a href="">Creating Mondrian-like Art</a>
-                </li>
-                <li>
-                    <a href="">Further Research</a>
-                </li>
-                <a class="btn btn-primary btn-lg" href="#" role="button">Generate Website</a>
-            </ul>
-            
-        </nav> 
+{% block menu %}
+{% endblock %}    
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
-                <span class="hamb-top"></span>
-    			<span class="hamb-middle"></span>
-				<span class="hamb-bottom"></span>
-            </button>
+{% block body %}
             <div class="jumbotron text-left">
 					<h1>Welcome!</h1>
 					<p>Click one of the activities to get started.</p>
@@ -71,14 +29,7 @@
 					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a href="{#{% url 'eyetrackingimages:index' %}#}">Eye Tracking for Images</a></p></div>
 				</div>
 
-                      </div>
-           
-        </div><!-- /#page-content-wrapper -->
-
-    </div><!-- /#wrapper -->
-				
 {% endblock %}
-
 
 {% block script %}
     <script src="{% static 'main.js' %}"></script>

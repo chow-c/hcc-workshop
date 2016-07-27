@@ -1,9 +1,9 @@
-{% extends "base.html" %}
+{% extends "core.html" %}
 {% load staticfiles %}
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'home/cover.css' %}" />
 {% endblock %}
-{% block body %}
+{% block body_main %}
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
@@ -19,7 +19,6 @@
               </nav>
             </div>
           </div>
-
           <div class="inner cover">
             <h1 class="cover-heading">HCC Workshop</h1>
             <p class="lead">The Human Centred Computing Workshop is designed to showcase leading research in a fun and interactive environment.</p>
