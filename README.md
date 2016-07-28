@@ -53,7 +53,7 @@ docker-compose run -d web python manage.py startapp yourapp
 You are able to run the HCC workshop on your development machine to view and test it as you develop.  
 1. If you installed the workshop via Docker, ensure that the Docker containers are running.
 ```
-docker-compose up --build
+docker-compose up
 ```
 2. Now, open a web browser and navigate to
 ```
