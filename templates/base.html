@@ -3,8 +3,7 @@
 {% block body %}
 <div id="wrapper" class="toggled"> 
         <div class="overlay"></div>
-        <!-- Sidebar -->
-        <!-- Sidebar 
+
         <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
@@ -13,7 +12,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;Dashboard</a>
+                    <a href="#">Dashboard</a>
                 </li>
                 <li>
                     <a href="#">The Thatcher Effect</a>
@@ -35,88 +34,17 @@
                 </li>
                 {% block menu %}
                 {% endblock %}
-                <a class="btn btn-primary btn-lg" href="#" role="button">Generate Website</a>
                 <li>
+                    <a href="">Generate Website</a>
+                </li>
+                <li class="sidebar-sign-out">
                     <a href="{% url 'django.contrib.auth.views.logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</a>
                 </li>
+                <li class="sidebar-expand">
+                    <a href="">Expand</a>
+                </li>
             </ul>
-        </nav> <!-- End navbar -->
-
-    <div class="nicescroll sidebar-collapsed sidebar-wrapper" tabindex="0" style="overflow: hidden; outline: none;">
-<div class="header-logo">
-<a id="logo">
-<svg width="36" height="36" id="tanuki-logo">
-  <path id="tanuki-right-ear" class="tanuki-shape" fill="#e24329" d="M2 14l9.38 9v-9l-4-12.28c-.205-.632-1.176-.632-1.38 0z"></path>
-  <path id="tanuki-left-ear" class="tanuki-shape" fill="#e24329" d="M34 14l-9.38 9v-9l4-12.28c.205-.632 1.176-.632 1.38 0z"></path>
-  <path id="tanuki-nose" class="tanuki-shape" fill="#e24329" d="M18,34.38 3,14 33,14 Z"></path>
-  <path id="tanuki-right-eye" class="tanuki-shape" fill="#fc6d26" d="M18,34.38 11.38,14 2,14 6,25Z"></path>
-  <path id="tanuki-left-eye" class="tanuki-shape" fill="#fc6d26" d="M18,34.38 24.62,14 34,14 30,25Z"></path>
-  <path id="tanuki-right-cheek" class="tanuki-shape" fill="#fca326" d="M2 14L.1 20.16c-.18.565 0 1.2.5 1.56l17.42 12.66z"></path>
-  <path id="tanuki-left-cheek" class="tanuki-shape" fill="#fca326" d="M34 14l1.9 6.16c.18.565 0 1.2-.5 1.56L18 34.38z"></path>
-</svg>
-
-</a>
-<a class="gitlab-text-container-link" title="Dashboard" id="js-shortcuts-home" href="/"><div class="gitlab-text-container">
-<h3>ANU</h3>
-</div>
-</a></div>
-<ul class="nav nav-sidebar">
-<li class="home"><a title="" href="/dashboard/projects" data-original-title="Projects"><i class="fa fa-bookmark fa-fw"></i>
-<span>
-Projects
-</span>
-</a></li><li class=""><a title="" href="/dashboard/todos" data-original-title="Todos"><i class="fa fa-bell fa-fw"></i>
-<span>
-Todos
-<span class="count todos-pending-count">0</span>
-</span>
-</a></li><li class=""><a class="shortcuts-activity" title="Activity" href="/dashboard/activity"><i class="fa fa-dashboard fa-fw"></i>
-<span>
-Activity
-</span>
-</a></li><li class=""><a title="" href="/dashboard/groups" data-original-title="Groups"><i class="fa fa-group fa-fw"></i>
-<span>
-Groups
-</span>
-</a></li><li class=""><a title="" href="/dashboard/milestones" data-original-title="Milestones"><i class="fa fa-clock-o fa-fw"></i>
-<span>
-Milestones
-</span>
-</a></li><li class=""><a title="" class="shortcuts-issues" href="/dashboard/issues?assignee_id=71" data-original-title="Issues"><i class="fa fa-exclamation-circle fa-fw"></i>
-<span>
-Issues
-<span class="count">0</span>
-</span>
-</a></li><li class=""><a title="Merge Requests" class="shortcuts-merge_requests" href="/dashboard/merge_requests?assignee_id=71"><i class="fa fa-tasks fa-fw"></i>
-<span>
-Merge Requests
-<span class="count">0</span>
-</span>
-</a></li><li class=""><a title="" href="/dashboard/snippets" data-original-title="Snippets"><i class="fa fa-clipboard fa-fw"></i>
-<span>
-Snippets
-</span>
-</a></li><li class=""><a title="" href="/help" data-original-title="Help"><i class="fa fa-question-circle fa-fw"></i>
-<span>
-Help
-</span>
-</a></li><li class=""><a title="" data-placement="bottom" href="/profile" data-original-title="Profile Settings"><i class="fa fa-user fa-fw"></i>
-<span>
-Profile Settings
-</span>
-</a></li></ul>
-
-<div class="collapse-nav">
-<a class="toggle-nav-collapse" title="Open/Close" href="#"><i class="fa fa-angle-right"></i></a>
-
-</div>
-<a class="sidebar-user" title="" href="/u/***REMOVED***" data-original-title="Profile"><img alt="Profile" class="avatar avatar s36" src="https://secure.gravatar.com/avatar/3a3733edfc669d35fc6cb08c8aaafaaa?s=120&amp;d=identicon">
-<div class="username">
-***REMOVED***
-</div>
-</a></div>
-
-
+        </nav> 
 
                 <!-- Page Content -->
         <div id="page-content-wrapper">
