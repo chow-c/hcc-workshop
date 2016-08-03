@@ -22,25 +22,21 @@
             </div>
           </div>
           <div class="inner cover">
-            <h2>Login</h2>
+            <h2>Register</h2>
             <br>
             {% if user.is_authenticated %}
               <p>You are already logged in!</p>
               <p><a href="{% url 'home:home' %}">Click here to go to your dashboard.</a></p>
               {% else %}
                 {# Display a form #}
-            <form action="{% url 'django.contrib.auth.views.login' %}" method="post" class="form">
-              {% csrf_token %}
-              {% bootstrap_form form %}
-              {% buttons %}
-                <button type="submit" class="btn btn-primary">
+<form action="{% url 'home:register' %}" method="post" class="form">
+    {% csrf_token %}
+              {{ form }}
+              
+              <button type="submit" class="btn btn-primary">
                   Submit
                 </button>
-                
-              {% endbuttons %}
-               <input type="hidden" name="next" value="{{ next }}" />
-            </form>
-            <p><a href="{#{% url 'password_reset' %}#}">Lost password?</a></p>
+ </form>
             {% endif %}
 
           </div>
