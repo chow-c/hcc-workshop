@@ -9,6 +9,7 @@ class Index(generic.TemplateView):
 
 @method_decorator(login_required, name='dispatch')
 class Home(generic.TemplateView):
+    name = "test"
     template_name = 'home/dashboard.html'
 
 class About(generic.TemplateView):

@@ -1,18 +1,22 @@
 {% extends "core.html" %}
 {% load staticfiles %}
 {% block body %}
-<div id="wrapper"> 
+<div id="wrapper" class="toggled"> 
 
                 <!-- Page Content -->
     <header class="navbar navbar-default navbar-fixed-top">
+
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <i class="fa fa-bars" aria-hidden="true" data-toggle="offcanvas" style="color: white"></i><a class="navbar-brand" href="#"><span>HCC Workshop</span></a>
+                    <button class="side-nav-toggle" data-toggle="offcanvas">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <span class="title">
+                <a class="navbar-brand" href="#">
+                    {% block app-title %}
+                    {% endblock %}
+          </a>
+            </span>
+            
         </div>
         <!-- <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -41,45 +45,63 @@
     </header>
     <nav class="navbar navbar-inverse" id="sidebar-wrapper" role="navigation">  
             <ul class="nav sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href=""><i class="fa fa-bars" aria-hidden="true"></i></a>
+                <li class="sidebar-brand" title="Hide/Show">
+                    <i class="fa fa-bars" aria-hidden="true" data-toggle="offcanvas"></i>
                 </li>
                 <li>
-                    <div class="icon-container">
-                        <i class="fa fa-sign-out" aria-hidden="true"></i>
-                    </div>
+                    <a href="#">
+                        <i class="fa fa-tachometer fa-lg" aria-hidden="true"></i>
+                        <span>Dashboard</span>
+                    </a>
                 </li>
                 <li>
-                    <a href="#">The Thatcher Effect</a>
+                    <a href="#">
+                        <i class="fa fa-frown-o fa-rotate-180 fa-lg" aria-hidden="true"></i>
+                        <span>The Thatcher Effect</span>
+                    </a>
                 </li>
                 <li>
-                    <a href="#">Cyber Security</a>
+                    <a href="#">
+                        <i class="fa fa-user-secret fa-lg" aria-hidden="true"></i>
+                        <span>Cyber Security</span></a>
                 </li>
                 <li>
-                    <a href="#">Fake or Real Smiles</a>
+                    <a href="#">
+                        <i class="fa fa-smile-o fa-lg" aria-hidden="true"></i>
+                        <span>Fake or Real Smiles</span></a>
                 </li>
                 <li>
-                    <a href="">Images: Believe em or Not</a>
+                    <a href="">
+                        <i class="fa fa-picture-o fa-lg" aria-hidden="true"></i>
+                        <span>Images: Believe em or Not</span></a>
                 </li>
                 <li>
-                    <a href="">Creating Mondrian-like Art</a>
+                    <a href="">
+                        <i class="fa fa-university fa-lg" aria-hidden="true"></i>
+                        <span>Creating Mondrian-like Art</span></a>
                 </li>
                 <li>
-                    <a href="">Further Research</a>
+                    <a href="#">
+                        <i class="fa fa-heartbeat fa-lg" aria-hidden="true"></i>
+                        <span>Further Research</span></a>
                 </li>
                 {% block menu %}
                 {% endblock %}
                 <li>
-                    <a href="">Generate Website</a>
+                    <a href="">
+                        <i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i>
+                        <span>Generate Website</span></a>
                 </li>
                 <li class="sidebar-sign-out">
-                    <a href="{% url 'django.contrib.auth.views.logout' %}">&nbsp;Logout</a>
+                    <a href="{% url 'django.contrib.auth.views.logout' %}">
+                        <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>
+                        <span>Logout</span>
+                    </a> 
                 </li>
             </ul>
         </nav> 
         <div id="page-content-wrapper" >
             <div class="container-fluid">
-                
             {% block content %}
             {% endblock %}
             </div>
