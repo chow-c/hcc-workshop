@@ -1,5 +1,6 @@
-{% extends "core.html" %}
+{% extends "base.html" %}
 {% load staticfiles %}
+{% load bootstrap3 %}
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'home/cover.css' %}" />
 {% endblock %}
@@ -12,7 +13,7 @@
               <h3 class="masthead-brand">ANU</h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="{% url 'home:index' %}">Home</a></li>
+                  <li><a href="{% url 'home:index' %}">Home</a></li>
                   <li><a href="{% url 'home:about' %}">About HCC</a></li>
                   <li><a href="{% url 'django.contrib.auth.views.login' %}">Login</a></li>
                 </ul>
@@ -20,13 +21,18 @@
             </div>
           </div>
           <div class="inner cover">
-            <h1 class="cover-heading">HCC Workshop</h1>
-            <p class="lead">The Human Centred Computing Workshop is designed to showcase leading research in a fun and interactive environment.</p>
-            <p class="lead">Explore how the study of human computer interaction can enhance the computing experience.</p>
-            <p class="lead">
-              <br/>
-              <a href="{% url 'django.contrib.auth.views.login' %}" class="btn btn-lg btn-default">Login</a>
-            </p>
+            <h2>Goodbye!</h2>
+
+            {% if user.is_authenticated %}
+              <p>You are still logged in!</p>
+              <p><a href="{% url 'home:home' %}">Click here to go to your dashboard.</a></p>
+              {% else %}
+              <br><br>
+                <p class="lead">Thank you for participating in the HCC Workshop. We hope you enjoyed it.
+                    <br><br>
+                If you have any feedback, we would love to hear it.</p>
+            {% endif %}
+
           </div>
 
           <div class="mastfoot">
@@ -40,6 +46,4 @@
       </div>
 
     </div>
-      <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 {% endblock %}

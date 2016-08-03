@@ -9,29 +9,112 @@
 {% block menu %}
 {% endblock %}    
 
-{% block body %}
+{% block app-title %}Dashboard {% endblock %}
+
+{% block content %}
             <div class="jumbotron text-left">
-					<h1>Welcome!</h1>
+					<h1>Welcome, {{ user.username|title }}!</h1>
 					<p>Click one of the activities to get started.</p>
-				</div>
+			</div>
+			<div id="inner-container-fluid" class="container-fluid">
                 <div class="row">
-					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a class="thumbnail" href="{#{% url 'thatchereffect:index' %}#}"><img src="" alt=""></a></p></div>
-					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a class="thumbnail" href="{#{% url 'cybersecurity:index' %}#}"><img src="" alt=""></a></p></div>
-					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a class="thumbnail" href="{#{% url 'fakeorrealsmiles:index' %}#}"><img src="" alt="">Fake or Real Smiles</a></p></div>
-					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a class="thumbnail" href="{#{% url 'manipulatedimages:index' %}#}"><img src="" alt="">Images: Believe &rsquo;em or Not</a></p></div>
-					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a class="thumbnail" href="{#{% url 'mondriandrawer:index' %}#}"><img src="" alt="">Creating Mondrian-like Art</a></p></div>
-					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a class="thumbnail" href="{#{% url 'furtherresearch:index' %}#}"><img src="" alt="">Further Research</a></p></div>
+					<div class="col-md-3">
+						<div class="thumbnail">
+							<a href=""><img class="img-responsive" src="https://placekitten.com/800/600" alt=""></a>
+							<div class="caption">
+								<h3>The Thatcher Effect</h3>
+								<p>...</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="thumbnail">
+							<a href=""><img class="img-responsive" src="https://placekitten.com/800/600" alt=""></a>
+							<div class="caption">
+								<h3>Cyber Security</h3>
+								<p>...</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="thumbnail">
+							<a href=""><img class="img-responsive" src="https://placekitten.com/800/600" alt=""></a>
+							<div class="caption">
+								<h3>Fake or Real Smiles</h3>
+								<p>...</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="thumbnail">
+							<a href=""><img class="img-responsive" src="https://placekitten.com/800/600" alt=""></a>
+							<div class="caption">
+								<h3>Images: Believe em or Not</h3>
+								<p>...</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="thumbnail">
+							<a href=""><img class="img-responsive" src="https://placekitten.com/800/600" alt=""></a>
+							<div class="caption">
+								<h3>Creating Mondrian-like Art</h3>
+								<p>...</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="thumbnail">
+							<a href=""><img class="img-responsive" src="https://placekitten.com/800/600" alt=""></a>
+							<div class="caption">
+								<h3>Further Research</h3>
+								<p>...</p>
+							</div>
+						</div>
+					</div>
 				</div>
 				<br/>
-				<div class="row">
-					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a href="{#{% url 'facialsymmetry:index' %}#}">Facial Symmetry</a></p></div>
-					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a href="{#{% url 'eyetrackingreading:index' %}#}">Eye Tracking for Reading</a></p></div>
-					<div class="col-md-4" style="border: 1px solid white;"><p class="lead"><a href="{#{% url 'eyetrackingimages:index' %}#}">Eye Tracking for Images</a></p></div>
+				</div>
+				<div id="eyetracker-activities" class="container-fluid">
+					<div class="page-header text-center"><h1>Eye Tracking</h1></div>
+					<p class="lead text-center">These activities are only available at the eye-tracking stations.</p>
+					<div class="row">
+						<div class="col-md-4">
+						<div class="thumbnail">
+							<a href=""><img class="img-responsive" src="https://placekitten.com/800/600" alt=""></a>
+							<div class="caption">
+								<h3>Facial Symmetry</h3>
+								<p>...</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<a href=""><img class="img-responsive" src="https://placekitten.com/800/600" alt=""></a>
+							<div class="caption">
+								<h3>Eye Tracking for Reading</h3>
+								<p>...</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<a href=""><img class="img-responsive" src="https://placekitten.com/800/600" alt=""></a>
+							<div class="caption">
+								<h3>Eye Tracking for Images</h3>
+								<p>...</p>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="other-activities" class="container-fluid">
+					<div class="page-header text-center"><h1>Other activities</h1></div>
+					<p class="lead text-center">Other special activities can go here.</p>
 				</div>
 
-{% endblock %}
 
-{% block script %}
-    <script src="{% static 'main.js' %}"></script>
 
 {% endblock %}
+
+

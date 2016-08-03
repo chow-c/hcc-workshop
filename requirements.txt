@@ -1,2 +1,5 @@
 Django==1.9.8
 psycopg2
+django-bootstrap3
+channels
+asgi_redis
