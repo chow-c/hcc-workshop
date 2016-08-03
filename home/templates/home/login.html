@@ -23,27 +23,7 @@
           <div class="inner cover">
             <h2>Login</h2>
             <br>
-            {% if next %}
-                {% if user.is_authenticated %}
-                <p>Your account doesn't have access to this page. To proceed,
-                please login.</p>
-                {% else %}
-                <p>Please login to see this page.</p>
-                <form action="{% url 'django.contrib.auth.views.login' %}" method="post" class="form">
-              {% csrf_token %}
-              {% bootstrap_form form %}
-              {% buttons %}
-                <button type="submit" class="btn btn-primary">
-                  Submit
-                </button>
-                
-              {% endbuttons %}
-               <input type="hidden" name="next" value="{{ next }}" />
-            </form>
-            <p><a href="{#{% url 'password_reset' %}#}">Lost password?</a></p>
-                {% endif %}
-            {% else %}
-{% if user.is_authenticated %}
+            {% if user.is_authenticated %}
               <p>You are already logged in!</p>
               <p><a href="{% url 'home:home' %}">Click here to go to your dashboard.</a></p>
               {% else %}
@@ -61,8 +41,6 @@
             </form>
             <p><a href="{#{% url 'password_reset' %}#}">Lost password?</a></p>
             {% endif %}
-            {% endif %}
-            
 
           </div>
 
