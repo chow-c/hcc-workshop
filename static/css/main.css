@@ -177,7 +177,7 @@ i.fa + span {
 .sidebar-nav li.sidebar-brand {
     color: #979797;
     background: #373737;
-    height: 49px;
+    height: 50px;
 }
 
 .sidebar-nav > .sidebar-brand i {
@@ -216,8 +216,9 @@ i.fa + span {
     display: inline-block;
     position:relative; left: 0px; margin:6px 0;font-size:18px;padding:6px 10px;
     border:none;
-color: black;
+color: #373737;
 background:#fafafa}
+
 #wrapper.toggled header.navbar-fixed-top .side-nav-toggle:hover{background-color:#eee}
 #wrapper.toggled header.navbar-fixed-top .side-nav-toggle:focus{outline:none}
 
@@ -267,5 +268,18 @@ background:#fafafa}
 
 .thumbnail {
     border: none;
+}
+
+#eyetracker-activities.container-fluid {
     background: #EBEBEB;
+    padding: 15px;
+}
+
+.col-md-4 > .thumbnail {
+    background: transparent;
+}
+
+#other-activities.container-fluid {
+    background: #fff;
+    padding: 15px;
 }
