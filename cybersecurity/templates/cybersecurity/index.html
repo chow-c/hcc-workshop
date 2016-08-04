@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}HCC Workshop | Cyber Security {% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'cybersecurity/style.css' %}" />	
+{% endblock %}
+
+{% block menu %}
+{% endblock %}    
+
+{% block app-title %}Cyber Security{% endblock %}
+
+{% block content %}
+<div id="inner-container-fluid" class="container-fluid">
+    <div class="container-fluid stats">
+        <div class="page-header">
+        <h1>Cyber Security <small>IN NUMBERS</small></h1>
+        </div>
+        <div class="row">
+		    <div class="col-md-2">
+                <div class="thumbnail">
+					<img class="img-responsive" src="{% static 'cybersecurity/images/identities.png' %}" alt="">
+				</div>
+            </div>
+            <div class="col-md-2">
+                <div class="thumbnail">
+					<img class="img-responsive" src="{% static 'cybersecurity/images/malware.png' %}" alt="">
+				</div>
+            </div>
+            <div class="col-md-2">
+                <div class="thumbnail">
+					<img class="img-responsive" src="{% static 'cybersecurity/images/vulnerabilities.png' %}" alt="">
+				</div>
+            </div>
+            <div class="col-md-2">
+            <div class="thumbnail">
+					<img class="img-responsive" src="{% static 'cybersecurity/images/variants.png' %}" alt="">
+				</div>
+            </div>
+            <div class="col-md-2">
+            <div class="thumbnail">
+					<img class="img-responsive" src="{% static 'cybersecurity/images/webmal.png' %}" alt="">
+				</div>
+            </div>
+            <div class="col-md-2">
+            <div class="thumbnail">
+					<img class="img-responsive" src="{% static 'cybersecurity/images/webattack.png' %}" alt="">
+				</div>
+            </div>
+        </div>
+        <p class="text-justify"><span class="lead">Blah blah blah talk about the stats here.</span></p>
+    </div>
+    <div class="container-fluid intro">
+        <p class="text-justify"><span class="lead">Cyber security is an important aspect of ICT.</span> Technology plays a part in almost all aspects of our lives, from health and transport services to personal computing and telecommunications. Even our cars, watches and refrigerators now have embedded computers in them. With so much technology assisting humans in day-to-day life, it is important that we keep the technology secure and therefore safe. This is not just for small and large businesses, but also for keeping individuals like you safe while at home on the Internet.</p><br>
+        <p class="text-justify">Cyber security is a field that looks at the vulnerabilities and threats that face technology, and the implications of implementing poor security practices. What might happen if malicious actors (those who want to <em>hack in</em> to your system and cause harm) broke someone's pacemaker? Or tampered with your car's onboard computer? Or what about if they broke into your bank account? Many technologies in modern society are critical to human safety, or are relied upon for ensuring social and financial stability, or upholding everybody's right to safety, privacy and happiness.</p>
+    </div>
+    <div class="container-fluid extra">
+        <p class="text-justify">While awareness and implementation of strong ICT security practices is increasing, so are the volume and sophistication of cyber threats. Cyber security incidents are very common, and can affect everyone from businesses and government agencies to individuals. The Australian Crime Commission estimates put the annual cost of cyber crime to Australia at $1 billion a year. Tens of thousands of cyber security related incidents are reported to authorities across Australia each year, with these reports being used to develop a better idea of the threats facing Australia. These are used for developing new techniques and clearer advice for combatting future cyber threats. </p>
+        <p class="text-justify">Adding security to technology is not something that should be 'added on' on top, but rather needs to be built-in during design and development stages. Making technology secure is not a trivial process, but is greatly aided through user education and awareness.</p>
+        <p class="text-justify">Cyber security can and should be applied in layers. This is called defence-in-depth, in which malicious actors  must penetrate several different types of security measures. </p>
+    </div>
+    <div class="container-fluid next-page text-center">
+        <a href="{% url 'cybersecurity:privacy' %}" role="button" class="btn btn-primary btn-lg"><span class="next-btn-primary-span">Next</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+    </div>
+    
+</div>  
+
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

@@ -1,0 +1,43 @@
+
+
+#inner-container-fluid {
+    padding: 0px;
+}
+
+.stats {
+    
+    padding: 0px 20px 50px 20px;;
+}
+
+.intro {
+    background: #5B81A1;
+    color: #fff;
+    padding: 80px 40px;
+}
+
+.extra {
+    /* background: rgba(153, 48, 57, 1);
+    color: white; */
+    padding: 50px 40px;
+}
+
+.next-page {
+    padding: 20px 40px;
+}
+
+.cloud {
+    padding: 20px 40px;
+}
+
+.phishing-intro {
+    height: calc(100vh - 50px); 
+    padding: 20px 40px;
+}
+
+#phishing-experiment {
+    background: #EBEBEB;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 50px 0 0 0;
+}
