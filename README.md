@@ -5,8 +5,7 @@ Students and staff can develop and contribute toward new applications, host expe
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.  
 A step-by-step tutorial is available at ***REMOVED***.
 ### Prerequisites
-The HCC Workshop is built on Django 1.9.8 using Python 3.5. All requirements are contained in the requirements.txt file which will be used during installation. We recommend working with Docker when setting up a development environment for the workshop.  
-The workshop is built using Django 1.9.8, Bootstrap 3, HTML 5, CSS 3, and jQuery 2.2.4.  
+The workshop is built using Django 1.9.8, Bootstrap 3, HTML 5, CSS 3, and jQuery 2.2.4. All requirements are contained in the requirements.txt file which will be used during installation. We recommend working with Docker when setting up a development environment for the workshop.  
 ### Installation
 These instructions will guide you through installing the development environment via the recommended method of using Docker. 
 1. First, install all prerequisities and ensure they are up to date.
@@ -53,7 +52,7 @@ docker-compose run -d web python manage.py startapp yourapp
 You are able to run the HCC workshop on your development machine to view and test it as you develop.  
 1. If you installed the workshop via Docker, ensure that the Docker containers are running.
 ```
-docker-compose up --build
+docker-compose up
 ```
 2. Now, open a web browser and navigate to
 ```

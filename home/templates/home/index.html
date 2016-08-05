@@ -5,6 +5,7 @@
 {% endblock %}
 {% block body %}
     <div class="site-wrapper">
+      <div class="background-gif"></div>
       <div class="site-wrapper-inner">
         <div class="cover-container">
           <div class="masthead clearfix">
@@ -15,6 +16,7 @@
                   <li class="active"><a href="{% url 'home:index' %}">Home</a></li>
                   <li><a href="{% url 'home:about' %}">About HCC</a></li>
                   <li><a href="{% url 'django.contrib.auth.views.login' %}">Login</a></li>
+                  <li><a href="{% url 'home:register' %}">Register</a></li>
                 </ul>
               </nav>
             </div>
@@ -34,10 +36,10 @@
               <small>By logging in and using this system, you agree to have your data used for research purposes. <a href="#">Find out more.</a></small>
             </div>
           </div>
-
         </div>
 
       </div>
+
 
     </div>
       <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
