@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'bootstrap3',
     'channels',
+    'cybersecurity',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -117,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LOGIN_URL = '/login'
+LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/home'
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
