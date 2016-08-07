@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'channels',
     'cybersecurity',
+    'thatcher',
 ]
 
 MIDDLEWARE_CLASSES = [

@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name':'home/login.html'}),
     url(r'^logout/$', auth_views.logout, {'template_name':'home/logout.html'}),
     url(r'^cyber/', include('cybersecurity.urls')),
+    url(r'^thatcher/', include('thatcher.urls')),
 ]
