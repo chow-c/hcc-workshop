@@ -3,3 +3,4 @@ psycopg2
 django-bootstrap3
 channels
 asgi_redis
+reportlab
