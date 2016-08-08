@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout, {'template_name':'home/logout.html'}),
     url(r'^cyber/', include('cybersecurity.urls')),
     url(r'^thatcher/', include('thatcher.urls')),
+    url(r'^other_research/', include('other_research.urls')),
 ]
