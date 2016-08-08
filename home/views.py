@@ -27,6 +27,7 @@ class Index(generic.TemplateView):
 class Dashboard(generic.TemplateView):
     template_name = 'home/dashboard.html'
 
+
 class About(generic.TemplateView):
     
     template_name = 'home/about.html'
@@ -36,7 +37,7 @@ class About(generic.TemplateView):
         if request.user.is_authenticated():
             return redirect('home:dashboard')
         else:
-            return super(Index, self).dispatch(request, *args, **kwargs)
+            return super(About, self).dispatch(request, *args, **kwargs)
 
 def generate_webpage(request):
     # Create the HttpResponse object with the appropriate PDF headers.
