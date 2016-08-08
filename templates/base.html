@@ -49,7 +49,7 @@
                     <i class="fa fa-bars" aria-hidden="true" data-toggle="offcanvas"></i>
                 </li>
                 <li>
-                    <a href="{% url 'home:home' %}">
+                    <a href="{% url 'home:dashboard' %}">
                         <i class="fa fa-tachometer fa-lg fa-fw" aria-hidden="true"></i>
                         <span>Dashboard</span>
                     </a>
@@ -85,8 +85,24 @@
                         <i class="fa fa-heartbeat fa-lg fa-fw" aria-hidden="true"></i>
                         <span>Further Research</span></a>
                 </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-camera-retro fa-lg fa-fw" aria-hidden="true"></i>
+                        <span>Facial Symmetry</span></a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-eye fa-lg fa-fw" aria-hidden="true"></i>
+                        <span>Eye Tracking for Reading</span></a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-eye fa-lg fa-fw" aria-hidden="true"></i>
+                        <span>Eye Tracking for Images</span></a>
+                </li>
                 {% block menu %}
                 {% endblock %}
+                <br><br>
                 <li>
                     <a href="">
                         <i class="fa fa-file-text-o fa-lg fa-fw" aria-hidden="true"></i>
