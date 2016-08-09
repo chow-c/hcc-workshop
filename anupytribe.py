@@ -1,5 +1,13 @@
-# PyTribe: classes to communicate with EyeTribe eye trackers
+# ANUPyTribe: classes to communicate with EyeTribe eye trackers 
+# as part of the HCC Workshop
 #
+# author: Christopher Chow
+# email: ***REMOVED***
+#
+# version 1 (09-Aug-2016)
+#
+# Adapted from PyTribe
+# 
 # author: Edwin Dalmaijer
 # email: edwin.dalmaijer@psy.ox.ac.uk
 #
@@ -306,32 +314,34 @@ class EyeTribe:
 		"""
 
 		# assemble new line
-		line = self._separator.join(map(str,[	sample['timestamp'],
-										sample['time'],
-										sample['fix'],
-										sample['state'],
-										sample['rawx'],
-										sample['rawy'],
-										sample['avgx'],
-										sample['avgy'],
-										sample['psize'],
-										sample['Lrawx'],
-										sample['Lrawy'],
-										sample['Lavgx'],
-										sample['Lavgy'],
-										sample['Lpsize'],
-										sample['Lpupilx'],
-										sample['Lpupily'],
-										sample['Rrawx'],
-										sample['Rrawy'],
-										sample['Ravgx'],
-										sample['Ravgy'],
-										sample['Rpsize'],
-										sample['Rpupilx'],
-										sample['Rpupily']
-								]))
+		## ANUPytribe: Output as a JSON
+		line = json.dumps(sample)
+		#line = self._separator.join(map(str,	sample['timestamp'],
+		#								sample['time'],
+		#								sample['fix'],
+		#								sample['state'],
+		#								sample['rawx'],
+		#								sample['rawy'],
+		#								sample['avgx'],
+		#								sample['avgy'],
+		#								sample['psize'],
+		#								sample['Lrawx'],
+		#								sample['Lrawy'],
+		#								sample['Lavgx'],
+		#								sample['Lavgy'],
+		#								sample['Lpsize'],
+		#								sample['Lpupilx'],
+		#								sample['Lpupily'],
+		#								sample['Rrawx'],
+		#								sample['Rrawy'],
+		#								sample['Ravgx'],
+		#								sample['Ravgy'],
+		#								sample['Rpsize'],
+		#								sample['Rpupilx'],
+		#								sample['Rpupily']
+		#						]))
 		# write line to log file
-		self._logfile.write(line + '\n') # to internal buffer
+		self._logfile.write(line) # to internal buffer
 
 	def _log_header(self):
 
@@ -564,6 +574,8 @@ class connection:
 
 		# create a JSON formatted string
 		msg = self.create_json(category, request, values)
+		##  ANUPytribe: Encode the message into bytes
+		msg = msg.encode()
 		# send the message over the connection
 		self._request_lock.acquire()
 		self.sock.send(msg)
@@ -614,6 +626,10 @@ class connection:
 			self.revive()
 			response = '{"statuscode":901,"values":{"statusmessage":"connection error"}}'
 			return False
+		
+		##  ANUPytribe: Decode the bytes into UTF-8
+		response = response.decode("utf-8") 
+
 		# split the responses (in case multiple came in)
 		response = response.split('\n')
 		# add parsed responses to the internal list
