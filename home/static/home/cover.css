@@ -157,7 +157,7 @@ body {
     height: 100%;
     display: block;
     z-index: 1;
-    background:url('cover.gif');
+    background:url('cover-eyetracking.gif');
     background-size: cover;
     background-repeat: no-repeat;
     -webkit-filter: blur(3px) grayscale(0.3) brightness(0.9);
