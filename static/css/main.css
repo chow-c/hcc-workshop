@@ -172,30 +172,35 @@ i.fa + span {
     border:none;
 }
 
-        .title{margin:0;font-size:19px;max-width:400px;display:inline-block;line-height:50px;font-weight:normal;color:#5c5c5c;overflow:hidden;text-overflow:ellipsis;vertical-align:top;white-space:nowrap; 
-        }
 
 .side-nav-toggle {
     display: none;
 }
 
-#wrapper.toggled .side-nav-toggle{
+#wrapper.toggled .side-nav-toggle, .navbar-sign-out, .navbar-dashboard {
     display: inline-block;
-    position:relative; left: 0px; margin:6px 0;font-size:18px;padding:6px 10px;
+    position:relative; 
+    left: 0px; 
+    margin:6px 0;
+    font-size:18px;
+    padding:6px 10px;
     border:none;
     color: #979797;
-    background: rgb(51,51,51);}
+    background: rgb(51,51,51);
+}
 
-#wrapper.toggled header.navbar-fixed-top .side-nav-toggle:hover{background-color:rgb(51,51,51); color: #fff;}
-#wrapper.toggled header.navbar-fixed-top .side-nav-toggle:focus{outline:none}
+#wrapper.toggled header.navbar-fixed-top .side-nav-toggle:hover, .navbar-sign-out:hover {
+    background-color:rgb(51,51,51); color: #fff;
+}
+
+#wrapper.toggled header.navbar-fixed-top .side-nav-toggle:focus, .navbar-sign-out:focus {
+    outline:none;
+}
 
 #content {
     padding: 0px;
  }
 
-#inner-container-fluid {
-    padding: 0 20px;
-}
 
 .thumbnail {
     border: none;
@@ -221,4 +226,53 @@ i.fa + span {
 
 .next-btn-primary-span {
     padding-right: 15px;
+}
+
+
+.container-fluid {
+    padding: 0;
+}
+
+#dashboard-container-fluid {
+    padding: 0 15px;
+}
+
+.title {
+    margin:0;
+    font-size:19px;
+    max-width:400px;
+    display:inline-block;
+    line-height:50px;
+    font-weight:normal;
+    color:#5c5c5c;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    vertical-align:top;
+    white-space:nowrap; 
+}
+
+.navbar-sign-out, .navbar-dashboard {
+    position: relative;
+    left: calc(100vw - 515px);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled .navbar-sign-out, #wrapper.toggled .navbar-dashboard {
+    position: relative;
+    left: calc(100vw - 315px);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.navbar-sign-out > a, .navbar-dashboard > a {
+    color:#5c5c5c;
+}
+
+.navbar-sign-out > a:hover, .navbar-dashboard > a:hover {
+    color: #fff;
 }
