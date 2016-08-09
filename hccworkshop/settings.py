@@ -40,9 +40,10 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'bootstrap3',
     'channels',
-    'cybersecurity',
-    'thatcher',
-    'other_research.apps.OtherResearchConfig'
+    'cybersecurity.apps.CybersecurityConfig',
+    'thatcher.apps.ThatcherConfig',
+    'other_research.apps.OtherResearchConfig',
+    'reading_tracking.apps.ReadingTrackingConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
