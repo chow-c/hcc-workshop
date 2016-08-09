@@ -193,9 +193,6 @@ i.fa + span {
     padding: 0px;
  }
 
-#inner-container-fluid {
-    padding: 0 20px;
-}
 
 .thumbnail {
     border: none;
@@ -221,4 +218,13 @@ i.fa + span {
 
 .next-btn-primary-span {
     padding-right: 15px;
+}
+
+
+.container-fluid {
+    padding: 0;
+}
+
+#dashboard-container-fluid {
+    padding: 0 15px;
 }
