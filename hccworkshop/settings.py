@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'cybersecurity',
     'thatcher',
     'other_research.apps.OtherResearchConfig',
-    'eyetribe.apps.EyetribeConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
