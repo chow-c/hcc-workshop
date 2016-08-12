@@ -16,7 +16,7 @@
                   <li><a href="{% url 'home:about' %}">About</a></li>
                   <li><a href="{% url 'django.contrib.auth.views.login' %}">Login</a></li>
                   <li class="active"><a href="{% url 'home:register' %}">Register</a></li>
-                  <li><a href="{% url 'home:newsletter' %}">Newsletter</a></li>
+                  <li><a href="{% url 'home:newsletter' %}">Subscribe</a></li>
                 </ul>
               </nav>
             </div>
@@ -34,7 +34,7 @@
               {% bootstrap_form form %}
               {% buttons %}
                 <button type="submit" class="btn btn-primary">
-                  Submit
+                  Register
                 </button>
               {% endbuttons %}
                <input type="hidden" name="next" value="{{ next }}" />

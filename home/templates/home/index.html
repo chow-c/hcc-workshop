@@ -16,7 +16,7 @@
                   <li><a href="{% url 'home:about' %}">About</a></li>
                   <li><a href="{% url 'django.contrib.auth.views.login' %}">Login</a></li>
                   <li><a href="{% url 'home:register' %}">Register</a></li>
-                  <li><a href="{% url 'home:newsletter' %}">Newsletter</a></li>
+                  <li><a href="{% url 'home:newsletter' %}">Subscribe</a></li>
                 </ul>
               </nav>
             </div>
@@ -28,6 +28,9 @@
             <p class="lead">
               <br/>
               <a href="{% url 'django.contrib.auth.views.login' %}" class="btn btn-lg btn-default">Login</a>
+              <a href="{% url 'home:register' %}" class="btn btn-lg btn-default">Register</a>
+              <br><br>
+              <a href="{% url 'home:newsletter' %}" class="btn btn-lg btn-default">Subscribe</a>
             </p>
           </div>
 

@@ -26,7 +26,7 @@ TITLES AND HEADERS
 */
 
 .page-header {
-    margin-bottom: 80px;
+    padding: 0 40px;
 }
 
 /**
@@ -51,4 +51,15 @@ SECTIONS
 
 .button-section {
     padding: 20px 40px;
+}
+
+.app-text-highlight {
+    background: #5B81A1;
+    color: #fff;
+    padding: 80px 40px;
+}
+
+.app-text-standard {
+    padding: 80px 40px;
+    border-bottom: 1px solid #f3f3f3;
 }
