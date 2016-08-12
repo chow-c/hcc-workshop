@@ -5,16 +5,22 @@
 {% block head %} 
 {% endblock %}
 
-{% block app-title %} Reading Tracking {% endblock %}
+{% block app-breadcrumbs %}
+	<li><a href="{% url 'reading_tracking:index' %}">Reading Tracking</a></li>
+	<li class="active">Reading Tracking 2</li>
+{% endblock %}
 
 {% block content %} 
 	<div id="inner-container-fluid" class="container-fluid">
 		<h1>Eye Tracking for Reading Analysis</h1>
+
         {% if False %}
             <p>Whoops! Something seems to have gone wrong. Go back to the 
-                <a href="{% url 'reading_tracking:eyegaze' %}">start page</a> for the activity and 
+                <a href="{% url 'reading_tracking:index' %}">start page</a> for the activity and 
                 make sure an <a href="https://theeyetribe.com/">EyeTribe</a> eye tracker is connected and running on this computer. 
             </p>
+
+
             <div class="container-fluid next-page text-center">
                 <a href="{% url 'reading_tracking:eyegaze' %}" role="button" class="btn btn-primary btn-lg">
 					<i class="fa fa-chevron-left" aria-hidden="true"></i>
@@ -28,11 +34,13 @@
         {% else %}
             <p>Have a look at what your eye movements look like whilst you read the text on the previous page: </p>
 			<div class="text-center">
-            	<img  src="https://placekitten.com/800/600" alt="">
+            	
 			</div>
-            <p>Pretty cool huh?! If you would like to learn about eye tracking and the use of eye tracking in HCC 
-                research go to our <a href="{% url 'home:eyegazeinfo' %}">Eye Tracking Information Sheet</a></p>
 
+			<div class="container-fluid intro">
+            	<p>Pretty cool huh?! If you would like to learn about eye tracking and the use of eye tracking in HCC 
+                research go to our <a href="{% url 'home:eyegazeinfo' %}">Eye Tracking Information Sheet</a></p>
+			</div>
             <div class="container-fluid next-page text-center">
                 <a href="{% url 'home:eyegazeinfo' %}" role="button" class="btn btn-primary btn-lg">
 					<i class="fa fa-info-circle" aria-hidden="true"></i>
@@ -49,5 +57,6 @@
 	</div>
 {% endblock %}
 {% block script %} 
-	
+
+
 {% endblock %}

@@ -5,11 +5,16 @@
 {% block head %} 
 {% endblock %}
 
-{% block app-title %} Reading Tracking {% endblock %}
+{% block app-breadcrumbs %}
+	<li class="active">Reading Tracking</li>
+{% endblock %}
 
 {% block content %} 
+	<div class="background-gif"></div>
+    	<div class="jumbotron text-center">
+		<h1 class="vertical-align">Eye Tracking for Reading Analysis</h1>
+	</div>
 	<div id="inner-container-fluid" class="container-fluid">
-		<h1>Eye Tracking for Reading Analysis</h1>
 		{% if False %}
 			<p>Unfortunately, no eye tracker has been detected, if you have an EyeTribe
 				 connected,check the connection through the EyeTribe software and reload this page. If you 
@@ -29,28 +34,20 @@
 				</a>
     		</div>
 		{% else %}
-			<p>Right now your eye movements are being tracked. This allows us to see what you are looking at 
-				and analyse your reading behaviour.</p>
-
-			<p>Please read the text below:</p>
-
 			<div style="width:700px;margin-left:auto;margin-right:auto;font-size:34px;font-family: Arial, Helvetica, sans-serif;line-height: 125%;padding-top:20px;padding-bottom:50px;">
-				When a person is reading a sentence silently, the eye movements show that not every word is fixated. 
-				Every once in a while a regression (an eye movement that goes back in the text) is made to re-examine 
-				a word that may be longer not fully understood the first time. This only happens with about 10% of 
-				the fixations, depending on how difficult the text is. The more difficult the higher the likelihood 
-				that regressions are made.
+				Right now your eye movements are being tracked. This allows us to see what you are looking at 
+				and analyse your reading behaviour. When you click the next button you will be able to see 
+				which part of this page you were looking at, as well as how you read this text. The circles are
+				where your eyes took in visual information, these are termed fixations. The lines between the 
+				circles are called saccades, this is when your eye moves rapidly to another point of fixation.	
 			</div>
-
-			<input type="hidden" id="etdata" name="eyetracker_data" value="">
-
-			<div class="container-fluid next-page text-center">
-        		<a href="{% url 'reading_tracking:eyegaze' %}" role="button" class="btn btn-primary btn-lg">
-					<span class="next-btn-primary-span">Next</span>
-					<i class="fa fa-chevron-right" aria-hidden="true"></i>
-				</a>
-    		</div>
-
+			<form method="post" action="">
+				{% csrf_token %}
+				{{ form.gazedata.as_hidden }}
+				<div class="container-fluid next-page text-center">
+				<button type="submit" value="Next" class="btn btn-primary btn-lg">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+				</div>
+			</form>
 		{% endif %}
 	</div>
 {% endblock %}
@@ -58,11 +55,12 @@
 {% block script %} 
 <script>
 	var eyedata = [];
-	etdata = $('#etdata');
-	EyeTribe.loop(function(frame) {
-		eyedata.push(frame.dump());
-		etdata.val(JSON.stringify(eyedata));
-	});
+	etdata = $('#id_gazedata');
+	etdata.val("Hello World");
+	//EyeTribe.loop(function(frame) {
+	//	eyedata.push(frame.dump());
+	//	etdata.val(JSON.stringify(eyedata));
+	//});
 </script>
 
 {% endblock %}
