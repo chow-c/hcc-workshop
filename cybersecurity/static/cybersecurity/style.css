@@ -4,7 +4,7 @@
 
 .stats {
     
-    padding: 0px 20px 50px 20px;;
+    padding: 50px 20px;
 }
 
 .related-section {
@@ -55,5 +55,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     -webkit-filter: blur(1px) grayscale(0.3) brightness(0.9);
+}
+
+.thumbnail {
+    background: transparent;
 }
 
