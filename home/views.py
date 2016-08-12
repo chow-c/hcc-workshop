@@ -1,10 +1,18 @@
 from django.shortcuts import render
 from django.views import generic
+from django.views.generic.edit import CreateView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import redirect
+
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+
+from home.forms import UserCreateForm, NewsletterForm
 
 from reportlab.pdfgen import canvas
 
@@ -38,6 +46,40 @@ class About(generic.TemplateView):
             return redirect('home:dashboard')
         else:
             return super(About, self).dispatch(request, *args, **kwargs)
+
+class UserRegister(CreateView):
+    template_name = "home/register.html"
+    model = User
+    success_url = '/dashboard'
+
+    fields = ['username', 'password', 'email', 'first_name', 'last_name']
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreateForm(request.POST)
+        if form.is_valid():
+            new_user = form.save()
+            return HttpResponseRedirect("/dashboard")
+    else:
+        form = UserCreateForm()
+    return render(request, "home/register.html", {
+        'form': form,
+    })
+
+def newsletter(request):
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            new_newsletter_signup = form.save()
+            return HttpResponseRedirect("/thanks")
+    else:
+        form = NewsletterForm()
+    return render(request, "home/newsletter.html", {
+        'form': form,
+    })
+
+    return render(request, 'home/newsletter.html')
+
 
 def generate_webpage(request):
     # Create the HttpResponse object with the appropriate PDF headers.

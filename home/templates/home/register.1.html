@@ -29,15 +29,10 @@
               <p><a href="{% url 'home:dashboard' %}">Click here to go to your dashboard.</a></p>
               {% else %}
                 {# Display a form #}
-            <form action="{% url 'home:register' %}" method="post" class="form">
+            <form action="" method="post">
               {% csrf_token %}
-              {% bootstrap_form form %}
-              {% buttons %}
-                <button type="submit" class="btn btn-primary">
-                  Submit
-                </button>
-              {% endbuttons %}
-               <input type="hidden" name="next" value="{{ next }}" />
+            {{ form.as_p }}
+            <input type="submit" value="Create the account">
             </form>
             {% endif %}
 
