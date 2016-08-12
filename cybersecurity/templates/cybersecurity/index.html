@@ -22,9 +22,9 @@
     <section class="container-fluid stats">
         <div class="row">
 		    <div class="col-md-2">
-                <div class="thumbnail text-center hidden">
+                <div class="thumbnail text-center">
 					<!-- <img class="img-responsive" src="{% static 'cybersecurity/images/identities.png' %}" alt=""> -->
-                    <i class="fa fa-users fa-5x fa-fw" aria-hidden="true"></i>
+                    <i class="fa fa-users fa-5x fa-fw hidden" aria-hidden="true"></i>
                     <div class="caption text-center">
                         <h3>429 Million</h3>
 						<p>Online identities exposed</p>
@@ -33,9 +33,9 @@
 				</div>
             </div>
             <div class="col-md-2">
-                <div class="thumbnail text-center hidden">
+                <div class="thumbnail text-center">
 					<!-- <img class="img-responsive" src="{% static 'cybersecurity/images/malware.png' %}" alt=""> -->
-                    <i class="fa fa-envelope-o fa-5x fa-fw" aria-hidden="true"></i>
+                    <i class="fa fa-envelope-o fa-5x fa-fw hidden" aria-hidden="true"></i>
                     <div class="caption text-center">
                         <h3>1 in 220</h3>
 						<p>Emails contained malware</p>
@@ -43,9 +43,9 @@
 				</div>
             </div>
             <div class="col-md-2">
-                <div class="thumbnail text-center hidden">
+                <div class="thumbnail text-center">
 					<!-- <img class="img-responsive" src="{% static 'cybersecurity/images/vulnerabilities.png' %}" alt=""> -->
-                    <i class="fa fa-pie-chart fa-5x fa-fw" aria-hidden="true"></i>
+                    <i class="fa fa-pie-chart fa-5x fa-fw hidden" aria-hidden="true"></i>
                     <div class="caption text-center">
                         <h3>78%</h3>
 						<p>Websites contained vulnerabilities</p>
@@ -53,9 +53,9 @@
 				</div>
             </div>
             <div class="col-md-2">
-            <div class="thumbnail text-center hidden">
+            <div class="thumbnail text-center">
 					<!--<img class="img-responsive" src="{% static 'cybersecurity/images/variants.png' %}" alt=""> -->
-                    <i class="fa fa-bug fa-5x fa-fw" aria-hidden="true"></i>
+                    <i class="fa fa-bug fa-5x fa-fw hidden" aria-hidden="true"></i>
 				    <div class="caption text-center">
                         <h3>431 Million</h3>
 						<p>New malware variants identified</p>
@@ -63,9 +63,9 @@
                 </div>
             </div>
             <div class="col-md-2">
-            <div class="thumbnail text-center hidden">
+            <div class="thumbnail text-center">
 					<!-- <img class="img-responsive" src="{% static 'cybersecurity/images/webmal.png' %}" alt=""> -->
-                    <i class="fa fa-file-o fa-5x fa-fw" aria-hidden="true"></i>
+                    <i class="fa fa-file-o fa-5x fa-fw hidden" aria-hidden="true"></i>
                     <div class="caption text-center">
                         <h3>1 in 3172</h3>
 						<p>Websites hosted malware</p>
@@ -73,9 +73,9 @@
                 </div>
             </div>
             <div class="col-md-2">
-            <div class="thumbnail text-center hidden">
+            <div class="thumbnail text-center">
 					<!-- <img class="img-responsive" src="{% static 'cybersecurity/images/webattack.png' %}" alt=""> -->
-                    <i class="fa fa-shield fa-5x fa-fw" aria-hidden="true"></i>
+                    <i class="fa fa-shield fa-5x fa-fw hidden" aria-hidden="true"></i>
                     <div class="caption text-center">
                         <h3>1.1 Million</h3>
 						<p>Web attacks blocked daily</p>
@@ -120,15 +120,21 @@ function isElementInViewport(elem) {
 
 // Check if it's time to start the animation.
 function checkAnimation() {
-    var $elem = $('.thumbnail');
+    var $elem = $('.thumbnail > .fa');
     var $trigger = $('.app-text-highlight')
     // If the animation has already been started
     if ($elem.hasClass('animated bounceInUp')) return;
 
     if (isElementInViewport($trigger)) {
         // Start the animation
-        $elem.removeClass('hidden');
-        $elem.addClass('animated bounceInUp');
+        $elem.each(function(index) {
+            $(this).delay(100*index).queue(function() {
+                $(this).addClass('animated bounceInUp').removeClass('hidden').dequeue();
+            });
+        });
+        
+        //$elem.removeClass('hidden');
+        //$elem.addClass('animated bounceInUp');
     }
 }
 
