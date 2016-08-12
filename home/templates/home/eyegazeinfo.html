@@ -11,51 +11,49 @@
     <p>Want some more information about eye tracking? This page will provide you with a brief overview of 
         what eye tracking is, and also how the HCC research group uses eye tracking in their research. 
     </p>
-
     <h2>What is eye tracking?</h2>
-
     <p>Eye tracking involves measuring what a person is looking at and an eye tracker is the device used 
         for making these measurements. The first eye tracker was actually invented to analyse how we read. 
         Since then psychologists have thoroughly studied the reading process. You’ve already read a passage 
         that briefly describes this research, and your eye gaze was recorded as you read.
     </p>
-
     <h2>Why do our eye movements look like this?</h2>
-
     <p>Humans essentially have two type of vision - detailed and peripheral. Detailed vision is when details 
         of a vision scene are actually encoded and is the reason we can do tasks such as reading, driving, watching 
         TV, playing sport, etc. When you look at something the centre of your gaze is where the detailed visual 
-        information is encoded. The visual detail drops very rapidly as you move away from the centre of gaze. 
-        As a result, the eye is always moving so that the centre of gaze can be directed to different parts of the 
-        visual stimulus so that visual scene can be put together in the brain.
+        information is encoded. The visual detail drops very rapidly as you move away from the centre of gaze. You can 
+        see an example of this in Figure 1.
     </p>
-
     <div class="text-center">
-        <img src="{% static 'home/images/illustration.png' %}" width="400">
+        <img src="{% static 'home/images/visualAcuity.gif' %}" width="600" alt="Example of visual acuity">
     </div>
     <p style="text-align:center;margin-top:0px;">Figure 1</p>
+    <p>As a result, the eye is always moving so that the centre of gaze can be directed to different parts of the 
+        visual stimulus so that visual scene can be put together in the brain. This means we read text in a very specific way,
+        which is illustrated in Figure 2.
+    </p>
+    <div class="text-center">
+        <img src="{% static 'home/images/illustration.png' %}" width="400" alt="Example of fixations on text">
+    </div>
+    <p style="text-align:center;margin-top:0px;">Figure 2</p>
   
     <p>In more technical terms, the centre of gaze is called a <strong>fixation</strong> and is where the eye 
     remains (relatively) still to take in visual information. And a <strong>saccade</strong> is the rapid movement 
-    that transports the eye to another fixation. Little to no visual information is encoded during saccades. Figure 1
+    that transports the eye to another fixation. Little to no visual information is encoded during saccades. Figure 2
     visually illustrates fixations and saccades; the dots are the fixations and the lines between the fixations are the 
     saccades.
     </p>
-
     <div class="text-center">
-        <img src="{% static 'home/images/figure1.png' %}" width="200">
+        <img src="{% static 'home/images/figure1.png' %}" width="200" alt="Example to show we do not read every word">
     </div>
-    <p style="text-align:center;margin-top:0px;">Figure 2</p>
-
+    <p style="text-align:center;margin-top:0px;">Figure 3</p>
     <p>So did you fixate on every word? As mentioned above, it has been found that when reading English, people often 
         do not fixate on every word. That means we don’t actually see every single word when we read. Check out Figure 
-        2 again, did you see the second “of”? Most people don’t! You can also see in Figure 1 that not all words are fixated,
+        2 again, did you see the second “of”? Most people don’t! You can also see in Figure 3 that not all words are fixated,
         yet others are fixated more than once. The way in which we read can be related to the difficulty of the text as 
         well as your understanding of the text.
     </p>
-
     <h2>How is this applicable to Human Centred Computing research?</h2>
-
     <p>Eye trackers were originally used for research such as in psychology to analyse reading behaviour, the way we 
         view images, and to help understand the visual system. These days eye trackers are used a lot in marketing and 
         product design and research into how to make computers work better for humans. An example of this in analysing 
@@ -63,14 +61,10 @@
         research that is being conducted in the HCC group at ANU, the aim of which is to help create learning environments 
         that better help students learn.
     </p>
-  
     <p>Another way in which eye tracking is used is as an input device for human computer interaction. Some people don’t 
         have the ability to use their hands which restricts their use of computers. They could use their eyes to control a 
         mouse or input keyboard commands!
     </p>
-
-
 {% endblock %}
 {% block script %} 
-	
 {% endblock %}
