@@ -12,8 +12,24 @@
 {% block content %} 
 	<div class="background-gif"></div>
     	<div class="jumbotron text-center">
+			<svg id="circle-dance" width="720" height="120">
 		<h1 class="vertical-align">Eye Tracking for Reading Analysis</h1>
+		
+			<circle cx="40" cy="60" r="30" style="fill:steelblue;"></circle>
+		</svg>
 	</div>
+
+	<script>(function() {
+		function dance() {
+		var circle = d3.selectAll("#circle-dance circle"),
+			span = d3.selectAll(".circle-dance-x"),
+			data = d3.range(3).map(function() { return Math.random() * 720; });
+		circle.data(data).attr("cx", function(d) { return d; });
+		}
+		dance();
+		setInterval(dance, 500);
+		})();</script>
+
 	<div id="inner-container-fluid" class="container-fluid">
 		{% if False %}
 			<p>Unfortunately, no eye tracker has been detected, if you have an EyeTribe
@@ -41,6 +57,7 @@
 				where your eyes took in visual information, these are termed fixations. The lines between the 
 				circles are called saccades, this is when your eye moves rapidly to another point of fixation.	
 			</div>
+			<p></p>
 			<form method="post" action="">
 				{% csrf_token %}
 				{{ form.gazedata.as_hidden }}
