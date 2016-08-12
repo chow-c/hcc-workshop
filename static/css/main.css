@@ -51,7 +51,7 @@ Top Navbar
     display: none;
 }
 
-#wrapper.toggled .side-nav-toggle, .navbar-sign-out, .navbar-dashboard {
+#wrapper.toggled .side-nav-toggle, .navbar-sign-out, .navbar-dashboard, .navbar-newsletter {
     display: inline-block;
     position:relative; 
     left: 0px; 
@@ -63,25 +63,25 @@ Top Navbar
     background: rgb(51,51,51);
 }
 
-.navbar-sign-out, .navbar-dashboard {
+.navbar-sign-out, .navbar-dashboard, .navbar-newsletter {
     position: relative;
-    left: calc(100vw - 515px);
+    left: calc(100vw - 565px);
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
-#wrapper.toggled .navbar-sign-out, #wrapper.toggled .navbar-dashboard {
+#wrapper.toggled .navbar-sign-out, #wrapper.toggled .navbar-dashboard, #wrapper.toggled .navbar-newsletter {
     position: relative;
-    left: calc(100vw - 315px);
+    left: calc(100vw - 365px);
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
-.navbar-sign-out > a, .navbar-dashboard > a {
+.navbar-sign-out > a, .navbar-dashboard > a, .navbar-newsletter >a {
     color:#5c5c5c;
 }
 
@@ -99,11 +99,11 @@ Top Navbar
     white-space:nowrap; 
 }
 
-#wrapper.toggled header.navbar-fixed-top .side-nav-toggle:hover, .navbar-sign-out:hover a, .navbar-dashboard:hover a {
+#wrapper.toggled header.navbar-fixed-top .side-nav-toggle:hover, .navbar-sign-out:hover a, .navbar-dashboard:hover a, .navbar-newsletter:hover a {
     background-color:rgb(51,51,51); color: #fff;
 } 
 
-#wrapper.toggled header.navbar-fixed-top .side-nav-toggle:focus, .navbar-sign-out:focus {
+#wrapper.toggled header.navbar-fixed-top .side-nav-toggle:focus, .navbar-sign-out:focus, .navbar-newsletter:focus {
     outline:none;
 }
 

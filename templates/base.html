@@ -15,6 +15,11 @@
                     {% block app-title %}
                     {% endblock %}</a>
             </span>
+            <button class="navbar-newsletter" title="Newsletter" >
+                <a href="{% url 'home:newsletter' %}">
+                    <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+                </a>
+            </button>
             <button class="navbar-dashboard" title="Dashboard" >
                 <a href="{% url 'home:dashboard' %}">
                     <i class="fa fa-home fa-lg fa-fw" aria-hidden="true"></i>

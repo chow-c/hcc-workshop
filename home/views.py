@@ -47,13 +47,6 @@ class About(generic.TemplateView):
         else:
             return super(About, self).dispatch(request, *args, **kwargs)
 
-class UserRegister(CreateView):
-    template_name = "home/register.html"
-    model = User
-    success_url = '/dashboard'
-
-    fields = ['username', 'password', 'email', 'first_name', 'last_name']
-
 def register(request):
     if request.method == 'POST':
         form = UserCreateForm(request.POST)
@@ -71,7 +64,7 @@ def newsletter(request):
         form = NewsletterForm(request.POST)
         if form.is_valid():
             new_newsletter_signup = form.save()
-            return HttpResponseRedirect("/thanks")
+            return HttpResponseRedirect("/")
     else:
         form = NewsletterForm()
     return render(request, "home/newsletter.html", {
@@ -79,7 +72,6 @@ def newsletter(request):
     })
 
     return render(request, 'home/newsletter.html')
-
 
 def generate_webpage(request):
     # Create the HttpResponse object with the appropriate PDF headers.

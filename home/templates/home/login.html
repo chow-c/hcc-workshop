@@ -10,13 +10,13 @@
         <div class="cover-container">
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">ANU</h3>
+              <h3 class="masthead-brand"><a href="{% url 'home:index' %}">ANU HCC Workshop</a></h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li><a href="{% url 'home:index' %}">Home</a></li>
-                  <li><a href="{% url 'home:about' %}">About HCC</a></li>
+                  <li><a href="{% url 'home:about' %}">About</a></li>
                   <li class="active"><a href="{% url 'django.contrib.auth.views.login' %}">Login</a></li>
                   <li><a href="{% url 'home:register' %}">Register</a></li>
+                  <li><a href="{% url 'home:newsletter' %}">Newsletter</a></li>
                 </ul>
               </nav>
             </div>
