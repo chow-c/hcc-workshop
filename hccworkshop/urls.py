@@ -27,3 +27,5 @@ urlpatterns = [
     url(r'^other_research/', include('other_research.urls')),
     url(r'^eyetribe/', include('eyetribe.urls')),
 ]
+
+admin.site.site_header = 'HCC Workshop Administration'
