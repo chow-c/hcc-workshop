@@ -86,17 +86,9 @@ Top Navbar
 }
 
 .title {
-    margin:0;
     font-size:19px;
-    max-width:400px;
     display:inline-block;
-    line-height:50px;
-    font-weight:normal;
-    color:#5c5c5c;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    vertical-align:top;
-    white-space:nowrap; 
+    background: rgb(51,51,51);
 }
 
 #wrapper.toggled header.navbar-fixed-top .side-nav-toggle:hover, .navbar-sign-out:hover a, .navbar-dashboard:hover a, .navbar-newsletter:hover a {
@@ -107,6 +99,9 @@ Top Navbar
     outline:none;
 }
 
+.breadcrumb > li > a {
+    color: #fff;
+}
 /**
 ---------------------------------
 Side Navbar Wrapper

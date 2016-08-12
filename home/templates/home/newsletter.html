@@ -16,7 +16,7 @@
                   <li><a href="{% url 'home:about' %}">About</a></li>
                   <li><a href="{% url 'django.contrib.auth.views.login' %}">Login</a></li>
                   <li><a href="{% url 'home:register' %}">Register</a></li>
-                  <li class="active"><a href="{% url 'home:newsletter' %}">Newsletter</a></li>
+                  <li class="active"><a href="{% url 'home:newsletter' %}">Subscribe</a></li>
                 </ul>
               </nav>
             </div>
@@ -32,7 +32,7 @@
                           {% buttons %}
                 <button type="submit" class="btn btn-primary">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <span class="btn-primary-span">Sign Up for Newsletter</span>
+                    <span class="btn-primary-span">Subscribe For Newsletter</span>
                 </button>
               {% endbuttons %}
             </form>

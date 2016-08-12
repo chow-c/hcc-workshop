@@ -10,7 +10,10 @@
 {% block menu %}
 {% endblock %}    
 
-{% block app-title %}Cyber Security / Privacy {% endblock %}
+{% block app-breadcrumbs %}
+<li><a href="{% url 'cybersecurity:index' %}">Cyber Security</a></li>
+<li class="active">Privacy</li>
+{% endblock %}
 
 {% block content %}
 <div id="inner-container-fluid" class="container-fluid">

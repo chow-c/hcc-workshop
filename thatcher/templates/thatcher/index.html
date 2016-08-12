@@ -5,7 +5,9 @@
 	HCC Workshop | Thatcher Effect
 {% endblock %}
 
-{% block app-title %} Thatcher Effect {% endblock %}
+{% block app-breadcrumbs %}
+<li class="active">The Thatcher Effect</li>
+{% endblock %}
 
 {% block head %} 
 	<link rel="stylesheet" type="text/css" href="{% static 'thatcher/styles.css' %}" />
@@ -13,20 +15,24 @@
 
 {% block content %} 
 <div id="inner-container-fluid" class="container-fluid">
-    <h1>The Thatcher Effect</h1>
-    <p>The Thatcher Effect, or Thatcher illusion, illustrates that the brain has special processes for face recognition, which do not apply when viewing upside down photo of a face. This has been illustrated by making local changes to the face, typically the eyes and mouth. Whilst the changes are blatantly obvious when the photo of the face is the right way up, and holistic face processing occurs, these changes are far more difficult to detect when the image is turned upside down.</p>
-    <p>The effect is named after <a href="https://en.wikipedia.org/wiki/Margaret_Thatcher">Margaret Thatcher</a>, a former British Prime Minister, because her photo that was used to famously illustrate the illusion.</p>
-    <p>Let’s test it out on some images of faces you may be familiar with to see if you can see the effect.</p>
-    
-    <h2>Instructions</h2>
-
-    <p>Select the eyes (separately) and the mouth with your mouse cursor. Once selected press the rotate button and see the effect for yourself. Hit the rotate button again to see the image the right way up. If you create an image that you wish to keep, click 'save' to insert it into your website. Saving another image will replace the previous image.</p>
-
-    <h2>Try it out!</h2>
+  <div class="page-header">
+        <h1>The Thatcher Effect</h1>
+    </div>
+    <section class="container-fluid app-text-standard">
+      <p>The Thatcher Effect, or Thatcher illusion, illustrates that the brain has special processes for face recognition, which do not apply when viewing upside down photo of a face. This has been illustrated by making local changes to the face, typically the eyes and mouth. Whilst the changes are blatantly obvious when the photo of the face is the right way up, and holistic face processing occurs, these changes are far more difficult to detect when the image is turned upside down.</p>
+      <p>The effect is named after Margaret Thatcher, a former British Prime Minister, because her photo that was used to famously illustrate the illusion.</p>
+      <p>Let’s test it out on some images of faces you may be familiar with to see if you can see the effect.</p>
+    </section>
+    <section class="container-fluid app-text-highlight">
+      <h2>Instructions</h2>
+      <p>Select the eyes (separately) and the mouth with your mouse cursor. Once selected press the rotate button and see the effect for yourself. Hit the rotate button again to see the image the right way up. If you create an image that you wish to keep, click 'save' to insert it into your website. Saving another image will replace the previous image.</p>
+    </section>
+    <section class="container-fluid app-text-standard">
+        <h2>Try it out!</h2>
 
     <ul id="image_chooser">
       {% for image_name, image_description in images %}
-        {% with 'thatcher/'|add:image_name as image_url %}
+        {% with 'thatcher/images/'|add:image_name as image_url %}
           <li data-image-url="{% static image_url %}"
             data-image-name="{{ image_name }}"
             data-image-description="{{ image_description }}"
@@ -39,7 +45,7 @@
       {% endfor %}
     </ul>
 
-    {% with 'thatcher/'|add:first_image_name as image_static %}
+    {% with 'thatcher/images/'|add:first_image_name as image_static %}
     <div id="image_field" data-image-name="{{ first_image_name }}" style="background-image: url({% static image_static %});">
     </div>
     {% endwith %}
@@ -52,6 +58,8 @@
         <button id="rotate_back_button" class="disabled btn btn-primary btn-lg">Rotate Back</button>
         <button id="save_button" class="inactive btn btn-primary btn-lg">Save</button>
     </div>
+    </section>
+
 </div>
 {% endblock %}
 
