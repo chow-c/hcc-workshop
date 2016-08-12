@@ -1,22 +1,27 @@
 /*!
- * Start Bootstrap - Simple Sidebar (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ * ANU HCC Workshop
+ * August 2016
+ * 
+ * ***REMOVED***
+ *
+ * These styles control overarching navbars and divs
  */
+
+/**
+=================================
+OVERARCHING WORKSHOP STYLES
+=================================
+*/
 
  body {
     overflow-x: hidden;
  }
 
-/* Toggle Styles */
-#wrapper {
-    padding-left: 250px;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
+/**
+---------------------------------
+Top Navbar
+---------------------------------
+*/
 .navbar-fixed-top {
     left: 250px;
     -webkit-transition: all 0.5s ease;
@@ -29,18 +34,79 @@
     border-bottom: none;
 }
 
-.navbar-fixed-top .navbar-brand {
-
-}
-
 #wrapper.toggled .navbar-fixed-top {
     left: 0px;
 }
 
-#wrapper.toggled {
-    padding-left: 0px;
+.navbar-fixed-top {
+    padding:0 16px;
+    z-index:100;
+    margin-bottom:0;
+    height:50px;
+    background-color:rgb(51,51,51);
+    border:none;
 }
 
+.side-nav-toggle {
+    display: none;
+}
+
+#wrapper.toggled .side-nav-toggle, .navbar-sign-out, .navbar-dashboard, .navbar-newsletter {
+    display: inline-block;
+    position:relative; 
+    left: 0px; 
+    margin:6px 0;
+    font-size:18px;
+    padding:6px 10px;
+    border:none;
+    color: #979797;
+    background: rgb(51,51,51);
+}
+
+.navbar-sign-out, .navbar-dashboard, .navbar-newsletter {
+    position: relative;
+    left: calc(100vw - 565px);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled .navbar-sign-out, #wrapper.toggled .navbar-dashboard, #wrapper.toggled .navbar-newsletter {
+    position: relative;
+    left: calc(100vw - 365px);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.navbar-sign-out > a, .navbar-dashboard > a, .navbar-newsletter >a {
+    color:#5c5c5c;
+}
+
+.title {
+    font-size:19px;
+    display:inline-block;
+    background: rgb(51,51,51);
+}
+
+#wrapper.toggled header.navbar-fixed-top .side-nav-toggle:hover, .navbar-sign-out:hover a, .navbar-dashboard:hover a, .navbar-newsletter:hover a {
+    background-color:rgb(51,51,51); color: #fff;
+} 
+
+#wrapper.toggled header.navbar-fixed-top .side-nav-toggle:focus, .navbar-sign-out:focus, .navbar-newsletter:focus {
+    outline:none;
+}
+
+.breadcrumb > li > a {
+    color: #fff;
+}
+/**
+---------------------------------
+Side Navbar Wrapper
+---------------------------------
+*/
 #sidebar-wrapper {
     border: none;
     z-index: 1000;
@@ -60,7 +126,24 @@
 
 #wrapper.toggled #sidebar-wrapper {
     width: 0px;
+}
 
+/**
+---------------------------------
+Main Content Areas
+---------------------------------
+*/
+
+#wrapper {
+    padding-left: 250px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 0px;
 }
 
 #page-content-wrapper {
@@ -79,8 +162,14 @@
     color: white;
 }
 
-
-/* Sidebar Styles */
+.container-fluid {
+    padding: 0;
+}
+/**
+---------------------------------
+Side Navbar
+---------------------------------
+*/
 
 .sidebar-nav {
     position: absolute;
@@ -110,6 +199,7 @@
     text-decoration: none;
     padding: 10px 15px 10px 30px;    
 }
+
 li a:hover {
     background-position: 0 0;
 }
@@ -163,44 +253,14 @@ i.fa + span {
     background:#373737;
 }
 
-.navbar-fixed-top {
-    padding:0 16px;
-    z-index:100;
-    margin-bottom:0;
-    height:50px;
-    background-color:rgb(51,51,51);
-    border:none;
+/**
+=================================
+DASHBOARD STYLES
+=================================
+*/
+#dashboard-container-fluid {
+    padding: 0 15px;
 }
-
-
-.side-nav-toggle {
-    display: none;
-}
-
-#wrapper.toggled .side-nav-toggle, .navbar-sign-out, .navbar-dashboard {
-    display: inline-block;
-    position:relative; 
-    left: 0px; 
-    margin:6px 0;
-    font-size:18px;
-    padding:6px 10px;
-    border:none;
-    color: #979797;
-    background: rgb(51,51,51);
-}
-
-#wrapper.toggled header.navbar-fixed-top .side-nav-toggle:hover, .navbar-sign-out:hover {
-    background-color:rgb(51,51,51); color: #fff;
-}
-
-#wrapper.toggled header.navbar-fixed-top .side-nav-toggle:focus, .navbar-sign-out:focus {
-    outline:none;
-}
-
-#content {
-    padding: 0px;
- }
-
 
 .thumbnail {
     border: none;
@@ -218,61 +278,4 @@ i.fa + span {
 #other-activities.container-fluid {
     background: #fff;
     padding: 15px;
-}
-
-.page-header {
-    margin-bottom: 80px;
-}
-
-.next-btn-primary-span {
-    padding-right: 15px;
-}
-
-
-.container-fluid {
-    padding: 0;
-}
-
-#dashboard-container-fluid {
-    padding: 0 15px;
-}
-
-.title {
-    margin:0;
-    font-size:19px;
-    max-width:400px;
-    display:inline-block;
-    line-height:50px;
-    font-weight:normal;
-    color:#5c5c5c;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    vertical-align:top;
-    white-space:nowrap; 
-}
-
-.navbar-sign-out, .navbar-dashboard {
-    position: relative;
-    left: calc(100vw - 515px);
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#wrapper.toggled .navbar-sign-out, #wrapper.toggled .navbar-dashboard {
-    position: relative;
-    left: calc(100vw - 315px);
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-.navbar-sign-out > a, .navbar-dashboard > a {
-    color:#5c5c5c;
-}
-
-.navbar-sign-out > a:hover, .navbar-dashboard > a:hover {
-    color: #fff;
 }

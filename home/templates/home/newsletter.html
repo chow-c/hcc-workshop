@@ -15,38 +15,31 @@
                 <ul class="nav masthead-nav">
                   <li><a href="{% url 'home:about' %}">About</a></li>
                   <li><a href="{% url 'django.contrib.auth.views.login' %}">Login</a></li>
-                  <li class="active"><a href="{% url 'home:register' %}">Register</a></li>
-                  <li><a href="{% url 'home:newsletter' %}">Subscribe</a></li>
+                  <li><a href="{% url 'home:register' %}">Register</a></li>
+                  <li class="active"><a href="{% url 'home:newsletter' %}">Subscribe</a></li>
                 </ul>
               </nav>
             </div>
           </div>
           <div class="inner cover">
-            <h2>Register</h2>
+            <h1 class="cover-heading">Interested in Engineering or<br>Computer Science?</h1>
+            <p class="lead"><small>Enter your email address in order to receive communication from the<br>ANU College of Engineering and Computer Science</small></p>
             <br>
-            {% if user.is_authenticated %}
-              <p>You are already logged in!</p>
-              <p><a href="{% url 'home:dashboard' %}">Click here to go to your dashboard.</a></p>
-              {% else %}
                 {# Display a form #}
-            <form action="{% url 'home:register' %}" method="post" class="form">
+            <form action="" method="post">
               {% csrf_token %}
-              {% bootstrap_form form %}
-              {% buttons %}
+            {% bootstrap_form form %}
+                          {% buttons %}
                 <button type="submit" class="btn btn-primary">
-                  Register
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span class="btn-primary-span">Subscribe For Newsletter</span>
                 </button>
               {% endbuttons %}
-               <input type="hidden" name="next" value="{{ next }}" />
             </form>
-            {% endif %}
 
           </div>
 
           <div class="mastfoot">
-            <div class="inner">
-              <small>By logging in and using this system, you agree to have your data used for research purposes. <a href="#">Find out more.</a></small>
-            </div>
           </div>
 
         </div>

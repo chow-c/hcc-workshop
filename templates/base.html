@@ -10,11 +10,19 @@
             <button class="side-nav-toggle" data-toggle="offcanvas" title="Show Menu">
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
-            <span class="title">
-                <a class="navbar-brand" href="#">
-                    {% block app-title %}
-                    {% endblock %}</a>
-            </span>
+            <ol class="breadcrumb title">
+                {% if request.get_full_path = "/dashboard" %}
+                    <li class="active">Dashboard</li>
+                {% else %}
+                    <li><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
+                    {% block app-breadcrumbs %}{% endblock %}
+                {% endif %}
+            </ol>
+            <button class="navbar-newsletter" title="Subscribe" >
+                <a href="{% url 'home:newsletter' %}">
+                    <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+                </a>
+            </button>
             <button class="navbar-dashboard" title="Dashboard" >
                 <a href="{% url 'home:dashboard' %}">
                     <i class="fa fa-home fa-lg fa-fw" aria-hidden="true"></i>

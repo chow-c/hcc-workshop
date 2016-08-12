@@ -1,0 +1,65 @@
+/*!
+ * ANU HCC Workshop
+ * August 2016
+ * 
+ * ***REMOVED***
+ *
+ * These styles control common elements that should
+ * appear consistent across multiple apps
+ * 
+ */
+ 
+ /**
+=================================
+BUTTONS
+=================================
+*/
+
+.btn-primary-span {
+    padding-right: 15px;
+}
+
+/**
+=================================
+TITLES AND HEADERS
+=================================
+*/
+
+.page-header {
+    padding: 0 40px;
+}
+
+/**
+=================================
+SECTIONS
+=================================
+*/
+
+.app-splash {
+    z-index: 2;
+    position: absolute;
+    top: calc((100vh - 50px)/ 2);
+    width: 100%;
+    background: rgba(255,255,255,0.1);
+}
+
+.related-section {
+    background: #5B81A1;
+    color: #fff;
+    padding: 80px 40px;
+}
+
+.button-section {
+    padding: 20px 40px;
+}
+
+.app-text-highlight {
+    background: #5B81A1;
+    color: #fff;
+    padding: 80px 40px;
+}
+
+.app-text-standard {
+    padding: 80px 40px;
+    border-bottom: 1px solid #f3f3f3;
+}

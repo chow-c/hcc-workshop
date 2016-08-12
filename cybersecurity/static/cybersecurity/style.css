@@ -7,7 +7,7 @@
     padding: 0px 20px 50px 20px;;
 }
 
-.intro {
+.related-section {
     background: #5B81A1;
     color: #fff;
     padding: 80px 40px;
@@ -57,10 +57,3 @@
     -webkit-filter: blur(1px) grayscale(0.3) brightness(0.9);
 }
 
-.jumbotron {
-    z-index: 2;
-    position: absolute;
-    top: calc((100vh - 50px)/ 2);
-    width: 100%;
-    background: rgba(255,255,255,0.1);
-}

@@ -10,7 +10,10 @@
 {% block menu %}
 {% endblock %}    
 
-{% block app-title %}Cyber Security / Privacy {% endblock %}
+{% block app-breadcrumbs %}
+<li><a href="{% url 'cybersecurity:index' %}">Cyber Security</a></li>
+<li class="active">Privacy</li>
+{% endblock %}
 
 {% block content %}
 <div id="inner-container-fluid" class="container-fluid">
@@ -32,7 +35,7 @@
         <p>A recent report by Cisco estimates that global Internet traffic will exceed the zettabyte (that's one <em>trillion</em> gigabytes). Figures suggest that with every minute that passes by, over 300 hours of footage is uploaded to Youtube alone. That means that in the time you have been on this page, users around the world have uploaded over <span id="hours"></span> hours of video!</p>
         <p>With so much data available, it is important to consider where your information is going, who has access to it, and what they are doing with it. An important aspect of cyber security is therefore ensuring personal privacy.</p>
     </div>
-    <div class="container-fluid intro">
+    <div class="container-fluid related-section">
         <h1>How does this relate to Human Centred Computing?</h1>
         <p>People are the most important aspect of ICT. Technology is great for assisting us with our every day lives, from making tasks easier to making life more enjoyable. However, humans are often considered to be the weakest link in the cyber security of a system. For example, if a human user has direct access to data, by manipulating the user (with or without their knowledge or intent), a malicious adversary can cause damage whilst bypassing a large range of technical controls. Additionally, we want to make sure our interaction with technology is a safe one, and is not used as a means to do us harm through misuse of our personal information.</p>
         <p>Cyber security is an active area of research in the ANU Human Centred Computing research group. By understanding how humans interact with technology, it assists us in implementing better security. We also look at ways of adding additional security measures into systems to preserve your privacy. This might involve developing special transformations to the data so that it is unrecognisable, or by utilising your subconscious thoughts and actions to serve as a means of representing you in an 'un-hackable' way. </p>
@@ -57,8 +60,8 @@
             <path class="path" id="pi_p" d='M287 112 V88 H157 V70' fill="transparent"/>
         </svg>
     </div>
-    <div class="container-fluid next-page text-center">
-        <a href="{% url 'cybersecurity:phishing' %}" role="button" class="btn btn-primary btn-lg"><span class="next-btn-primary-span">Next</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+    <div class="container-fluid button-section text-center">
+        <a href="{% url 'cybersecurity:phishing' %}" role="button" class="btn btn-primary btn-lg"><span class="btn-primary-span">Next</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
     </div>
 </div>
 

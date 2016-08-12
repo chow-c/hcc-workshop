@@ -11,28 +11,34 @@
 {% block menu %}
 {% endblock %}    
 
-{% block app-title %}Cyber Security / Privacy / Phishing{% endblock %}
+{% block app-breadcrumbs %}
+<li><a href="{% url 'cybersecurity:index' %}">Cyber Security</a></li>
+<li><a href="{% url 'cybersecurity:privacy' %}">Privacy</a></li>
+<li class="active">Phishing</li>
+{% endblock %}
 
 {% block content %}
 <div id="inner-container-fluid" class="container-fluid">
-    <div class="container-fluid phishing-intro">
+    <section class="container-fluid phishing-intro">
         <div class="page-header">
         <h1>Cyber Security <small>PHISHING</small></h1>
         </div>
-    <p>But wait, how are users so easily manipulated? Are people <em>really</em> the weakest link in the chain?</p>
-  <p>One of the main ways in which humans are exploited to grant malicious adversaries access to a system is through phishing emails. Phishing (pronounced <em>fishing</em>) is a form of social engineering, whereby people are manipulated into doing something without actually intending to. These types of cyber attacks exploit the nuances in human nature, such as our desires, our personality traits or our general willingness to help others. 
-  <p>Have you ever experienced a scam? Maybe a dodgy phone call or an online advertisement saying you've won a prize. Phishing is a special type of scam sent to you via an email, whereby a malicious actor is enticing you to click on a link or open an attachment. By doing so, you often fall victim to a cyber attack, in which the adversary can access your computer without your consent. </p>
-  <p>While some technical measures exist to help users detect phishing emails, often it comes down to a person's own judgement as to whether or not an email is legitimate. How good are you at detecting phishing emails? For each of the emails below, can you tell if they are real emails or fake phishing emails?</p>
-    <div class="text-center">
-  <a href="#phishing-experiment" role="button" class="btn btn-primary btn-lg"><span>Try it out</span><br><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-  </div>
-  </div>
+        <p>But wait, how are users so easily manipulated? Are people <em>really</em> the weakest link in the chain?</p>
+        <p>One of the main ways in which humans are exploited to grant malicious adversaries access to a system is through phishing emails. Phishing (pronounced <em>fishing</em>) is a form of social engineering, whereby people are manipulated into doing something without actually intending to. These types of cyber attacks exploit the nuances in human nature, such as our desires, our personality traits or our general willingness to help others. 
+        <p>Have you ever experienced a scam? Maybe a dodgy phone call or an online advertisement saying you've won a prize. Phishing is a special type of scam sent to you via an email, whereby a malicious actor is enticing you to click on a link or open an attachment. By doing so, you often fall victim to a cyber attack, in which the adversary can access your computer without your consent. </p>
+        <p>While some technical measures exist to help users detect phishing emails, often it comes down to a person's own judgement as to whether or not an email is legitimate. How good are you at detecting phishing emails? For each of the emails below, can you tell if they are real emails or fake phishing emails?</p>
+        <section class="text-center button-section">
+            <a href="#phishing-experiment" role="button" class="btn btn-primary btn-lg"><span>Try it out</span><br><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+        </section>
+    </section>
+
+
 
 </div>
 <div id="phishing-experiment" class="container">
     <p>Omg test</p>
-    <div class="container-fluid next-page text-center">
-        <a href="{% url 'home:dashboard' %}" role="button" class="btn btn-primary btn-lg"><i class="fa fa-home" aria-hidden="true"></i><span class="next-btn-primary-span">Home</span></a>
+    <div class="container-fluid button-section text-center">
+        <a href="{% url 'home:dashboard' %}" role="button" class="btn btn-primary btn-lg"><i class="fa fa-home" aria-hidden="true"></i><span class="btn-primary-span">Home</span></a>
     </div>
 </div>
 {% endblock %}
