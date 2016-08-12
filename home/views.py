@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import redirect
+from django.contrib.auth import authenticate, login
 
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
@@ -54,6 +55,10 @@ def register(request):
         form = UserCreateForm(request.POST)
         if form.is_valid():
             new_user = form.save()
+            new_user = authenticate(username=new_user.username,
+                                    password=form.cleaned_data['password1'],
+                                    )
+            login(request, new_user)
             return HttpResponseRedirect("/dashboard")
     else:
         form = UserCreateForm()

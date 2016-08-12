@@ -27,3 +27,5 @@ urlpatterns = [
     url(r'^other_research/', include('other_research.urls')),
     url(r'^reading_tracking/', include('reading_tracking.urls')),
 ]
+
+admin.site.site_header = 'HCC Workshop Administration'
