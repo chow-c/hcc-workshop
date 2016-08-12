@@ -22,6 +22,8 @@ class Index(generic.TemplateView):
         else:
             return super(Index, self).dispatch(request, *args, **kwargs)
 
+def eyegazeinfo(request):
+    return render(request,'home/eyegazeinfo.html')
 
 @method_decorator(login_required, name='dispatch')
 class Dashboard(generic.TemplateView):

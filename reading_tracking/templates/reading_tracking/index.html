@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %} HCC Workshop | Reading Tracking {% endblock %}
+
+{% block head %} 
+{% endblock %}
+
+{% block app-breadcrumbs %}
+	<li class="active">Reading Tracking</li>
+{% endblock %}
+
+{% block content %} 
+	<div class="background-gif"></div>
+    	<div class="jumbotron text-center">
+		<h1 class="vertical-align">Eye Tracking for Reading Analysis</h1>
+	</div>
+	<div id="inner-container-fluid" class="container-fluid">
+		{% if False %}
+			<p>Unfortunately, no eye tracker has been detected, if you have an EyeTribe
+				 connected,check the connection through the EyeTribe software and reload this page. If you 
+				do not have an EyeTribe connected to this computer 
+				please either move to a computer with one connected, of connect one. 
+			</p>
+			<p>If you are interested in finding out more about the EyeTribe eye tracker please visit the
+				EyeTribe's website: theeyetribe.com
+			</p>
+			<p>If you're interested in finding out more about eye tracking you can read the <a href="{% url 'home:eyegazeinfo' %}">information page</a>
+				on eye tracking.
+			</p>
+			<div class="container-fluid next-page text-center">
+        		<a href="{% url 'home:dashboard' %}" role="button" class="btn btn-primary btn-lg">
+					<i class="fa fa-home" aria-hidden="true"></i>
+					<span class="next-btn-primary-span">Dashboard</span>
+				</a>
+    		</div>
+		{% else %}
+			<div style="width:700px;margin-left:auto;margin-right:auto;font-size:34px;font-family: Arial, Helvetica, sans-serif;line-height: 125%;padding-top:20px;padding-bottom:50px;">
+				Right now your eye movements are being tracked. This allows us to see what you are looking at 
+				and analyse your reading behaviour. When you click the next button you will be able to see 
+				which part of this page you were looking at, as well as how you read this text. The circles are
+				where your eyes took in visual information, these are termed fixations. The lines between the 
+				circles are called saccades, this is when your eye moves rapidly to another point of fixation.	
+			</div>
+			<form method="post" action="">
+				{% csrf_token %}
+				{{ form.gazedata.as_hidden }}
+				<div class="container-fluid next-page text-center">
+				<button type="submit" value="Next" class="btn btn-primary btn-lg">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+				</div>
+			</form>
+		{% endif %}
+	</div>
+{% endblock %}
+
+{% block script %} 
+<script>
+	var eyedata = [];
+	etdata = $('#id_gazedata');
+	etdata.val("Hello World");
+	//EyeTribe.loop(function(frame) {
+	//	eyedata.push(frame.dump());
+	//	etdata.val(JSON.stringify(eyedata));
+	//});
+</script>
+
+{% endblock %}
