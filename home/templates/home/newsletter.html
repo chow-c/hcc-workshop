@@ -22,24 +22,18 @@
             </div>
           </div>
           <div class="inner cover">
-            <h2>Register</h2>
+            <h2>Sign up for our Newsletter</h2>
             <br>
-            {% if user.is_authenticated %}
-              <p>You are already logged in!</p>
-              <p><a href="{% url 'home:dashboard' %}">Click here to go to your dashboard.</a></p>
-              {% else %}
                 {# Display a form #}
-            <form action="{% url 'home:register' %}" method="post" class="form">
+            <form action="" method="post">
               {% csrf_token %}
-              {% bootstrap_form form %}
-              {% buttons %}
+            {% bootstrap_form form %}
+                          {% buttons %}
                 <button type="submit" class="btn btn-primary">
-                  Submit
+                  Sign Up
                 </button>
               {% endbuttons %}
-               <input type="hidden" name="next" value="{{ next }}" />
             </form>
-            {% endif %}
 
           </div>
 
