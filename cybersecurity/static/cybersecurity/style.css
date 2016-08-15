@@ -60,3 +60,6 @@
     background: transparent;
 }
 
+.opaque-icon {
+    opacity: 0;
+}
