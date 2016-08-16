@@ -14,42 +14,28 @@
 {% endblock %}
 
 {% block content %} 
- <div class="background-gif"></div>
-  <div class="jumbotron text-center app-splash">
-		<h1 class="vertical-align">What else does the HCC group do?</h1>
-</div>
+     <div class="background-gif"></div>
+    <div class="jumbotron text-center app-splash">
+		<h1 class="vertical-align animated bounceInLeft" style="color: black">Other Research</h1>
+	</div>
 		<section class="container-fluid app-text-standard">
+			<h1 class="vertical-align">What else does the HCC group do?</h1>
 			<p>The activities that you have played around with in this workshop are all related to research that is carried out by the Human Centred Computing (HCC) group. Some of the activities are even simplified experiments that the researchers carry out. But what else is it that the HCC group does? Well we collect a lot of psychophysiological and physical data from participants as they carry out similar tasks to what you did today. You might now be asking what are psychophysiological and physical signals? These are your physiological and physical responses to psychological and cognitive processes. Put simply we measure heart rate, brain waves, eye movements, skin temperature, pupil dilation, accelerometer data, and much more. We analyse this data to make inferences about the psychological and cognitive processes that are occuring, such as reading comprehension, visual inspection of images, or whether you think an email is spam or not. We use these inferences to help build intelligent software systems that are designed to help people. </p>
-
-  	<p>Measuring psychophysiological signals requires a number of devices and depends on the signals being collected. To measure your heart rate (HR), galvanic skin response (GSR), and wrist movements we use an <a href="https://www.empatica.com/">Empatica e4 wristband.</a> The e4 wristband is just like a watch, see the image below: </p>
-    
-    <img src="{% static 'other_research/e4.png' %}" alt="e4" width="250"/>
-
-  	<p>Check out what this data looks like: </p>
-
-    <img src="{% static 'other_research/empatica_results.png' %}" alt="empatica_results" width="700"/>
-
-  	<p>You can have a play around with one of these watches if you'd like. Just make your way to the workshop presenter with the iPad, they will fit you with an e4 wristband, connect to it, and you will be able to see your HR and skin temperature in real-time!</p>
-
-  	<p>Another device we regularly is the <a href="https://emotiv.com/">emotiv</a> Insight headset to record electroencephalogram (EEG), which is the electrical activity of the brain. This device has electrodes that are placed on you scalp. The device is shown below: </p>
-
-    <img src="{% static 'other_research/emotiv_insight.jpg' %}" alt="emotive insight" width="400"/>
-
-  	<p>EEG data looks like this: </p>
-	
-    <img src="{% static 'other_research/emotiv_data.png' %}" alt="emotiv data" width="600"/>
-
-  	<p>You can have your EEG recorded as well. Just make your way to the workshop presenter with the iPad, they will fit you with an emotiv Insight headset, connect to it and you will be able to see EEG in real-time! </p>
-
-  	<p>Finally, another device we use is the eye tracker. You may have already had your eye gaze recorded today as part of the eye tracking activities. We use eye trackers a lot to monitor what people are looking at, how they read, and also to record their pupil dilation.</p>
-
-    <img src="{% static 'other_research/eyetribe.jpg' %}" alt="eyetribe" width="400"/>
-	
-	<p>The EyeTribe eye trackers that we used in the workshop today are commercial products that are designed to be used by anyone and not just for research. They only cost US$99 and you can even attach them to a Windows Surface and go anywhere to track your eyes!</p>
-
-    <img src="{% static 'other_research/eyetribe2.jpg' %}" alt="eyetribe" width="400"/>
-
-	<p>This allows us to perform research on mobile devices. We are currently investigating how people interact with Web search results on mobile devices and mobile eLearning. Both of these purposes are designed to help people not only learn but interact with mobile application more efficiently and ultimately have a more enjoyable experience. You can check out the current research projects on the HCC website.</p>
+			<p>Measuring psychophysiological signals requires a number of devices and depends on the signals being collected. To measure your heart rate (HR), galvanic skin response (GSR), and wrist movements we use an <a href="https://www.empatica.com/">Empatica e4 wristband.</a> The e4 wristband is just like a watch, see the image below: </p>
+			<div class="text-center"><img src="{% static 'other_research/e4.png' %}" alt="e4" width="250"/></div>
+			<p>Check out what this data looks like: </p>
+			<div class="text-center"><img src="{% static 'other_research/empatica_results.png' %}" alt="empatica_results" width="700"/></div>
+			<p>You can have a play around with one of these watches if you'd like. Just make your way to the workshop presenter with the iPad, they will fit you with an e4 wristband, connect to it, and you will be able to see your HR and skin temperature in real-time!</p>
+			<p>Another device we regularly is the <a href="https://emotiv.com/">emotiv</a> Insight headset to record electroencephalogram (EEG), which is the electrical activity of the brain. This device has electrodes that are placed on you scalp. The device is shown below: </p>
+			<div class="text-center"><img src="{% static 'other_research/emotiv_insight.jpg' %}" alt="emotive insight" width="400"/></div>
+			<p>EEG data looks like this: </p>
+			<div class="text-center"><img src="{% static 'other_research/emotiv_data.png' %}" alt="emotiv data" width="600"/></div>
+			<p>You can have your EEG recorded as well. Just make your way to the workshop presenter with the iPad, they will fit you with an emotiv Insight headset, connect to it and you will be able to see EEG in real-time! </p>
+			<p>Finally, another device we use is the eye tracker. You may have already had your eye gaze recorded today as part of the eye tracking activities. We use eye trackers a lot to monitor what people are looking at, how they read, and also to record their pupil dilation.</p>
+			<div class="text-center"><img src="{% static 'other_research/eyetribe.jpg' %}" alt="eyetribe" width="400"/></div>
+			<p>The EyeTribe eye trackers that we used in the workshop today are commercial products that are designed to be used by anyone and not just for research. They only cost US$99 and you can even attach them to a Windows Surface and go anywhere to track your eyes!</p>
+			<div class="text-center"><img src="{% static 'other_research/eyetribe2.jpg' %}" alt="eyetribe" width="400"/></div>
+			<p>This allows us to perform research on mobile devices. We are currently investigating how people interact with Web search results on mobile devices and mobile eLearning. Both of these purposes are designed to help people not only learn but interact with mobile application more efficiently and ultimately have a more enjoyable experience. You can check out the current research projects on the HCC website.</p>
 		</section>
 
 {% endblock %}

@@ -6,7 +6,6 @@
                 <!-- Page Content -->
     <header class="navbar navbar-default navbar-fixed-top">
 
-        <div class="navbar-header">
             <button class="side-nav-toggle" data-toggle="offcanvas" title="Show Menu">
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
@@ -18,24 +17,18 @@
                     {% block app-breadcrumbs %}{% endblock %}
                 {% endif %}
             </ol>
-            <button class="navbar-newsletter" title="Subscribe" >
-                <a href="{% url 'home:newsletter' %}">
-                    <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
-                </a>
-            </button>
-            <button class="navbar-dashboard" title="Dashboard" >
-                <a href="{% url 'home:dashboard' %}">
-                    <i class="fa fa-home fa-lg fa-fw" aria-hidden="true"></i>
-                </a>
-            </button>
-            
-            <button class="navbar-sign-out" title="Sign Out">
-                <a href="{% url 'django.contrib.auth.views.logout' %}">
-                    <i class="fa fa-sign-out fa-lg fa-fw" aria-hidden="true"></i>
-                </a>
-            </button>
-            
-        </div>
+            <span class="navbar-fixed-top-buttons">
+                    <a href="{% url 'home:dashboard' %}" class="navbar-dashboard" title="Dashboard">
+                        <i class="fa fa-home fa-lg fa-fw" aria-hidden="true"></i>
+                    </a>
+                    <a href="{% url 'home:newsletter' %}" class="navbar-newsletter" title="Subscribe">
+                        <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+                    </a>
+                    <a href="{% url 'django.contrib.auth.views.logout' %}" class="navbar-sign-out" title="Sign Out">
+                        <i class="fa fa-sign-out fa-lg fa-fw" aria-hidden="true"></i>
+                    </a>
+            </span>
+
         <!-- <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
@@ -83,6 +76,7 @@
                         <i class="fa fa-user-secret fa-lg fa-fw" aria-hidden="true"></i>
                         <span>Cyber Security</span></a>
                 </li>
+                <!--
                 <li>
                     <a href="#">
                         <i class="fa fa-smile-o fa-lg fa-fw" aria-hidden="true"></i>
@@ -98,6 +92,7 @@
                         <i class="fa fa-university fa-lg fa-fw" aria-hidden="true"></i>
                         <span>Creating Mondrian-like Art</span></a>
                 </li>
+                -->
                 <li>
                     <a href="{% url 'other_research:index' %}">
                         <i class="fa fa-heartbeat fa-lg fa-fw" aria-hidden="true"></i>
@@ -109,7 +104,7 @@
                         <span>Facial Symmetry</span></a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{% url 'reading_tracking:index' %}">
                         <i class="fa fa-eye fa-lg fa-fw" aria-hidden="true"></i>
                         <span>Eye Tracking for Reading</span></a>
                 </li>
@@ -138,6 +133,29 @@
             <div id="content" class="container-fluid">
             {% block content %}
             {% endblock %}
+                <section class="app-footer">
+                    <div class="row">
+                        <div class=col-md-4>
+                            <p class="lead">Human Centred Computing Workshop</p>
+                            <p>Research School of Computer Science<br>College of Engineering and Computer Science<br>The Australian National University</p>
+                            <p>© 2016 ANU HCC</p>
+                        </div>
+                        <div class=col-md-4>
+                            <p>Visit</p>
+                            <ul>
+                                <li>ANU Website</li>
+                                <li>CECS Website</li>
+                            </ul>
+                        </div>
+                        <div class=col-md-4>
+                            <p>Connect</p>
+                            <ul>
+                                <li>Facebook</li>
+                                <li>Instagram</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
             </div>
            
         </div><!-- /#page-content-wrapper -->

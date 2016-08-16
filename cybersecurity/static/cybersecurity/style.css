@@ -3,20 +3,13 @@
 }
 
 .stats {
-    
-    padding: 0px 20px 50px 20px;;
-}
-
-.related-section {
-    background: #5B81A1;
-    color: #fff;
-    padding: 80px 40px;
+    padding: 50px 150px;
 }
 
 .extra {
     /* background: rgba(153, 48, 57, 1);
     color: white; */
-    padding: 50px 40px;
+    padding: 50px 80px;
 }
 
 .next-page {
@@ -48,12 +41,13 @@
 }
 
 .background-gif {
-    display: block;
-    z-index: 1;
-    height: calc(100vh - 50px);
     background:url('images/cover.gif');
-    background-size: cover;
-    background-repeat: no-repeat;
-    -webkit-filter: blur(1px) grayscale(0.3) brightness(0.9);
 }
 
+.thumbnail {
+    background: transparent;
+}
+
+.opaque-icon {
+    opacity: 0;
+}
