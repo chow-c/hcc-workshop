@@ -1,8 +1,9 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
 {% block title %} HCC Workshop | Reading Tracking {% endblock %}
 
 {% block head %} 
+<link rel="stylesheet" href="{% static 'reading_tracking/styles.css' %}">
 {% endblock %}
 
 {% block app-breadcrumbs %}
@@ -10,30 +11,18 @@
 {% endblock %}
 
 {% block content %} 
-	<div class="background-gif"></div>
-    	<div class="jumbotron text-center">
-			<svg id="circle-dance" width="720" height="120">
-		<h1 class="vertical-align">Eye Tracking for Reading Analysis</h1>
-		
-			<circle cx="40" cy="60" r="30" style="fill:steelblue;"></circle>
+	<div class="background-gif">
+		<svg id="circle-dance" width="100%" height="100%">
+			<circle cx="40" cy="100" r="15" style="fill:black;opacity:0.75"></circle>
 		</svg>
 	</div>
-
-	<script>(function() {
-		function dance() {
-		var circle = d3.selectAll("#circle-dance circle"),
-			span = d3.selectAll(".circle-dance-x"),
-			data = d3.range(3).map(function() { return Math.random() * 720; });
-		circle.data(data).attr("cx", function(d) { return d; });
-		}
-		dance();
-		setInterval(dance, 500);
-		})();</script>
-
+	<div class="jumbotron text-center">
+	<h1 class="vertical-align">Eye Tracking for Reading Analysis</h1>
+	</div>
 	<div id="inner-container-fluid" class="container-fluid">
 		{% if False %}
 			<p>Unfortunately, no eye tracker has been detected, if you have an EyeTribe
-				 connected,check the connection through the EyeTribe software and reload this page. If you 
+				 connected, check the connection through the EyeTribe software and reload this page. If you 
 				do not have an EyeTribe connected to this computer 
 				please either move to a computer with one connected, of connect one. 
 			</p>
@@ -73,11 +62,24 @@
 <script>
 	var eyedata = [];
 	etdata = $('#id_gazedata');
-	etdata.val("Hello World");
-	//EyeTribe.loop(function(frame) {
-	//	eyedata.push(frame.dump());
-	//	etdata.val(JSON.stringify(eyedata));
-	//});
+	// etdata.val("Hello World");
+	EyeTribe.loop(function(frame) {
+		eyedata.push(frame.dump());
+		etdata.val(JSON.stringify(eyedata));
+	});
+</script>
+<script>(function() {
+	function dance() {
+	var circle = d3.selectAll("#circle-dance circle"),
+		span = d3.select(".circle-dance-x"),
+		data = d3.range(1).map(function() { 
+			return 100 + Math.random() * (screen.width-250); 
+		});
+	circle.data(data).attr("cx", function(d) { return d; });
+	}
+	dance();
+	setInterval(dance, 750);
+	})();
 </script>
 
 {% endblock %}

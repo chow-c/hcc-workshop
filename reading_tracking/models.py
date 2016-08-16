@@ -4,4 +4,5 @@ from django.contrib.auth.models import User
 
 class ReadingEyegaze(models.Model):
     user = models.ForeignKey(User)
+    timestamp = models.DateTimeField('Time Collected',auto_now_add=True)
     gazedata = models.TextField()
