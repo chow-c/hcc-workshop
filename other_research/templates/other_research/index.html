@@ -14,10 +14,12 @@
 {% endblock %}
 
 {% block content %} 
-  <div class="jumbotron text-center">
-		<h1 class="vertical-align">What else does the HCC group do?</h1>
-</div>
+     <div class="background-gif"></div>
+    <div class="jumbotron text-center app-splash">
+		<h1 class="vertical-align animated bounceInLeft" style="color: black">Other Research</h1>
+	</div>
 		<section class="container-fluid app-text-standard">
+			<h1 class="vertical-align">What else does the HCC group do?</h1>
 			<p>The activities that you have played around with in this workshop are all related to research that is carried out by the Human Centred Computing (HCC) group. Some of the activities are even simplified experiments that the researchers carry out. But what else is it that the HCC group does? Well we collect a lot of psychophysiological and physical data from participants as they carry out similar tasks to what you did today. You might now be asking what are psychophysiological and physical signals? These are your physiological and physical responses to psychological and cognitive processes. Put simply we measure heart rate, brain waves, eye movements, skin temperature, pupil dilation, accelerometer data, and much more. We analyse this data to make inferences about the psychological and cognitive processes that are occuring, such as reading comprehension, visual inspection of images, or whether you think an email is spam or not. We use these inferences to help build intelligent software systems that are designed to help people. </p>
 			<p>Measuring psychophysiological signals requires a number of devices and depends on the signals being collected. To measure your heart rate (HR), galvanic skin response (GSR), and wrist movements we use an <a href="https://www.empatica.com/">Empatica e4 wristband.</a> The e4 wristband is just like a watch, see the image below: </p>
 			<div class="text-center"><img src="{% static 'other_research/e4.png' %}" alt="e4" width="250"/></div>
