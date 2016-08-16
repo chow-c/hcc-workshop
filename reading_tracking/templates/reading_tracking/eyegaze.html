@@ -1,8 +1,10 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block title %} HCC Workshop | Reading Tracking {% endblock %}
 
 {% block head %} 
+<link rel="stylesheet" href="{% static 'reading_tracking/styles.css' %}">
 {% endblock %}
 
 {% block app-breadcrumbs %}
@@ -11,52 +13,83 @@
 {% endblock %}
 
 {% block content %} 
-	<div id="inner-container-fluid" class="container-fluid">
-		<h1>Eye Tracking for Reading Analysis</h1>
-
-        {% if False %}
-            <p>Whoops! Something seems to have gone wrong. Go back to the 
-                <a href="{% url 'reading_tracking:index' %}">start page</a> for the activity and 
-                make sure an <a href="https://theeyetribe.com/">EyeTribe</a> eye tracker is connected and running on this computer. 
-            </p>
-
-
-            <div class="container-fluid next-page text-center">
-                <a href="{% url 'reading_tracking:eyegaze' %}" role="button" class="btn btn-primary btn-lg">
-					<i class="fa fa-chevron-left" aria-hidden="true"></i>
-					<span class="next-btn-primary-span">Reading Tracking Start Page</span>
-				</a>
-        		<a href="{% url 'home:dashboard' %}" role="button" class="btn btn-primary btn-lg">
-					<i class="fa fa-home" aria-hidden="true"></i>
-					<span class="next-btn-primary-span">Dashboard</span>
-				</a>
-    		</div>
-        {% else %}
-            <p>Have a look at what your eye movements look like whilst you read the text on the previous page: </p>
-			<div class="text-center">
-            	
-			</div>
-
-			<div class="container-fluid intro">
-            	<p>Pretty cool huh?! If you would like to learn about eye tracking and the use of eye tracking in HCC 
-                research go to our <a href="{% url 'home:eyegazeinfo' %}">Eye Tracking Information Sheet</a></p>
-			</div>
-            <div class="container-fluid next-page text-center">
-                <a href="{% url 'home:eyegazeinfo' %}" role="button" class="btn btn-primary btn-lg">
-					<i class="fa fa-info-circle" aria-hidden="true"></i>
-					<span class="next-btn-primary-span">Eye Tracking Information Sheet</span>
-				</a>
-        		<a href="{% url 'home:dashboard' %}" role="button" class="btn btn-primary btn-lg">
-					<i class="fa fa-home" aria-hidden="true"></i>
-					<span class="next-btn-primary-span">Dashboard</span>
-				</a>
-    		</div>
-
-        {% endif %}
-
+	
+	{% if False %}
+	<div class="background-gif"></div>
+		<div class="jumbotron text-center">
+		<h1 class="vertical-align">Eye Tracking for Reading Analysis</h1>
 	</div>
+	<div id="inner-container-fluid" class="container-fluid">
+		<p>Whoops! Something seems to have gone wrong. Go back to the 
+			<a href="{% url 'reading_tracking:index' %}">start page</a> for the activity and 
+			make sure an <a href="https://theeyetribe.com/">EyeTribe</a> eye tracker is connected and running on this computer. 
+		</p>
+		<div class="container-fluid next-page text-center">
+			<a href="{% url 'reading_tracking:eyegaze' %}" role="button" class="btn btn-primary btn-lg">
+				<i class="fa fa-chevron-left" aria-hidden="true"></i>
+				<span class="next-btn-primary-span">Reading Tracking Start Page</span>
+			</a>
+			<a href="{% url 'home:dashboard' %}" role="button" class="btn btn-primary btn-lg">
+				<i class="fa fa-home" aria-hidden="true"></i>
+				<span class="next-btn-primary-span">Dashboard</span>
+			</a>
+		</div>
+	</div>
+	{% else %}
+		<div class="experiment-text">
+				Right now your eye movements are being tracked. This allows us to see what you are looking at 
+				and analyse your reading behaviour. When you click the next button you will be able to see 
+				which part of this page you were looking at, as well as how you read this text. The circles are
+				where your eyes took in visual information, these are termed fixations. The lines between the 
+				circles are called saccades, this is when your eye moves rapidly to another point of fixation.	
+		</div>
+		<div class="container-fluid intro">
+			<p>Pretty cool huh?! If you would like to learn about eye tracking and the use of eye tracking in HCC 
+			research go to our <a href="{% url 'home:eyegazeinfo' %}">Eye Tracking Information Sheet</a></p>
+		</div>
+		<div class="container-fluid next-page text-center">
+			<a href="{% url 'home:eyegazeinfo' %}" role="button" class="btn btn-primary btn-lg">
+				<i class="fa fa-info-circle" aria-hidden="true"></i>
+				<span class="next-btn-primary-span">Eye Tracking Information Sheet</span>
+			</a>
+			<a href="{% url 'home:dashboard' %}" role="button" class="btn btn-primary btn-lg">
+				<i class="fa fa-home" aria-hidden="true"></i>
+				<span class="next-btn-primary-span">Dashboard</span>
+			</a>
+		</div>
+	{% endif %}
 {% endblock %}
 {% block script %} 
+<script>
+// Plot the gaze data from the previous screen using D3.js:
+data = {{ data|safe }};
 
+//This is the accessor function we talked about above
+var lineFunction = d3.line()
+						.x(function(d) { return d.x; })
+						.y(function(d) { return d.y; });
+						
+//The SVG Container
+var svgContainer = d3.select("body").append("svg")
+					.attr("width", "100%")
+					.attr("height", "100%")
+					.attr("class", "overlay");
 
+//The line SVG Path we draw
+var lineGraph = svgContainer.append("path")
+						.attr("d", lineFunction(data))
+						.attr("stroke", "blue")
+						.attr("stroke-width", 2)
+						.attr("fill", "none");	
+
+var circles = svgContainer.selectAll("circle")
+                          .data(data)
+                          .enter()
+                          .append("circle");
+
+var circleAttributes = circles
+                       .attr("cx", function (d) { return d.x; })
+                       .attr("cy", function (d) { return d.y; })
+                       .attr("r", 5)			  
+</script>
 {% endblock %}
