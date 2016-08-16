@@ -19,7 +19,7 @@
 	<div class="jumbotron text-center">
 	<h1 class="vertical-align">Eye Tracking for Reading Analysis</h1>
 	</div>
-	<div id="inner-container-fluid" class="container-fluid">
+	<div id="inner-container-fluid" class="container-fluid" style="height:100vh">
 		{% if False %}
 			<p>Unfortunately, no eye tracker has been detected, if you have an EyeTribe
 				 connected, check the connection through the EyeTribe software and reload this page. If you 
@@ -39,7 +39,19 @@
 				</a>
     		</div>
 		{% else %}
-			<div style="width:700px;margin-left:auto;margin-right:auto;font-size:34px;font-family: Arial, Helvetica, sans-serif;line-height: 125%;padding-top:20px;padding-bottom:50px;">
+
+		<p>Our eyes move in very specific way when we read. Our eyes actually see very little in detail at any one point time. So our eyes are constantly on the move to see the visual field and compose a full picture of our environment. The movements are characterised by short pauses, termed fixations, where fine detail vision is taken in. The eye then rapidly jumps to the next point of fixation, these jumps are termed saccades. 
+		</p>
+		<p>Using the eye tracker we can capture these fixations and saccades. Would you like to see how you read?
+		</p>
+
+		<section class="text-center button-section" id="experiment-button">
+            <a href="#experiment" role="button" class="btn btn-primary btn-lg"><span>Try it out</span><br><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+        </section>
+		</div>
+		
+		<div id="experiment" class="container">
+			<div class="experiment-text">
 				Right now your eye movements are being tracked. This allows us to see what you are looking at 
 				and analyse your reading behaviour. When you click the next button you will be able to see 
 				which part of this page you were looking at, as well as how you read this text. The circles are
@@ -53,21 +65,25 @@
 				<div class="container-fluid next-page text-center">
 				<button type="submit" value="Next" class="btn btn-primary btn-lg">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
 				</div>
+
 			</form>
+		</div>
 		{% endif %}
-	</div>
 {% endblock %}
 
 {% block script %} 
+<script type="text/javascript" src="{% static 'reading_tracking/scroll.js' %}"></script>
 <script>
 	var eyedata = [];
 	etdata = $('#id_gazedata');
-	// etdata.val("Hello World");
-	EyeTribe.loop(function(frame) {
-		eyedata.push(frame.dump());
-		etdata.val(JSON.stringify(eyedata));
-	});
+	if ($('#experiment').visible(true)) {
+		EyeTribe.loop(function(frame) {
+			eyedata.push(frame.dump());
+			etdata.val(JSON.stringify(eyedata));
+		});
+	}
 </script>
+
 <script>(function() {
 	function dance() {
 	var circle = d3.selectAll("#circle-dance circle"),
