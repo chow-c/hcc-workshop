@@ -18,22 +18,15 @@
                 {% endif %}
             </ol>
             <span class="navbar-fixed-top-buttons">
-                <button class="navbar-newsletter" title="Subscribe" >
-                    <a href="{% url 'home:newsletter' %}">
-                        <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
-                    </a>
-                </button>
-                <button class="navbar-dashboard" title="Dashboard" >
-                    <a href="{% url 'home:dashboard' %}">
+                    <a href="{% url 'home:dashboard' %}" class="navbar-dashboard" title="Dashboard">
                         <i class="fa fa-home fa-lg fa-fw" aria-hidden="true"></i>
                     </a>
-                </button>
-                
-                <button class="navbar-sign-out" title="Sign Out">
-                    <a href="{% url 'django.contrib.auth.views.logout' %}">
+                    <a href="{% url 'home:newsletter' %}" class="navbar-newsletter" title="Subscribe">
+                        <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+                    </a>
+                    <a href="{% url 'django.contrib.auth.views.logout' %}" class="navbar-sign-out" title="Sign Out">
                         <i class="fa fa-sign-out fa-lg fa-fw" aria-hidden="true"></i>
                     </a>
-                </button>
             </span>
 
         <!-- <div id="navbar" class="navbar-collapse collapse">
@@ -138,6 +131,29 @@
             <div id="content" class="container-fluid">
             {% block content %}
             {% endblock %}
+                <section class="app-footer">
+                    <div class="row">
+                        <div class=col-md-4>
+                            <p class="lead">Human Centred Computing Workshop</p>
+                            <p>Research School of Computer Science<br>College of Engineering and Computer Science<br>The Australian National University</p>
+                            <p>© 2016 ANU HCC</p>
+                        </div>
+                        <div class=col-md-4>
+                            <p>Visit</p>
+                            <ul>
+                                <li>ANU Website</li>
+                                <li>CECS Website</li>
+                            </ul>
+                        </div>
+                        <div class=col-md-4>
+                            <p>Connect</p>
+                            <ul>
+                                <li>Facebook</li>
+                                <li>Instagram</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
             </div>
            
         </div><!-- /#page-content-wrapper -->
