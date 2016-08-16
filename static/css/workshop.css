@@ -59,7 +59,7 @@ SECTIONS
 }
 
 .button-section {
-    padding: 80px 80px;
+    padding: 50px 80px;
 }
 
 .app-text-highlight {
@@ -77,4 +77,8 @@ SECTIONS
     padding: 40px 80px;
     background: rgb(51,51,51);
     color: #fff;
+}
+
+#experiment-button {
+    padding-top: 15px;
 }
