@@ -27,25 +27,17 @@ def index(request):
     
 
 def eyegaze(request):
-    # get from the db
-    # rawdata = get_object_or_404(ReadingEyegaze, user=request.user)
-    # datalist = ReadingEyegaze.objects.filter(user=request.user.id)
+    # get most recent gaze data from the db
     rawgaze = ReadingEyegaze.objects.filter(user=request.user.id).order_by('-timestamp')[0]
+    # extract the gaze data 
     gazedata = rawgaze.gazedata
-
+    # create the x and y coords for plotting with D3
     list_for_d3 = []
-    links=[]
-    counter = 0
     json1 = json.loads(gazedata)
-    # json2 = json.loads(json1["eyetracker_data"])
     for i in range(0,len(json1)): ## Get each frame
             json2 = json.loads(json1[i]) # a single frame
-            if (json2["fix"]):
+            if (json2["fix"]): # only using fixation data
                 list_for_d3.append({"x" : json2["avg"]["x"], "y":json2["avg"]["y"]})
-                links.append({"target":counter+1, "source":counter})
-                counter+=1
-    
-    context = {"data":list_for_d3, "links":links}
-    # context = {'gazedata': data}
+
+    context = {"data":list_for_d3}
     return render(request,'reading_tracking/eyegaze.html', context)
-    # return render(request,'reading_tracking/eyegaze.html')

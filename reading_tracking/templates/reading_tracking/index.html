@@ -13,7 +13,7 @@
 {% block content %} 
 	<div class="background-gif">
 		<svg id="circle-dance" width="100%" height="100%">
-			<circle cx="40" cy="100" r="15" style="fill:black;opacity:0.75"></circle>
+			<circle cx="40" cy="200" r="15" style="fill:black;opacity:0.75"></circle>
 		</svg>
 	</div>
 	<div class="jumbotron text-center">
@@ -73,6 +73,7 @@
 
 {% block script %} 
 <script type="text/javascript" src="{% static 'reading_tracking/scroll.js' %}"></script>
+<script type="text/javascript" src="{% static 'reading_tracking/header_feature.js' %}"></script>
 <script>
 	var eyedata = [];
 	etdata = $('#id_gazedata');
@@ -84,18 +85,6 @@
 	}
 </script>
 
-<script>(function() {
-	function dance() {
-	var circle = d3.selectAll("#circle-dance circle"),
-		span = d3.select(".circle-dance-x"),
-		data = d3.range(1).map(function() { 
-			return 100 + Math.random() * (screen.width-250); 
-		});
-	circle.data(data).attr("cx", function(d) { return d; });
-	}
-	dance();
-	setInterval(dance, 750);
-	})();
-</script>
+
 
 {% endblock %}
