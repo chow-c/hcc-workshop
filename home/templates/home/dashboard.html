@@ -23,7 +23,6 @@
 						<div class="col-md-4">
 						<div class="thumbnail">
 							<a href=""><img class="img-responsive" src="{% static 'images/coming-soon.png' %}" alt=""></a>
-							<a href="{% url 'thatcher:index' %}"><img class="" src="{% static 'home/images/thatcher.png' %}" alt=""></a>
 							<div class="caption">
 								<h3>Facial Symmetry</h3>
 								<p>Work in progress.p>
@@ -42,10 +41,10 @@
 					</div>
 					<div class="col-md-6 inner-eye">
 						<div class="eye-thumbnail">
-							<img class="img-thumbnail" src="{% static 'images/coming-soon.png' %}" alt="">
+							<img class="img-thumbnail" src="{% static 'home/images/yarbus.jpg' %}" alt="">
 							<div class="eye-caption">
 								<h2>Eye Tracking for Images</h2>
-								<a href="" class="info">Click here</a>
+								<a href="{% url 'image_tracking:index' %}" class="info">Click here</a>
 							</div>
 						</div>
 					</div>
@@ -131,7 +130,6 @@
 					</div>
 				</div>
 				<br/>
-
 				</section>
 				<div id="other-activities" class="container-fluid">
 					<div class="page-header text-center"><h1>Other activities</h1></div>
