@@ -19,6 +19,10 @@ BUTTONS
     padding-right: 15px;
 }
 
+#experiment-button {
+    padding-top: 15px;
+}
+
 /**
 =================================
 TITLES AND HEADERS
@@ -79,6 +83,3 @@ SECTIONS
     color: #fff;
 }
 
-#experiment-button {
-    padding-top: 15px;
-}
