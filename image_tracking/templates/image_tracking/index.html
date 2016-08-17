@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %} HCC Workshop | Image Tracking {% endblock %}
+
+{% block head %} 
+<link rel="stylesheet" href="{% static 'image_tracking/styles.css' %}">
+{% endblock %}
+
+{% block app-breadcrumbs %}
+	<li class="active">Image Tracking</li>
+{% endblock %}
+
+{% block content %} 
+	<div class="background-gif">
+		<svg id="circle-dance" width="100%" height="100%">
+			<circle cx="40" cy="200" r="15" style="fill:black;opacity:0.75"></circle>
+		</svg>
+	</div>
+	<div class="jumbotron text-center">
+	<h1 class="vertical-align">Eye Tracking for Image Viewing</h1>
+	</div>
+	<div id="inner-container-fluid" class="container-fluid" style="height:100vh">
+		{% if False %}
+			<p>Unfortunately, no eye tracker has been detected, if you have an EyeTribe connected, check the connection through the EyeTribe software and reload this page. If you do not have an EyeTribe connected to this computer please either move to a computer with one connected, of connect one. 
+			</p>
+			<p>If you are interested in finding out more about the EyeTribe eye tracker please visit the EyeTribe's website: theeyetribe.com
+			</p>
+			<p>If you're interested in finding out more about eye tracking you can read the <a href="{% url 'home:eyegazeinfo' %}">information page</a>
+				on eye tracking.
+			</p>
+			<div class="container-fluid next-page text-center">
+        		<a href="{% url 'home:dashboard' %}" role="button" class="btn btn-primary btn-lg">
+					<i class="fa fa-home" aria-hidden="true"></i>
+					<span class="next-btn-primary-span">Dashboard</span>
+				</a>
+    		</div>
+		{% else %}
+
+		<p>When we veiw an image, we actually see very little of in fine detail. Actually, our eyes see very little in detail at any one point time. It has been found that what we look at in an image is dependent on the goals of viewing the image.
+		</p>
+		<p>Using the eye tracker we can capture the different ways that we look at images. In this activity you will be shown an image three times, but given differen goals. At the end, you will be able to see the different eye movement patterns for the three goals to compare them.
+		</p>
+
+		<section class="text-center button-section" id="experiment-button">
+            <a href="#experiment_pt1" role="button" class="btn btn-primary btn-lg"><span>Try it out</span><br><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+        </section>
+		</div>
+		
+		<div id="experiment_pt1" class="container">
+		
+            <p><b>Please look at this image and when you are ready press the continue button.</b></p>   
+            <div class="text-center"><img src="{% static 'image_tracking/the_visitor.jpg' %}" alt="The Visitor" /></div>
+			<form method="post" action="">
+			{% csrf_token %}
+			{{ form.image1.as_hidden }}
+			<section class="text-center button-section" id="experiment-button">
+				<a href="#experiment_pt2" role="button" class="btn btn-primary btn-lg"><span>Next</span><br><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+			</section>
+		</div>
+
+        <div id="experiment_pt2"  class="container">
+            <p><b>Look again at the image, this time can you guess what the ages of the people in the picture are?</b></p>   
+            <div class="text-center"><img src="{% static 'image_tracking/the_visitor.jpg' %}" alt="The Visitor" /></div>
+			{{ form.image2.as_hidden }}
+			<section class="text-center button-section" id="experiment-button">
+				<a href="#experiment_pt3" role="button" class="btn btn-primary btn-lg"><span>Try it out</span><br><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+			</section>
+
+		</div>
+
+		<div id="experiment_pt3"  class="container">
+            <p><b>Look again at the image, this time memorise the positions the objects in the room.</b></p>   
+            <div class="text-center"><img src="{% static 'image_tracking/the_visitor.jpg' %}" alt="The Visitor" /></div>
+			{{ form.image3.as_hidden }}
+			
+			<div class="container-fluid next-page text-center">
+				<button type="submit" value="Next" class="btn btn-primary btn-lg">See my eye gaze<i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+			</div>
+		</form>
+		</div>
+
+
+		{% endif %}
+{% endblock %}
+
+{% block script %} 
+<script type="text/javascript" src="{% static 'image_tracking/scroll.js' %}"></script>
+<script type="text/javascript" src="{% static 'image_tracking/header_feature.js' %}"></script>
+<script>
+	// var eyedata = [];
+	// pt1 = $('#id_image1');
+	// pt2 = $('#id_image2');
+	// pt3 = $('#id_image3');
+	// if ($('#experiment_pt1').visible(true)) {
+	// 	EyeTribe.loop(function(frame) {
+	// 		eyedata.push(frame.dump());
+	// 		pt1.val(JSON.stringify(eyedata));
+	// 	});
+	// } else if ($('#experiment_pt2').visible(true)) {
+	// 	EyeTribe.loop(function(frame) {
+	// 		eyedata.push(frame.dump());
+	// 		pt2.val(JSON.stringify(eyedata));
+	// 	});
+	// } else if ($('#experiment_pt3').visible(true)) {
+	// 	EyeTribe.loop(function(frame) {
+	// 		eyedata.push(frame.dump());
+	// 		pt3.val(JSON.stringify(eyedata));
+	// 	});
+	// } 
+</script>
+{% endblock %}
