@@ -35,7 +35,7 @@
 							<img class="img-thumbnail" src="{% static 'home/images/illustration.png' %}" alt="Eye tracking example of reading analysis">
 							<div class="eye-caption">
 								<h2>Eye Tracking for Reading</h2>
-								<a href="{% url 'reading_tracking:index' %}" class="info">Click here</a>
+								<a href="{% url 'reading_tracking:index' %}" class="info"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 							</div>
 						</div>
 					</div>
@@ -44,7 +44,7 @@
 							<img class="img-thumbnail" src="{% static 'images/coming-soon.png' %}" alt="">
 							<div class="eye-caption">
 								<h2>Eye Tracking for Images</h2>
-								<a href="" class="info">Click here</a>
+								<a href="" class="info "><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 							</div>
 						</div>
 					</div>
@@ -62,7 +62,7 @@
 						<div class="thumbnail activity-thumbnail">
 							<a href="{% url 'thatcher:index' %}"><img class="app-thumbnail-img" src="{% static 'images/thatcher.png' %}" alt=""></a>
 							<div class="caption title-caption">
-								<h3>The Thatcher Effect</h3><br>
+								<h3>The Thatcher Effect</h3>
 								<div class="content-caption">
 									
 								<p>Trick your brain!</p>
@@ -78,7 +78,6 @@
 							<a href="{% url 'cybersecurity:index' %}"><img class="app-thumbnail-img" src="https://placekitten.com/800/600" alt=""></a>
 							<div class="caption title-caption">
 								<h3>Cyber Security</h3>
-								<br>
 								<div class="content-caption">
 									<p>Learn about security!</p>
 								<a class="btn btn-default" href="{% url 'cybersecurity:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
@@ -120,7 +119,6 @@
 							<a href="{% url 'other_research:index' %}"><img class="app-thumbnail-img" src="https://placekitten.com/800/600" alt=""></a>
 							<div class="caption title-caption">
 								<h3>Further Research</h3>
-								<br>
 								<div class="content-caption">
 									<p>See what else we do!</p>
 								<a class="btn btn-default" href="{% url 'other_research:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
@@ -131,11 +129,6 @@
 				</div>
 				<br/>
 				</section>
-				<div id="other-activities" class="container-fluid">
-					<div class="page-header text-center"><h1>Other activities</h1></div>
-					<p class="lead text-center">Other special activities can go here.</p>
-				</div>
-
 {% endblock %}
 
 

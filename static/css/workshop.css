@@ -30,7 +30,7 @@ TITLES AND HEADERS
 */
 
 .page-header {
-    padding: 0 40px;
+    padding: 0 80px;
 }
 
 /**
@@ -83,3 +83,11 @@ SECTIONS
     color: #fff;
 }
 
+.app-text-other {
+    padding: 40px 80px;
+    background: #f7f7f7;
+}
+
+.next-page {
+    padding: 20px 40px;
+}

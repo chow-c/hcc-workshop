@@ -21,15 +21,15 @@
 	</div>
 	<div class="container-fluid " >
 		{% if False %}
-			<p>Unfortunately, no eye tracker has been detected, if you have an EyeTribe
+			<p class="text-justify">Unfortunately, no eye tracker has been detected, if you have an EyeTribe
 				 connected, check the connection through the EyeTribe software and reload this page. If you 
 				do not have an EyeTribe connected to this computer 
 				please either move to a computer with one connected, of connect one. 
 			</p>
-			<p>If you are interested in finding out more about the EyeTribe eye tracker please visit the
+			<p class="text-justify">If you are interested in finding out more about the EyeTribe eye tracker please visit the
 				EyeTribe's website: theeyetribe.com
 			</p>
-			<p>If you're interested in finding out more about eye tracking you can read the <a href="{% url 'home:eyegazeinfo' %}">information page</a>
+			<p class="text-justify">If you're interested in finding out more about eye tracking you can read the <a href="{% url 'home:eyegazeinfo' %}">information page</a>
 				on eye tracking.
 			</p>
 			<div class="container-fluid next-page text-center">
@@ -40,9 +40,9 @@
     		</div>
 		{% else %}
 
-		<p>Our eyes move in very specific way when we read. Our eyes actually see very little in detail at any one point time. So our eyes are constantly on the move to see the visual field and compose a full picture of our environment. The movements are characterised by short pauses, termed fixations, where fine detail vision is taken in. The eye then rapidly jumps to the next point of fixation, these jumps are termed saccades. 
+		<p class="text-justify">Our eyes move in very specific way when we read. Our eyes actually see very little in detail at any one point time. So our eyes are constantly on the move to see the visual field and compose a full picture of our environment. The movements are characterised by short pauses, termed fixations, where fine detail vision is taken in. The eye then rapidly jumps to the next point of fixation, these jumps are termed saccades. 
 		</p>
-		<p>Using the eye tracker we can capture these fixations and saccades. Would you like to see how you read?
+		<p class="text-justify">Using the eye tracker we can capture these fixations and saccades. Would you like to see how you read?
 		</p>
 		
 		<section class="text-center button-section" id="experiment-button">
@@ -63,7 +63,7 @@
 				{% csrf_token %}
 				{{ form.gazedata.as_hidden }}
 				<div class="container-fluid next-page text-center">
-				<button type="submit" value="Next" class="btn btn-primary btn-lg">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+					<button type="submit" value="Next" class="btn btn-primary btn-lg">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
 				</div>
 
 			</form>
