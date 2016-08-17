@@ -276,6 +276,7 @@ i.fa + span {
 DASHBOARD STYLES
 =================================
 */
+
 #dashboard-container-fluid {
     padding: 80px 60px 0 60px;
     background: #f7f7f7;
@@ -295,23 +296,21 @@ DASHBOARD STYLES
     padding: 0;
 }
 
-/*
-.col-md-4 > .thumbnail {
-    background: transparent;
-}
-*/
-
 #other-activities.container-fluid {
     background: #fff;
     padding: 15px 60px;
 }
 
-/****
 
-**/
 .img-thumbnail {
     padding: 0px;
 }
+
+/**
+=================================
+EYE TRACKING THUMBNAILS
+=================================
+*/
 
 .eye-thumbnail {
 width:100%;
@@ -397,6 +396,11 @@ transform:translatey(0);
 transition-delay:.2s;
 }
 
+/**
+=================================
+OTHER ACTIVITY THUMBNAILS
+=================================
+*/
 .activity-thumbnail:hover .app-thumbnail-img  {
     -webkit-transform: translate3d(0,-30%,0);
 	transform: translate3d(0,-30%,0);
