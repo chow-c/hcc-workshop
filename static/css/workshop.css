@@ -19,6 +19,10 @@ BUTTONS
     padding-right: 15px;
 }
 
+#experiment-button {
+    padding-top: 15px;
+}
+
 /**
 =================================
 TITLES AND HEADERS
@@ -59,7 +63,7 @@ SECTIONS
 }
 
 .button-section {
-    padding: 80px 80px;
+    padding: 50px 80px;
 }
 
 .app-text-highlight {
@@ -78,3 +82,4 @@ SECTIONS
     background: rgb(51,51,51);
     color: #fff;
 }
+

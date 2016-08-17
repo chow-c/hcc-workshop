@@ -1,10 +1,4 @@
-.background-gif {
-  z-index: 50;
-  width: 100%;
-  height: 100%;
-  background:transparent;
-}
-
+/*
 .overlay {
   position: absolute;
   left:0;
@@ -31,7 +25,7 @@ circle {
     stroke: #fff;
     stroke-width: 1px;
 }
-
+ */
 body {
     overflow: hidden;
 }

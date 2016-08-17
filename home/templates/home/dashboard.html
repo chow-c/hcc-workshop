@@ -16,25 +16,73 @@
 				<h1>Welcome to CECS@ANU Open Day! {# user.username|title #}</h1>
 				<p>Click one of the activities to get started.</p>
 			</div>
-			<div id="dashboard-container-fluid" class="container-fluid ">
-                <div class="row">
-					<div class="col-md-4">
+			<section id="eyetracker-activities" class="container-fluid">
+					<div class="row">
+						<div class="col-md-6">
+							<!--
+						<div class="col-md-4">
 						<div class="thumbnail">
-							<a href="{% url 'thatcher:index' %}"><img class="" src="{% static 'images/thatcher.png' %}" alt=""></a>
+							<a href=""><img class="img-responsive" src="{% static 'images/coming-soon.png' %}" alt=""></a>
 							<div class="caption">
-								<h3>The Thatcher Effect</h3>
-								<br>
-								<a class="btn btn-default" href="{% url 'thatcher:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+								<h3>Facial Symmetry</h3>
+								<p>Work in progress.p>
+							</div>
+						</div>
+					</div> -->
+					<div class="row">
+					<div class="col-md-6 inner-eye">
+						<div class="eye-thumbnail">
+							<img class="img-thumbnail" src="{% static 'home/images/illustration.png' %}" alt="Eye tracking example of reading analysis">
+							<div class="eye-caption">
+								<h2>Eye Tracking for Reading</h2>
+								<a href="{% url 'reading_tracking:index' %}" class="info">Click here</a>
 							</div>
 						</div>
 					</div>
+					<div class="col-md-6 inner-eye">
+						<div class="eye-thumbnail">
+							<img class="img-thumbnail" src="{% static 'images/coming-soon.png' %}" alt="">
+							<div class="eye-caption">
+								<h2>Eye Tracking for Images</h2>
+								<a href="" class="info">Click here</a>
+							</div>
+						</div>
+					</div>
+					</div>
+					</div>
+					<div class="col-md-6">
+					<p><h1 class="text-center">Eye Tracking</h1></p><br>
+					<p class="lead text-center">Visualise your gaze path on the screen</p>
+					</div>
+					</div>
+				</section>
+			<section id="dashboard-container-fluid" class="container-fluid ">
+                <div class="row">
 					<div class="col-md-4">
-						<div class="thumbnail">
-							<a href="{% url 'cybersecurity:index' %}"><img class="" src="https://placekitten.com/800/600" alt=""></a>
-							<div class="caption">
+						<div class="thumbnail activity-thumbnail">
+							<a href="{% url 'thatcher:index' %}"><img class="app-thumbnail-img" src="{% static 'images/thatcher.png' %}" alt=""></a>
+							<div class="caption title-caption">
+								<h3>The Thatcher Effect</h3><br>
+								<div class="content-caption">
+									
+								<p>Trick your brain!</p>
+								<a class="btn btn-default" href="{% url 'thatcher:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+							</div>
+							</div>
+
+						</div>
+						
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail activity-thumbnail">
+							<a href="{% url 'cybersecurity:index' %}"><img class="app-thumbnail-img" src="https://placekitten.com/800/600" alt=""></a>
+							<div class="caption title-caption">
 								<h3>Cyber Security</h3>
 								<br>
+								<div class="content-caption">
+									<p>Learn about security!</p>
 								<a class="btn btn-default" href="{% url 'cybersecurity:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -68,51 +116,21 @@
 					</div>
 					-->
 					<div class="col-md-4">
-						<div class="thumbnail">
-							<a href="{% url 'other_research:index' %}"><img class="img-responsive" src="https://placekitten.com/800/600" alt=""></a>
-							<div class="caption">
+						<div class="thumbnail activity-thumbnail">
+							<a href="{% url 'other_research:index' %}"><img class="app-thumbnail-img" src="https://placekitten.com/800/600" alt=""></a>
+							<div class="caption title-caption">
 								<h3>Further Research</h3>
 								<br>
+								<div class="content-caption">
+									<p>See what else we do!</p>
 								<a class="btn btn-default" href="{% url 'other_research:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<br/>
-				</div>
-				<div id="eyetracker-activities" class="container-fluid">
-					<div class="page-header text-center"><h1>Eye Tracking</h1></div>
-					<p class="lead text-center">These activities are only available at the eye-tracking stations.</p>
-					<div class="row">
-						<div class="col-md-4">
-						<div class="thumbnail">
-							<a href=""><img class="img-responsive" src="{% static 'images/coming-soon.png' %}" alt=""></a>
-							<div class="caption">
-								<h3>Facial Symmetry</h3>
-								<p>Work in progress.p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="thumbnail">
-							<a href="{% url 'reading_tracking:index' %}"><img class="img-responsive" src="{% static 'home/images/illustration.png' %}" alt="Eye tracking example of reading analysis"></a>
-							<div class="caption">
-								<h3>Eye Tracking for Reading</h3>
-								<p>Work in progress.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="thumbnail">
-							<a href=""><img class="img-responsive" src="{% static 'images/coming-soon.png' %}" alt=""></a>
-							<div class="caption">
-								<h3>Eye Tracking for Images</h3>
-								<p>Work in progress.</p>
-							</div>
-						</div>
-					</div>
-					</div>
-				</div>
+				</section>
 				<div id="other-activities" class="container-fluid">
 					<div class="page-header text-center"><h1>Other activities</h1></div>
 					<p class="lead text-center">Other special activities can go here.</p>
