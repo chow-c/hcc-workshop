@@ -1,17 +1,50 @@
-/*
+/* Styles for index.html */
+
+.background-gif {
+    background:url('reading.gif');
+    opacity: 0.6;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+button, #experiment-button {
+  z-index: 9999;
+}
+
+/*body {
+    overflow: hidden;
+}*/
+
+.experiment-text {
+    width:700px;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:30px;
+    line-height: 125%;
+    padding-top:20px;
+    padding-bottom:50px;
+}
+
+#intro {
+    height: calc(100vh - 50px); 
+}
+
+#experiment {
+    height: 100vh;
+    width: 100%;
+    padding: 50px 0 0 0;
+}
+
+/* Styles for plotting for eye gaze data */
 .overlay {
   position: absolute;
   left:0;
   right:0;
   width: 100%;
-  height: 100%;
-  display: block;
+  height: 100%;;
   z-index: 50;
   background:transparent;
-}
-
-button, #experiment-button {
-  z-index: 100;
 }
 
 path { 
@@ -25,17 +58,12 @@ circle {
     stroke: #fff;
     stroke-width: 1px;
 }
- */
-body {
-    overflow: hidden;
+
+#showgaze {
+    height: 100vh;
+    width: 100%;
+    /*padding: 50px 0 0 0;*/
 }
 
-.experiment-text {
-    width:700px;
-    margin-left:auto;
-    margin-right:auto;
-    font-size:30px;
-    line-height: 125%;
-    padding-top:20px;
-    padding-bottom:50px;
-}
+
+

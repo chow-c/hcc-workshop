@@ -9,11 +9,10 @@
 
 {% block app-breadcrumbs %}
 	<li><a href="{% url 'reading_tracking:index' %}">Reading Tracking</a></li>
-	<li class="active">Reading Tracking 2</li>
+	<li class="active">My eye gaze</li>
 {% endblock %}
 
 {% block content %} 
-	
 	{% if False %}
 	<div class="background-gif"></div>
 		<div class="jumbotron text-center">
@@ -29,13 +28,11 @@
 				<i class="fa fa-chevron-left" aria-hidden="true"></i>
 				<span class="next-btn-primary-span">Reading Tracking Start Page</span>
 			</a>
-			<a href="{% url 'home:dashboard' %}" role="button" class="btn btn-primary btn-lg">
-				<i class="fa fa-home" aria-hidden="true"></i>
-				<span class="next-btn-primary-span">Dashboard</span>
-			</a>
 		</div>
 	</div>
 	{% else %}
+	<!--<div id="inner-container-fluid" class="container-fluid">-->
+	<div id="showgaze" class="container">
 		<div class="experiment-text">
 				Right now your eye movements are being tracked. This allows us to see what you are looking at 
 				and analyse your reading behaviour. When you click the next button you will be able to see 
@@ -43,20 +40,15 @@
 				where your eyes took in visual information, these are termed fixations. The lines between the 
 				circles are called saccades, this is when your eye moves rapidly to another point of fixation.	
 		</div>
-		<div class="container-fluid intro">
-			<p>Pretty cool huh?! If you would like to learn about eye tracking and the use of eye tracking in HCC 
-			research go to our <a href="{% url 'home:eyegazeinfo' %}">Eye Tracking Information Sheet</a></p>
-		</div>
 		<div class="container-fluid next-page text-center">
 			<a href="{% url 'home:eyegazeinfo' %}" role="button" class="btn btn-primary btn-lg">
 				<i class="fa fa-info-circle" aria-hidden="true"></i>
 				<span class="next-btn-primary-span">Eye Tracking Information Sheet</span>
 			</a>
-			<a href="{% url 'home:dashboard' %}" role="button" class="btn btn-primary btn-lg">
-				<i class="fa fa-home" aria-hidden="true"></i>
-				<span class="next-btn-primary-span">Dashboard</span>
-			</a>
+			
 		</div>
+	</div>
+	<!--</div>-->
 	{% endif %}
 {% endblock %}
 {% block script %} 

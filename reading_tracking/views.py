@@ -24,7 +24,7 @@ def index(request):
         form = ReadingEyegazeForm()
     
     return render(request,'reading_tracking/index.html', {'form':form})
-    
+
 
 def eyegaze(request):
     # get most recent gaze data from the db
