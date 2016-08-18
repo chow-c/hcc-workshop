@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %} HCC Workshop | Reading Tracking {% endblock %}
+
+{% block head %} 
+
+<style>
+#map, svg {
+  position: absolute;
+  left:0;
+  right:0;
+  width: 100%;
+  height: 100%;;
+  z-index: 50;
+  background:transparent;
+}
+#background-text {
+    width:80vw;
+    font-size:39px;
+    line-height: 125%;
+    margin-left:auto;
+    margin-right:auto;
+    opacity: 0.4;
+}
+
+.node {
+    /*opacity:0.6;*/
+}
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+#container {
+    padding-top : 200px ;
+}
+
+</style>
+{% endblock %}
+
+{% block app-breadcrumbs %}
+	<li class="active">Reading Tracking</li>
+{% endblock %}
+
+{% block body %} 
+	<div id="container">
+		<div id="map"></div>
+        
+    </div>
+    </div>
+{% endblock %}
+{% block script %} 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+<script>
+
+var nodes = [{"x": 150, "y": 20}, {"x": 250,"y": 150}, {"x": 300,"y": 100}, {"x": 450,"y": 250},{"x": 600,"y": 20},
+                 {"x": 700,"y": 330}, {"x": 780,"y": 180},{"x": 950,"y": 220},{"x": 1050,"y": 100}, 
+]
+                
+                
+var svg = d3.select("#map").append("svg")
+                    .attr("width", "90vw")
+                    .attr("height", "70vh");
+	nodes.forEach(function(d) {
+			svg.append("circle")
+				.datum(d)
+				.attr("class", "node")
+				.attr("cx", function(d) {
+					return d.x;
+				})
+				.attr("cy", function(d) {
+					return d.y;
+				})                 
+				.attr("r", "10");               
+	});
+    
+</script>
+{% endblock %}
