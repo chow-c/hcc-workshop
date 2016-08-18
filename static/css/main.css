@@ -454,7 +454,7 @@ OTHER ACTIVITY THUMBNAILS
     background: #fff;
     width: 100%;
     height: 100%;
-    padding: 9px;
+    margin-top: 30px;
 }
 
 .title-caption:hover .content-caption {
