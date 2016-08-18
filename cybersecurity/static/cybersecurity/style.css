@@ -28,7 +28,8 @@
 }
 
 .background-gif {
-    background:url('images/cover.gif');
+    background:url('images/cover2.gif');
+    background-size: cover;
 }
 
 .thumbnail {

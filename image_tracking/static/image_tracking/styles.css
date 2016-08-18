@@ -4,7 +4,8 @@
     background:url('image.gif');
     /*opacity: 0.6;*/
     background-repeat: no-repeat;
-    
+    background-size: cover;
+    background-position: center;
 }
 
 button, #experiment-button {
@@ -23,6 +24,7 @@ button, #experiment-button {
 
 #intro {
     height: calc(100vh - 50px); 
+    padding: 50px 80px;
 }
 
 #experiment_pt1, #experiment_pt2, #experiment_pt3 {
