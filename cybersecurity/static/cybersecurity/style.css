@@ -1,19 +1,7 @@
-#inner-container-fluid {
-    padding: 0px;
-}
-
-.stats {
-    padding: 50px 150px;
-}
-
 .extra {
     /* background: rgba(153, 48, 57, 1);
     color: white; */
     padding: 50px 80px;
-}
-
-.next-page {
-    padding: 20px 40px;
 }
 
 .cloud {
@@ -22,7 +10,6 @@
 
 .phishing-intro {
     height: calc(100vh - 50px); 
-    padding: 20px 40px;
 }
 
 #phishing-experiment {
