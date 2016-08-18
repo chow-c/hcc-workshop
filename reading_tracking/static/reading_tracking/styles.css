@@ -2,9 +2,10 @@
 
 .background-gif {
     background:url('reading.gif');
-    opacity: 0.6;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 140% 140%;
+    background-position: center top;
+    opacity: 0.5;
 }
 
 
@@ -27,13 +28,14 @@ button, #experiment-button {
 }
 
 #intro {
-    height: calc(100vh - 50px); 
+    padding: 50px 80px;
+    height: calc(30vh - 50px); 
 }
 
 #experiment {
-    height: 100vh;
+    height: calc(100vh - 50px);
     width: 100%;
-    padding: 50px 0 0 0;
+    padding: 110px 0 0 0;
 }
 
 /* Styles for plotting for eye gaze data */

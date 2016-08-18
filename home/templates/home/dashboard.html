@@ -19,39 +19,32 @@
 			<section id="eyetracker-activities" class="container-fluid">
 					<div class="row">
 						<div class="col-md-6">
-							<!--
-						<div class="col-md-4">
-						<div class="thumbnail">
-							<div class="caption">
-								<h3>Facial Symmetry</h3>
-								<p>Work in progress.p>
+							<div class="row">
+								<div class="col-xs-4 col-md-6 inner-eye">
+									<div class="eye-thumbnail">
+										<img class="" src="{% static 'home/images/illustration.png' %}" alt="Eye tracking example of reading analysis" height="450px">
+										<div class="eye-caption">
+											<h2>Eye Tracking for Reading</h2>
+											<a href="{% url 'reading_tracking:index' %}" class="btn btn-default info"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 col-md-6 inner-eye">
+									<div class="eye-thumbnail">
+										<img class="" src="{% static 'home/images/yarbus.jpg' %}" alt="">
+										<div class="eye-caption">
+											<h2>Eye Tracking for Images</h2>
+											<a class="btn btn-default info" href="{% url 'image_tracking:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+										</div>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div> -->
-					<div class="row">
-					<div class="col-md-6 inner-eye">
-						<div class="eye-thumbnail">
-							<img class="img-thumbnail" src="{% static 'home/images/illustration.png' %}" alt="Eye tracking example of reading analysis">
-							<div class="eye-caption">
-								<h2>Eye Tracking for Reading</h2>
-								<a href="{% url 'reading_tracking:index' %}" class="info"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 inner-eye">
-						<div class="eye-thumbnail">
-							<img class="img-thumbnail" src="{% static 'home/images/yarbus.jpg' %}" alt="">
-							<div class="eye-caption">
-								<h2>Eye Tracking for Images</h2>
-								<a href="" class="info "><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-							</div>
-						</div>
-					</div>
-					</div>
 					</div>
 					<div class="col-md-6">
-					<p><h1 class="text-center">Eye Tracking</h1></p><br>
-					<p class="lead text-center">Visualise your gaze path on the screen</p>
+						<div class="text-center vertical-align eyegaze-title">
+							<h1 >Eye Tracking</h1>
+							<p class="lead">Visualise your gaze path on the screen</p>
+						</div>
 					</div>
 					</div>
 				</section>
@@ -74,7 +67,7 @@
 					</div>
 					<div class="col-md-4">
 						<div class="thumbnail activity-thumbnail">
-							<a href="{% url 'cybersecurity:index' %}"><img class="app-thumbnail-img" src="https://placekitten.com/800/600" alt=""></a>
+							<a href="{% url 'cybersecurity:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/cyber.png' %}" alt=""></a>
 							<div class="caption title-caption">
 								<h3>Cyber Security</h3>
 								<div class="content-caption">
