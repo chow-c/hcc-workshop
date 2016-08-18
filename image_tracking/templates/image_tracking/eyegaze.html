@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block title %} HCC Workshop | Reading Tracking {% endblock %}
+{% block title %} HCC Workshop | Image Tracking {% endblock %}
 
 {% block head %} 
 <link rel="stylesheet" href="{% static 'reading_tracking/styles.css' %}">
 {% endblock %}
 
 {% block app-breadcrumbs %}
-	<li><a href="{% url 'reading_tracking:index' %}">Reading Tracking</a></li>
+	<li><a href="{% url 'reading_tracking:index' %}">Image Tracking</a></li>
 	<li class="active">My eye gaze</li>
 {% endblock %}
 
@@ -16,29 +16,32 @@
 	{% if False %}
 	<div class="background-gif"></div>
 		<div class="jumbotron text-center">
-		<h1 class="vertical-align">Eye Tracking for Reading Analysis</h1>
+		<h1 class="vertical-align">Eye Tracking for Image Viewing</h1>
 	</div>
 	<div id="inner-container-fluid" class="container-fluid">
 		<p>Whoops! Something seems to have gone wrong. Go back to the 
-			<a href="{% url 'reading_tracking:index' %}">start page</a> for the activity and 
+			<a href="{% url 'image_tracking:index' %}">start page</a> for the activity and 
 			make sure an <a href="https://theeyetribe.com/">EyeTribe</a> eye tracker is connected and running on this computer. 
 		</p>
 		<div class="container-fluid next-page text-center">
-			<a href="{% url 'reading_tracking:eyegaze' %}" role="button" class="btn btn-primary btn-lg">
+			<a href="{% url 'image_tracking:eyegaze' %}" role="button" class="btn btn-primary btn-lg">
 				<i class="fa fa-chevron-left" aria-hidden="true"></i>
-				<span class="next-btn-primary-span">Reading Tracking Start Page</span>
+				<span class="next-btn-primary-span">Image Tracking Start Page</span>
 			</a>
 		</div>
 	</div>
 	{% else %}
-	<!--<div id="inner-container-fluid" class="container-fluid">-->
-	<div id="showgaze" class="container">
-		<div class="experiment-text">
-				Right now your eye movements are being tracked. This allows us to see what you are looking at 
-				and analyse your reading behaviour. When you click the next button you will be able to see 
-				which part of this page you were looking at, as well as how you read this text. The circles are
-				where your eyes took in visual information, these are termed fixations. The lines between the 
-				circles are called saccades, this is when your eye moves rapidly to another point of fixation.	
+	<div id="inner-container-fluid" class="container-fluid">
+	<div class="page-header">
+        <h1>Image Tracking <small>MY EYE GAZE</small></h1>
+    </div>
+		<div class="experiment-images">
+			<p>When asked to simply look at the image your eye gaze looked like this:</p> 
+			<div id="showgaze" class="text-center"><img src="{% static 'image_tracking/the_visitor.jpg' %}" id="image1"/></div>
+			<p>When asked to guess the ages of the people in the image your eye gaze looked like this:</p> 
+			<div id="showgaze" class="text-center"><img src="{% static 'image_tracking/the_visitor.jpg' %}" id="image2"/></div>
+			<p>When asked to time memorise the positions the objects in the image your eye gaze looked like this:</p> 
+			<div id="showgaze" class="text-center"><img src="{% static 'image_tracking/the_visitor.jpg' %}" id="image3"/></div>
 		</div>
 		<div class="container-fluid next-page text-center">
 			<a href="{% url 'home:eyegazeinfo' %}" role="button" class="btn btn-primary btn-lg">
@@ -47,8 +50,8 @@
 			</a>
 			
 		</div>
+
 	</div>
-	<!--</div>-->
 	{% endif %}
 {% endblock %}
 {% block script %} 
@@ -63,8 +66,8 @@ var lineFunction = d3.line()
 						
 //The SVG Container
 var svgContainer = d3.select("body").append("svg")
-					.attr("width", "100vw")
-					.attr("height", "80vh")
+					.attr("width", "100%")
+					.attr("height", "100%")
 					.attr("class", "overlay");
 
 //The line SVG Path we draw

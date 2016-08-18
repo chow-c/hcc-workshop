@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'thatcher.apps.ThatcherConfig',
     'other_research.apps.OtherResearchConfig',
     'reading_tracking.apps.ReadingTrackingConfig',
+    'image_tracking.apps.ImageTrackingConfig'
 ]
 
 MIDDLEWARE_CLASSES = [
