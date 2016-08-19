@@ -13,6 +13,7 @@
   height: 100%;;
   z-index: 50;
   background:transparent;
+   background-color: darkgrey;
 }
 #background-text {
     width:80vw;
@@ -25,6 +26,8 @@
 
 .node {
     /*opacity:0.6;*/
+    fill: DarkRed;
+    z-index: 100;
 }
 .overlay {
   fill: none;
@@ -32,7 +35,10 @@
 }
 #container {
     padding-top : 200px ;
+    background-color: darkgrey;
 }
+
+
 
 </style>
 {% endblock %}
@@ -49,14 +55,15 @@
     </div>
 {% endblock %}
 {% block script %} 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+
 <script>
 
 var nodes = [{"x": 150, "y": 20}, {"x": 250,"y": 150}, {"x": 300,"y": 100}, {"x": 450,"y": 250},{"x": 600,"y": 20},
-                 {"x": 700,"y": 330}, {"x": 780,"y": 180},{"x": 950,"y": 220},{"x": 1050,"y": 100}, 
+                 {"x": 700,"y": 330}, {"x": 780,"y": 180},{"x": 950,"y": 220},{"x": 1050,"y": 100}, {"x": 1250,"y": 350}, 
 ]
-                
-                
+var lines= [[{"x": 150, "y": 20}, {"x": 250,"y": 150}],[{"x": 250,"y": 150}, {"x": 300,"y": 100}],[{"x": 300,"y": 100}, {"x": 450,"y": 250}], [{"x": 450,"y": 250},{"x": 600,"y": 20}],[{"x": 600,"y": 20},{"x": 700,"y": 330}], [{"x": 700,"y": 330}, {"x": 780,"y": 180}],[{"x": 780,"y": 180},{"x": 950,"y": 220}],[{"x": 950,"y": 220},{"x": 1050,"y": 100}],[{"x": 1050,"y": 100}, {"x": 1250,"y": 350}]
+]                
+
 var svg = d3.select("#map").append("svg")
                     .attr("width", "90vw")
                     .attr("height", "70vh");
@@ -72,6 +79,21 @@ var svg = d3.select("#map").append("svg")
 				})                 
 				.attr("r", "10");               
 	});
-    
+
+var lineFunction = d3.line()
+					.x(function(d) { return d.x; })
+					.y(function(d) { return d.y; });
+						
+
+lines.forEach(function(d, i) {
+            setTimeout(function() {
+                svg.append("path")
+                    .attr("d", lineFunction(d))
+                    .attr("stroke", "DarkRed")
+                    .attr("stroke-width", 5)
+                    .attr("fill", "DarkRed")                           
+            }, 500 * i);
+        });
+
 </script>
 {% endblock %}

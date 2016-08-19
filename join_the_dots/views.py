@@ -23,8 +23,8 @@ def index(request):
     
     return render(request,'join_the_dots/index.html', {'form':form})
 
-def dots_gif(request):
-    return render(request,'join_the_dots/dots_gif.html')
+# def dots_gif(request):
+#     return render(request,'join_the_dots/dots_gif.html')
 
 def eyegaze(request):
     # get most recent gaze data from the db
