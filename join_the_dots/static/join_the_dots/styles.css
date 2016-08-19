@@ -2,6 +2,8 @@
 
 .background-gif {
     background:url('dots.gif');
+    background-size: cover;
+    background-position: center;
 }
 
 
