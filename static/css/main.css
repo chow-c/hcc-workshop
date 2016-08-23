@@ -339,7 +339,7 @@ EYE TRACKING THUMBNAILS
 */
 
 .eyegaze-title {
-    margin-top: 101px;  
+    margin-top: calc(50% - 69px);  
 }
 
 .eye-thumbnail {
