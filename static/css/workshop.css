@@ -91,3 +91,8 @@ SECTIONS
 .next-page {
     padding: 20px 40px;
 }
+
+#intro {
+    height: calc(100vh - 50px); 
+    padding: 50px 80px;
+}
