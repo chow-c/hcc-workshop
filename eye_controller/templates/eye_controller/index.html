@@ -51,13 +51,13 @@
 	 <script type="text/javascript" src="{% static 'reading_tracking/scroll.js' %}"></script>
      <script type="text/javascript" src="{% static 'eye_controller/tofront.js' %}"></script>
     <script>
-
+$(function() {
     var svgheight= document.getElementById('map').offsetHeight;
     var svgwidth = document.getElementById('map').offsetWidth;
 
     // practice run
     $('#start').click(function() {
-        initialiseBoard("#map","svg1");
+        initialiseBoard("#map","svg1","cursor","target");
         console.log("now collecting");
         var stop = false;
         var b = "#target", a = "#cursor";
@@ -67,7 +67,8 @@
         EyeTribe.loop(function(frame) {
             // console.log(frame);
             if (stop) return;
-            moveCursor([frame.smoothedCoordinates]);
+            moveCursor([frame.smoothedCoordinates], a);
+
             var cx = frame.smoothedCoordinates.x;
             var cy = frame.smoothedCoordinates.y;
             if ( (cx > tx) && cx<(tx+100) && (cy>ty) && cy<(ty+100) ) {
@@ -80,6 +81,7 @@
                 var button = map.append("a")
                                 .attr("href","#experiment_pt2")
                                 .attr("id","next")
+                                .attr("role","button")
                                 .attr("class","btn btn-primary btn-lg experiment-btn")
                                 .html("Next level");
                 stop = true;
@@ -88,49 +90,35 @@
     });
 
     // game time
-    $('#next').click(function() {
-        var svgheight= document.getElementById('map').offsetHeight;
-        var svgwidth = document.getElementById('map').offsetWidth;
-
-        initialiseBoard("#map2","svg2");
-        console.log("now collecting");
+    $('#experiment').on('click','#next', function() {
+        initialiseBoard("#map2","svg2","cursor2","target2");
+        console.log("now collecting again");
         var stop = false;
-        var b = "#target", a = "#cursor";
-        // var t = setInterval(moveTarget([{"x": svgwidth*Math.random(), "y": svgheight*Math.random()}]), 500);
-       
-        // // moveTarget([{"x": svgwidth*Math.random(), "y": svgheight*Math.random()}]);
-        // EyeTribe.loop(function(frame) {
-        //     // console.log(frame);
-        //     if (stop) return;
-        //     moveCursor([frame.smoothedCoordinates]);
-            
-        //     var cx = frame.smoothedCoordinates.x;
-        //     var cy = frame.smoothedCoordinates.y;
-        //     var tx = parseInt(d3.selectAll("#target").attr("x"))+25;
-        //     var ty = parseInt(d3.selectAll("#target").attr("y"))+25;
-        //     if ( (cx > tx) && cx<(tx+100) && (cy>ty) && cy<(ty+100) ) {
-        //         changeColour(a);
-        //         changeColour(b);
-        //         var map = d3.select("#experiment_pt2");
-        //         var div = map.append("div")
-        //                     .html("Great job!")
-        //                     .attr("class","text");
-                        
-        //         // var button = svgContainer.append("a")
-        //         //                 .attr("href","#experiment_pt2")
-        //         //                 .attr("id","next")
-        //         //                 .append("rect")  
-        //         //                 .attr("x", 300)
-        //         //                 .attr("y", 300)
-        //         //                 .style("fill", "rgb(149,47,55)")
-        //         //                 .attr("height", 100)
-        //         //                 .attr("width", 200);
-        //         stop = true;
-        //     }
-        // });
+        var b = "#target2", a = "#cursor2";       
+        var t = setInterval(function(){ moveTarget(b, svgwidth, svgheight) }, 1000);
+        EyeTribe.loop(function(frame) {
+            // console.log(frame);
+            if (stop) return;
+            moveCursor([frame.smoothedCoordinates], a);
+            var cx = frame.smoothedCoordinates.x;
+            var cy = frame.smoothedCoordinates.y;
+            var tx = parseInt(d3.selectAll("#target").attr("x"))+25;
+            var ty = parseInt(d3.selectAll("#target").attr("y"))+25;
+            if ( (cx > tx) && cx<(tx+100) && (cy>ty) && cy<(ty+100) ) {
+                changeColour(a);
+                changeColour(b);
+                var map = d3.select("#experiment_pt2");
+                var div = map.append("div")
+                            .html("Great job!")
+                            .attr("class","text");
+                clearInterval(t);        
+                stop = true;
+            }
+        });
     });
 
-    function initialiseBoard(map,svg_id) {
+
+    function initialiseBoard(map,svg_id,cursor,target) {
         //Make an SVG Container
         var svgContainer = d3.select(map).append("svg")
                                         .attr("id", svg_id)
@@ -143,7 +131,7 @@
                                     .attr("cy", 50)
                                     .attr("r", 20)
                                     .attr("fill", "red")
-                                    .attr("id","cursor");    
+                                    .attr("id",cursor);    
 
         //Draw the Target
         var target = svgContainer.append("rect")
@@ -152,12 +140,13 @@
                                     .attr("width", 100)
                                     .attr("height", 100)
                                     .attr("fill", "BlueViolet")
-                                    .attr("id","target");                        
+                                    .attr("id",target);                        
     }
 
     // Move the circle based on the new incoming data
-    function moveCursor(new_point) {
-        var circle = d3.selectAll("#cursor")
+    function moveCursor(new_point, name) {
+        // console.log("calling moveCursor");
+        var circle = d3.select(name)
                         .data(new_point)
                         .attr("cx", function(d) { return d.x; })
                         .attr("cy", function(d) { return d.y; })
@@ -165,19 +154,24 @@
     }
 
     // Move the circle based on the new incoming data
-    function moveTarget(new_point) {
-        var circle = d3.selectAll("#target")
+    function moveTarget(name, width, height) {
+        var new_x = width*Math.random();
+        var x = ((new_x + 100 > svgwidth) ?  new_x - 100: new_x);
+        var new_y = height*Math.random();
+        var y = ((new_y + 100 > svgheight) ? new_y - 100: new_y);
+        var new_point = [{"x":x,"y":y}];
+        var square = d3.select(name)
                         .data(new_point)
                         .attr("x", function(d) { return d.x; })
                         .attr("y", function(d) { return d.y; });
     }
+
 
     // for when the game is over and we just quickly want to hide the elements
     function changeColour( elem ) {
         var elem = d3.selectAll(elem)
                     .attr("fill", "white")
     }
-
-
+});
     </script>
 {% endblock %}
