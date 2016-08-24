@@ -27,7 +27,8 @@ body {
 #map{
     /*border: 2px #555 dashed;*/
     width:90vw;
-    height:70vh;
+    height:80vh;
+    padding-left: 50px;
 }
 
 /* Styles for plotting for eye gaze data */
