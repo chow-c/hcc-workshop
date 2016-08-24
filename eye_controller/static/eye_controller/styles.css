@@ -1,24 +1,30 @@
 /* Styles for index.html */
 
-/*.background-gif {
-}*/
-
+.background-gif {
+    background-image:url("controller.gif");
+}
+/*
 body {
    overflow: hidden;
-}
+}*/
 
 #intro {
     height: calc(100vh - 50px); 
 }
 
 /* Styles for container for the box controller */
-#experiment {
+#experiment, #experiment_pt2 {
     height: 100vh;
     width: 100vw;
     padding: 50px 5%;
 }
 
-#map{
+/*#next {
+    display:block;
+    margin:0 auto;
+} */
+
+#map, #map2 {
     border: 2px #555 dashed;
     width: 90vw;
     height: 90vh;
@@ -40,4 +46,11 @@ body {
 
 #target {
     z-index: 50;
+}
+
+.experiment-btn {
+    position: relative;
+    top: -50vh;
+    z-index: 999999;
+    margin-left: 45%;
 }

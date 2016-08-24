@@ -35,65 +35,125 @@
 		</section>
     </div>
 	<div id="experiment" class="container">
-		<div id="map"></div>
+		<div id="map">
+        </div>  
 	</div>
-    <!--<div id="experiment_pt2" class="container">
-		<div id="map"></div>
-	</div>-->
+    <div id="experiment_pt2" class="container">
+		<div id="map2">
+        </div>  
+	</div>
+
     {% endif %}
     </div>
 {% endblock %}
 
 {% block script %} 
 	 <script type="text/javascript" src="{% static 'reading_tracking/scroll.js' %}"></script>
-    <script type="text/javascript" src="{% static 'eye_controller/tofront.js' %}"></script>
-     <script>
-    //Make an SVG Container
-    var svgContainer = d3.select("#map").append("svg")
-                                    .attr("width", "90vw")
-                                    .attr("height", "90vh");
+     <script type="text/javascript" src="{% static 'eye_controller/tofront.js' %}"></script>
+    <script>
 
-    //Draw the Circle
-    var circle = svgContainer.append("circle")
-                                .attr("cx", 50)
-                                .attr("cy", 50)
-                                .attr("r", 20)
-                                .attr("fill", "red")
-                                .attr("id","cursor");    
+    var svgheight= document.getElementById('map').offsetHeight;
+    var svgwidth = document.getElementById('map').offsetWidth;
 
-    //Draw the Target
-    var target = svgContainer.append("rect")
-                                .attr("x", screen.width - 300)
-                                .attr("y", screen.height - 400)
-                                .attr("width", 100)
-                                .attr("height", 100)
-                                .attr("fill", "BlueViolet")
-                                .attr("id","target");                        
-
-    var b = "#target", a = "#cursor";
-    var tx = parseInt(d3.selectAll("#target").attr("x"))+25;
-    var ty = parseInt(d3.selectAll("#target").attr("y"))+25;
-
+    // practice run
     $('#start').click(function() {
+        initialiseBoard("#map","svg1");
         console.log("now collecting");
+        var stop = false;
+        var b = "#target", a = "#cursor";
+        var tx = parseInt(d3.selectAll("#target").attr("x"))+25;
+        var ty = parseInt(d3.selectAll("#target").attr("y"))+25;
+
         EyeTribe.loop(function(frame) {
             // console.log(frame);
+            if (stop) return;
             moveCursor([frame.smoothedCoordinates]);
             var cx = frame.smoothedCoordinates.x;
             var cy = frame.smoothedCoordinates.y;
-            setInterval(function(){
-                if ( (cx > tx) && cx<(tx+100) && (cy>ty) && cy<(ty+100) ) {
-                    changeColour(a);
-                    changeColour(b);
-                    var map = d3.select("#experiment");
-                    var div = map.append("div");
-                    div.html("Great job! The board will redraw again, except this time your target will be moving and  you'll be timed.");
-                    div.attr("class","text");
-                    
-                }
-            }, 1500);
+            if ( (cx > tx) && cx<(tx+100) && (cy>ty) && cy<(ty+100) ) {
+                changeColour(a);
+                changeColour(b);
+                var map = d3.select("#experiment");
+                var div = map.append("div")
+                            .html("Great job! The board will redraw again, except this time your target will be moving and  you'll be timed.")
+                            .attr("class","text");    
+                var button = map.append("a")
+                                .attr("href","#experiment_pt2")
+                                .attr("id","next")
+                                .attr("class","btn btn-primary btn-lg experiment-btn")
+                                .html("Next level");
+                stop = true;
+            }
         });
     });
+
+    // game time
+    $('#next').click(function() {
+        var svgheight= document.getElementById('map').offsetHeight;
+        var svgwidth = document.getElementById('map').offsetWidth;
+
+        initialiseBoard("#map2","svg2");
+        console.log("now collecting");
+        var stop = false;
+        var b = "#target", a = "#cursor";
+        // var t = setInterval(moveTarget([{"x": svgwidth*Math.random(), "y": svgheight*Math.random()}]), 500);
+       
+        // // moveTarget([{"x": svgwidth*Math.random(), "y": svgheight*Math.random()}]);
+        // EyeTribe.loop(function(frame) {
+        //     // console.log(frame);
+        //     if (stop) return;
+        //     moveCursor([frame.smoothedCoordinates]);
+            
+        //     var cx = frame.smoothedCoordinates.x;
+        //     var cy = frame.smoothedCoordinates.y;
+        //     var tx = parseInt(d3.selectAll("#target").attr("x"))+25;
+        //     var ty = parseInt(d3.selectAll("#target").attr("y"))+25;
+        //     if ( (cx > tx) && cx<(tx+100) && (cy>ty) && cy<(ty+100) ) {
+        //         changeColour(a);
+        //         changeColour(b);
+        //         var map = d3.select("#experiment_pt2");
+        //         var div = map.append("div")
+        //                     .html("Great job!")
+        //                     .attr("class","text");
+                        
+        //         // var button = svgContainer.append("a")
+        //         //                 .attr("href","#experiment_pt2")
+        //         //                 .attr("id","next")
+        //         //                 .append("rect")  
+        //         //                 .attr("x", 300)
+        //         //                 .attr("y", 300)
+        //         //                 .style("fill", "rgb(149,47,55)")
+        //         //                 .attr("height", 100)
+        //         //                 .attr("width", 200);
+        //         stop = true;
+        //     }
+        // });
+    });
+
+    function initialiseBoard(map,svg_id) {
+        //Make an SVG Container
+        var svgContainer = d3.select(map).append("svg")
+                                        .attr("id", svg_id)
+                                        .attr("width", "90vw")
+                                        .attr("height", "90vh");
+
+        //Draw the Circle
+        var circle = svgContainer.append("circle")
+                                    .attr("cx", 50)
+                                    .attr("cy", 50)
+                                    .attr("r", 20)
+                                    .attr("fill", "red")
+                                    .attr("id","cursor");    
+
+        //Draw the Target
+        var target = svgContainer.append("rect")
+                                    .attr("x", screen.width - 300)
+                                    .attr("y", screen.height - 400)
+                                    .attr("width", 100)
+                                    .attr("height", 100)
+                                    .attr("fill", "BlueViolet")
+                                    .attr("id","target");                        
+    }
 
     // Move the circle based on the new incoming data
     function moveCursor(new_point) {
