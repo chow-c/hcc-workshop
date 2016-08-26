@@ -3,10 +3,10 @@
 .background-gif {
     background-image:url("controller.gif");
 }
-/*
+
 body {
    overflow: hidden;
-}*/
+}
 
 #intro {
     height: calc(100vh - 50px); 

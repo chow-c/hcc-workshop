@@ -4,6 +4,17 @@
 
 {% block head %} 
 <link rel="stylesheet" href="{% static 'image_tracking/styles.css' %}">
+
+<style>
+svg { 
+	border: 5px solid red;
+	/*margin-left: 302px;
+	background:transparent;
+	position: absolute;
+	display: block;
+	z-index: 50;*/
+}
+</style>
 {% endblock %}
 
 {% block app-breadcrumbs %}
@@ -16,7 +27,6 @@
 	<div class="jumbotron text-center app-splash" >
 		<h1 class="vertical-align animated bounceInLeft" >Eye Tracking for Image Viewing</h1>
 	</div>
-	<div class="" style="height:30vh">
 		{% if False %}
 			<p class="test-justify">Unfortunately, no eye tracker has been detected, if you have an EyeTribe connected, check the connection through the EyeTribe software and reload this page. If you do not have an EyeTribe connected to this computer please either move to a computer with one connected, of connect one. 
 			</p>
@@ -31,22 +41,23 @@
 					<span class="next-btn-primary-span">Dashboard</span>
 				</a>
     		</div>
-		{% else %}
-		<div id="intro">
-			<p class="test-justify">When we view an image, we actually see very little of in fine detail. Actually, our eyes see very little in detail at any one point time. It has been found that what we look at in an image is dependent on the goals of viewing the image.
-			</p>
-			<p class="test-justify">Using the eye tracker we can capture the different ways that we look at images. In this activity you will be shown an image three times, but given differen goals. At the end, you will be able to see the different eye movement patterns for the three goals to compare them.
-			</p>
 
+		{% else %}
+
+		<div id="intro">
+			<p class="test-justify">When we view an image, we actually see very little of in fine detail. Actually, our eyes see very little in detail at any one point time. It has been found that what we look at in an image is dependent on the goals of viewing the image.</p>
+			<p class="test-justify">Using the eye tracker we can capture the different ways that we look at images. In this activity you will be shown an image three times, but given differen goals. At the end, you will be able to see the different eye movement patterns for the three goals to compare them.</p>
 			<section class="text-center button-section" id="experiment-button" >
 				<a href="#experiment_pt1" id="to_pt1" role="button" class="btn btn-primary btn-lg"><span>Try it out</span><br><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 			</section>
 		</div>
-		</div>
-		
+
 		<div id="experiment_pt1" class="container" >
+			<svg class="overlay"> </svg>
             <p><b>Please look at this image and when you are ready press the Next button.</b></p>   
-            <div class="text-center"><img src="{% static 'image_tracking/the_visitor.jpg' %}" alt="The Visitor" /></div>
+            <div class="text-center" id="test">
+				<img id="img1" src="{% static 'image_tracking/the_visitor.jpg' %}" alt="The Visitor" />
+			</div>
 			<form method="post" action="">
 			{% csrf_token %}
 			{{ form.image1.as_hidden }}
@@ -62,52 +73,81 @@
 			<section class="text-center button-section" id="experiment-button">
 				<a href="#experiment_pt3" role="button" id="to_pt3" class="btn btn-primary btn-lg"><span>Next</span><br><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 			</section>
-
 		</div>
 
 		<div id="experiment_pt3"  class="container">
             <p><b>Look again at the image, this time memorise the positions the objects in the room.</b></p>   
             <div class="text-center"><img src="{% static 'image_tracking/the_visitor.jpg' %}" alt="The Visitor" /></div>
 			{{ form.image3.as_hidden }}
-			
 			<section class="text-center button-section" id="experiment-button">
 				<button type="submit" value="Next" class="btn btn-primary btn-lg">See my eye gaze <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
 			</section>
 		</form>
 		</div>
-
 		{% endif %}
 {% endblock %}
 
 {% block script %} 
-<script type="text/javascript" src="{% static 'image_tracking/scroll.js' %}"></script>
+<!--<script type="text/javascript" src="{% static 'image_tracking/scroll.js' %}"></script>-->
 <script>
-	var eyedata_p1 = [];
-	var eyedata_p2 = [];
-	var eyedata_p3 = [];
-	image1 = $('#id_image1');
-	image2 = $('#id_image2');
-	image3 = $('#id_image3');
-	$('#to_pt1').click(function() {
-		console.log("now collecting for part 1");
-		EyeTribe.loop(function(frame) {
-			eyedata_p1.push(frame.dump());
-			image1.val(JSON.stringify(eyedata_p1));
-		});
-	});
-	$('#to_pt2').click(function() {
-		console.log("now collecting for part 2");
-		EyeTribe.loop(function(frame) {
-			eyedata_p2.push(frame.dump());
-			image2.val(JSON.stringify(eyedata_p2));
-		});
-	});
-	$('#to_pt3').click(function() {
-		console.log("now collecting for part 3");
-		EyeTribe.loop(function(frame) {
-			eyedata_p3.push(frame.dump());
-			image3.val(JSON.stringify(eyedata_p3));
-		});
-	});
+
+	// $( document ).ready(function() {
+	// 	console.log( "ready!" );
+	// 	console.log($("#img1").position().top);	
+	// 	console.log($("#img1").position().left);
+
+	// });
+
+	// get coordinates of image on the screen
+	// test if eye gaze point is within the coordinates
+	// apply transform and store data
+	
+	
+	// var svgContainer = d3.select(".overlay");
+
+	// var nodes = [{"x": l, "y": t}];
+
+	// svgContainer.append("circle")
+    //                 .data(nodes)
+    //                 .attr("class", "node")
+    //                 .attr("cx", function(d) { return d.x;})
+    //                 .attr("cy", function(d) { return d.y;})                 
+    //                 .attr("r", "10");
+
+	// var eyedata_p1 = [];
+	// var eyedata_p2 = [];
+	// var eyedata_p3 = [];
+
+	// image1 = $('#id_image1');
+	// image2 = $('#id_image2');
+	// image3 = $('#id_image3');
+
+	// $('#to_pt1').click(function() {
+
+	// 	console.log("now collecting for part 1");
+	// 	EyeTribe.loop(function(frame) {
+	// 		eyedata_p1.push(frame.dump());
+	// 		if (frame.average.x >= l && frame.average.x <= l+width && 
+	// 				frame.average.y >= t && frame.average.y <= t+height ) {
+	// 			console.log("in box")
+	// 			image1.val(JSON.stringify(eyedata_p1));
+	// 		}
+	// 	});
+	// });
+	// $('#to_pt2').click(function() {
+	// 	console.log("now collecting for part 2");
+	// 	EyeTribe.loop(function(frame) {
+	// 		eyedata_p2.push(frame.dump());
+	// 		image2.val(JSON.stringify(eyedata_p2));
+	// 	});
+	// });
+	// $('#to_pt3').click(function() {
+	// 	console.log("now collecting for part 3");
+	// 	EyeTribe.loop(function(frame) {
+	// 		eyedata_p3.push(frame.dump());
+	// 		image3.val(JSON.stringify(eyedata_p3));
+	// 	});
+	// });
+
 </script>
 {% endblock %}
