@@ -48,15 +48,21 @@
 {% endblock %}
 {% block script %} 
 <script>
-var nodes = [{"x": 20, "y": 20}, {"x": 20,"y": 400}, {"x": 20,"y": 200}, {"x": 250,"y": 200}, {"x": 250,"y": 20},
-                {"x": 250,"y": 400}, 
-                {"x": 650,"y": 400}, {"x": 550,"y": 400}, {"x": 400,"y": 300}, {"x": 375,"y": 200}, 
-                {"x": 400,"y": 100}, {"x": 550,"y": 20}, {"x": 650,"y": 20},
-                {"x": 1050,"y": 20}, {"x": 950,"y": 20},{"x": 800,"y": 100}, {"x": 775,"y": 200}, {"x": 800,"y": 300}, 
-                {"x": 950,"y": 400}, {"x": 1050,"y": 400},
-                {"x": -10,"y": -10}]
+var nodes = [{"x": screen.width*0.05, "y": screen.height*0.05}, {"x": screen.width*0.05,"y": screen.height*0.5}, 
+                {"x": screen.width*0.05,"y": screen.height*0.25}, {"x": screen.width*0.25,"y": screen.height*0.25}, 
+                {"x": screen.width*0.25,"y": screen.height*0.05}, {"x": screen.width*0.25,"y": screen.height*0.5}, 
+                {"x": screen.width*0.55,"y": screen.height*0.5}, {"x": screen.width*0.47,"y": screen.height*0.5}, 
+                {"x": screen.width*0.375,"y": screen.height*0.4}, {"x": screen.width*0.33,"y": screen.height*0.25}, 
+                {"x": screen.width*0.375,"y": screen.height*0.11}, {"x": screen.width*0.47,"y": screen.height*0.05}, 
+                {"x": screen.width*0.55,"y": screen.height*0.05}, 
+                {"x": screen.width*0.87,"y": screen.height*0.05}, {"x": screen.width*0.8,"y": screen.height*0.05},
+                {"x": screen.width*0.7,"y": screen.height*0.11}, {"x": screen.width*0.65,"y": screen.height*0.25}, 
+                {"x": screen.width*0.7,"y": screen.height*0.4}, {"x":screen.width*0.8,"y": screen.height*0.5}, 
+                {"x": screen.width*0.87,"y": screen.height*0.5},
+                {"x": -100,"y": -100}]
+
 var svg = d3.select("#map").append("svg")
-                    .attr("width", "90vw")
+                    .attr("width", "100vw")
                     .attr("height", "70vh");
 	nodes.forEach(function(d) {
 			svg.append("circle")
