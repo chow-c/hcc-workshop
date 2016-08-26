@@ -13,9 +13,9 @@ button, #experiment-button {
   z-index: 9999;
 }
 
-/*body {
+body {
     overflow: hidden;
-}*/
+}
 
 .experiment-text {
     width:700px;

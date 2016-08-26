@@ -25,6 +25,8 @@ def index(request):
     
     return render(request,'reading_tracking/index.html', {'form':form})
 
+def reading_gif(request):
+    return render(request,'reading_tracking/reading_gif.html')
 
 def eyegaze(request):
     # get most recent gaze data from the db

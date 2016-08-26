@@ -93,6 +93,6 @@ SECTIONS
 }
 
 #intro {
-    height: calc(100vh - 50px); 
-    padding: 50px 80px;
+    height: calc(30vh - 50px); 
+    padding: 10px 80px;
 }
