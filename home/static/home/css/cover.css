@@ -161,6 +161,7 @@ body {
     background-repeat: no-repeat;
     -webkit-filter: blur(3px) grayscale(0.3) brightness(0.9);
   }
+  
   /* Handle the widths */ 
   .masthead,
   .mastfoot,

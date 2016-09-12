@@ -27,4 +27,4 @@ When finished developing new functionality, create a merge request in order for 
 
 ## Further information
 * [PEP 8 - Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/) 
-* [Django 1.9.8](https://docs.djangoproject.com/en/1.9)
+* [Django 1.10.1](https://docs.djangoproject.com/en/1.10)
