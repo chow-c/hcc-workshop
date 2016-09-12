@@ -28,7 +28,7 @@
 }
 
 .background-gif {
-    background:url('images/cover2.gif');
+    background:url('../images/cover2.gif');
     background-size: cover;
 }
 

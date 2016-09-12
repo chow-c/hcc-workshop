@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,7 +39,6 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'cybersecurity.apps.CybersecurityConfig',
     'thatcher.apps.ThatcherConfig',
-    'other_research.apps.OtherResearchConfig',
     'reading_tracking.apps.ReadingTrackingConfig',
     'image_tracking.apps.ImageTrackingConfig',
     'join_the_dots.apps.JoinTheDotsConfig',
