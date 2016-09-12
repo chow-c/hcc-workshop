@@ -102,3 +102,6 @@ def generate_webpage(request):
     buffer.close()
     response.write(pdf)
     return response
+
+class OtherResearch(generic.TemplateView):
+    template_name = 'home/other_research.html'

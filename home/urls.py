@@ -13,4 +13,5 @@ urlpatterns = [
     url(r'^pdf$', views.generate_webpage, name='pdf'),
     url(r'^eyegazeinfo/$', views.eyegazeinfo, name='eyegazeinfo'),
     url(r'^newsletter$', views.newsletter, name='newsletter'),
+    url(r'^other-research$', views.OtherResearch.as_view(), name='other_research'),
 ]

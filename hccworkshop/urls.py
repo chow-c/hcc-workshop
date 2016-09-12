@@ -22,10 +22,9 @@ urlpatterns = [
     url(r'^', include('home.urls')),
     url(r'^login/$', auth_views.login, {'template_name':'home/login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'template_name':'home/logout.html'}, name='logout'),
-    url(r'^cyber/', include('cybersecurity.urls')),
-    url(r'^thatcher/', include('thatcher.urls')),
-    url(r'^other_research/', include('other_research.urls')),
     url(r'^eyetracking/', include('eyetracking.urls')),
+    url(r'^cyber-security/', include('cybersecurity.urls')),
+    url(r'^the-thatcher-effect/', include('thatcher.urls')),
 ]
 
 admin.site.site_header = 'HCC Workshop Administration'

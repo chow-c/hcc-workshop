@@ -5,7 +5,7 @@ img {
 }
 
 .background-gif {
-    background:url('signals.gif');
+    background:url('images/signals.gif');
     background-size: cover;
     background-position: center;
 }
