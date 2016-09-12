@@ -14,7 +14,7 @@
               <nav>
                 <ul class="nav masthead-nav">
                   <li><a href="{% url 'home:about' %}">About</a></li>
-                  <li><a href="{% url 'django.contrib.auth.views.login' %}">Login</a></li>
+                  <li><a href="{% url 'login' %}">Login</a></li>
                   <li><a href="{% url 'home:register' %}">Register</a></li>
                   <li><a href="{% url 'home:newsletter' %}">Subscribe</a></li>
                 </ul>
@@ -27,7 +27,7 @@
             <p class="lead">Explore how the study of human computer interaction can enhance the computing experience.</p>
             <p class="lead">
               <br/>
-              <a href="{% url 'django.contrib.auth.views.login' %}" class="btn btn-lg btn-default">Login</a>
+              <a href="{% url 'login' %}" class="btn btn-lg btn-default">Login</a>
             </p>
           </div>
 
