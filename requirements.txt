@@ -1,6 +1,3 @@
-Django==1.9.8
+Django==1.10.1
 psycopg2
-django-bootstrap3
-channels
-asgi_redis
 reportlab
