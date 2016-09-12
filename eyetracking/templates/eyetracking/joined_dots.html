@@ -4,11 +4,12 @@
 {% block title %} HCC Workshop | Join the dots {% endblock %}
 
 {% block head %} 
-<link rel="stylesheet" href="{% static 'join_the_dots/styles.css' %}">
+<link rel="stylesheet" href="{% static 'eyetracking/styles.css' %}">
 {% endblock %}
 
 {% block app-breadcrumbs %}
-	<li><a href="{% url 'join_the_dots:index' %}">Join the dots</a></li>
+    <li><a href="{% url 'eyetracking:index' %}">Eye Tracking</a></li>
+	<li><a href="{% url 'eyetracking:dots' %}">Join the dots</a></li>
 	<li class="active">With my eye gaze</li>
 {% endblock %}
 
@@ -79,7 +80,7 @@ var svg = d3.select("#map").append("svg")
 
 // Plot the gaze data from the previous screen using D3.js:
 data = {{ data|safe }};
-// data = [{"x": 100,"y": 100},{"x": 200,"y": 100}]
+
 //This is the accessor function we talked about above
 var lineFunction = d3.line()
 						.x(function(d) { return d.x; })

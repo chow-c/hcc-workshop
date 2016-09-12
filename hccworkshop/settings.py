@@ -45,8 +45,7 @@ INSTALLED_APPS = [
     'other_research.apps.OtherResearchConfig',
     'reading_tracking.apps.ReadingTrackingConfig',
     'image_tracking.apps.ImageTrackingConfig',
-    'join_the_dots.apps.JoinTheDotsConfig',
-    'eye_controller.apps.EyeControllerConfig',
+    'eyetracking.apps.EyetrackingConfig',
 ]
 
 MIDDLEWARE_CLASSES = [

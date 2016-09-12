@@ -27,8 +27,7 @@ urlpatterns = [
     url(r'^other_research/', include('other_research.urls')),
     url(r'^reading_tracking/', include('reading_tracking.urls')),
     url(r'^image_tracking/', include('image_tracking.urls')),
-    url(r'^join_the_dots/', include('join_the_dots.urls')),
-    url(r'^eye_controller', include('eye_controller.urls')),
+    url(r'^eyetracking/', include('eyetracking.urls')),
 ]
 
 admin.site.site_header = 'HCC Workshop Administration'
