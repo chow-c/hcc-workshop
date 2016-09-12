@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'image_tracking.apps.ImageTrackingConfig',
     'join_the_dots.apps.JoinTheDotsConfig',
     'eye_controller.apps.EyeControllerConfig',
+    'collection.apps.CollectionConfig',
+    'import_export',
 ]
 
 MIDDLEWARE_CLASSES = [
