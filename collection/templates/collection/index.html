@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+<div class="container">
+    <h1>Pre-experiment Questionnaire</h1>
+
+    <p>Please answer all of the following demographic questions: </p>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <div class="container-fluid next-page text-center">
+			<button type="submit" value="Next" class="btn btn-primary btn-lg">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+		</div>
+    </form>
+</div>
+{% endblock body %}

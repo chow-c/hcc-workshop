@@ -25,6 +25,14 @@ urlpatterns = [
     url(r'^eyetracking/', include('eyetracking.urls')),
     url(r'^cyber-security/', include('cybersecurity.urls')),
     url(r'^the-thatcher-effect/', include('thatcher.urls')),
+<<<<<<< 3eea4fedddbea5e93c9f4f1a9ff27af8c0dcdc35
+=======
+    url(r'^reading_tracking/', include('reading_tracking.urls')),
+    url(r'^image_tracking/', include('image_tracking.urls')),
+    url(r'^join_the_dots/', include('join_the_dots.urls')),
+    url(r'^eye_controller', include('eye_controller.urls')),
+    url(r'^collection', include('collection.urls')),
+>>>>>>> Add invofis experiment
 ]
 
 admin.site.site_header = 'HCC Workshop Administration'
