@@ -12,12 +12,12 @@
 {% block app-title %}Dashboard {% endblock %}
 
 {% block content %}
-            <div class="jumbotron text-left">
-				<h1>Welcome, {{ user.first_name|title }}!</h1>
+            <div class="jumbotron dash-splash text-left">
+				<h1 class="animated slideInUp">Welcome, {{ user.first_name|title }}!</h1>
 				<p>Click one of the activities to get started.</p>
 			</div>
 			<section id="eyetracker-activities" class="container-fluid">
-					<div class="row">
+					<!--<div class="row">
 						<div class="col-md-6 col-lg-6">
 							<div class="row">
 								<div class="col-xs-6 col-md-6 col-lg-6 inner-eye">
@@ -66,13 +66,13 @@
 								</div>
 
 							</div>
-					</div>
-					<div class="col-md-6 col-lg-6">
+					</div>-->
+					<!--<div class="col-md-6 col-lg-6">-->
 						<div class="text-center vertical-align eyegaze-title">
 							<h1 >Eye Tracking</h1>
 							<p class="lead">Visualise the way in which you view the screen.</p>
 						</div>
-					</div>
+					<!--</div>-->
 					</div>
 				</section>
 			<section id="dashboard-container-fluid" class="container-fluid ">
@@ -118,8 +118,8 @@
 					</div>
 				</div>
 				<br/>
-
 				</section>
+				
 {% endblock %}
 
 

@@ -12,6 +12,50 @@
     src: url(../fonts/Cabin-Bold.otf);
 }
 
+@font-face {
+    font-family: unisans;
+    src: url(../fonts/UniSansHeavy.otf);
+}
+
+@font-face {
+    font-family: dense;
+    src: url(../fonts/Dense-Regular.otf);
+}
+
+@font-face {
+    font-family: arca;
+    src: url(../fonts/Arca-Heavy.ttf);
+}
+
+@font-face {
+    font-family: intro-black;
+    src: url(../fonts/IntroCondBlack.otf);
+}
+
+@font-face {
+    font-family: intro-light;
+    src: url(../fonts/IntroCondLight.otf);
+}
+
+@font-face {
+    font-family: moderne;
+    src: url(../fonts/MODERNESANS.ttf);
+}
+
+@font-face {
+    font-family: mohave;
+    src: url(../fonts/Mohave.otf);
+}
+
+@font-face {
+    font-family: mohave-bold;
+    src: url(../fonts/Mohave-Bold.otf);
+}
+
+@font-face {
+    font-family: mohave-semi;
+    src: url(../fonts/Mohave-SemiBold.otf);
+}
 /**
 =================================
 OVERARCHING WORKSHOP STYLES
@@ -24,11 +68,7 @@ OVERARCHING WORKSHOP STYLES
  }
 
 h1, h2, h3 {
-    font-family: 'cabin', sans-serif;
-}
-
-.jumbotron h1 {
-    font-size: 80px;
+    font-family: 'mohave-semi', sans-serif;
 }
 
 /**
