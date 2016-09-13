@@ -23,7 +23,13 @@ class QuestionnaireAdmin(ImportExportModelAdmin):
     resource_class = QuestionnaireResource
     list_display = ('id','timestamp')
 
-class SequencesAdmin(admin.ModelAdmin):
+# for importing and exporting the experiment data
+class SequencesResource(resources.ModelResource):
+    class Meta:
+        model = Sequences
+
+class SequencesAdmin(ImportExportModelAdmin):
+    resource_class = SequencesResource
     list_display = ('id','sequence','tally')
 
 # for importing and exporting the experiment data

@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
+{% block head %} 
+    <link rel="stylesheet" href="{% static 'collection/styles.css' %}">
+{% endblock %}
+
 {% block body %}
 <div class="container">
-    <h1>Instructions</h1>
+    <h2>Instructions</h2>
 
     <p>In this experiment you will be shown some visualisations that display data about businesses and people associated with those businesses.</p>
 

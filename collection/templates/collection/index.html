@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
+{% block head %} 
+    <link rel="stylesheet" href="{% static 'collection/styles.css' %}">
+{% endblock %}
+
 {% block body %}
 <div class="container">
-    <h1>Pre-experiment Questionnaire</h1>
+    <h2>Pre-experiment Questionnaire</h2>
 
     <p>Please answer all of the following demographic questions: </p>
 
