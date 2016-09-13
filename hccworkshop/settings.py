@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,12 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
-    'bootstrap3',
-    'channels',
     'cybersecurity.apps.CybersecurityConfig',
     'thatcher.apps.ThatcherConfig',
-    'other_research.apps.OtherResearchConfig',
     'eyetracking.apps.EyetrackingConfig',
+    'collection.apps.CollectionConfig',
+    'import_export',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -76,18 +74,7 @@ TEMPLATES = [
     },
 ]
 
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "asgi_redis.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [("redis",6379)],
-        },
-        "ROUTING": "hccworkshop.routing.channel_routing",
-    },
-}
-
 WSGI_APPLICATION = 'hccworkshop.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases

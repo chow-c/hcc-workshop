@@ -1,0 +1,11 @@
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.background-gif {
+    background:url('../images/signals.gif');
+    background-size: cover;
+    background-position: center;
+}

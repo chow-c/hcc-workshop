@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% load bootstrap3 %}
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'home/cover.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/cover.css' %}" />
 {% endblock %}
 {% block body %}
     <div class="site-wrapper">
@@ -14,7 +13,7 @@
               <nav>
                 <ul class="nav masthead-nav">
                   <li><a href="{% url 'home:about' %}">About</a></li>
-                  <li class="active"><a href="{% url 'django.contrib.auth.views.login' %}">Login</a></li>
+                  <li class="active"><a href="{% url 'login' %}">Login</a></li>
                   <li><a href="{% url 'home:register' %}">Register</a></li>
                   <li><a href="{% url 'home:newsletter' %}">Subscribe</a></li>
                 </ul>
@@ -29,15 +28,13 @@
               <p><a href="{% url 'home:dashboard' %}">Click here to go to your dashboard.</a></p>
               {% else %}
                 {# Display a form #}
-            <form action="{% url 'django.contrib.auth.views.login' %}" method="post" class="form">
+            <form action="{% url 'login' %}" method="post" class="form">
               {% csrf_token %}
-              {% bootstrap_form form %}
-              {% buttons %}
+              {{ form }}
                 <button type="submit" class="btn btn-primary">
                   Login
                 </button>
                 
-              {% endbuttons %}
                <input type="hidden" name="next" value="{{ next }}" />
             </form>
             <p><a href="{#{% url 'password_reset' %}#}">Lost password?</a></p>

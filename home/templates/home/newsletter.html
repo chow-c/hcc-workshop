@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% load bootstrap3 %}
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'home/cover.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/cover.css' %}" />
 {% endblock %}
 {% block body %}
     <div class="site-wrapper">
@@ -15,7 +14,7 @@
               <nav>
                 <ul class="nav masthead-nav">
                   <li><a href="{% url 'home:about' %}">About</a></li>
-                  <li><a href="{% url 'django.contrib.auth.views.login' %}">Login</a></li>
+                  <li><a href="{% url 'login' %}">Login</a></li>
                   <li><a href="{% url 'home:register' %}">Register</a></li>
                   <li class="active"><a href="{% url 'home:newsletter' %}">Subscribe</a></li>
                 </ul>
@@ -29,13 +28,11 @@
                 {# Display a form #}
             <form action="" method="post">
               {% csrf_token %}
-            {% bootstrap_form form %}
-                          {% buttons %}
+            {{ form }}
                 <button type="submit" class="btn btn-primary">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                     <span class="btn-primary-span">Subscribe For Newsletter</span>
                 </button>
-              {% endbuttons %}
             </form>
 
           </div>

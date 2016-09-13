@@ -5,7 +5,7 @@ Students and staff can develop and contribute toward new applications, host expe
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.  
 A step-by-step tutorial is available at ***REMOVED***.
 ### Prerequisites
-The workshop is built using Django 1.9.8, Bootstrap 3, HTML 5, CSS 3, and jQuery 2.2.4. All requirements are contained in the requirements.txt file which will be used during installation. We recommend working with Docker when setting up a development environment for the workshop.  
+The workshop is built using Django 1.10.1, Bootstrap 3, HTML 5, CSS 3, and jQuery 2.2.4. All requirements are contained in the requirements.txt file which will be used during installation. We recommend working with Docker when setting up a development environment for the workshop.  
 ### Installation
 These instructions will guide you through installing the development environment via the recommended method of using Docker. 
 1. First, install all prerequisities and ensure they are up to date.
@@ -61,7 +61,7 @@ http://localhost:8000
 3. You can use the Docker console to help you debug the application. To shut down the development server, press Ctrl+C in the console.   
 
 ## Documentation
-Documentation for running participants through the HCC Workshop is available upon request from [Leana Copeland](leana.copeland@anu.edu.au).   
+Documentation for running participants through the HCC Workshop is available upon request from [Christopher Chow](***REMOVED***).   
 
 ## Live Deployment
 Installation and setup instructions for deploying the HCC Workshop on a web server is available upon request from [Christopher Chow](***REMOVED***).   
@@ -70,8 +70,8 @@ Installation and setup instructions for deploying the HCC Workshop on a web serv
 Development for the HCC Workshop is only open to members of the ANU HCC research group. Please take a look at the [Contributing Guidelines](CONTRIBUTING.md) for basic instructions on contributing to this project. For all other queries, please contact the project maintainers.   
 
 ## Maintainers
-* Leana Copeland, leana.copeland@anu.edu.au
 * Christopher Chow, ***REMOVED***
 
 ## Acknowledgements
+* Leana Copeland
 * Jakub Nabaglo

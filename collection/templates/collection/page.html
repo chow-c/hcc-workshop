@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+<div class="container experiment">
+    <div id="countdown" class="container text-center">46</div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            countdown();
+        });
+    </script>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <p id="question">{{ question.question_text }} {{ form.answer }} </p>
+
+        {{ form.gazedata.as_hidden }}
+        {{ form.question_number.as_hidden }}
+        {{ form.image_ref.as_hidden }}
+
+        {% with 'collection/'|add:image as image_static %}
+            <img src="{% static image_static %}" width=1200px >
+        {% endwith %}
+
+        <div class="container-fluid next-page text-center">
+            <button id="submit" type="submit" value="Next" class="btn btn-primary btn-lg">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+        </div>
+    </form>
+
+</div>
+{% endblock body %}
+
+{% block script %} 
+<script>
+	var eyedata = [];
+	etdata = $('#id_gazedata');
+    console.log("now collecting");
+    EyeTribe.loop(function(frame) {
+            eyedata.push(frame.dump());
+            etdata.val(JSON.stringify(eyedata));
+        });
+</script>
+<script>
+function countdown() {
+    var seconds = parseInt($('#countdown').html(), 10);
+    if (seconds == 0) {
+        $('#submit').click();
+        return;
+    }
+    --seconds;
+    $('#countdown').html(seconds)
+    setTimeout(countdown, 1000);
+    };
+</script> 
+{% endblock %}

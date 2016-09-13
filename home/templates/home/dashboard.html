@@ -12,12 +12,12 @@
 {% block app-title %}Dashboard {% endblock %}
 
 {% block content %}
-            <div class="jumbotron text-left">
-				<h1>Welcome to ANU Open Day! {# user.username|title #}</h1>
+            <div class="jumbotron dash-splash text-left">
+				<h1 class="animated slideInUp">Welcome, {{ user.first_name|title }}!</h1>
 				<p>Click one of the activities to get started.</p>
 			</div>
 			<section id="eyetracker-activities" class="container-fluid">
-					<div class="row">
+					<!--<div class="row">
 						<div class="col-md-6 col-lg-6">
 							<div class="row">
 								<div class="col-xs-6 col-md-6 col-lg-6 inner-eye">
@@ -66,13 +66,13 @@
 								</div>
 
 							</div>
-					</div>
-					<div class="col-md-6 col-lg-6">
+					</div>-->
+					<!--<div class="col-md-6 col-lg-6">-->
 						<div class="text-center vertical-align eyegaze-title">
 							<h1 >Eye Tracking</h1>
 							<p class="lead">Visualise the way in which you view the screen.</p>
 						</div>
-					</div>
+					<!--</div>-->
 					</div>
 				</section>
 			<section id="dashboard-container-fluid" class="container-fluid ">
@@ -104,51 +104,22 @@
 							</div>
 						</div>
 					</div>
-					<!--
-					<div class="col-md-3">
-						<div class="thumbnail">
-							<a href=""><img class="" src="{% static 'images/coming-soon.png' %}" alt=""></a>
-							<div class="caption text-center">
-								<h3>Fake or Real Smiles</h3>
-								<p>Work in progress.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="thumbnail">
-							<a href=""><img class="" src="{% static 'images/coming-soon.png' %}" alt=""></a>
-							<div class="caption text-center">
-								<h3>Images: Believe em or Not</h3>
-								<p>Work in progress.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="thumbnail">
-							<a href=""><img class="" src="{% static 'images/coming-soon.png' %}" alt=""></a>
-							<div class="caption text-center">
-								<h3>Creating Mondrian-like Art</h3>
-								<p>Work in progress.</p>
-							</div>
-						</div>
-					</div>
-					-->
 					<div class="col-md-4">
 						<div class="thumbnail activity-thumbnail">
-							<a href="{% url 'other_research:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/other-thumb.jpg' %}" alt=""></a>
+							<a href="{% url 'home:other_research' %}"><img class="app-thumbnail-img" src="{% static 'home/images/other-thumb.jpg' %}" alt=""></a>
 							<div class="caption title-caption">
 								<h3>Other Research</h3>
 								<div class="content-caption">
 									<p>See what else we do!</p>
-								<a class="btn btn-default" href="{% url 'other_research:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+								<a class="btn btn-default" href="{% url 'home:other_research' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<br/>
-
 				</section>
+				
 {% endblock %}
 
 

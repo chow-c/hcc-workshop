@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% load bootstrap3 %}
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'home/cover.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/cover.css' %}" />
 {% endblock %}
 {% block body %}
     <div class="site-wrapper">
@@ -14,7 +13,7 @@
               <nav>
                 <ul class="nav masthead-nav">
                   <li><a href="{% url 'home:about' %}">About</a></li>
-                  <li><a href="{% url 'django.contrib.auth.views.login' %}">Login</a></li>
+                  <li><a href="{% url 'login' %}">Login</a></li>
                   <li><a href="{% url 'home:register' %}">Register</a></li>
                   <li><a href="{% url 'home:newsletter' %}">Subscribe</a></li>
                 </ul>
