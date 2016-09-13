@@ -20,23 +20,24 @@ svg {
 {% endblock %}
 
 {% block app-breadcrumbs %}
-	<li><a href="{% url 'image_tracking:index' %}">Image Tracking</a></li>
+	<li><a href="{% url 'eyetracking:index' %}">Eye Tracking</a></li>
+    <li><a href="{% url 'eyetracking:image' %}">Images</a></li>
 	<li class="active">My eye gaze</li>
 {% endblock %}
 
 {% block content %} 
 	{% if False %}
-	<div class="background-gif"></div>
+	<div class="background-gif" id="image-gif"></div>
 		<div class="jumbotron text-center">
 		<h1 class="vertical-align">Eye Tracking for Image Viewing</h1>
 	</div>
 	<div id="inner-container-fluid" class="container-fluid">
 		<p>Whoops! Something seems to have gone wrong. Go back to the 
-			<a href="{% url 'image_tracking:index' %}">start page</a> for the activity and 
+			<a href="{% url 'eyetracking:image' %}">start page</a> for the activity and 
 			make sure an <a href="https://theeyetribe.com/">EyeTribe</a> eye tracker is connected and running on this computer. 
 		</p>
 		<div class="container-fluid next-page text-center">
-			<a href="{% url 'image_tracking:eyegaze' %}" role="button" class="btn btn-primary btn-lg">
+			<a href="" role="button" class="btn btn-primary btn-lg">
 				<i class="fa fa-chevron-left" aria-hidden="true"></i>
 				<span class="next-btn-primary-span">Image Tracking Start Page</span>
 			</a>
@@ -51,12 +52,12 @@ svg {
 			<p>When asked to simply look at the image your eye gaze looked like this:</p> 
 			<div class="text-center">
 				<svg id="img1" height="450" width="460"></svg>
-				<img src="{% static 'image_tracking/the_visitor.jpg' %}" id="image1"/>
+				<img src="{% static 'eyetracking/the_visitor.jpg' %}" id="image1"/>
 			</div>
 			<p>When asked to guess the ages of the people in the image your eye gaze looked like this:</p> 
-			<div  class="text-center"><img src="{% static 'image_tracking/the_visitor.jpg' %}" id="image2"/></div>
+			<div  class="text-center"><img src="{% static 'eyetracking/the_visitor.jpg' %}" id="image2"/></div>
 			<p>When asked to time memorise the positions the objects in the image your eye gaze looked like this:</p> 
-			<div class="text-center"><img src="{% static 'image_tracking/the_visitor.jpg' %}" id="image3"/></div>
+			<div class="text-center"><img src="{% static 'eyetracking/the_visitor.jpg' %}" id="image3"/></div>
 		</div>
 		<div class="container-fluid next-page text-center">
 			<a href="{% url 'home:eyegazeinfo' %}" role="button" class="btn btn-primary btn-lg">

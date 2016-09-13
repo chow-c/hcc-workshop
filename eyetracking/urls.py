@@ -11,4 +11,6 @@ urlpatterns = [
     url(r'^controller/$', views.controller.as_view(), name='controller'),
     url(r'^reading/$', views.reading, name='reading'),
     url(r'^reading/reading_gaze$', views.reading_gaze, name='reading_gaze'),
+    url(r'^image/$', views.image, name='image'),
+    url(r'^image/image_gaze$', views.image_gaze, name='image_gaze'),
 ]

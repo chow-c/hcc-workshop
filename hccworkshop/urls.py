@@ -25,8 +25,6 @@ urlpatterns = [
     url(r'^cyber/', include('cybersecurity.urls')),
     url(r'^thatcher/', include('thatcher.urls')),
     url(r'^other_research/', include('other_research.urls')),
-    url(r'^reading_tracking/', include('reading_tracking.urls')),
-    url(r'^image_tracking/', include('image_tracking.urls')),
     url(r'^eyetracking/', include('eyetracking.urls')),
 ]
 

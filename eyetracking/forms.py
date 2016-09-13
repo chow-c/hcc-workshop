@@ -1,6 +1,6 @@
 from django import forms
 
-from eyetracking.models import DotsGaze, ReadingGaze
+from eyetracking.models import DotsGaze, ReadingGaze, ImageGaze
 
 # For the join the dots app
 class DotsGazeForm(forms.ModelForm):
@@ -13,3 +13,9 @@ class ReadingGazeForm(forms.ModelForm):
     class Meta:
         model = ReadingGaze
         fields = ['gazedata']
+
+# For image tracking apply
+class ImageGazeForm(forms.ModelForm):
+    class Meta:
+        model = ImageGaze
+        fields = ['image1','image2','image3']
