@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} HCC Workshop | Image Tracking {% endblock %}
+
+{% block head %} 
+<link rel="stylesheet" href="{% static 'eyetracking/styles.css' %}">
+<style>
+.blue {
+    fill: blue;
+    stroke: royalblue;
+    stroke-width: 1px;
+}
+.blue_path { 
+    stroke:  royalblue;
+    stroke-width: 2;
+    fill: none;
+}
+.pink {
+    fill: red;
+    stroke: tomato;
+    stroke-width: 1px;
+}
+.pink_path { 
+    stroke:  tomato;
+    stroke-width: 2;
+    fill: none;
+}
+.green {
+    fill: green;
+    stroke: lightgreen;
+    stroke-width: 1px;
+}
+.green_path { 
+    stroke: lightgreen;
+    stroke-width: 2;
+    fill: none;
+}
+
+</style>
+{% endblock %}
+
+{% block app-breadcrumbs %}
+	<li><a href="{% url 'eyetracking:index' %}">Eye Tracking</a></li>
+    <li><a href="{% url 'eyetracking:image' %}">Images</a></li>
+	<li class="active">My eye gaze</li>
+{% endblock %}
+
+{% block content %} 
+	{% if False %}
+	<div class="background-gif" id="image-gif"></div>
+		<div class="jumbotron text-center">
+		<h1 class="vertical-align">Eye Tracking for Image Viewing</h1>
+	</div>
+	<div id="inner-container-fluid" class="container-fluid">
+		<p>Whoops! Something seems to have gone wrong. Go back to the 
+			<a href="{% url 'eyetracking:image' %}">start page</a> for the activity and 
+			make sure an <a href="https://theeyetribe.com/">EyeTribe</a> eye tracker is connected and running on this computer. 
+		</p>
+		<div class="container-fluid next-page text-center">
+			<a href="" role="button" class="btn btn-primary btn-lg">
+				<i class="fa fa-chevron-left" aria-hidden="true"></i>
+				<span class="next-btn-primary-span">Image Tracking Start Page</span>
+			</a>
+		</div>
+	</div>
+	{% else %}
+ 
+		<div class="container">
+			<p><b>Check out your eye gaze when you looked at the image each time: </b></p>   
+            <div class="text-center" id="test">
+				<img id="img1" src="{% static 'eyetracking/the_visitor.jpg' %}" alt="The Visitor" />
+			</div>
+            <p id="">The gaze (dots and lines) in blue are from when you looked at the image first.</p>
+            <p id="">The gaze (dots and lines) in pink are from when you tried to guess the ages of the people.</p>
+            <p id="">The gaze (dots and lines) in green are from when you tried to memorise the positions the objects in the room.</p>
+		</div>
+
+	{% endif %}
+{% endblock %}
+{% block script %} 
+<script>
+// Plot the gaze data from the previous screen using D3.js:
+data1 = {{ img1_data|safe }};
+data2 = {{ img2_data|safe }};
+data3 = {{ img3_data|safe }};
+
+//This is the accessor function we talked about above
+var lineFunction = d3.line()
+						.x(function(d) { return d.x; })
+						.y(function(d) { return d.y; });
+
+ 
+//The SVG Container
+var svgContainer = d3.select("body").append("svg")
+					.attr("width", "100vw")
+					.attr("height", "100vh")
+					.attr("class", "overlay");
+
+// Plot the data from Image 1
+var b_lineGraph = svgContainer.append("path")
+						.attr("d", lineFunction(data1))
+						.attr("class", "blue_path")
+						.attr("stroke-width", 2)
+						.attr("fill", "none");	
+
+var b_circles = svgContainer.selectAll("circle").filter(".blue")
+                          .data(data1)
+                          .enter()
+                          .append("circle");
+
+var b_circleAttributes = b_circles
+                       .attr("cx", function (d) { return d.x; })
+                       .attr("cy", function (d) { return d.y; })
+                       .attr("class", "blue")
+                       .attr("r", 5);
+
+// Plot the data from Image 2
+var p_lineGraph = svgContainer.append("path")
+						.attr("d", lineFunction(data2))
+						.attr("class", "pink_path")
+						.attr("stroke-width", 2)
+						.attr("fill", "none");	
+
+var p_circles = svgContainer.selectAll("circle").filter(".pink")
+                          .data(data2)
+                          .enter()
+                          .append("circle");
+
+var p_circleAttributes = p_circles
+                       .attr("cx", function (d) { return d.x; })
+                       .attr("cy", function (d) { return d.y; })
+                       .attr("class", "pink")
+                       .attr("r", 5);
+
+// Plot gaze from image 3
+var g_lineGraph = svgContainer.append("path")
+						.attr("d", lineFunction(data3))
+						.attr("class", "green_path")
+						.attr("stroke-width", 2)
+						.attr("fill", "none");	
+
+var g_circles = svgContainer.selectAll("circle").filter(".green")
+                          .data(data3)
+                          .enter()
+                          .append("circle");
+
+var g_circleAttributes = g_circles
+                       .attr("cx", function (d) { return d.x; })
+                       .attr("cy", function (d) { return d.y; })
+                       .attr("class", "green")
+                       .attr("r", 5);
+
+</script>
+{% endblock %}

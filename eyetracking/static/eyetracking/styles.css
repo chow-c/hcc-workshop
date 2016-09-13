@@ -1,0 +1,171 @@
+/* Styles for Join the Dots */
+.background-gif {
+    background-size: cover;
+    background-position: center;
+
+    /*background-repeat: no-repeat;
+    background-size: 140% 140%;
+    background-position: center top;
+    opacity: 0.5;*/
+}
+
+#dots-gif {
+    background:url('dots.gif');
+}
+
+body {
+   overflow: hidden;
+}
+
+#experiment, #showgaze {
+    height: 100vh;
+    width: 100vw;
+    padding: 50px 0 0 0;
+    
+}
+
+/* Styles for the appearing circles */
+#map{
+    /*border: 2px #555 dashed;*/
+    width:90vw;
+    height:80vh;
+    padding-left: 50px;
+}
+
+/* Styles for plotting for eye gaze data */
+.overlay {
+  position: absolute;
+  left:0;
+  right:0;
+  width:100%;
+  height:100%;
+  /*padding-left: 100px;*/
+  z-index: 50;
+  background:transparent;
+}
+
+path { 
+    stroke:  #777;
+    stroke-width: 2;
+    fill: none;
+}
+
+.gaze {
+    opacity: 0.5;
+    fill: #ccc;
+    stroke: #fff;
+    stroke-width: 1px;
+}
+
+
+/* Styles for Eye Controller */
+#controller-gif {
+    background-image:url("controller.gif");
+}
+
+body {
+   overflow: hidden;
+}
+
+/*#intro {
+    height: calc(100vh - 50px); 
+}*/
+
+/* Styles for container for the box controller */
+#experiment, #experiment_pt2 {
+    height: 100vh;
+    width: 100vw;
+    padding: 50px 5%;
+}
+
+#map, #map2 {
+    border: 2px #555 dashed;
+    width: 90vw;
+    height: 90vh;
+}
+
+.text {
+    position: relative;
+    top: -50vh;
+    text-align: center;
+    font-size: 150%;
+    padding-left: 5%;
+    padding-right: 5%
+}
+
+#cursor {
+    z-index: 100;
+}
+
+#target {
+    z-index: 50;
+}
+
+.experiment-btn {
+    position: relative;
+    top: -50vh;
+    z-index: 999999;
+    margin-left: 45%;
+}
+
+/* For reading tracking app */
+#reading-gif {
+    background-image:url("reading.gif");
+    opacity: 0.5;
+}
+
+.experiment-text {
+    width:700px;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:30px;
+    line-height: 125%;
+    padding-top:20px;
+    padding-bottom:50px;
+}
+
+#intro {
+    padding: 25px 80px;
+    height: calc(30vh - 50px); 
+}
+
+.reading-experiment {
+    height: 100vh;
+    width: 100vw;
+    padding: 120px 0 0 0;
+}
+
+/* Styles for plotting for eye gaze data */
+
+path { 
+    stroke:  #777;
+    stroke-width: 2;
+    fill: none;
+}
+
+circle {
+    fill: #ccc;
+    stroke: #fff;
+    stroke-width: 1px;
+}
+
+#showgaze {
+    height: 100vh;
+    width: 100%;
+    /*padding: 50px 0 0 0;*/
+}
+
+/* For image tracking */
+#image-gif {
+    background-image:url("image.gif");
+}
+.experiment-images {
+    display: inline-block;
+}
+
+#experiment_p1, #experiment_p2, #experiment_p3 {
+    height: 100vh;
+    width: 100%;
+    padding: 70px 0 0 0;
+}
+

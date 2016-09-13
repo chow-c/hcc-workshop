@@ -43,10 +43,7 @@ INSTALLED_APPS = [
     'cybersecurity.apps.CybersecurityConfig',
     'thatcher.apps.ThatcherConfig',
     'other_research.apps.OtherResearchConfig',
-    'reading_tracking.apps.ReadingTrackingConfig',
-    'image_tracking.apps.ImageTrackingConfig',
-    'join_the_dots.apps.JoinTheDotsConfig',
-    'eye_controller.apps.EyeControllerConfig',
+    'eyetracking.apps.EyetrackingConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
