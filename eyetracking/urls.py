@@ -10,7 +10,7 @@ urlpatterns = [
     url(r'^join_the_dots/joined_dots/$', views.joined_dots, name='joined_dots'),
     url(r'^controller/$', views.controller.as_view(), name='controller'),
     url(r'^reading/$', views.reading, name='reading'),
-    url(r'^reading/reading_gaze$', views.reading_gaze, name='reading_gaze'),
+    url(r'^reading_gaze$', views.reading_gaze, name='reading_gaze'),
     url(r'^image/$', views.image, name='image'),
-    url(r'^image/image_gaze$', views.image_gaze, name='image_gaze'),
+    url(r'^image_gaze$', views.image_gaze, name='image_gaze'),
 ]
