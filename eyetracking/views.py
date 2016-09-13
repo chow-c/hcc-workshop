@@ -60,6 +60,7 @@ def reading(request):
     
     return render(request,'eyetracking/reading.html', {'form':form})
 
+# Plot the participants eye gaze onto the text and show them
 def reading_gaze(request):
     # get most recent gaze data from the db
     rawgaze = ReadingGaze.objects.filter(user=request.user.id).order_by('-timestamp')[0]
@@ -75,3 +76,11 @@ def reading_gaze(request):
 
     context = {"data":list_for_d3}
     return render(request,'eyetracking/reading_gaze.html', context)
+
+# To display the reading tracking gif
+def reading_gif(request):
+    return render(request,'eyetracking/reading_gif.html')
+
+# To display the join the dots gif 
+def dots_gif(request):
+    return render(request,'eyetracking/dots_gif.html')
