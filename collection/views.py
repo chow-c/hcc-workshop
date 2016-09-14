@@ -110,6 +110,7 @@ def page(request):
         if count < 6 :
             image_suffix = IMAGES_SUFFIX[0]
         else:
+            question_id = question_id + 6
             image_suffix = IMAGES_SUFFIX[1]
         # Get the question object
         question = get_object_or_404(Questions, pk=question_id)
