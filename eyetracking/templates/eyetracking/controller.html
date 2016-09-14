@@ -1,24 +1,21 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block title %} HCC Workshop | Eye Controller {% endblock %}
+{% block title %} HCC Workshop | Eye Tracking | Mouse Controller {% endblock %}
 
 {% block head %} 
     <link rel="stylesheet" href="{% static 'eyetracking/styles.css' %}">
-    
 {% endblock %}
-
-{% block app-title %}Eye Controller{% endblock %}
 
 {% block app-breadcrumbs %}
     <li><a href="{% url 'eyetracking:index' %}">Eye Tracking</a></li>
-	<li class="active">Eye Controller</li>
+	<li class="active">Mouse Controller</li>
 {% endblock %}
 
 {% block content %} 
 	<div class="background-gif" id="controller-gif"></div>
 	<div class="jumbotron text-center app-splash">
-		<h1 class="vertical-align animated bounceInLeft" style="color: black">Eye Tracking as a Controller</h1>
+		<h1 class="vertical-align animated bounceInLeft" style="color: black">Eye Tracking as a Mouse Controller</h1>
 	</div>
 	
     {% if False %}

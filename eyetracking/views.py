@@ -19,7 +19,7 @@ def dots(request):
             eyegaze_form = form.save(commit=False)
             eyegaze_form.user = request.user
             eyegaze_form.save()
-            return HttpResponseRedirect('/eyetracking/joined_dots')
+            return HttpResponseRedirect('/eyetracking/join-the-dots-results')
     else:
         form = DotsGazeForm()
     
@@ -54,7 +54,7 @@ def reading(request):
             eyegaze_form = form.save(commit=False)
             eyegaze_form.user = request.user
             eyegaze_form.save()
-            return HttpResponseRedirect('/eyetracking/reading_gaze')
+            return HttpResponseRedirect('/eyetracking/reading-analysis/results')
     else:
         form = ReadingGazeForm()
     
@@ -85,7 +85,7 @@ def image(request):
             eyegaze_form = form.save(commit=False)
             eyegaze_form.user = request.user
             eyegaze_form.save()
-            return HttpResponseRedirect('/eyetracking/image_gaze')
+            return HttpResponseRedirect('/eyetracking/image-viewing/results')
     else:
         form = ImageGazeForm()
     
@@ -118,7 +118,7 @@ def processGazedata(gazedata):
 
     return list_for_d3
 
-
+## DEV PAGES TO RECREATE GIFS
 # To display the reading tracking gif
 def reading_gif(request):
     return render(request,'eyetracking/reading_gif.html')
