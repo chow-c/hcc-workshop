@@ -39,7 +39,7 @@ class ExperimentPageResource(resources.ModelResource):
 
 class ExperimentPageAdmin(ImportExportModelAdmin):
     resource_class = ExperimentPageResource
-    list_display = ('pid','timestamp','question_number', 'image_ref', 'answer', 'gazedata')
+    list_display = ('pid','timestamp','question_number', 'image_ref')
 
 
 admin.site.register(Questionnaire, QuestionnaireAdmin)
