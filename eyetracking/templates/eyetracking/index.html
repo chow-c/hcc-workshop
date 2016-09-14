@@ -1,20 +1,136 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
-{% block title %} HCC Workshop | Eye Tracking {% endblock %}
-{% block head %} 	
+{% block title %} HCC Workshop | Eye Tracking{% endblock %}
+
+{% block head %} 
+	
 {% endblock %}
+
 {% block app-breadcrumbs %}
-	<li class="active">Eye Tracking </li>
+    <li class="active">Eye Tracking</li>
 {% endblock %}
-
-{% block app-title %}Eye Tracking{% endblock %}
 
 {% block content %} 
-<div class="container-fluid " >
-	<p class="text-justify">An eye tracker is a device that captures where you are looking. It has a lot of applications in human centred computing research and practice. One use is to simply record eye gaze to see where a user has looked, and another is to use eye tracking as a method of input to the computer. The latter use is of special importance when considering disabled people who may not be able to move thier hand and therefore not be able to control a mouse or keyboard.</p> 
-	<p class="text-justify">Have a go at the following activities... </p>
-</div>
-{% endblock %}
+    <div class="background-gif" id="eyegaze-bg-gif"></div>
+    <div class="jumbotron text-center app-splash">
+		<h1 class="vertical-align animated bounceInLeft">Eye Tracking</h1>
+	</div>
+    <div class="row">
+								<div class="col-xs-3 col-md-3 col-lg-3 inner-eye">
+									<div class="eye-thumbnail">
+										<a href="{% url 'eyetracking:join-the-dots' %}">
+											<img src="{% static 'home/images/dots.jpg' %}" alt="">
+											<div class="eye-caption">
+											<h2>Join the Dots With Your Eyes</h2>
+											<button class="btn btn-default info" href=""><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+										</div></a>
+									</div>
+								</div>
+								<div class="col-xs-3 col-md-3 col-lg-3 inner-eye">
+									<div class="eye-thumbnail">
+										<a href="{% url 'eyetracking:mouse-controller' %}">
+											<img src="{% static 'home/images/controller.png' %}" alt="">
+											<div class="eye-caption">
+											<h2>Eye Tracking as a Controller</h2>
+											<button class="btn btn-default info" href=""><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+										</div></a>
+									</div>
+								</div>
+							
+							
+								<div class="col-xs-3 col-md-3 col-lg-3 inner-eye">
+									<div class="eye-thumbnail">
+										<a href="{% url 'eyetracking:reading-analysis' %}">
+										<img class="" src="{% static 'home/images/illustration.png' %}" alt="Eye tracking example of reading analysis" height="450px">
+										<div class="eye-caption">
+											<h2>Eye Tracking for Reading</h2>
+											<button href="" class="btn btn-default info"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+										</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xs-3 col-md-3 col-lg-3 inner-eye">
+									<div class="eye-thumbnail">
+										<a href="{% url 'eyetracking:image-viewing' %}">
+										<img class="" src="{% static 'home/images/yarbus.jpg' %}" alt="">
+										<div class="eye-caption">
+											<h2>Eye Tracking for Images</h2>
+											<button class="btn btn-default info" href=""><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+										</div>
+										</a>
+									</div>
+								</div>
 
+							
+					</div>
+    <section class="app-text-standard">
+        <p class="text-justify">An eye tracker is a device that captures where you are looking. It has a lot of applications in human centred computing research and practice. One use is to simply record eye gaze to see where a user has looked, and another is to use eye tracking as a method of input to the computer. The latter use is of special importance when considering disabled people who may not be able to move thier hand and therefore not be able to control a mouse or keyboard.</p> 
+	<p class="text-justify">Have a go at the following activities... </p>
+        <p>Want some more information about eye tracking? This page will provide you with a brief overview of 
+        what eye tracking is, and also how the HCC research group uses eye tracking in their research. 
+    </p>
+    <h2>What is eye tracking?</h2>
+    <p>Eye tracking involves measuring what a person is looking at and an eye tracker is the device used 
+        for making these measurements. The first eye tracker was actually invented to analyse how we read. 
+        Since then psychologists have thoroughly studied the reading process. You’ve already read a passage 
+        that briefly describes this research, and your eye gaze was recorded as you read.
+    </p>
+    </section>
+    <section class="app-text-standard">
+    <h2>Why do our eye movements look like this?</h2>
+    <p>Humans essentially have two type of vision - detailed and peripheral. Detailed vision is when details 
+        of a vision scene are actually encoded and is the reason we can do tasks such as reading, driving, watching 
+        TV, playing sport, etc. When you look at something the centre of your gaze is where the detailed visual 
+        information is encoded. The visual detail drops very rapidly as you move away from the centre of gaze. You can 
+        see an example of this in Figure 1.
+    </p>
+    <div class="text-center">
+        <img src="{% static 'home/images/visualAcuity.gif' %}" width="600" alt="Example of visual acuity">
+    </div>
+    <p style="text-align:center;margin-top:0px;">Figure 1</p>
+        <p>As a result, the eye is always moving so that the centre of gaze can be directed to different parts of the 
+        visual stimulus so that visual scene can be put together in the brain. This means we read text in a very specific way,
+        which is illustrated in Figure 2.
+    </p>
+    <div class="text-center">
+        <img src="{% static 'home/images/illustration.png' %}" width="400" alt="Example of fixations on text">
+    </div>
+    <p style="text-align:center;margin-top:0px;">Figure 2</p>
+  
+    <p>In more technical terms, the centre of gaze is called a <strong>fixation</strong> and is where the eye 
+    remains (relatively) still to take in visual information. And a <strong>saccade</strong> is the rapid movement 
+    that transports the eye to another fixation. Little to no visual information is encoded during saccades. Figure 2
+    visually illustrates fixations and saccades; the dots are the fixations and the lines between the fixations are the 
+    saccades.
+    </p>
+    <div class="text-center">
+        <img src="{% static 'home/images/figure1.png' %}" width="200" alt="Example to show we do not read every word">
+    </div>
+    <p style="text-align:center;margin-top:0px;">Figure 3</p>
+    <p>So did you fixate on every word? As mentioned above, it has been found that when reading English, people often 
+        do not fixate on every word. That means we don’t actually see every single word when we read. Check out Figure 
+        2 again, did you see the second “of”? Most people don’t! You can also see in Figure 3 that not all words are fixated,
+        yet others are fixated more than once. The way in which we read can be related to the difficulty of the text as 
+        well as your understanding of the text.
+    </p>
+    </section>
+    
+    
+
+    <section class="container-fluid related-section">
+        <h1>How is this applicable to Human Centred Computing research?</h1>
+        <p>Eye trackers were originally used for research such as in psychology to analyse reading behaviour, the way we 
+        view images, and to help understand the visual system. These days eye trackers are used a lot in marketing and 
+        product design and research into how to make computers work better for humans. An example of this in analysing 
+        reading behaviour and adapting eLearning environments based a students’ reading behaviour. This is ongoing 
+        research that is being conducted in the HCC group at ANU, the aim of which is to help create learning environments 
+        that better help students learn.</p>
+        <p>Another way in which eye tracking is used is as an input device for human computer interaction. Some people don’t 
+        have the ability to use their hands which restricts their use of computers. They could use their eyes to control a 
+        mouse or input keyboard commands!</p>
+    </section>
+    
+{% endblock %}
 {% block script %} 
 {% endblock %}

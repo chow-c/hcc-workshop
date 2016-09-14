@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% block title %} HCC Workshop | Image Tracking {% endblock %}
+
+{% block title %} HCC Workshop | Eye Tracking | Image Viewing{% endblock %}
 
 {% block head %} 
 <link rel="stylesheet" href="{% static 'eyetracking/styles.css' %}">
@@ -19,7 +20,7 @@ svg {
 
 {% block app-breadcrumbs %}
     <li><a href="{% url 'eyetracking:index' %}">Eye Tracking</a></li>
-	<li class="active">Images</li>
+	<li class="active">Image Viewing</li>
 {% endblock %}
 
 {% block content %} 
