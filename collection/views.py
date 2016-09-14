@@ -86,7 +86,7 @@ def page(request):
         print(form)
         # check whether it's valid:
         if form.is_valid():
-            print('FORM VALID')
+            # print('FORM VALID')
             # process the data in form.cleaned_data as required
             exp_form = form.save(commit=False)
             exp_form.pid = request.session.get('pid')
