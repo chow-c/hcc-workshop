@@ -7,17 +7,33 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login
+from django.template import RequestContext
 
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.conf import settings
+
+from django.template.loader import get_template
 
 from home.forms import UserCreateForm, NewsletterForm
 
 from reportlab.pdfgen import canvas
 
-from io import BytesIO
+from weasyprint import HTML, CSS
+
+def get_report(request):
+    html_template = get_template('home/other_research.html')
+
+    rendered_html = html_template.render(RequestContext(request)).encode(encoding="UTF-8")
+
+    pdf_file = HTML(string=rendered_html).write_pdf(stylesheets=[CSS(settings.STATICFILES_DIRS[0] +  '/css/main.css')])
+
+    http_response = HttpResponse(pdf_file, content_type='application/pdf')
+    http_response['Content-Disposition'] = 'filename="report.pdf"'
+
+    return http_response
 
 # Create your views here.
 class Index(generic.TemplateView):
