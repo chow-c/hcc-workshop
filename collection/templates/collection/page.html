@@ -1,14 +1,13 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
+{% block head %} 
+    <link rel="stylesheet" href="{% static 'collection/styles.css' %}">
+{% endblock %}
+
 {% block body %}
 <div class="container experiment">
     <div id="countdown" class="container text-center">46</div>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            countdown();
-        });
-    </script>
 
     <form action="" method="POST">
         {% csrf_token %}
@@ -51,5 +50,9 @@ function countdown() {
     $('#countdown').html(seconds)
     setTimeout(countdown, 1000);
     };
+
+    $(document).ready(function() {
+        countdown();
+    });
 </script> 
 {% endblock %}
