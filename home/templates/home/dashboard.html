@@ -14,13 +14,15 @@
 {% block content %}
             <div class="jumbotron dash-splash text-left">
 				<h1 class="animated slideInUp">Welcome, {{ user.first_name|title }}!</h1>
-				<p>Click one of the activities to get started.</p>
+				<p>Click any of the activities to get started.</p>
 			</div>
 			<section id="eyetracker-activities" class="container-fluid">
-					<!--<div class="row">
-						<div class="col-md-6 col-lg-6">
+				<div class="text-center vertical-align eyegaze-title">
+					<h1>Eye Tracking</h1>
+					<p class="lead">Visualise the way in which you view the screen.</p>
+				</div>
 							<div class="row">
-								<div class="col-xs-6 col-md-6 col-lg-6 inner-eye">
+								<div class="col-xs-3 col-md-3 col-lg-3 inner-eye">
 									<div class="eye-thumbnail">
 										<a href="">
 											<img src="{% static 'home/images/dots.jpg' %}" alt="">
@@ -30,7 +32,7 @@
 										</div></a>
 									</div>
 								</div>
-								<div class="col-xs-6 col-md-6 col-lg-6 inner-eye">
+								<div class="col-xs-3 col-md-3 col-lg-3 inner-eye">
 									<div class="eye-thumbnail">
 										<a href="">
 											<img src="{% static 'home/images/controller.png' %}" alt="">
@@ -40,9 +42,9 @@
 										</div></a>
 									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-6 col-md-6 col-lg-6 inner-eye">
+							
+							
+								<div class="col-xs-3 col-md-3 col-lg-3 inner-eye">
 									<div class="eye-thumbnail">
 										<a href="">
 										<img class="" src="{% static 'home/images/illustration.png' %}" alt="Eye tracking example of reading analysis" height="450px">
@@ -53,7 +55,7 @@
 										</a>
 									</div>
 								</div>
-								<div class="col-xs-6 col-md-6 col-lg-6 inner-eye">
+								<div class="col-xs-3 col-md-3 col-lg-3 inner-eye">
 									<div class="eye-thumbnail">
 										<a href="">
 										<img class="" src="{% static 'home/images/yarbus.jpg' %}" alt="">
@@ -65,34 +67,20 @@
 									</div>
 								</div>
 
-							</div>
-					</div>-->
+							
+					</div>
 					<!--<div class="col-md-6 col-lg-6">-->
-						<div class="text-center vertical-align eyegaze-title">
-							<h1 >Eye Tracking</h1>
-							<p class="lead">Visualise the way in which you view the screen.</p>
-						</div>
-					<!--</div>-->
-					</div>
-				</section>
-			<section id="dashboard-container-fluid" class="container-fluid ">
-                <div class="row">
-					<div class="col-md-4">
-						<div class="thumbnail activity-thumbnail">
-							<a href="{% url 'thatcher:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/thatcher.png' %}" alt=""></a>
-							<div class="caption title-caption">
-								<h3>The Thatcher Effect</h3>
-								<div class="content-caption">
-									
-								<p>Trick your brain!</p>
-								<a class="btn btn-default" href="{% url 'thatcher:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-							</div>
-							</div>
-
-						</div>
 						
-					</div>
-					<div class="col-md-4">
+					<!--</div>-->
+					
+				</section>
+				<section id="dashboard-container-fluid" class="container-fluid">
+					<div class="text-center vertical-align">
+				<h1 class="text-center">Research Areas</h1>
+				<p class="lead">Explore some of the topics we work on.</p>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-lg-4 col-sm-4">
 						<div class="thumbnail activity-thumbnail">
 							<a href="{% url 'cybersecurity:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/cyber.png' %}" alt=""></a>
 							<div class="caption title-caption">
@@ -104,7 +92,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-4 col-lg-4 col-sm-4">
 						<div class="thumbnail activity-thumbnail">
 							<a href="{% url 'home:other_research' %}"><img class="app-thumbnail-img" src="{% static 'home/images/other-thumb.jpg' %}" alt=""></a>
 							<div class="caption title-caption">
@@ -117,8 +105,40 @@
 						</div>
 					</div>
 				</div>
+			</section>
+			<section class="container-fluid app-text-standard">
+                <div class="row">
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-6">
+						<div class="thumbnail activity-thumbnail">
+							<a href="{% url 'thatcher:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/thatcher.png' %}" alt=""></a>
+							<div class="caption title-caption">
+								<h3>The Thatcher Effect</h3>
+								<div class="content-caption">
+									<p>Trick your brain!</p>
+									<a class="btn btn-default" href="{% url 'thatcher:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+						</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="text-center vertical-align">
+						<h1>Bonus Activities</h1>
+						<p class="lead">Play around with some of our extra material.</p>
+						</div>
+					</div>
+				</div>
 				<br/>
-				</section>
+			</section>
+			<section class="app-text-highlight">
+				<div class="text-center vertical-align">
+					<h1>Take it home</h1>
+					<p class="lead">Email your work to yourself to show it off later.</p>
+				</div>
+			</section>
 				
 {% endblock %}
 
