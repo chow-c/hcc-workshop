@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load bootstrap3 %}
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'home/css/cover.css' %}" />
 {% endblock %}
@@ -30,7 +31,10 @@
                 {# Display a form #}
             <form action="{% url 'login' %}" method="post" class="form">
               {% csrf_token %}
-              {{ form }}
+              {{ form.username.label }}
+              {{ form.username }}
+              {{ form.password.label }}
+              {{ form.password }}
                 <button type="submit" class="btn btn-primary">
                   Login
                 </button>

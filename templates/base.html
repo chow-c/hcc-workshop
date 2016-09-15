@@ -3,7 +3,8 @@
 {% block body %}
 <section class="help-overlay text-center" id="instructions">
       <h1>Instructions</h1>
-      <p class="text-justify">Welcome to the HCC Workshop. This is a self-paced learning environment, allowing you to explore the entire website and complete the activities you want in whatever order or pace that suits you.<p>
+      <p class="text-justify">The workshop consists of several activities that you are able to play with. Whenever you complete an activity, you will gain an extra level. You can view your current level by looking at the middle of the navigation bar at the top of the screen.<p>
+      <p class="text-justify">This is a self-paced learning environment, allowing you to explore the entire website and complete the activities you want in whatever order or pace that suits you.<p>
       <p class="text-justify">If you have any questions, feel free to talk to one of the friendly ANU Ambassadors.</p>
       <p class="text-justify">When you are finished, please complete our feedback form to help improve the experience for others.</p>
       <button class="btn btn-lg btn-default" id="instructions-close-btn">Close</button>
@@ -22,8 +23,8 @@
                     {% block app-breadcrumbs %}{% endblock %}
                 {% endif %}
             </ol>
+            <span class="navbar-fixed-top-level">Current Level: {{ user.workshopuser.get_level_display }}</span>
             <span class="navbar-fixed-top-buttons">
-                
                     <a href="{% url 'home:dashboard' %}" class="navbar-dashboard" title="Dashboard">
                         <i class="fa fa-home fa-lg fa-fw" aria-hidden="true"></i>
                     </a>
