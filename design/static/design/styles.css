@@ -8,10 +8,93 @@
 
 .subject-div {
     padding-top: 50px;
-    height: 100vh;
+    /*height: 100vh;*/
 }
 
-/* For the image flipping */
 
+/* For the image flipping section */
 
+/* flip the pane when hovered */
+.flipped {
+    /*transform*/
+    -webkit-transform:rotateY(180deg);
+       -moz-transform:rotateY(180deg);
+        -ms-transform:rotateY(180deg);
+         -o-transform:rotateY(180deg);
+            transform:rotateY(180deg);
+}
 
+.flipper, .front, .back{
+    width:250px;
+    height:250px;
+}
+
+/* flip speed goes here */
+.flipper {
+    /*perspective*/
+    -webkit-perspective:1000;
+       -moz-perspective:1000;
+        -ms-perspective:1000;
+         -o-perspective:1000;
+            perspective:1000;
+    /*transition*/
+    -webkit-transition:0.6s;
+       -moz-transition:0.6s;
+         -o-transition:0.6s;
+            transition:0.6s;
+    /*transform-style*/
+    -webkit-transform-style:preserve-3d;
+       -moz-transform-style:preserve-3d;
+        -ms-transform-style:preserve-3d;
+         -o-transform-style:preserve-3d;
+            transform-style:preserve-3d;
+    
+    position:relative;
+}
+
+/* hide back of pane during swap */
+.front, .back{
+    /*backface-visibility*/
+    -webkit-backface-visibility:hidden;
+       -moz-backface-visibility:hidden;
+        -ms-backface-visibility:hidden;
+         -o-backface-visibility:hidden;
+            backface-visibility:hidden;
+
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+/* front pane, placed above back */
+.front{
+    z-index:2;
+}
+
+/* back, initially hidden pane */
+.back{
+    /*transform*/
+    -webkit-transform:rotateY(180deg);
+       -moz-transform:rotateY(180deg);
+        -ms-transform:rotateY(180deg);
+         -o-transform:rotateY(180deg);
+            transform:rotateY(180deg);
+}
+
+.back-img {
+    /* Fade out the image */
+   -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+    filter: grayscale(100%);
+}
+
+/* For text */
+.overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.75);
+  color: black;
+  padding: 4px 8px;
+  margin: 0;
+  font: 14px Sans-Serif;
+}
