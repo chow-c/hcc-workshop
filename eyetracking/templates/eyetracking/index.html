@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %} 
-<div id="eyetracking-loader" class="eyetracking-loader text-center"></div>
+<div id="eyetracking-loader" class="help-overlay text-center"></div>
 <div class="background-gif" id="eyegaze-bg-gif"></div>
 <div class="jumbotron text-center app-splash">
     <h1 class="vertical-align animated bounceInLeft">Eye Tracking</h1>
@@ -102,7 +102,7 @@
 $(document).ready(function() {
     $(".eyetracking-btn").click(function() {
         var redirect = $(this).data('val');
-
+        $('body').addClass('lock');
         $('#page-overlay').show();
         $('#eyetracking-loader').show();
         $('#eyetracking-loader').html('<h1>Detecting</h1><br><p>An eyetracking device is required for these activities.<br><br><br><br><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>');
@@ -120,6 +120,7 @@ $(document).ready(function() {
     });
 
     $("#eyetracking-loader").on("click", "#eyetracking-close-btn", function() {
+        $('body').removeClass('lock');
         $('#eyetracking-loader').hide();
         $('#page-overlay').hide();
     });
