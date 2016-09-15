@@ -12,7 +12,6 @@
 {% block app-title %}Dashboard {% endblock %}
 
 {% block content %}
-<div id="eyetracking-loader" class="eyetracking-loader text-center"></div>
             <div class="jumbotron dash-splash text-left">
 				<h1 class="animated slideInUp">Welcome, {{ user.first_name|title }}!</h1>
 				<p>Click any of the activities to get started.</p>
@@ -21,7 +20,7 @@
 				<div class="text-center vertical-align eyegaze-title">
 					<h1>Eye Tracking</h1>
 					<p class="lead">Visualise the way in which you view the screen.</p>
-					<button class="btn btn-default btn-lg" id="eyetracking-btn">Launch</button>
+					<a class="btn btn-default btn-lg" href="{% url 'eyetracking:index' %}">Try it out</a>
 				</div>
 				</section>
 				<section id="dashboard-container-fluid" class="container-fluid">
@@ -47,6 +46,18 @@
 							<a href="{% url 'home:other_research' %}"><img class="app-thumbnail-img" src="{% static 'home/images/other-thumb.jpg' %}" alt=""></a>
 							<div class="caption title-caption">
 								<h3>Other Research</h3>
+								<div class="content-caption">
+									<p>See what else we do!</p>
+								<a class="btn btn-default" href="{% url 'home:other_research' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-4 col-sm-4">
+						<div class="thumbnail activity-thumbnail">
+							<a href=""><img class="app-thumbnail-img" src="http://placekitten.com/400/300" alt=""></a>
+							<div class="caption title-caption">
+								<h3>Human Computer Interaction</h3>
 								<div class="content-caption">
 									<p>See what else we do!</p>
 								<a class="btn btn-default" href="{% url 'home:other_research' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
@@ -92,28 +103,3 @@
 				
 {% endblock %}
 
-{% block script %}
-<script>
-
-
-$("#eyetracking-btn").click(function() {
-	$('#page-overlay').show();
-	$('#eyetracking-loader').show();
-	$('#eyetracking-loader').html('<h1>Detecting</h1><br><p>An eyetracking device is required for these activities.<br><br><br><br><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>');
-
-	var testSocket = new WebSocket("ws://localhost:6556");
-	
-	if(testSocket.readyState === testSocket.OPEN){
-		setTimeout(function() {$('#eyetracking-loader').html('<h1>Found</h1><br><p>Redirecting...</p>');setTimeout(function() {window.location.href = "/eye-tracking/";},1000)},5000);
-	} else {
-		setTimeout(function() {$('#eyetracking-loader').html('<h1>Not Found</h1><br><p>These activities are only available at the eyetracking workstations.<br><br>Please try again or talk to one of the ANU workshop instructors.<br><br></p><button class="btn btn-default btn-lg" id="eyetracking-close-btn">Close</button>');},5000);
-	}
-
-});
-
-$("#eyetracking-loader").on("click", "#eyetracking-close-btn", function() {
-	$('#eyetracking-loader').hide();
-	$('#page-overlay').hide();
-});
-</script>
-{% endblock %}
