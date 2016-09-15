@@ -33,7 +33,7 @@ TITLES AND HEADERS
     padding: 0 80px;
 }
 
-h1 {
+h1, .jumbotron h1 {
     font-size: 13vh;
 }
 /**
@@ -126,7 +126,7 @@ SECTIONS
     display: none;
 }
 
-.eyetracking-loader {
+.help-overlay {
     background: #5B81A1;
     color: white;
     position: fixed;
@@ -137,4 +137,12 @@ SECTIONS
     z-index: 600;
     padding: 30px 30px;
     display: none;
+}
+
+.lock {
+    overflow: hidden;
+}
+
+#help-btn {
+    cursor: pointer;
 }

@@ -391,6 +391,7 @@ EYE TRACKING THUMBNAILS
     cursor:default;
     width: 100%;
     max-height: 350px;
+    cursor: pointer;
 }
 
 .eye-thumbnail .eye-caption {
@@ -519,3 +520,4 @@ OTHER ACTIVITY THUMBNAILS
 	transform: translate3d(0,-140%,0);
 
 }
+

@@ -25,7 +25,21 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/eyetribe.js' %}"></script>
+    <script>
+    $(document).ready(function() {
+        $("#help-btn").click(function() {
+            $('body').addClass('lock');
+            $('#page-overlay').show();
+            $('#instructions').show();
+        });
 
+        $("#instructions").on("click", "#instructions-close-btn", function() {
+          $('body').removeClass('lock');
+            $('#instructions').hide();
+            $('#page-overlay').hide();
+        });
+    });
+    </script>
     {% block script %}{% endblock %}
   </body>
 </html>
