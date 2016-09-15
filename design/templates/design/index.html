@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block app-breadcrumbs %}
-	<li class="active">Design Principles </li>
+	<li class="active">HCI Design Principles </li>
 {% endblock %}
 
 {% block content %} 
@@ -15,72 +15,119 @@
 	<div class="jumbotron text-center app-splash">
 		<h1 class="vertical-align animated bounceInLeft" style="color: black;">Human Computer Interaction 101</h1>
 	</div>
-	<div  class="container-fluid">
+	<!-- Introduction section -->
+	<div class="container">
 		<p class="text-justify">Welcome to an introduction to Human Computer Interaction (HCI). You may be wondering, what is HCI? HCI is about the design, evaluation, and implementation of of computer systems that facilitates effective human use. HCI puts the human before anything else. </p>
 		<p class="text-justify">But there are A LOT of poorly designed websites and software out there, I'm sure you have encountered many! Our goal is to introduce you to some design principles that can make interfaces better for interaction, and to hopefully interest you enough to come help us fight the battle against bad interface design!</p>
 		<p class="text-justify">In this activity you will get to play some little activities that teach you some of the design principles that are fundamental in HCI. The more you play, the higher your skill level will become. See how skilled you can get and if you can beat your friends! </p> 
+	</div>
 
+	<section class="container-fluid app-text-highlight">
+		<h3>“A user interface is like a joke, if you have to explain it, it's not that good” ~ unknown</h3>
+	</section>
+	
+	<div class="container">
 		<div class="text-center" id="skill-div"> 
 			<p>You are at the <strong>student</strong> skill level!</p>
 			<img src="https://placekitten.com/g/150/150" class="img-circle level">
 			<p>How much higher can you get?</p>
 		</div>
+	</div>
+	
+	<!-- Container for all of the activities -->
+	<section class="container activities">
+		<h2>HCI Design Principles</h2>
 
-		<section class="container-fluid app-text-highlight">
-			<h3>“A user interface is like a joke, if you have to explain it, it's not that good” ~ unknown</h3>
-		</section>
+	</section>
 
-		<div class="subject-div">
-			<h2>HCI combines different subject areas... </h2>
-			<br>
-			<p>Click to just some... </p>
-			<br>
-			<div class="container-fluid grid">
-				<div class="row">
-					<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
-						<img class="front" src="https://placekitten.com/g/250/250">
-						<img class="back" src="https://placekitten.com/250/250">
-					</div>
-					<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
-						<img class="front" src="https://placekitten.com/g/250/250">
-						<div class="back">
-							<img src="https://placekitten.com/250/250" class="back-img">
-							<p class="overlay">Test text</p>
+	<!-- Have students toggle images to find out what kind of subject areas HCI involves -->
+	<div class="container subject-div">
+		<h2>HCI combines different subject areas... </h2>
+		<br>
+		<p>Click to just some... </p>
+		<br>
+		<div class="container-fluid grid">
+			<div class="row">
+				<div class="col-sm-7 col-centered">
+					<div class="row">
+						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
+							<img class="front" src="https://placekitten.com/250/250">
+							<div class="back">
+								<img src="https://placekitten.com/250/250" class="back-img">
+								<p class="overlay">Computer Science</p>
+							</div>
+						</div>
+						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
+							<img class="front" src="https://placekitten.com/250/250">
+							<div class="back">
+								<img src="https://placekitten.com/250/250" class="back-img">
+								<p class="overlay">Psychology</p>
+							</div>
+						</div>
+						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
+							<img class="front" src="https://placekitten.com/250/250">
+							<div class="back">
+								<img src="https://placekitten.com/250/250" class="back-img">
+								<p class="overlay">Art</p>
+							</div>
 						</div>
 					</div>
-					<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
-						<img class="front" src="https://placekitten.com/g/250/250">
-						<img class="back" src="https://placekitten.com/250/250">
+					<div class="row">
+						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
+							<img class="front" src="https://placekitten.com/250/250">
+							<div class="back">
+								<img src="https://placekitten.com/250/250" class="back-img">
+								<p class="overlay">Design</p>
+							</div>
+						</div>
+						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
+							<img class="front" src="https://placekitten.com/250/250">
+							<div class="back">
+								<img src="https://placekitten.com/250/250" class="back-img">
+								<p class="overlay">Music</p>
+							</div>
+						</div>
+						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
+							<img class="front" src="https://placekitten.com/250/250">
+							<div class="back">
+								<img src="https://placekitten.com/250/250" class="back-img">
+								<p class="overlay">Education</p>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
-						<img class="front" src="https://placekitten.com/g/250/250">
-						<img class="back" src="https://placekitten.com/250/250">
-					</div>
-					<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
-						<img class="front" src="https://placekitten.com/g/250/250">
-						<img class="back" src="https://placekitten.com/250/250">
-					</div>
-					<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
-						<img class="front" src="https://placekitten.com/g/250/250">
-						<img class="back" src="https://placekitten.com/250/250">
+					<div class="row">
+						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
+							<img class="front" src="https://placekitten.com/250/250">
+							<div class="back">
+								<img src="https://placekitten.com/250/250" class="back-img">
+								<p class="overlay">Cyber Security</p>
+							</div>
+						</div>
+						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
+							<img class="front" src="https://placekitten.com/250/250">
+							<div class="back">
+								<img src="https://placekitten.com/250/250" class="back-img">
+								<p class="overlay">Sociology</p>
+							</div>
+						</div>
+						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
+							<img class="front" src="https://placekitten.com/250/250">
+							<div class="back">
+								<img src="https://placekitten.com/250/250" class="back-img">
+								<p class="overlay">Ergonomics</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<div class="container-fluid next-page text-center">
-			<a href="{% url 'home:dashboard' %}" role="button" class="btn btn-primary btn-lg">
-				<i class="fa fa-home" aria-hidden="true"></i>
-				<span class="next-btn-primary-span">Dashboard</span>
-			</a>
-		</div>
+		<br>
+		<p>And there is heaps more you can do with HCI! So no matter what you're interested in, HCI probably has something for you! </p>
 	</div>
+
+
 
 {% endblock %}
 
 {% block script %} 
-	<script type="text/javascript" src="{% static 'design/flip.js' %}"></script>
-    
 {% endblock %}

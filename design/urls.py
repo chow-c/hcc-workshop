@@ -6,4 +6,5 @@ from . import views
 app_name = 'design'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^mappings/$', views.mappings, name='mappings'),
 ]
