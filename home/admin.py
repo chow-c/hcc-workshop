@@ -4,6 +4,22 @@ from django.http import HttpResponse
 # Register your models here.
 from .models import NewsletterSignup
 
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib.auth.models import User
+
+from home.models import WorkshopUser
+
+# Define an inline admin descriptor for Employee model
+# which acts a bit like a singleton
+class WorkshopUserInline(admin.StackedInline):
+    model = WorkshopUser
+    can_delete = False
+    verbose_name_plural = 'workshopUser'
+
+# Define a new User admin
+class UserAdmin(BaseUserAdmin):
+    inlines = (WorkshopUserInline, )
+
 def export_csv(modeladmin, request, queryset):
     import csv
     from django.utils.encoding import smart_str
@@ -29,3 +45,7 @@ class NewsletterAdmin(admin.ModelAdmin):
     actions = [export_csv]
 
 admin.site.register(NewsletterSignup, NewsletterAdmin)
+
+# Re-register UserAdmin
+admin.site.unregister(User)
+admin.site.register(User, UserAdmin)
