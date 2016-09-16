@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'collection.apps.CollectionConfig',
     'import_export',
     'image_manipulation.apps.ImageManipulationConfig',
+    'bootstrap3',
 ]
 
 MIDDLEWARE_CLASSES = [

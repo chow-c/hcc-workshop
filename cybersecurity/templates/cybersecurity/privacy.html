@@ -76,4 +76,38 @@ path {
 {% endblock %}
 
 {% block script %}
+<script>
+    var seconds = 0;
+
+    function count_hours() {
+        seconds++;
+        h = seconds*5;
+
+        $('#hours').html(h);
+        setTimeout(count_hours,1000);
+    };
+
+    setTimeout(count_hours,1000);
+</script>
+<script>
+     //The data for our line
+var lineData = [ { "x": 1,   "y": 5},  { "x": 20,  "y": 20},
+                  { "x": 40,  "y": 10}, { "x": 60,  "y": 40},
+                  { "x": 80,  "y": 5},  { "x": 100, "y": 60}];
+ 
+ //This is the accessor function we talked about above
+var lineFunction = d3.line().x(function(d) { return d.x; }).y(function(d) { return d.y; });
+
+//The SVG Container
+var svgContainer = d3.select("#content").append("svg")
+                                    .attr("width", 1000)
+                                    .attr("height", 1000);
+
+//The line SVG Path we draw
+var lineGraph = svgContainer.append("path")
+                            .attr("d", lineFunction(lineData))
+                            .attr("stroke", "blue")
+                            .attr("stroke-width", 8)
+                            .attr("fill", "none");
+</script>
 {% endblock %}
