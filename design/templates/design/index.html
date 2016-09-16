@@ -26,95 +26,128 @@
 		<h3>“A user interface is like a joke, if you have to explain it, it's not that good” ~ unknown</h3>
 	</section>
 	
-	<div class="container">
-		<div class="text-center" id="skill-div"> 
-			<p>You are at the <strong>student</strong> skill level!</p>
-			<img src="https://placekitten.com/g/150/150" class="img-circle level">
-			<p>How much higher can you get?</p>
-		</div>
-	</div>
-	
 	<!-- Container for all of the activities -->
 	<section class="container activities">
 		<h2>HCI Design Principles</h2>
+		<div class="row">
+				<div class="col-sm-12 col-md-12 col-lg-12 col-centered">
+					<div class="row">
+						<div class="col-sm-3 col-md-3 col-lg-3 text-center bigger"> 
+							<a href="{% url 'design:mappings' %}">
+							<i class="fa fa-map-marker fa-5x fa-fw" aria-hidden="true"></i><h3>Mappings</h3></a>
+						</div>
+						<div class="col-sm-3 col-md-3 col-lg-3 text-center bigger"> 
+							<a href="{% url 'design:affordances' %}">
+							<i class="fa fa-map-signs fa-5x fa-fw" aria-hidden="true"></i><h3>Affordances & Signifiers</h3></a>
+						</div>
+						<div class="col-sm-3 col-md-3 col-lg-3 text-center bigger"> 
+							<a href="{% url 'design:conceptual' %}">
+							<i class="fa fa-bicycle fa-5x fa-fw" aria-hidden="true"></i><h3>Conceptual Models</h3></a>
+						</div>
+						<div class="col-sm-3 col-md-3 col-lg-3 text-center bigger"> 
+							<a href="{% url 'design:constraints' %}">
+							<i class="fa fa-ban fa-5x fa-fw" aria-hidden="true"></i><h3>Constraints</h3></a>
+						</div>
+					</div>
+				</div>
+		</div>
 
+		
 	</section>
 
 	<!-- Have students toggle images to find out what kind of subject areas HCI involves -->
 	<div class="container subject-div">
 		<h2>HCI combines different subject areas... </h2>
 		<br>
-		<p>Click to just some... </p>
+		<p>Click to find out just some of them: </p>
 		<br>
 		<div class="container-fluid grid">
 			<div class="row">
-				<div class="col-sm-7 col-centered">
+				<div class="col-sm-5 col-md-5 col-lg-5 col-centered">
 					<div class="row">
-						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
-							<img class="front" src="https://placekitten.com/250/250">
-							<div class="back">
-								<img src="https://placekitten.com/250/250" class="back-img">
-								<p class="overlay">Computer Science</p>
+						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+							<div class="front text-center">
+								<i class="fa fa-laptop fa-5x fa-fw" aria-hidden="true"></i>
+							</div>
+							<div class="back text-center">
+								<i class="fa fa-laptop fa-5x fa-fw" aria-hidden="true"></i>
+								<p>Computer Science</p>
 							</div>
 						</div>
-						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
-							<img class="front" src="https://placekitten.com/250/250">
-							<div class="back">
-								<img src="https://placekitten.com/250/250" class="back-img">
-								<p class="overlay">Psychology</p>
+						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+							<div class="front text-center">
+								<i class="fa fa-flask fa-5x fa-fw" aria-hidden="true"></i>
+							</div>
+							<div class="back text-center">
+								<i class="fa fa-flask fa-5x fa-fw" aria-hidden="true"></i>
+								<p>Psychology</p>
 							</div>
 						</div>
-						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
-							<img class="front" src="https://placekitten.com/250/250">
-							<div class="back">
-								<img src="https://placekitten.com/250/250" class="back-img">
-								<p class="overlay">Art</p>
+						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+							<div class="front text-center">
+								<i class="fa fa-paint-brush fa-5x fa-fw" aria-hidden="true"></i>
+							</div>
+							<div class="back text-center">
+								<i class="fa fa-paint-brush fa-5x fa-fw" aria-hidden="true"></i>
+								<p>Art</p>
 							</div>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
-							<img class="front" src="https://placekitten.com/250/250">
-							<div class="back">
-								<img src="https://placekitten.com/250/250" class="back-img">
-								<p class="overlay">Design</p>
+						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+							<div class="front text-center">
+								<i class="fa fa-picture-o fa-5x fa-fw" aria-hidden="true"></i>
+							</div>
+							<div class="back text-center">
+								<i class="fa fa-picture-o fa-5x fa-fw" aria-hidden="true"></i>
+								<p>Design</p>
 							</div>
 						</div>
-						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
-							<img class="front" src="https://placekitten.com/250/250">
-							<div class="back">
-								<img src="https://placekitten.com/250/250" class="back-img">
-								<p class="overlay">Music</p>
+						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+							<div class="front text-center">
+								<i class="fa fa-music fa-5x fa-fw" aria-hidden="true"></i>
+							</div>
+							<div class="back text-center">
+								<i class="fa fa-music fa-5x fa-fw" aria-hidden="true"></i>
+								<p>Music</p>
 							</div>
 						</div>
-						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
-							<img class="front" src="https://placekitten.com/250/250">
-							<div class="back">
-								<img src="https://placekitten.com/250/250" class="back-img">
-								<p class="overlay">Education</p>
+						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+							<div class="front text-center">
+								<i class="fa fa-graduation-cap fa-5x" aria-hidden="true"></i>
+							</div>
+							<div class="back text-center">
+								<i class="fa fa-graduation-cap fa-5x" aria-hidden="true"></i>
+								<p>Education</p>
 							</div>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
-							<img class="front" src="https://placekitten.com/250/250">
-							<div class="back">
-								<img src="https://placekitten.com/250/250" class="back-img">
-								<p class="overlay">Cyber Security</p>
+						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+							<div class="front text-center">
+								<i class="fa fa-user-secret fa-5x fa-fw" aria-hidden="true"></i>
+							</div>
+							<div class="back text-center">
+								<i class="fa fa-user-secret fa-5x fa-fw" aria-hidden="true"></i>
+								<p>Cyber Security</p>
 							</div>
 						</div>
-						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
-							<img class="front" src="https://placekitten.com/250/250">
-							<div class="back">
-								<img src="https://placekitten.com/250/250" class="back-img">
-								<p class="overlay">Sociology</p>
+						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+							<div class="front text-center">
+								<i class="fa fa-users fa-5x fa-fw" aria-hidden="true"></i>
+							</div>
+							<div class="back text-center">
+								<i class="fa fa-users fa-5x fa-fw" aria-hidden="true"></i>
+								<p>Sociology</p>
 							</div>
 						</div>
-						<div class="col-sm-3 flipper" onclick="this.classList.toggle('flipped')">
-							<img class="front" src="https://placekitten.com/250/250">
-							<div class="back">
-								<img src="https://placekitten.com/250/250" class="back-img">
-								<p class="overlay">Ergonomics</p>
+						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+							<div class="front text-center">
+								<i class="fa fa-keyboard-o fa-5x fa-fw" aria-hidden="true"></i>
+							</div>
+							<div class="back text-center">
+								<i class="fa fa-keyboard-o fa-5x fa-fw" aria-hidden="true"></i>
+								<p>Ergonomics</p>
 							</div>
 						</div>
 					</div>

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} HCC Workshop | Design Principles {% endblock %}
+{% block head %}
+	<link rel="stylesheet" href="{% static 'design/styles.css' %}">
+{% endblock %}
+
+{% block app-breadcrumbs %}
+<li><a href="{% url 'design:index' %}">HCI Design Principles</a></li>
+	<li class="active">Conceptual Models</li>
+{% endblock %}
+
+{% block content %} 
+    <div class="container">
+        <h2>Conceptual Models</h2>
+        <p class="text-justify">Conceptual models are how we think things works. They are mental models that help useres understand the system and how to use it. Bad design of an interface can mess with the conceptual model and therefore its use! Conceputal models are formed through training, previous experience, cultural factors, as well as </p>
+
+
+
+ </p>
+
+    </div>
+{% endblock %}
+
+{% block script %} 
+{% endblock %}

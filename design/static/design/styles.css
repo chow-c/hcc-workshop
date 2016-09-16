@@ -1,9 +1,8 @@
-#skill-div {
-    padding: 30px;
-}
-
-.level {
-    padding:10px;
+.bigger{
+    font-size: 3em;
+    height: 35vh;
+    width: 22vw;
+    border: 1px solid black;
 }
 
 .subject-div {
@@ -30,8 +29,8 @@
 }
 
 .flipper, .front, .back, .back-img {
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 125px;
 }
 
 /* flip speed goes here */
@@ -73,6 +72,7 @@
 
 /* front pane, placed above back */
 .front{
+    /*background-scolor: grey;*/
     z-index:2;
 }
 
@@ -94,16 +94,6 @@
 }
 
 /* For text */
-.overlay {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background: rgba(255, 255, 255, 0.75);
-  color: black;
-  padding: 4px 8px;
-  margin: 0;
-  font: 14px Sans-Serif;
-}
 
 
 /* For the Mappings Activity */

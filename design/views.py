@@ -30,3 +30,12 @@ def mappings(request):
         form = mappingsForm()
 
     return render(request, 'design/mappings.html', {'form': form})
+
+def affordances(request):
+    return render(request, 'design/affordances.html')
+
+def constraints(request):
+    return render(request, 'design/constraints.html')
+
+def conceptual(request):
+    return render(request, 'design/conceptual.html')
