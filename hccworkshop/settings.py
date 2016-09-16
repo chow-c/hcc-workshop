@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'eyetracking.apps.EyetrackingConfig',
     'collection.apps.CollectionConfig',
     'import_export',
+    'bootstrap3',
 ]
 
 MIDDLEWARE_CLASSES = [
