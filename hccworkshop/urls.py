@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^the-thatcher-effect/', include('thatcher.urls')),
     url(r'^experiment/infovis/', include('collection.urls')),
     url(r'^design/', include('design.urls')),
+    url(r'^image-manipulation/', include('image_manipulation.urls')),
 ]
 
 admin.site.site_header = 'HCC Workshop Administration'

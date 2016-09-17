@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'eyetracking.apps.EyetrackingConfig',
     'collection.apps.CollectionConfig',
     'import_export',
+    'image_manipulation.apps.ImageManipulationConfig',
 ]
 
 MIDDLEWARE_CLASSES = [

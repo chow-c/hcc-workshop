@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} HCC Workshop | Manipulated Images {% endblock %}
+{% block head %}
+	<link rel="stylesheet" href="{% static 'image_manipulation/styles.css' %}">
+{% endblock %}
+
+{% block app-breadcrumbs %}
+    <li><a href="{% url 'image_manipulation:index' %}">Manipulated Images</a></li>
+	<li class="active">How well did you do?</li>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h2>How many did you get right?</h2>
+
+    <h3 class="text-center">You got <span id="result">{{ context }}</span> out of 9 right!</h3>
+
+    <p class="test-justify">Click on the images to find out which ones for manipulated and which ones weren't</p>
+
+    <div class="container-fluid grid">
+        <div class="row">
+            <div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+                <div class="front text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image1.png' %}">
+                </div>
+                <div class="back text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image1.png' %}">
+                    <p id="text">Not manipulated</p>
+                </div>
+            </div>
+            <div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+                <div class="front text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image2.png' %}">
+                </div>
+                <div class="back text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image2.png' %}">
+                    <p id="text">Manipulated</p>
+                </div>
+            </div>
+            <div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+                <div class="front text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image3.png' %}">
+                </div>
+                <div class="back text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image3.png' %}">
+                    <p id="text">Not manipulated</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+                <div class="front text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image4.png' %}">
+                </div>
+                <div class="back text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image4.png' %}">
+                    <p id="text">Manipulated</p>
+                </div>
+            </div>
+            <div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+                <div class="front text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image5.png' %}">
+                </div>
+                <div class="back text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image5.png' %}">
+                    <p id="text">Not manipulated</p>
+                </div>
+            </div>
+            <div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+                <div class="front text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image6.png' %}">
+                </div>
+                <div class="back text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image6.png' %}">
+                    <p id="text">Manipulated</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+                <div class="front text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image7.png' %}">
+                </div>
+                <div class="back text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image7.png' %}">
+                    <p id="text">Manipulated</p>
+                </div>
+            </div>
+            <div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+                <div class="front text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image8.png' %}">
+                </div>
+                <div class="back text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image8.png' %}">
+                    <p id="text">Manipulated</p>
+                </div>
+            </div>
+            <div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+                <div class="front text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image9.png' %}">
+                </div>
+                <div class="back text-center">
+                    <img id="result-img" src="{% static 'image_manipulation/image9.png' %}">
+                    <p id="text">Manipulated</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block script %} 
+{% endblock %}
