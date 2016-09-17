@@ -146,3 +146,16 @@ SECTIONS
 #help-btn {
     cursor: pointer;
 }
+
+#ethics-overlay {
+    overflow-y: scroll;
+}
+
+#ethics-contact-details {
+    position: relative;
+    left: 5%;
+}
+
+#find-out-more {
+    cursor: pointer;
+}

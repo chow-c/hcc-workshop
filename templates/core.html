@@ -19,6 +19,36 @@
   </head>
   <body>
     <div id="page-overlay" class="page-overlay"></div>
+    <section id="ethics-overlay" class="help-overlay">
+      <h1>Terms of Use</h1>
+      <h2>Who are we?</h2>
+      <p class="text-justify">This Human Centred Computing Workshop (HCC workshop) was developed by the Research School of Computer Science in the College of Engineering and Computer Science (the College). It showcases current experiments and technologies in use by our researchers.<br>The project is led by Professor Tom Gedeon, head of the human-centred computing research area, and convenor of the ANU Bachelor of Information Technology degree.</p>
+      <h2>What is the Human Centred Computing Workshop?</h2>
+      <p class="text-justify">The HCC workshop is a collection of experiments derived from current research in the College. Experiments in the workshop may use one or more of many types of methodologies and technologies, which change from time to time depending on current research.<br>Our participants are people like you who have come to ANU and this HCC workshop to learn more about computer science and engineering at ANU. <br>ANU is a research-led university. The online adventure you are enjoying creates real world information that contributes to research. As you do various experiments, we collect data such as eye gaze information, questionnaire responses, survey information, and experiment outcomes. Aggregated data may be used in academic papers, theses, and publications, and may inform future research.<br>This data is used to give you feedback directly to you about your participation, and as input to data collections for individual and group researchers as part of our on-going research.</p>
+      <h2>How do I participate?</h2>
+      <p class="text-justify">Participation in the project is voluntary and you may, without negative consequences, decline to take part or withdraw from the research without providing an explanation at any time during your time participating in the workshop.  You can choose not to participate in any or all of the workshop.  If you withdraw from the workshop, any information collected during your participation will be removed from our records and not used.<br>Research for this workshop is normally conducted online, within controlled environments such as rooms in the College equipped with laptops and any additional equipment such as eye gaze tracking devices or other special interface devices.</p>
+      <h2>Benefits</h2>
+      <p class="text-justify">Benefits: The HCC workshop is intended as an opportunity for you to learn more about research in the College of Engineering and Computer Science at ANU.  This knowledge may benefit you by giving you a better understanding of computer science and engineering generally, and a sampling of research projects at ANU specifically, which may be helpful to you as you decide on your future research activities.</p>
+      <h2>Risks</h2>
+      <p class="text-justify">Risks: The normal risks of using a computer apply. If you are affected by vision disturbances caused by viewing computer screens you may wish to be aware that this experiment will involve viewing computer screens.  You may be sitting in one position for a period of time, which may cause you minor discomfort.  In the case of eye gaze tracking activities, you may be called upon to sit quite still for periods of up to 10-15 minutes in order for your eye gaze to be tracked properly. Remember that you are free to stop your participation in the activities at any time.</p>
+      <h2>Exclusion Criteria</h2>
+      <p class="text-justify">In some cases, participants may be unable to do some activities. One example where this may occur is in respect of activities using eye gaze tracking where you wear glasses that do not allow the tracker to perceive your eyes properly (though this is unusual, it has occurred from time to time).  In the event that there are any activities with specific limitations, these are noted prior to you commencing the activity. It may also sometimes be the case that there is not enough capacity with specific equipment to accommodate everyone. Remember that there are a range of activities, so if you are unable to participate in one of them please consider continuing on with another.</p>
+      <h2>Confidentiality</h2>
+      <p class="text-justify">Your data will be aggregated with other participants’ and any use of this data will be de-identified. Your personal information will be kept confidential as far as the law allows. Your personal information will not be used in the publication of results.</p>
+      <h2>Privacy</h2>
+      <p class="text-justify">In collecting your personal information within this research, the ANU must comply with the Privacy Act 1988. The ANU Privacy Policy is available <a href="https://policies.anu.edu.au/ppl/document/ANUP_010007">online</a> and contains information about how a person can:
+      <ul class="text-left">
+          <li>Access or seek correction to their personal information</li>
+          <li>Complain about a breach of an Australian Privacy Principle by ANU, and how ANU will handle the complaint.</li>
+      </ul></p>
+      <h2>Data Use</h2>
+      <p class="text-justify">Your data will stored within secure facilities at ANU in accordance with ANU policy and the Australian Code for the Responsible Conduct of Research. We are required to retain your data for up to 5 years after the publications in which your data is used. After the data is no longer needed for current research, it may be archived or retained in a de-identified format by researchers. </p>
+      <h2>Queries and Concerns</h2>
+      <p class="text-justify">For further requests for information or queries regarding the study, please contact Professor Tom Gedeon, Primary Investigator, via <a href="mailto:***REMOVED***@anu.edu.au">***REMOVED***@anu.edu.au</a>. </p>
+      <h2>Ethics Clearance</h2>
+      <p class="text-justify">The ethical aspects of this research have been approved by the ANU Human Research Ethics Committee (Protocol 2012/006). If you have any concerns or complaints about how this research has been conducted, please contact: <br><span id="ethics-contact-details"><br>Ethics Manager <br>The ANU Human Research Ethics Committee <br>The Australian National University <br>Telephone: +61 ***REMOVED*** <br>Email: <a href="***REMOVED***">***REMOVED***</a></span></p>
+      <button class="btn btn-lg btn-default" id="find-out-more-close-btn">Close</button>
+    </section>
     {% block body %}{% endblock %}
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -38,7 +68,20 @@
             $('#instructions').hide();
             $('#page-overlay').hide();
         });
+
+        $("#find-out-more").click(function() {
+            $('body').addClass('lock');
+            $('#page-overlay').show();
+            $('#ethics-overlay').show();
+        });
+
+        $("#ethics-overlay").on("click", "#find-out-more-close-btn", function() {
+          $('body').removeClass('lock');
+            $('#ethics-overlay').hide();
+            $('#page-overlay').hide();
+        });
     });
+  
     </script>
     {% block script %}{% endblock %}
   </body>
