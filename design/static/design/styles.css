@@ -10,8 +10,29 @@
     /*height: 100vh;*/
 }
 
+/* CONCEPTUAL MODEL PAGE: for scrolling game */
+#map {
+    margin: 50px;
+    padding:20px
+    background: midnightblue; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(midnightblue, deepskyblue); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(midnightblue, deepskyblue); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(midnightblue, deepskyblue); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(midnightblue, deepskyblue); /* Standard syntax (must be last) */
+}
+.reverse {
+    overflow: scroll;
+    width: 90vw;
+    height: 100vh;
+}
 
-/* For the image flipping section */
+.intro {
+    height: 100vh;
+    padding-bottom: 60px;
+}
+
+
+/* MAPPING PAGE: For the image flipping section */
 .col-centered {
   float: none;
   margin-right: auto;
@@ -19,7 +40,7 @@
 }
 
 /* flip the pane when hovered */
-.flipped {
+.flipped, .flipped_coin {
     /*transform*/
     -webkit-transform:rotateY(180deg);
        -moz-transform:rotateY(180deg);
@@ -33,8 +54,13 @@
     height: 125px;
 }
 
+.flipper_coin, .front_coin, .back_coin, .back-img_coin {
+    width: 200px;
+    height: 200px;
+}
+
 /* flip speed goes here */
-.flipper {
+.flipper, .flipper_coin {
     /*perspective*/
     -webkit-perspective:1000;
        -moz-perspective:1000;
@@ -57,7 +83,7 @@
 }
 
 /* hide back of pane during swap */
-.front, .back{
+.front, .back, .front_coin, .back_coin {
     /*backface-visibility*/
     -webkit-backface-visibility:hidden;
        -moz-backface-visibility:hidden;
@@ -71,13 +97,13 @@
 }
 
 /* front pane, placed above back */
-.front{
+.front, .front_coin{
     /*background-scolor: grey;*/
     z-index:2;
 }
 
 /* back, initially hidden pane */
-.back{
+.back, .back_coin{
     /*transform*/
     -webkit-transform:rotateY(180deg);
        -moz-transform:rotateY(180deg);
@@ -86,11 +112,17 @@
             transform:rotateY(180deg);
 }
 
-.back-img {
-    /* Fade out the image */
-   /*-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
-    /*filter: grayscale(100%);*/
-    filter:sepia(100%)
+.coin-text {
+    position: absolute;
+    bottom: 80px;
+    padding: 4px 40px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.back_coin p {
+  background: rgba(255, 255, 255, 0.75);
+  color: black;
 }
 
 

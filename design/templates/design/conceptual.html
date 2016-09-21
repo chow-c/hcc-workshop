@@ -4,24 +4,66 @@
 {% block title %} HCC Workshop | Design Principles {% endblock %}
 {% block head %}
 	<link rel="stylesheet" href="{% static 'design/styles.css' %}">
+    <style>
+        body { 
+            overflow: hidden;
+
+        }
+
+    </style>
 {% endblock %}
 
 {% block app-breadcrumbs %}
-<li><a href="{% url 'design:index' %}">HCI Design Principles</a></li>
+<li><a href="{% url 'design:index' %}">HCI </a></li>
 	<li class="active">Conceptual Models</li>
 {% endblock %}
 
 {% block content %} 
-    <div class="container">
+    <div class="container intro">
         <h2>Conceptual Models</h2>
         <p class="text-justify">Conceptual models are how we think things works. They are mental models that help useres understand the system and how to use it. Bad design of an interface can mess with the conceptual model and therefore its use! Conceputal models are formed through training, previous experience, cultural factors, as well as </p>
+        <p class="class-justify"></p>
+        <!-- Have a -->
 
-
-
- </p>
-
+        <h2>Scrolling</h2>
+        <p class="text-justify">An example of where conceptual models come into play is when scrolling on devices. Scrolling is an almost automatic reaction, and they way in which we scroll largely depends on the device you are using. If you have a smart phone you most likely are used to scrolling with your finger. The actions that you perform are slightly different from what you would on a PC. Let's check it out by playing a little game. The aim of the game is to press the STOP button as quickly as you can. You have to scroll to find it though! Press begin to start. </p>
+        <section class="text-center button-section" id="experiment-button">
+                <a id="start" href="#experiment" role="button" class="btn btn-primary btn-lg"><span>Begin </span><br><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+        </section>
     </div>
+        <div id="experiment" class="container reverse">
+            <div id="map"></div>
+        </div>
+
+        <div></div>
+
+    
 {% endblock %}
 
 {% block script %} 
+<script type="text/javascript" src="{% static 'eyetracking/scroll.js' %}"></script>
+<script>
+var svg = d3.select("#map").append("svg")
+                    .attr("width", "90vw")
+                    .attr("height", "200vh");
+
+var circle = svg.append("circle")
+	.attr("id", "target")
+    .attr("cx", Math.random() * 200)
+    .attr("cy", Math.random() * 200)
+    .attr("r", 50 + "px")
+
+function moveTarget() {
+    var circle = d3.select("#target")
+                    .attr("cx", Math.random() * 200) // change this to random 2px 
+                    .attr("cy", Math.random() * 200) // change this to random 2px
+    
+    circle.data(data).attr("cx", function(d) { return d; });
+}
+
+function backward_scroll() {
+$('down-left').style.bottom = '-' + window.scrollY + 'px';
+$('down-right').style.bottom = '-' + window.scrollY + 'px';
+}
+</script> 
 {% endblock %}
