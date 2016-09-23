@@ -2,7 +2,18 @@
     font-size: 3em;
     height: 35vh;
     width: 22vw;
-    border: 1px solid black;
+    color: black;
+
+    /*border: 1px solid black;*/
+}
+
+a:hover {
+    text-decoration: none;
+    color:black;
+}
+
+a {
+    color: grey;
 }
 
 .subject-div {
@@ -11,24 +22,13 @@
 }
 
 /* CONCEPTUAL MODEL PAGE: for scrolling game */
-#map {
-    margin: 50px;
-    padding:20px
-    background: midnightblue; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(midnightblue, deepskyblue); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(midnightblue, deepskyblue); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(midnightblue, deepskyblue); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(midnightblue, deepskyblue); /* Standard syntax (must be last) */
-}
-.reverse {
-    overflow: scroll;
-    width: 90vw;
-    height: 100vh;
-}
-
-.intro {
-    height: 100vh;
-    padding-bottom: 60px;
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 400px;
 }
 
 
@@ -127,9 +127,10 @@
 
 
 /* For the Mappings Activity */
-/*.row, .col-sm-4, .col-sm-3 {
-    border: 1px black solid;
-}*/
+.linear-switches {
+    padding-bottom: 5vh;
+}
+
 
 .light-demo {
     display: block;
