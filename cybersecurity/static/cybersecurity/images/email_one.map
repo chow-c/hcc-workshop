@@ -1,0 +1,11 @@
+<img src="[phishing] (imported)" width="990" height="904" border="0" usemap="#map" />
+
+<map name="map">
+<!-- #$-:Image map file created by GIMP Image Map plug-in -->
+<!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
+<!-- #$-:Please do not edit lines starting with "#$" -->
+<!-- #$VERSION:2.3 -->
+<!-- #$AUTHOR:chris -->
+<area shape="rect" coords="300,0,645,15" target="sender-email" href="sender-email" />
+<area shape="rect" coords="15,705,840,765" target="info-request" href="info-request" />
+</map>

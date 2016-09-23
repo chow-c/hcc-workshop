@@ -20,11 +20,12 @@
     padding: 50px 0 0 0;
 }
 
-.svg-cloud {
+#svg-cloud {
     fill:white;
     stroke: black;
     stroke-width:1;
     stroke-linejoin:round;
+    top: 100%;
 }
 
 .background-gif {
@@ -38,4 +39,23 @@
 
 .opaque-icon {
     opacity: 0;
+}
+
+span.phishing-header {
+    position: relative;
+    left: 50px;
+}
+
+.phishing-highlight {
+    background: rgba(255,255,153,1);
+    transition: background-color .8s ease-in-out;
+}
+
+.phishing-fade-out {
+    background: rgba(100,100,100,0.5);
+    transition: background-color .8s ease-in-out;
+}
+
+#phishing-items-left {
+    font-size: 10vh;
 }
