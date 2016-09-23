@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} HCC Workshop | Manipulated Images {% endblock %}
+{% block head %}
+	<link rel="stylesheet" href="{% static 'image_manipulation/styles.css' %}">
+{% endblock %}
+
+{% block app-breadcrumbs %}
+	<li class="active">Manipulated Images</li>
+{% endblock %}
+
+{% block content %} 
+    <div class="background-gif" id="reading-gif"></div>
+	<div class="jumbotron text-center app-splash">
+		<h1 class="vertical-align animated bounceInLeft" style="color: black;">Can you pick which images have been manipulated?</h1>
+	</div>
+    <div class="container intro">
+        <p class="text-justify">One of the areas of interest to the HCC group is in image manipulation. The central question of this research is, can people tell if an image has been manipulated or not? Now we've all seen images that have clearly been tampered with, and not very well, but there are others out there that are photoshoped and and you can't obvious detect the change.</p>
+        <p class="text-justify">In this activity you will be shown 9 images and asked whether the image has been manipulated or not. At the end, you'll get to see how well you did.</p>
+
+        <div class="container-fluid next-page text-center">
+			<a href="{% url 'image_manipulation:page' %}" role="button" class="btn btn-primary btn-lg">
+				<span class="next-btn-primary-span">Let's get started!</span>
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+			</a>
+		</div>
+    </div>
+
+
+{% endblock %}
+
+{% block script %} 
+{% endblock %}

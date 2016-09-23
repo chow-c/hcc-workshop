@@ -86,7 +86,7 @@ def page(request):
         print(form)
         # check whether it's valid:
         if form.is_valid():
-            print('FORM VALID')
+            # print('FORM VALID')
             # process the data in form.cleaned_data as required
             exp_form = form.save(commit=False)
             exp_form.pid = request.session.get('pid')
@@ -110,6 +110,7 @@ def page(request):
         if count < 6 :
             image_suffix = IMAGES_SUFFIX[0]
         else:
+            question_id = question_id + 6
             image_suffix = IMAGES_SUFFIX[1]
         # Get the question object
         question = get_object_or_404(Questions, pk=question_id)

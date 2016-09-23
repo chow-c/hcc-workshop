@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} HCC Workshop | Design Principles {% endblock %}
+{% block head %}
+	<link rel="stylesheet" href="{% static 'design/styles.css' %}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+{% endblock %}
+
+{% block app-breadcrumbs %}
+<li><a href="{% url 'design:index' %}">HCI </a></li>
+	<li class="active">Constraints</li>
+{% endblock %}
+
+{% block content %} 
+    <div class="container">
+        <h2>Constraints</h2>
+        <p class="text-justify">Constraints provide cues and limit the set of possible operations. Constraints are necessary for indicating proper use of a system.</p>
+
+        <p class="text-justify">People don't remember small details when they are used to distinguishing between larger objects. It makes no sense for people to remember every little detail about every object they encounter, because that's a lot of information! In a psychology study by Bickerson & Adams (1979) it was found that in the US most people do not recognise common coins.</p> 
+        <p class="text-justify">Let's see how well you do at picking out the real Australian $2 coin. Click the coin below that you think is the real $2 coin:</p>
+
+        <div class="row">
+            <div class="col-sm-2 flipper_coin" onclick="this.classList.toggle('flipped_coin')">
+                <div class="front_coin text-center">
+                    <img src="{% static 'design/coin_1_flipped-grayscale.jpg' %}">
+                </div>
+                <div class="back_coin text-center">
+                    <img src="{% static 'design/coin_1_flipped-grayscale.jpg' %}">
+                    <p class="coin-text">Whoops, this one is a fake!</p>
+                </div>
+            </div>
+            <div class="col-sm-2 flipper_coin" onclick="this.classList.toggle('flipped_coin')">
+                <div class="front_coin text-center">
+                    <img src="{% static 'design/coin_backward_flipped-grayscale.jpg' %}">
+                </div>
+                <div class="back_coin text-center">
+                    <img src="{% static 'design/coin_backward_flipped-grayscale.jpg' %}">
+                    <p class="coin-text">Whoops, this one is a fake!</p>
+                </div>
+            </div>
+            <div class="col-sm-2 flipper_coin" onclick="this.classList.toggle('flipped_coin')">
+                <div class="front_coin text-center">
+                    <img src="{% static 'design/coin_1-grayscale.jpg' %}">
+                </div>
+                <div class="back_coin text-center">
+                    <img src="{% static 'design/coin_1-grayscale.jpg' %}">
+                    <p class="coin-text">Whoops, this one is a fake!</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 flipper_coin" onclick="this.classList.toggle('flipped_coin')">
+                <div class="front_coin text-center">
+                    <img src="{% static 'design/coin_real-grayscale1.jpg' %}" >
+                </div>
+                <div class="back_coin text-center">
+                    <img src="{% static 'design/coin_real-grayscale1.jpg' %}" >
+                    <p class="coin-text">Correct! This is the real one.</p>
+                </div>
+            </div>
+            <div class="col-sm-2 flipper_coin" onclick="this.classList.toggle('flipped_coin')">
+                <div class="front_coin text-center">
+                    <img src="{% static 'design/coin_1_backward_flipped-grayscale.jpg' %}" >
+                </div>
+                <div class="back_coin text-center">
+                    <img src="{% static 'design/coin_1_backward_flipped-grayscale.jpg' %}">
+                    <p class="coin-text">Whoops, this one is a fake!</p>
+                </div>
+            </div>
+            <div class="col-sm-2 flipper_coin" onclick="this.classList.toggle('flipped_coin')">
+                <div class="front_coin text-center">
+                    <img src="{% static 'design/coin_backward-grayscale.jpg' %}">
+                </div>
+                <div class="back_coin text-center">
+                    <img src="{% static 'design/coin_backward-grayscale.jpg' %}">
+                    <p class="coin-text">Whoops, this one is a fake!</p>
+                </div>
+            </div>
+        </div>
+            
+        <p class="text-justify">How did you fare? If you're like most people you would have found this task difficult! Yet, you can most likely use money with no problems, right? So why did you find it so difficult to figure out which was the real coin? The answer is that in day to day life we don't have to distinguish between fake and real coins, we just have to distinguish between other coins. There are a lot of other differences that we use to recognise a coin in comparison to others, such as size, shape, and colour, but usually we don't distinguish coins based upon the fine details on the coins themselves.</p>
+
+        <p class="text-justify">You may be wondering at this point, what does this have to do with HCI and constraints. Well this simple example is often used to demonstrate that people do not, neither do they have to, remember everything in order to perform a task. The studd we remember that's called knowledge in the head, but there is also a lot of knowledge that we can glean from the world to help us figure out how to use something - such as mappings and affordances! But constraints play a big part in forming our knowledge of the world.</p>
+
+        <p class="text-justify">Constraints simplify memory of performing a task and they can be a very useful tool to designers to simplify use of a system by limiting the possible actions that can occur. Constraining possible actions means that there is less need for users to remember complicated and detailed steps, which would take time and most likely result in numerous errors. </p>
+        
+        <h3>Example</h3>
+        <p class="text-justify">Let's have a look at constraints in action, fill in the following forms and press submit for each: </p>
+        <div class="row">
+            <div class="col-lg-6">
+                <form name="form1">
+                    <h4>Form 1</h4>
+                    <p>Your favourite number: <input type="text" id="fav_number" > <span id="error1"></span></p>
+                    <p>Pick a date: <input type="text" id="date" > <span id="error2"></span></p>
+                    <p>Your favourite colour: <input type="text" id="fav_colour" > <span id="error3"></span></p>
+                    <button type="button" onclick="validateForm()">Submit</button>
+                </form>
+            </div>
+            <div class="col-lg-6">
+                <form>
+                    <h4>Form 2</h4>
+                    <p>Your favourite number: <input type="number" id="numberpicker" > <span id="error4"></span></p>
+                    <p>Pick a date: <input type="text" id="datepicker"> <span id="error5"></span></p>
+                    <p>Your favourite colour: <input type="color" id="colourpicker" value="#ff0000"> <span id="error6"></span></p>
+                    <button type="button" onclick="alreadyValidated()">Submit</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        <p class="text-justify">Ok, so it is a pretty silly form but it demonstrates the power of imposing constraints! As you probably figured out, <strong>Form 2</strong> is the form that has constraints on the inputsand <strong>Form 1</strong> had no constraints on the inputs. Did you find it difficult to get the right inputs for <strong>Form 1</strong>? The answer is most likely yes. Once you filled in <strong>Form 2</strong> it was probably a lot easier to fill in <strong>Form 1</strong>, but until there it probably seemed impossible! How would one know that the number picked had to be numerical, that the date picked had to be in the format <em>yyyy/mm/dd</em>, or that the colour picked had to be in <em>hexadecimal</em> (a number system you may not have even heard of)? The designer of <strong>Form 2</strong> knew this and so constrained the possible inputs to the particular fields so that the user (you) could not possibly make an error!</p>
+    </div>
+    <section class="container-fluid app-text-highlight">
+        <h3>Want to upskill a level?</h3>
+        <p>Just answer this question and you'll be on your to getting another skill level!</p>
+            <form action="" method="POST">
+            {% csrf_token %}
+            <p id="question">{{ form.answer.label }}</p>
+            {% for choice in form.answer %}
+                {%  if choice.choice_label != "---------" %}
+                    <p id="choice_{{ forloop.counter0 }}">{{ choice.tag }} {{ choice.choice_label }}</p>
+                {% endif %}
+            {% endfor %}
+            <p id="answer_field" class="text-center"></p>
+            <div class="container-fluid next-page text-center">
+                <button type="submit" value="Next" class="btn btn-primary btn-lg">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+            </div>
+        </form>
+    </section>
+{% endblock %}
+
+{% block script %} 
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker({
+        dateFormat: "yy-mm-dd"
+    });
+  } );
+  </script>
+  <script>
+    $('#choice_3').click(function() {
+        $('#answer_field').html("You're correct! You're on your way to leveling up! Hit the next button now.")
+    });
+    $('#choice_1').click(function() {
+        $('#answer_field').html("Close but not quite, Try again!")
+    });
+    $('#choice_1').click(function() {
+        $('#answer_field').html("Close but not quite, Try again!")
+    });
+
+
+    function alreadyValidated(){
+        var x = document.getElementById("numberpicker").value;
+        if ( x == null || x == "") {
+            text = "Input not valid";
+        } else {
+            text = "Input OK";
+        }
+        document.getElementById("error4").innerHTML = text;
+
+        var d = document.getElementById("datepicker").value;
+        if ( d == null || d == "") {
+            text = "Input not valid";
+        } else {
+            text = "Input OK";
+        }
+        document.getElementById("error5").innerHTML = text;
+
+        var c = document.getElementById("colourpicker").value;
+
+        document.getElementById("error6").innerHTML = c+ " - Input OK";
+    }
+
+    function validateForm() {
+        var x = document.getElementById("fav_number").value;
+        if (isNaN(x) || x == null || x == "") {
+            text = "Input not valid";
+        } else {
+            text = "Input OK";
+        }
+        document.getElementById("error1").innerHTML = text;
+
+        var d = document.getElementById("date").value;
+        if (!isValidDate(d)) {
+            text = "Input not valid";
+        } else {
+            text = "Input OK";
+        }
+        document.getElementById("error2").innerHTML = text;
+
+        var c = document.getElementById("fav_colour").value;
+        var isOk  = /^#[0-9A-F]{6}$/i.test(c);
+        if (!isOk || c == null || c == "") {
+            text = "Input not valid";
+        } else {
+            text = "Input OK";
+        }
+
+        document.getElementById("error3").innerHTML = text;
+
+    }
+
+    // Validates that the input string is a valid date formatted as "yyyy/mm/dd"
+    function isValidDate(dateString){
+
+        // First check for the pattern
+        if(!/^\d{4}\/\d{1,2}\/\d{1,2}$/.test(dateString)){
+            return false;
+        }
+        // Parse the date parts to integers
+        var parts = dateString.split("/");
+        var day = parseInt(parts[2], 10);
+        var month = parseInt(parts[1], 10);
+        var year = parseInt(parts[0], 10);
+
+        // Check the ranges of month and year
+        if(year < 1000 || year > 3000 || month == 0 || month > 12){
+            return false;
+        }
+
+        var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+        // Adjust for leap years
+        if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
+            monthLength[1] = 29;
+
+       
+        // Check the range of the day
+        return day > 0 && day <= monthLength[month - 1];
+    }
+    </script>
+{% endblock %}

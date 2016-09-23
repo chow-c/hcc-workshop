@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'cybersecurity.apps.CybersecurityConfig',
     'thatcher.apps.ThatcherConfig',
+    'design.apps.DesignConfig',
     'eyetracking.apps.EyetrackingConfig',
     'collection.apps.CollectionConfig',
     'import_export',
+    'image_manipulation.apps.ImageManipulationConfig',
 ]
 
 MIDDLEWARE_CLASSES = [

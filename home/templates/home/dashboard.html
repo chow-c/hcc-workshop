@@ -103,3 +103,30 @@
 				
 {% endblock %}
 
+{% block script %}
+<script>
+
+
+$("#eyetracking-btn").click(function() {
+	$('#page-overlay').show();
+	$('#eyetracking-loader').show();
+	$('#eyetracking-loader').html('<h1>Detecting</h1><br><p>An eyetracking device is required for these activities.<br><br><br><br><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>');
+
+	var testSocket = new WebSocket("ws://localhost:6556");
+	
+	testSocket.onopen = function() {
+		setTimeout(function() {$('#eyetracking-loader').html('<h1>Found</h1><br><p>Redirecting...</p>');setTimeout(function() {window.location.href = "/eye-tracking/";},1000)},5000);
+	};
+	
+	testSocket.onerror = function()  {
+		setTimeout(function() {$('#eyetracking-loader').html('<h1>Not Found</h1><br><p>These activities are only available at the eyetracking workstations.<br><br>Please try again or talk to one of the ANU workshop instructors.<br><br></p><button class="btn btn-default btn-lg" id="eyetracking-close-btn">Close</button>');},5000);
+	};
+
+});
+
+$("#eyetracking-loader").on("click", "#eyetracking-close-btn", function() {
+	$('#eyetracking-loader').hide();
+	$('#page-overlay').hide();
+});
+</script>
+{% endblock %}

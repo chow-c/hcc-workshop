@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} HCC Workshop | Design Principles {% endblock %}
+{% block head %}
+	<link rel="stylesheet" href="{% static 'design/styles.css' %}">
+{% endblock %}
+
+{% block app-breadcrumbs %}
+<li><a href="{% url 'design:index' %}">HCI </a></li>
+	<li class="active">Affordances & Signifiers</li>
+{% endblock %}
+
+{% block content %} 
+    <div class="container">
+        <h2>Affordances & Signifiers</h2>
+        <p class="text-justify">Affordances are a tricky concept to master because it is easily confused with the concept of mappings (which you may have already learnt) and signifiers. Affordances are nevertheless very important, because they help the user figure out what actions are possible without the need for labels or instructions. Affordances are relationships between an object or item and its use. An example of an affordance is a flat plate on a door, which gives the impression that the door must be pushed open, rather than pulled.</p>
+
+        <h3 class="text-center">Affordances give STRONG cues on use</h3>
+
+        <p class="text-justify">If affordances are thought of as determining what action is possible, then signifiers are the signal for what the action is. An examples is, if a button must be pushed, the signifier is the text on the button signalling what action the push is, such as “Delete” or “Enter”. Perceived affordances act as signifiers.</p>
+
+        <h2>Opening doors can be very difficult</h2>
+        <p class="text-justify">It may sound stupid at first, but opening doors isn't as straight forward as it often looks. How many times have you accidently pulled on a door that said right above the handle to push? If you are like the majority of people, this happens quite often.</p>
+
+        
+
+
+    </div>
+{% endblock %}
+
+{% block script %} 
+
+{% endblock %}

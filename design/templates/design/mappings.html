@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} HCC Workshop | Design Principles {% endblock %}
+{% block head %}
+	<link rel="stylesheet" href="{% static 'design/styles.css' %}">
+{% endblock %}
+
+{% block app-breadcrumbs %}
+<li><a href="{% url 'design:index' %}">HCI </a></li>
+	<li class="active">Mappings </li>
+{% endblock %}
+
+{% block content %} 
+    <div class="container">
+        <h2>Mappings</h2>
+
+        <div class="container-fluid light-demo">
+        <p class="text-justify">Mappings are the link between what a control does and what you perceive it to do. Good mapping take advantage of the real world, of spacial and temporal analogies, so that users can easily work out what controls do what. An example that is often used is that of a light switch. Take a look at the light switch below, turn on the lights labeled A and C.</p>
+        <div class="row">
+            <div class="col-sm-7 col-md-7 col-lg-7 col-centered">
+                <div class="row">
+                    <div class="col-sm-3 col-md-3 col-lg-3 top">
+                        <!-- For the light switch -->
+                        <div class="cube-switch-3"></div>
+                    </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 top left">
+                        <!-- For the light switch -->
+                        <div class="cube-switch-1"></div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 ">
+                        <p class="text-center">A</p>
+                        <div id="light-bulb-1" class="off" ><div id="light-bulb2-1" style="opacity: 0; "></div></div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 ">
+                        <p class="text-center">B</p>
+                        <div id="light-bulb-2" class="off " ><div id="light-bulb2-2" style="opacity: 0; "></div></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-md-3 col-lg-3 ">
+                        <!-- For the light switch -->
+                        <div class="cube-switch-4"></div>
+                    </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3  left">
+                        <!-- For the light switch -->
+                        <div class="cube-switch-2"></div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 ">
+                        <p class="text-center">C</p>
+                        <div id="light-bulb-3" class="off " ><div id="light-bulb2-3" style="opacity: 0; "></div></div>
+                    </div>
+                    <p class="text-center">D</p>
+                    <div class="col-sm-3 col-md-3 col-lg-3 ">
+                        <div id="light-bulb-4" class="off " ><div id="light-bulb2-4" style="opacity: 0; "></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    <p class="text-justify">How hard did you think it was to find the right switch? If you're like most people you would have found it quite difficult and frustrating! That's because there is no logical mapping between the switches and the bulbs. No pattern in the mappings means increased time to learn which switch is for which bulb, and people have to learn from making mistakes. The best mappings are implied, making use of patterns and spatial reasoning. </p>
+        </div>
+
+    <div class="container-fluid light-demo">
+        <p class="text-justify">Try with this layout, note that this layout is often used for stove tops; have you ever turned on the wrong stove? It's probably becuase stove tops are notorious for poor spatial mapping of knobs.</p>
+    
+        <div class="row">
+            <div class="col-sm-7 col-md-7 col-lg-7 col-centered">
+                <div class="row">
+                    <div class="col-sm-3 col-md-3 col-lg-3 ">
+                        <p class="text-center">A</p>
+                        <div id="line-bulb-1" class="off" ><div id="line-bulb2-1" style="opacity: 0; "></div></div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <p class="text-center">B</p>
+                        <div id="line-bulb-2" class="off " ><div id="line-bulb2-2" style="opacity: 0; "></div></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <p class="text-center">C</p>
+                        <div id="line-bulb-3" class="off " ><div id="line-bulb2-3" style="opacity: 0; "></div></div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 ">
+                        <p class="text-center">D</p>
+                        <div id="line-bulb-4" class="off " ><div id="line-bulb2-4" style="opacity: 0; "></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="row linear-switches">
+            <div class="col-sm-7 col-md-7 col-lg-7 col-centered">
+                <div class="row">
+                    <div class="col-sm-2 col-md-2 col-lg-2 ">
+                        <!-- For the light switch -->
+                        <div class="line-switch-1"></div>
+                    </div>
+                        <div class="col-sm-2 col-md-2 col-lg-2">
+                        <!-- For the light switch -->
+                        <div class="line-switch-2"></div>
+                    </div>
+                    <div class="col-sm-2 col-md-2 col-lg-2">
+                        <!-- For the light switch -->
+                        <div class="line-switch-3"></div>
+                    </div>
+                        <div class="col-sm-2 col-md-2 col-lg-2">
+                        <!-- For the light switch -->
+                        <div class="line-switch-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-justify">What did you think about this layout? Do you think it was easier or harder then the previous layout?</p>
+        <p class="text-justify">The difference here is that, whilst there is a pattern between the switch and the light bulbs, the way in which the switches are laid out is different from the way that the bulbs are laid out. This difference causes a lot of confusion, because once again, the designer has not taken advantage of spatial reasoning.</p>
+    </div>
+        
+    <div class="container-fluid light-demo">
+        <p class="text-justify">Try again, but this time there is a clearer mapping.</p>
+        <div class="row">
+            <div class="col-sm-7 col-md-7 col-lg-7 col-centered">
+                <div class="row">
+                    <div class="col-sm-3 col-md-3 col-lg-3 top">
+                        <!-- For the light switch -->
+                        <div class="switch-1"></div>
+                    </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 top left">
+                        <!-- For the light switch -->
+                        <div class="switch-2"></div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 ">
+                        <p class="text-center">A</p>
+                        <div id="bulb-1" class="off" ><div id="bulb2-1" style="opacity: 0; "></div></div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 ">
+                        <p class="text-center">B</p>
+                        <div id="bulb-2" class="off " ><div id="bulb2-2" style="opacity: 0; "></div></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-md-3 col-lg-3 ">
+                        <!-- For the light switch -->
+                        <div class="switch-3"></div>
+                    </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3  left">
+                        <!-- For the light switch -->
+                        <div class="switch-4"></div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 ">
+                        <p class="text-center">C</p>
+                        <div id="bulb-3" class="off " ><div id="bulb2-3" style="opacity: 0; "></div></div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 ">
+                        <p class="text-center">D</p>
+                        <div id="bulb-4" class="off " ><div id="bulb2-4" style="opacity: 0; "></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="text-justify">Better right? That's because this design did take into consideration spatial reasoning. </p>
+    </div>
+
+    </div>
+    <section class="container-fluid app-text-highlight">
+        <h3>Want to upskill a level?</h3>
+        <p>Just answer this question and you'll be on your to getting another skill level!</p>
+            <form action="" method="POST">
+            {% csrf_token %}
+            <p id="question">{{ form.answer.label }}</p>
+            {% for choice in form.answer %}
+                {%  if choice.choice_label != "---------" %}
+                    <p id="choice_{{ forloop.counter0 }}">{{ choice.tag }} {{ choice.choice_label }}</p>
+                {% endif %}
+            {% endfor %}
+            <p id="answer_field" class="text-center"></p>
+            <div class="container-fluid next-page text-center">
+                <button type="submit" value="Next" class="btn btn-primary btn-lg">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+            </div>
+        </form>
+    </section>
+{% endblock %}
+
+{% block script %} 
+<script>
+$('#choice_2').click(function() {
+    $('#answer_field').html("You're correct! You're on your way to leveling up! Hit the next button now.")
+});
+$('#choice_1').click(function() {
+    $('#answer_field').html("Close but not quite, Try again!")
+});
+$('#choice_3').click(function() {
+    $('#answer_field').html("Close but not quite, Try again!")
+});
+$('#choice_4').click(function() {
+    $('#answer_field').html("Close but not quite, Try again!")
+});
+
+// For controlling the light switches:
+function switch_click(button_class, bulb_class){
+    $(button_class).click(function() {
+        if ($(button_class).hasClass('active')) {
+            $(button_class).removeClass('active');
+            $(bulb_class).css({'opacity': '0'});
+        } else {
+            $(button_class).addClass('active');
+            $(bulb_class).css({'opacity': '1'});
+        }
+    });
+}
+
+// For the first light bulb task
+switch_click('.cube-switch-1', '#light-bulb2-1');
+switch_click('.cube-switch-2', '#light-bulb2-2');
+switch_click('.cube-switch-3', '#light-bulb2-3');
+switch_click('.cube-switch-4', '#light-bulb2-4');
+
+// For the second light bulb task
+switch_click('.line-switch-1', '#line-bulb2-1');
+switch_click('.line-switch-2', '#line-bulb2-2');
+switch_click('.line-switch-3', '#line-bulb2-3');
+switch_click('.line-switch-4', '#line-bulb2-4');
+
+// For the second light bulb task
+switch_click('.switch-1', '#bulb2-1');
+switch_click('.switch-2', '#bulb2-2');
+switch_click('.switch-3', '#bulb2-3');
+switch_click('.switch-4', '#bulb2-4');
+
+</script>
+{% endblock %}
