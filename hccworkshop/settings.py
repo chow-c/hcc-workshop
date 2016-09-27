@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'import_export',
     'image_manipulation.apps.ImageManipulationConfig',
     'bootstrap3',
+    'neural_networks.apps.NeuralNetworksConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
