@@ -9,15 +9,14 @@
 }
 
 .phishing-intro {
-    height: calc(100vh - 50px); 
+    height: calc(80vh - 50px); 
 }
 
 #phishing-experiment {
     background: #EBEBEB;
     height: 100vh;
-    width: 100%;
     margin: 0;
-    padding: 50px 0 0 0;
+    padding-top: 80px;
 }
 
 #svg-cloud {
@@ -58,4 +57,9 @@ span.phishing-header {
 
 #phishing-items-left {
     font-size: 10vh;
+}
+
+.phishing-one {
+    height: calc(100vh);
+    padding-top: 20vh;
 }
