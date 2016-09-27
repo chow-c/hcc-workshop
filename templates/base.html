@@ -63,6 +63,16 @@
                     <span>Cyber Security</span></a>
             </li>
             <li>
+                <a href="{% url 'design:index' %}">
+                    <i class="fa fa-desktop fa-lg fa-fw" aria-hidden="true"></i>
+                    <span>Human Computer Interaction</span></a>
+            </li>
+            <li>
+                <a href="{% url 'image_manipulation:index' %}">
+                    <i class="fa fa-picture-o fa-lg fa-fw" aria-hidden="true"></i>
+                    <span>Image Manipulation</span></a>
+            </li>
+            <li>
                 <a href="{% url 'home:other_research' %}">
                     <i class="fa fa-heartbeat fa-lg fa-fw" aria-hidden="true"></i>
                     <span>Other Research</span></a>
@@ -72,6 +82,12 @@
                 <a href="{% url 'thatcher:index' %}">
                     <i class="fa fa-frown-o fa-rotate-180 fa-lg fa-fw" aria-hidden="true"></i>
                     <span>The Thatcher Effect</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa fa-cogs fa-rotate-180 fa-lg fa-fw" aria-hidden="true"></i>
+                    <span>Artificial Neural Networks</span>
                 </a>
             </li>
             {% block menu %}
