@@ -55,7 +55,7 @@
 					</div>
 					<div class="col-md-3 col-lg-3 col-sm-3">
 						<div class="thumbnail activity-thumbnail">
-							<a href=""><img class="app-thumbnail-img" src="http://placekitten.com/600/400" alt=""></a>
+							<a href="{% url 'image_manipulation:index' %}"><img class="app-thumbnail-img" src="http://placekitten.com/600/400" alt=""></a>
 							<div class="caption title-caption">
 								<h3>Image Manipulation</h3>
 								<div class="content-caption">
@@ -154,4 +154,15 @@ $("#eyetracking-loader").on("click", "#eyetracking-close-btn", function() {
 	$('#page-overlay').hide();
 });
 </script>
+<script>
+	$('body').addClass('lock');
+	$('#page-overlay').show();
+	$('#instructions').show();
+
+	$("#instructions").on("click", "#instructions-close-btn", function() {
+        $('body').removeClass('lock');
+        $('#instructions').hide();
+        $('#page-overlay').hide();
+    });
+ </script>
 {% endblock %}
