@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^experiment/infovis/', include('collection.urls')),
     url(r'^design/', include('design.urls')),
     url(r'^image-manipulation/', include('image_manipulation.urls')),
+    url(r'^neural-networks/', include('neural_networks.urls')),
 ]
 
 admin.site.site_header = 'HCC Workshop Administration'

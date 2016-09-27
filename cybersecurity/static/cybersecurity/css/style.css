@@ -9,22 +9,22 @@
 }
 
 .phishing-intro {
-    height: calc(100vh - 50px); 
+    height: calc(80vh - 50px); 
 }
 
 #phishing-experiment {
     background: #EBEBEB;
     height: 100vh;
-    width: 100%;
     margin: 0;
-    padding: 50px 0 0 0;
+    padding-top: 80px;
 }
 
-.svg-cloud {
+#svg-cloud {
     fill:white;
     stroke: black;
     stroke-width:1;
     stroke-linejoin:round;
+    top: 100%;
 }
 
 .background-gif {
@@ -38,4 +38,28 @@
 
 .opaque-icon {
     opacity: 0;
+}
+
+span.phishing-header {
+    position: relative;
+    left: 50px;
+}
+
+.phishing-highlight {
+    background: rgba(255,255,153,1);
+    transition: background-color .8s ease-in-out;
+}
+
+.phishing-fade-out {
+    background: rgba(100,100,100,0.5);
+    transition: background-color .8s ease-in-out;
+}
+
+#phishing-items-left-one, #phishing-items-left-two {
+    font-size: 10vh;
+}
+
+.phishing-one {
+    height: calc(100vh);
+    padding-top: 20vh;
 }

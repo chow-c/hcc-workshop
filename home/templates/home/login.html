@@ -1,5 +1,6 @@
-{% extends "base.html" %}
+{% extends "core.html" %}
 {% load staticfiles %}
+{% load bootstrap3 %}
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'home/css/cover.css' %}" />
 {% endblock %}
@@ -30,7 +31,7 @@
                 {# Display a form #}
             <form action="{% url 'login' %}" method="post" class="form">
               {% csrf_token %}
-              {{ form }}
+              {% bootstrap_form form %}
                 <button type="submit" class="btn btn-primary">
                   Login
                 </button>
@@ -44,7 +45,7 @@
 
           <div class="mastfoot">
             <div class="inner">
-              <small>By logging in and using this system, you agree to have your data used for research purposes. <a href="#">Find out more.</a></small>
+              <small>By logging in and using this system, you agree to have your data used for research purposes. <a id="find-out-more">Find out more.</a></small>
             </div>
           </div>
 

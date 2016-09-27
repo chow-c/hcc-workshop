@@ -167,6 +167,14 @@ Top Navbar
     transition: all 0.5s ease;
 }
 
+.navbar-fixed-top-level {
+    font-family: 'mohave';
+    padding: 6px 15px;
+    color: #f3f3f3;
+    font-size: 2em;
+    left: 40vw;
+    position: absolute;
+}
 /**
 ---------------------------------
 Side Navbar Wrapper

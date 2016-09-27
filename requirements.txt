@@ -3,3 +3,6 @@ psycopg2
 reportlab
 django-import-export
 weasyprint
+pdfkit
+weasyprint
+django-bootstrap3

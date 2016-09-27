@@ -12,6 +12,7 @@
 {% block app-title %}Dashboard {% endblock %}
 
 {% block content %}
+ 
             <div class="jumbotron dash-splash text-left">
 				<h1 class="animated slideInUp">Welcome, {{ user.first_name|title }}!</h1>
 				<p>Click any of the activities to get started.</p>
@@ -19,7 +20,7 @@
 			<section id="eyetracker-activities" class="container-fluid">
 				<div class="text-center vertical-align eyegaze-title">
 					<h1>Eye Tracking</h1>
-					<p class="lead">Visualise the way in which you view the screen.</p>
+					<p class="lead">Visualise the way in which you view the screen through four different activities.</p>
 					<a class="btn btn-default btn-lg" href="{% url 'eyetracking:index' %}">Try it out</a>
 				</div>
 				</section>
@@ -29,7 +30,7 @@
 				<p class="lead">Explore some of the topics we work on.</p>
 				</div>
 				<div class="row">
-					<div class="col-md-4 col-lg-4 col-sm-4">
+					<div class="col-md-3 col-lg-3 col-sm-3">
 						<div class="thumbnail activity-thumbnail">
 							<a href="{% url 'cybersecurity:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/cyber.png' %}" alt=""></a>
 							<div class="caption title-caption">
@@ -41,23 +42,35 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 col-lg-4 col-sm-4">
+					<div class="col-md-3 col-lg-3 col-sm-3">
 						<div class="thumbnail activity-thumbnail">
-							<a href="{% url 'home:other_research' %}"><img class="app-thumbnail-img" src="{% static 'home/images/other-thumb.jpg' %}" alt=""></a>
+							<a href="{% url 'design:index' %}"><img class="app-thumbnail-img" src="http://placekitten.com/400/300" alt=""></a>
 							<div class="caption title-caption">
-								<h3>Other Research</h3>
+								<h3>Human Computer Interaction</h3>
 								<div class="content-caption">
-									<p>See what else we do!</p>
+									<p>Learn some of the basic theory behind what we study!</p>
 								<a class="btn btn-default" href="{% url 'home:other_research' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 col-lg-4 col-sm-4">
+					<div class="col-md-3 col-lg-3 col-sm-3">
 						<div class="thumbnail activity-thumbnail">
-							<a href=""><img class="app-thumbnail-img" src="http://placekitten.com/400/300" alt=""></a>
+							<a href="{% url 'image_manipulation:index' %}"><img class="app-thumbnail-img" src="http://placekitten.com/600/400" alt=""></a>
 							<div class="caption title-caption">
-								<h3>Human Computer Interaction</h3>
+								<h3>Image Manipulation</h3>
+								<div class="content-caption">
+									<p>Can you tell if an image has been photoshopped?</p>
+								<a class="btn btn-default" href="{% url 'home:other_research' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-lg-3 col-sm-3">
+						<div class="thumbnail activity-thumbnail">
+							<a href="{% url 'home:other_research' %}"><img class="app-thumbnail-img" src="{% static 'home/images/other-thumb.jpg' %}" alt=""></a>
+							<div class="caption title-caption">
+								<h3>Other Research</h3>
 								<div class="content-caption">
 									<p>See what else we do!</p>
 								<a class="btn btn-default" href="{% url 'home:other_research' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
@@ -72,23 +85,35 @@
 					<div class="col-md-6">
 						<div class="row">
 							<div class="col-md-6">
-						<div class="thumbnail activity-thumbnail">
-							<a href="{% url 'thatcher:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/thatcher.png' %}" alt=""></a>
-							<div class="caption title-caption">
-								<h3>The Thatcher Effect</h3>
-								<div class="content-caption">
-									<p>Trick your brain!</p>
-									<a class="btn btn-default" href="{% url 'thatcher:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+								<div class="thumbnail activity-thumbnail">
+									<a href="{% url 'thatcher:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/thatcher.png' %}" alt=""></a>
+									<div class="caption title-caption">
+										<h3>The Thatcher Effect</h3>
+										<div class="content-caption">
+											<p>Trick your brain!</p>
+											<a class="btn btn-default" href="{% url 'thatcher:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+										</div>
+									</div>
 								</div>
 							</div>
-						</div>
-						</div>
+							<div class="col-md-6">
+								<div class="thumbnail activity-thumbnail">
+									<a href="{% url 'neural_networks:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/preview.png' %}" alt=""></a>
+									<div class="caption title-caption">
+										<h3>Artificial Neural Networks</h3>
+										<div class="content-caption">
+											<p>See bio-inspired machine learning in action!</p>
+											<a class="btn btn-default" href="{% url 'neural_networks:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="text-center vertical-align">
 						<h1>Bonus Activities</h1>
-						<p class="lead">Play around with some of our extra material.</p>
+						<p class="lead">Gain those extra levels.</p>
 						</div>
 					</div>
 				</div>
@@ -98,6 +123,7 @@
 				<div class="text-center vertical-align">
 					<h1>Take it home</h1>
 					<p class="lead">Email your work to yourself to show it off later.</p>
+					<a class="btn btn-default btn-lg" href=""><span class="btn-primary-span">Send It</span><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
 				</div>
 			</section>
 				
@@ -129,4 +155,15 @@ $("#eyetracking-loader").on("click", "#eyetracking-close-btn", function() {
 	$('#page-overlay').hide();
 });
 </script>
+<script>
+	$('body').addClass('lock');
+	$('#page-overlay').show();
+	$('#instructions').show();
+
+	$("#instructions").on("click", "#instructions-close-btn", function() {
+        $('body').removeClass('lock');
+        $('#instructions').hide();
+        $('#page-overlay').hide();
+    });
+ </script>
 {% endblock %}

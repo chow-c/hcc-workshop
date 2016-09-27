@@ -21,19 +21,19 @@ from home.forms import UserCreateForm, NewsletterForm
 
 from reportlab.pdfgen import canvas
 
-from weasyprint import HTML, CSS
+# from weasyprint import HTML, CSS
 
-def get_report(request):
-    html_template = get_template('home/other_research.html')
+# def get_report(request):
+#     html_template = get_template('home/other_research.html')
 
-    rendered_html = html_template.render(RequestContext(request)).encode(encoding="UTF-8")
+#     rendered_html = html_template.render(RequestContext(request)).encode(encoding="UTF-8")
 
-    pdf_file = HTML(string=rendered_html).write_pdf(stylesheets=[CSS(settings.STATICFILES_DIRS[0] +  '/css/main.css')])
+#     pdf_file = HTML(string=rendered_html).write_pdf(stylesheets=[CSS(settings.STATICFILES_DIRS[0] +  '/css/main.css')])
 
-    http_response = HttpResponse(pdf_file, content_type='application/pdf')
-    http_response['Content-Disposition'] = 'filename="report.pdf"'
+#     http_response = HttpResponse(pdf_file, content_type='application/pdf')
+#     http_response['Content-Disposition'] = 'filename="report.pdf"'
 
-    return http_response
+#     return http_response
 
 # Create your views here.
 class Index(generic.TemplateView):
