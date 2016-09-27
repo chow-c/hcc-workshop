@@ -29,7 +29,7 @@
 				<p class="lead">Explore some of the topics we work on.</p>
 				</div>
 				<div class="row">
-					<div class="col-md-4 col-lg-4 col-sm-4">
+					<div class="col-md-3 col-lg-3 col-sm-3">
 						<div class="thumbnail activity-thumbnail">
 							<a href="{% url 'cybersecurity:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/cyber.png' %}" alt=""></a>
 							<div class="caption title-caption">
@@ -41,23 +41,35 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 col-lg-4 col-sm-4">
+					<div class="col-md-3 col-lg-3 col-sm-3">
 						<div class="thumbnail activity-thumbnail">
-							<a href="{% url 'home:other_research' %}"><img class="app-thumbnail-img" src="{% static 'home/images/other-thumb.jpg' %}" alt=""></a>
+							<a href="{% url 'design:index' %}"><img class="app-thumbnail-img" src="http://placekitten.com/400/300" alt=""></a>
 							<div class="caption title-caption">
-								<h3>Other Research</h3>
+								<h3>Human Computer Interaction</h3>
 								<div class="content-caption">
-									<p>See what else we do!</p>
+									<p>Learn some of the basic theory behind what we study!</p>
 								<a class="btn btn-default" href="{% url 'home:other_research' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 col-lg-4 col-sm-4">
+					<div class="col-md-3 col-lg-3 col-sm-3">
 						<div class="thumbnail activity-thumbnail">
-							<a href=""><img class="app-thumbnail-img" src="http://placekitten.com/400/300" alt=""></a>
+							<a href=""><img class="app-thumbnail-img" src="http://placekitten.com/600/400" alt=""></a>
 							<div class="caption title-caption">
-								<h3>Human Computer Interaction</h3>
+								<h3>Image Manipulation</h3>
+								<div class="content-caption">
+									<p>Can you tell if an image has been photoshopped?</p>
+								<a class="btn btn-default" href="{% url 'home:other_research' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-lg-3 col-sm-3">
+						<div class="thumbnail activity-thumbnail">
+							<a href="{% url 'home:other_research' %}"><img class="app-thumbnail-img" src="{% static 'home/images/other-thumb.jpg' %}" alt=""></a>
+							<div class="caption title-caption">
+								<h3>Other Research</h3>
 								<div class="content-caption">
 									<p>See what else we do!</p>
 								<a class="btn btn-default" href="{% url 'home:other_research' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
@@ -72,17 +84,29 @@
 					<div class="col-md-6">
 						<div class="row">
 							<div class="col-md-6">
-						<div class="thumbnail activity-thumbnail">
-							<a href="{% url 'thatcher:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/thatcher.png' %}" alt=""></a>
-							<div class="caption title-caption">
-								<h3>The Thatcher Effect</h3>
-								<div class="content-caption">
-									<p>Trick your brain!</p>
-									<a class="btn btn-default" href="{% url 'thatcher:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+								<div class="thumbnail activity-thumbnail">
+									<a href="{% url 'thatcher:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/thatcher.png' %}" alt=""></a>
+									<div class="caption title-caption">
+										<h3>The Thatcher Effect</h3>
+										<div class="content-caption">
+											<p>Trick your brain!</p>
+											<a class="btn btn-default" href="{% url 'thatcher:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+										</div>
+									</div>
 								</div>
 							</div>
-						</div>
-						</div>
+							<div class="col-md-6">
+								<div class="thumbnail activity-thumbnail">
+									<a href="{% url 'thatcher:index' %}"><img class="app-thumbnail-img" src="http://placekitten.com/500/400" alt=""></a>
+									<div class="caption title-caption">
+										<h3>Artificial Neural Networks</h3>
+										<div class="content-caption">
+											<p>See bio-inspired machine learning in action!</p>
+											<a class="btn btn-default" href="{% url 'thatcher:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="col-md-6">
