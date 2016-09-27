@@ -13,7 +13,6 @@
 
 {% block app-breadcrumbs %}
 <li><a href="{% url 'cybersecurity:index' %}">Cyber Security</a></li>
-<li><a href="{% url 'cybersecurity:privacy' %}">Privacy</a></li>
 <li class="active">Phishing</li>
 {% endblock %}
 
@@ -32,28 +31,28 @@
     </section>
 <div class="container-fluid phishing-one" id="phishing-one">
     <div class="row">
-        <div class="col-md-3 col-lg-3">
+        <div class="col-md-3 col-lg-3" id="phishing-feedback-one">
             <h2 class="text-center">Items remaining</h2>
-            <p class="text-center"></p>
+            <p class="text-center" id="phishing-items-left-one"></p>
         </div>
         <div class="col-md-9 col-lg-9" style="border: 1px solid red; padding: 15px">
-            <p><strong>From:</strong><span class="phishing-header phishing-sender">FedEx International &lt;inspiringp1@silverdaddies.com&gt;</span></p>
+            <p><strong>From:</strong><span class="phishing-header phishing-brand">FedEx International &lt;inspiringp1@silverdaddies.com&gt;</span></p>
         <p><strong>Sent:</strong><span class="phishing-header ">Saturday 14 May 2016 7:43 PM</span></p>
         <p><strong>Subject:</strong><span class="phishing-header ">No.3819</span></p>
         <p><strong>Attachment:</strong><span class="phishing-header phishing-attachment"><i class="fa fa-file-archive-o" aria-hidden="true"></i>&nbsp;&nbsp;invoice.zip</span></p>
         <table cellspacing="0" cellpadding="0" style="color:#555555;font:13px Arial;border:solid 1px #dfdfdf;width:100%;background-color:#ffffff;"> 
             <tr industries="3">
                 <td style="padding:20px;">
-                    <img src="http://images.fedex.com/images/c/t1/gh/logo-header-fedex.png" border="0" alt="FedEx International" title="FedEx International"><br /><br />  <br /> <span controllably="11" style="color:#222222;font-weight:bold;">We have sent you a message with the required information.</span><br /><a berkelium=1 style="color:#4d148c;text-decoration:none;" href="http://www.5z8.info/inject_now_h5b0ek_php-start_GPS_tracking-user" alt="Click here" title="Click here">Click here</a> to open this email in your browser.<br /><br /><br />Thanks for choosing FedEx&reg;.<br />  <br />
+                    <img src="http://images.fedex.com/images/c/t1/gh/logo-header-fedex.png" border="0" alt="FedEx International" title="FedEx International"><br /><br />  <br /> <span controllably="11" style="color:#222222;font-weight:bold;">We have sent you a message with the <span class="phishing-expected-one">required information</span>.</span><br /><a berkelium=1 style="color:#4d148c;text-decoration:none;" href="http://www.5z8.info/inject_now_h5b0ek_php-start_GPS_tracking-user" alt="Click here" title="Click here" class="phishing-link">Click here</a> to open this email in your browser.<br /><br /><br />Thanks for choosing FedEx&reg;.<br />  <br />
                 </td>
             </tr>     
             <tr>
                 <td style="padding:10px 20px 10px 20px;background-color:#f0f0f0;">
-                    <a abbreviate="postulate" href="http://www.5z8.info/inject_now_h5b0ek_php-start_GPS_tracking-user" style="font-family:Arial;display:inline-block;padding:7px 15px;background-color:#4d2c86;color:#ffffff;font-size:13px;border-radius:2px;-webkit-border-radius:2px;-moz-border-radius:2px;border:solid 1px #3d1c76;white-space:nowrap;text-decoration:none;" alt="More details" title="More details">More details</a>
+                    <a abbreviate="postulate" href="http://www.5z8.info/inject_now_h5b0ek_php-start_GPS_tracking-user" style="font-family:Arial;display:inline-block;padding:7px 15px;background-color:#4d2c86;color:#ffffff;font-size:13px;border-radius:2px;-webkit-border-radius:2px;-moz-border-radius:2px;border:solid 1px #3d1c76;white-space:nowrap;text-decoration:none;" alt="More details" title="More details" class="phishing-link">More details</a>
                 </td>
             </tr>
             <tr> 
-                <td style="font-size:11px;padding:10px 20px 10px 20px;">     This message was sent to {{ user.first_name }}.{{user.last_name }}@anu.edu.au.     Please click <a cheapest=3 href="http://www.5z8.info/inject_now_h5b0ek_php-start_GPS_tracking-user" style="text-decoration:none;color:#4d148c;" alt="Unsubscribe" title="Unsubscribe">unsubscribe</a> if you don't want to receive these messages from FedEx International in the future.
+                <td style="font-size:11px;padding:10px 20px 10px 20px;">     This message was sent to {{ user.first_name }}.{{user.last_name }}@anu.edu.au.     Please click <a cheapest=3 href="http://www.5z8.info/inject_now_h5b0ek_php-start_GPS_tracking-user" style="text-decoration:none;color:#4d148c;" alt="Unsubscribe" title="Unsubscribe" class="phishing-link">unsubscribe</a> if you don't want to receive these messages from FedEx International in the future.
                 </td>   
             </tr>  
         </table> 
@@ -61,25 +60,25 @@
             <br />&copy;2016 FedEx. The content of this message is protected by copyright and trademark laws under U.S. and international law.<br />Review our <a href="http://www.5z8.info/inject_now_h5b0ek_php-start_GPS_tracking-user" style="text-decoration:none;color:#4d148c;" alt="Privacy policy" title="Privacy policy" class="phishing-link">privacy policy</a>. All rights reserved.</div>   
         </div>  
     </div>
-    <section class="text-center button-section">
-            <a href="#phishing-experiment" role="button" class="btn btn-primary btn-lg"><span>Try it out</span><br><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+    <section class="text-center button-section" style="display: none" id="phishing-one-next">
+            <a href="#phishing-experiment" role="button" class="btn btn-primary btn-lg"><span>Next level</span><br><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
     </section>
 </div>
 <div id="phishing-experiment" class="container-fluid">
     <div class="row container-fluid">
         <div class="col-md-3 col-lg-3" id="phishing-feedback">
             <h2 class="text-center">Items remaining</h2>
-            <p class="text-center" id="phishing-items-left"></p>
+            <p class="text-center" id="phishing-items-left-two"></p>
         </div>
         <div class="col-md-9 col-lg-9" style="border: 1px solid red; padding: 15px">
             <p><strong>From:</strong><span class="phishing-header phishing-sender">Maria Laurent &lt;maria64182391@mail.ru&gt;</span></p>
         <p><strong>Sent:</strong><span class="phishing-header ">Friday, 22 April 2016 4:30 AM</span></p>
         <p><strong>Subject:</strong><span class="phishing-header ">Greetings,</span></p>
-        <p><span class="phishing-impersonal">Greetings,</span><br>I know that this letter may be a very big surprise to you, but please consider it a divine wish and accept it with a deep sense of humility. <br>I am giving you my trust and wish you will give me back the trust i have given you. I believe that you will be Honest to fulfil my final wish before I will die. <br><br>I am <span class="phishing-sender phishing-cue">Maria Laurent</span> Originally from Montmorillon in western France. I am currently undergoing medical treatment here in Malaysia. I am 63 years old; <span class="phishing-emotion-appeal">I am suffering from a long time Cancer of the breast.</span> From all indication my condition is really deteriorating, and my Doctors have courageously advised that <span class="phishing-urgency">I may not live beyond next month;</span> this is because the cancer stage has reached a critical stage. I was brought up in orphanage home working in Cote D’Ivoire married to my late husband for twenty years without a child. My husband and I are true Christians, but quite unfortunately, he died in a fatal motor accident. <br><br>Since his death I decided not to re-marry, my late husband deposited the sum of <span class="phishing-typo phishing-cue">$6. 650, 000.00</span> US Dollars with a bank. Presently, this Money is still in bank custody and the management just wrote me as the legitimate Depositor to inform me of the maturity date of my deposit or rather issue declaration of fund claim authorisation to somebody to receive it on my behalf since I can not come over as a Result of my illness, or they get it confiscated. <br><br>It is my last wish to see that this money is been invested into a very good LUCRATIVE VENTURE of <span class="phishing-expected">your choice</span> that will be giving out proceeds to be distributed each year Among the charity organization, the poor and the orphanage Homes and widows around. I must let you know that this was a very hard decision, but I had to take a bold step towards this issue because I have no further option. <br><br><span class="phishing-request phishing-cue">Please send me your details request by my bank if you are interested to handle this project. <br><br>1) Real Names (2) Phone/Fax numbers (3) Occupation (4) Residence address. (6) Passport or ID card</span><br><br><span class="phishing-emotion-appeal">I hope you will help me see that my last wishes come true.</span><br><br>God bless <br><br><span class="phishing-sender">Mrs.Maria</span><span class="phishing-typo">,</span></p>
+        <p><span class="phishing-impersonal">Greetings,</span><br>I know that this letter may be a very big surprise to you, but please consider it a divine wish and accept it with a deep sense of humility. <br>I am giving you my trust and wish you will give me back the trust i have given you. I believe that you will be Honest to fulfil my final wish before I will die. <br><br>I am <span class="phishing-sender phishing-cue">Maria Laurent</span> Originally from Montmorillon in western France. I am currently undergoing medical treatment here in Malaysia. I am 63 years old; <span class="phishing-emotion-appeal">I am suffering from a long time Cancer of the breast.</span> From all indication my condition is really deteriorating, and my Doctors have courageously advised that <span class="phishing-urgency">I may not live beyond next month;</span> this is because the cancer stage has reached a critical stage. I was brought up in orphanage home working in Cote D’Ivoire married to my late husband for twenty years without a child. My husband and I are true Christians, but quite unfortunately, he died in a fatal motor accident. <br><br>Since his death I decided not to re-marry, my late husband deposited the sum of <span class="phishing-typo phishing-cue">$6. 650, 000.00</span> US Dollars with a bank. Presently, this Money is still in bank custody and the management just wrote me as the legitimate Depositor to inform me of the maturity date of my deposit or rather issue declaration of fund claim authorisation to somebody to receive it on my behalf since I can not come over as a Result of my illness, or they get it confiscated. <br><br>It is my last wish to see that this money is been invested into a very good LUCRATIVE VENTURE of your choice that will be giving out proceeds to be distributed each year Among the charity organization, the poor and the orphanage Homes and widows around. I must let you know that this was a very hard decision, but I had to take a bold step towards this issue because I have no further option. <br><br><span class="phishing-request phishing-cue">Please send me your details request by my bank if you are interested to handle this project. <br><br>1) Real Names (2) Phone/Fax numbers (3) Occupation (4) Residence address. (6) Passport or ID card</span><br><br><span class="phishing-emotion-appeal">I hope you will help me see that my last wishes come true.</span><br><br>God bless <br><br><span class="phishing-sender">Mrs.Maria</span><span class="phishing-typo">,</span></p>
         </div>
     </div>
-    <div class="container-fluid button-section text-center">
-        <a href="{% url 'home:dashboard' %}" role="button" class="btn btn-primary btn-lg"><i class="fa fa-home" aria-hidden="true"></i><span class="btn-primary-span">Home</span></a>
+    <div class="container-fluid button-section text-center" style="display: none" id="phishing-two-next">
+        <a href="{% url 'home:dashboard' %}" role="button" class="btn btn-primary btn-lg"><i class="fa fa-home" aria-hidden="true"></i><span class="btn-primary-span">Level Up</span></a>
     </div>
 </div>
 {% endblock %}
@@ -87,106 +86,137 @@
 {% block script %}
 <script src="{% static 'cybersecurity/js/scroll.js' %}"></script>
 <script>
-    var count_found = 0;
-    $('#phishing-items-left').html(7-count_found);
-
-    $('body').one("click", '.phishing-cue', function() {
-        $(this).addClass("phishing-highlight");
-        count_found++;
-        $('#phishing-items-left').html(7-count_found);
-    });
+    var count_found_one = 0;
+    var count_found_two = 0;
+    $('#phishing-items-left-two').html(6-count_found_two);
+    $('#phishing-items-left-one').html(4-count_found_one);
+    
+    // $('body').one("click", '.phishing-cue', function() {
+    //     $(this).addClass("phishing-highlight");
+    //     count_found++;
+    //     $('#phishing-items-left').html(7-count_found);
+    // });
 
     $('.phishing-emotion-appeal').click(function() {
-        count_found++;
-        console.log(count_found);
-        $('#phishing-items-left').html(7-count_found);
+        count_found_two++;
+        $('#phishing-items-left-two').html(6-count_found_two);
         $('#phishing-feedback').append('<p class="text-justify">Great job! Phishing emails often try to make you feel sympathetic by telling an emotional story.</p>');
         $('.phishing-emotion-appeal').addClass("phishing-highlight");
         setTimeout(function() {
             $('.phishing-emotion-appeal').addClass("phishing-fade-out");
         },5000);
+        if (count_found_two == 6) {
+            $('#phishing-two-next').show();
+        };
     });
-    // $('.phishing-typo').one("click", function() {
-    //     count_found++;
-    //     console.log(count_found);
-    //     $('#phishing-items-left').html(7-count_found);
-    //     $('#phishing-feedback').append('<p class="text-justify">Excellent! One of the biggest cues of phishing attempts is poor spelling and grammar.</p>');
-    //     $('.phishing-typo').addClass("phishing-highlight");
-    //     setTimeout(function() {
-    //         $('.phishing-typo').addClass("phishing-fade-out");
-    //     },5000);
-    // });
-    $('.phishing-expected').click(function() {
-        count_found++;
-        console.log(count_found);
-        $('#phishing-items-left').html(7-count_found);
-        $('#phishing-feedback').append('<p class="text-justify">Correct! You should always stop to think about whether you are actually expecting anything similar to what they say.</p>');
-        $('.phishing-expected').addClass("phishing-highlight");
+    $('.phishing-typo').one("click", function() {
+        count_found_two++;
+        $('#phishing-items-left-two').html(6-count_found_two);
+        $('#phishing-feedback').append('<p class="text-justify">Excellent! One of the biggest cues of phishing attempts is poor spelling and grammar.</p>');
+        $('.phishing-typo').addClass("phishing-highlight");
         setTimeout(function() {
-            $('.phishing-expected').addClass("phishing-fade-out");
+            $('.phishing-typo').addClass("phishing-fade-out");
         },5000);
+        if (count_found_two == 6) {
+            $('#phishing-two-next').show();
+        };
     });
     $('.phishing-urgency').click(function() {
-        count_found++;
-        console.log(count_found);
-        $('#phishing-items-left').html(7-count_found);
+        count_found_two++;
+        $('#phishing-items-left-two').html(6-count_found_two);
         $('#phishing-feedback').append('<p class="text-justify">Good work! Phishing attempts usually try to convey a sense of urgency and encourage you to act quickly.</p>');
         $('.phishing-urgency').addClass("phishing-highlight");
         setTimeout(function() {
             $('.phishing-urgency').addClass("phishing-fade-out");
         },5000);
+        if (count_found_two == 6) {
+            $('#phishing-two-next').show();
+        };
     });
-    // $('.phishing-sender').click(function() {
-    //     count_found++;
-    //     console.log(count_found);
-    //     $('#phishing-items-left').html(7-count_found);
-    //     $('#phishing-feedback').append('<p class="text-justify">Perfect! Do you recognise the sender? Do they perhaps use a strange looking name or email address?</p>');
-    //     $('.phishing-sender').addClass("phishing-highlight");
-    //     setTimeout(function() {
-    //         $('.phishing-sender').addClass("phishing-fade-out");
-    //     },5000);
-    // });
-    // $('.phishing-request').click(function() {
-    //     count_found++;
-    //     console.log(count_found);
-    //     $('#phishing-items-left').html(7-count_found);
-    //     $('#phishing-feedback').append('<p class="text-justify">Exactly! Phishing attempts often ask you to provide some sort of information, particularly financial details.</p>');
-    //     $('.phishing-request').addClass("phishing-highlight");
-    //     setTimeout(function() {
-    //         $('.phishing-request').addClass("phishing-fade-out");
-    //     },5000);
-    // });
+    $('.phishing-sender').click(function() {
+        count_found_two++;
+        $('#phishing-items-left-two').html(6-count_found_two);
+        $('#phishing-feedback').append('<p class="text-justify">Perfect! Do you recognise the sender? Do they perhaps use a strange looking name or email address?</p>');
+        $('.phishing-sender').addClass("phishing-highlight");
+        setTimeout(function() {
+            $('.phishing-sender').addClass("phishing-fade-out");
+        },5000);
+        if (count_found_two == 6) {
+            $('#phishing-two-next').show();
+        };
+    });
+    $('.phishing-request').click(function() {
+        count_found_two++;
+        $('#phishing-items-left-two').html(6-count_found_two);
+        $('#phishing-feedback').append('<p class="text-justify">Exactly! Phishing attempts often ask you to provide some sort of information, particularly financial details.</p>');
+        $('.phishing-request').addClass("phishing-highlight");
+        setTimeout(function() {
+            $('.phishing-request').addClass("phishing-fade-out");
+        },5000);
+        if (count_found_two == 6) {
+            $('#phishing-two-next').show();
+        };
+    });
     $('.phishing-impersonal').click(function() {
-        count_found++;
-        console.log(count_found);
-        $('#phishing-items-left').html(7-count_found);
+        count_found_two++;
+        $('#phishing-items-left-two').html(6-count_found_two);
         $('#phishing-feedback').append('<p class="text-justify">That\'s right! Phishing emails are often impersonal, and use generic introductions without ever mentioning your name.</p>');
         $('.phishing-impersonal').addClass("phishing-highlight");
         setTimeout(function() {
             $('.phishing-impersonal').addClass("phishing-fade-out");
         },5000);
+        if (count_found_two == 6) {
+            $('#phishing-two-next').show();
+        };
     });
     $('.phishing-attachment').click(function() {
-        count_found++;
-        console.log(count_found);
-        $('#phishing-items-left').html(7-count_found);
-        $('#phishing-feedback').append('<p class="text-justify">That\'s right! Phishing emails are often impersonal, and use generic introductions without ever mentioning your name.</p>');
+        count_found_one++;
+        $('#phishing-items-left-one').html(4-count_found_one);
+        $('#phishing-feedback-one').append('<p class="text-justify">You got it! Phishing emails can often have suspicious looking attachments, such as .zip files.</p>');
         $('.phishing-attachment').addClass("phishing-highlight");
         setTimeout(function() {
             $('.phishing-attachment').addClass("phishing-fade-out");
         },5000);
+        if (count_found_one == 4) {
+            $('#phishing-one-next').show();
+        };
     });
     $('.phishing-link').click(function(event) {
             event.preventDefault(); //Stops the user actually using the hyperlink
-            count_found++;
-            console.log(count_found);
-            $('#phishing-items-left').html(7-count_found);
-            $('#phishing-feedback').append('<p class="text-justify">That\'s right! Phishing emails are often impersonal, and use generic introductions without ever mentioning your name.</p>');
+            count_found_one++;
+            $('#phishing-items-left-one').html(4-count_found_one);
+            $('#phishing-feedback-one').append('<p class="text-justify">Sweet! Phishing emails can often ask you to click on dodgy links. Did you notice the URL this link was pointing to?</p>');
             $('.phishing-link').addClass("phishing-highlight");
             setTimeout(function() {
                 $('.phishing-link').addClass("phishing-fade-out");
             },5000);
+        if (count_found_one == 4) {
+            $('#phishing-one-next').show();
+        };
         });
-
+    $('.phishing-expected-one').click(function() {
+        count_found_one++;
+        $('#phishing-items-left-one').html(4-count_found_one);
+        $('#phishing-feedback-one').append('<p class="text-justify">Correct! You should always stop to think about whether you are actually expecting anything similar to what they say.</p>');
+        $('.phishing-expected-one').addClass("phishing-highlight");
+        setTimeout(function() {
+            $('.phishing-expected-one').addClass("phishing-fade-out");
+        },5000);
+        if (count_found_one == 4) {
+            $('#phishing-one-next').show();
+        };
+    });
+    $('.phishing-brand').click(function() {
+        count_found_one++;
+        $('#phishing-items-left-one').html(4-count_found_one);
+        $('#phishing-feedback-one').append('<p class="text-justify">Fantastic! Do you recognise the sender? Do they perhaps use a strange looking name or email address?</p>');
+        $('.phishing-brand').addClass("phishing-highlight");
+        setTimeout(function() {
+            $('.phishing-brand').addClass("phishing-fade-out");
+        },5000);
+        if (count_found_one == 4) {
+            $('#phishing-one-next').show();
+        };
+    });
 </script>
 {% endblock %}

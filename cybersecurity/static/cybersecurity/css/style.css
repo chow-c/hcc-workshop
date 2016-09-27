@@ -55,7 +55,7 @@ span.phishing-header {
     transition: background-color .8s ease-in-out;
 }
 
-#phishing-items-left {
+#phishing-items-left-one, #phishing-items-left-two {
     font-size: 10vh;
 }
 
