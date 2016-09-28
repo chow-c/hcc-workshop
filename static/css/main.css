@@ -95,6 +95,7 @@ Top Navbar
 #wrapper.toggled .navbar-fixed-top {
     left: 0px;
     width: 100%;
+    z-index: 600;
     overflow: hidden;
 }
 
