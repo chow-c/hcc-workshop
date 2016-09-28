@@ -157,17 +157,20 @@ $("#eyetracking-loader").on("click", "#eyetracking-close-btn", function() {
 </script>
 <script>
 $(function() {
+	// If the user hasnt visited before, force display the instructions
 	if ("{{visited}}" == "False") {
 		$('body').addClass('lock');
         $('#page-overlay').show();
         $('#instructions').show();
 		
+		// Allow users to click the close button to hide the instructions
 		$("#instructions").on("click", "#instructions-close-btn", function() {
 			$('body').removeClass('lock');
             $('#instructions').hide();
             $('#page-overlay').hide();
         });
 	} else {
+		// If the user HAS visited, do nothing.
 	}
 });
  </script>

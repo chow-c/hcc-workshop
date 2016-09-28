@@ -134,6 +134,9 @@
   $('#rotate_back_button').click(function() {
     $('#image_field').addClass('unrotated');
     $('#image_field').toggleClass('rotated');
+
+    $('#rotate_button').removeClass('disabled');
+    $('#rotate_back_button').addClass('disabled');
   })
 
   $('#save_button').click(function() {
