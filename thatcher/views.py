@@ -1,6 +1,7 @@
 ## views.py
 from django.shortcuts import render
 from django.views import generic
+from django.views.decorators.csrf import requires_csrf_token
 
 
 
@@ -8,6 +9,7 @@ from django.views import generic
 class Index(generic.TemplateView):
     template_name = 'thatcher/index.html'
 
+@requires_csrf_token
 def index(request):
     images = [('margaret_thatcher.jpg', 'Margaret Thatcher'),
                     ('adele.jpg', 'Adele'),

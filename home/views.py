@@ -21,6 +21,8 @@ from home.forms import UserCreateForm, NewsletterForm
 
 from reportlab.pdfgen import canvas
 
+from datetime import datetime
+
 # from weasyprint import HTML, CSS
 
 # def get_report(request):
@@ -55,7 +57,8 @@ def dashboard(request):
     if request.session.get('visited',False) == True:
         # If the variable exists, the user has visited
         # Pass a variable to javascript to say the user has visited
-        context = {'visited' : True }
+        app_name = request.resolver_match.app_name
+        context = {'visited' : True, 'appname' : app_name }
         return render(request,'home/dashboard.html', context)
     else:
         # Create the variable if it doesnt exist to say the user has visited
@@ -131,3 +134,14 @@ def generate_webpage(request):
 
 class OtherResearch(generic.TemplateView):
     template_name = 'home/other_research.html'
+
+def levelUp(request):
+    print(request.POST['app_name'])
+    print(request.user.id)
+    new_completion = request.user.completedactivity_set.create(completed_date=datetime.now(),activity=request.POST['app_name'])
+    print("count",request.user.completedactivity_set.count())
+    print("old level",request.user.workshopuser.level)
+    request.user.workshopuser.level = str(request.user.completedactivity_set.count()+1)
+    request.user.workshopuser.save()
+    print("new level",request.user.workshopuser.level)
+    return dashboard(request)

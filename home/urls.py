@@ -14,4 +14,5 @@ urlpatterns = [
     url(r'^eyegazeinfo/$', views.eyegazeinfo, name='eyegazeinfo'),
     url(r'^newsletter$', views.newsletter, name='newsletter'),
     url(r'^other-research$', views.OtherResearch.as_view(), name='other_research'),
+    url(r'^level-up$', views.levelUp, name='levelup'),
 ]
