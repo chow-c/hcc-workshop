@@ -50,9 +50,14 @@ class Index(generic.TemplateView):
 def eyegazeinfo(request):
     return render(request,'home/eyegazeinfo.html')
 
-@method_decorator(login_required, name='dispatch')
-class Dashboard(generic.TemplateView):
-    template_name = 'home/dashboard.html'
+def dashboard(request):
+    if request.session.get('visited',False) == True:
+        context = {'visited' : True }
+        return render(request,'home/dashboard.html', context)
+    else:
+        request.session['visited'] = True
+        context = {'visited' : False }
+        return render(request,'home/dashboard.html', context)
 
 
 class About(generic.TemplateView):
