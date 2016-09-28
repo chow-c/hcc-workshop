@@ -14,6 +14,17 @@ class NewsletterSignup(models.Model):
     def __str__(self):
         return self.email
 
+class CompletedActivity(models.Model):
+    completed_date = models.DateField()
+    activity = models.CharField(max_length=100)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+
+    def __unicode__(self):
+        return self.user
+
+    class Meta:
+        ordering = ('activity',)
+
 class WorkshopUser(models.Model):
     LEVELS = (
     ('0', 'Baby'),

@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.http import HttpResponse
 
 # Register your models here.
-from .models import NewsletterSignup
+from .models import NewsletterSignup, CompletedActivity
 
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
@@ -16,9 +16,14 @@ class WorkshopUserInline(admin.StackedInline):
     can_delete = False
     verbose_name_plural = 'workshopUser'
 
+class CompletedActivityInline(admin.StackedInline):
+    model = CompletedActivity
+    can_delete = False
+    verbose_name_plural = 'completedActivity'
+
 # Define a new User admin
 class UserAdmin(BaseUserAdmin):
-    inlines = (WorkshopUserInline, )
+    inlines = (WorkshopUserInline, CompletedActivityInline)
 
 def export_csv(modeladmin, request, queryset):
     import csv
