@@ -8,17 +8,13 @@
 
 {% block app-breadcrumbs %}
     <li><a href="{% url 'image_manipulation:index' %}">Manipulated Images</a></li>
-	<li class="active">How well did you do?</li>
+	<li class="active">Results</li>
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
-    <h2>How many did you get right?</h2>
-
-    <h3 class="text-center">You got <span id="result">{{ context }}</span> out of 9 right!</h3>
-
-    <p class="test-justify">Click on the images to find out which ones for manipulated and which ones weren't</p>
-
+<div class="container-fluid app-text-standard text-center">
+    <h2>You got <span id="result">{{ context }}</span> out of 9 right!</h2>
+    <p style="margin: 30px 0">Click on each of the images to find out which ones were manipulated and which ones weren't.</p>
     <div class="container-fluid grid">
         <div class="row">
             <div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">

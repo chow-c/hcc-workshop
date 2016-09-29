@@ -23,7 +23,7 @@
                     {% block app-breadcrumbs %}{% endblock %}
                 {% endif %}
             </ol>
-            <span class="navbar-fixed-top-level">Current Level: {{ user.workshopuser.get_level_display }}</span>
+            <span class="navbar-fixed-top-level">{{ user.workshopuser.get_level_display }}</span>
             <span class="navbar-fixed-top-buttons">
                     <a href="{% url 'home:dashboard' %}" class="navbar-dashboard" title="Dashboard">
                         <i class="fa fa-home fa-lg fa-fw" aria-hidden="true"></i>
@@ -58,19 +58,19 @@
             </li>
             <br>
             <li>
-                <a href="{% url 'cybersecurity:index' %}">
-                    <i class="fa fa-user-secret fa-lg fa-fw" aria-hidden="true"></i>
-                    <span>Cyber Security</span></a>
-            </li>
-            <li>
                 <a href="{% url 'design:index' %}">
                     <i class="fa fa-desktop fa-lg fa-fw" aria-hidden="true"></i>
                     <span>Human Computer Interaction</span></a>
             </li>
             <li>
+                <a href="{% url 'cybersecurity:index' %}">
+                    <i class="fa fa-user-secret fa-lg fa-fw" aria-hidden="true"></i>
+                    <span>Cyber Security</span></a>
+            </li>
+            <li>
                 <a href="{% url 'image_manipulation:index' %}">
                     <i class="fa fa-picture-o fa-lg fa-fw" aria-hidden="true"></i>
-                    <span>Image Manipulation</span></a>
+                    <span>Manipulated Images</span></a>
             </li>
             <li>
                 <a href="{% url 'home:other_research' %}">
