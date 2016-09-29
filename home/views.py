@@ -22,6 +22,7 @@ from home.forms import UserCreateForm, NewsletterForm
 from reportlab.pdfgen import canvas
 
 from datetime import datetime
+from django.apps import apps
 
 # from weasyprint import HTML, CSS
 
@@ -57,8 +58,7 @@ def dashboard(request):
     if request.session.get('visited',False) == True:
         # If the variable exists, the user has visited
         # Pass a variable to javascript to say the user has visited
-        app_name = request.resolver_match.app_name
-        context = {'visited' : True, 'appname' : app_name }
+        context = {'visited' : True}
         return render(request,'home/dashboard.html', context)
     else:
         # Create the variable if it doesnt exist to say the user has visited
@@ -136,12 +136,24 @@ class OtherResearch(generic.TemplateView):
     template_name = 'home/other_research.html'
 
 def levelUp(request):
-    print(request.POST['app_name'])
-    print(request.user.id)
-    new_completion = request.user.completedactivity_set.create(completed_date=datetime.now(),activity=request.POST['app_name'])
-    print("count",request.user.completedactivity_set.count())
-    print("old level",request.user.workshopuser.level)
-    request.user.workshopuser.level = str(request.user.completedactivity_set.count()+1)
-    request.user.workshopuser.save()
-    print("new level",request.user.workshopuser.level)
-    return dashboard(request)
+    user = request.user
+    activity_path = request.POST['app_name']
+
+    list_of_completes = []
+
+    for item in user.completedactivity_set.all():
+        list_of_completes.append(item.activity)
+
+    if activity_path not in list_of_completes:
+        new_completion = user.completedactivity_set.create(activity=activity_path)
+        user.workshopuser.level = user.completedactivity_set.count()
+        user.workshopuser.save()
+        return redirect('home:dashboard')
+    else:
+        return redirect('home:dashboard')
+
+    # print("count",user.completedactivity_set.count())
+    # print("old level",user.workshopuser.level)
+    # print("new level",user.workshopuser.level)
+    # print(apps)
+    # return dashboard(request)

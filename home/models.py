@@ -15,12 +15,12 @@ class NewsletterSignup(models.Model):
         return self.email
 
 class CompletedActivity(models.Model):
-    completed_date = models.DateField()
+    completed_date = models.DateTimeField('Date Completed',auto_now_add=True)
     activity = models.CharField(max_length=100)
     user = models.ForeignKey(User,on_delete=models.CASCADE)
 
     def __unicode__(self):
-        return self.user
+        return "%s %s" % (self.user, self.activity)
 
     class Meta:
         ordering = ('activity',)
