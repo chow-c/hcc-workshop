@@ -18,6 +18,47 @@
     {% block head %}{% endblock %}
   </head>
   <body>
+    <div class="modal fade" tabindex="-1" role="dialog" id="instructions-modal" data-backdrop="static">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title text-center">Instructions</h2>
+            </div>
+            <div class="modal-body">
+                <p class="text-justify"><strong>Welcome to the ANU HCC Workshop!</strong><p>
+                <p class="text-justify">The workshop consists of several activities that you are able to play with. Whenever you complete an activity, you will gain an extra level. You can view your current level by looking at the middle of the navigation bar at the top of the screen.<p>
+                <p class="text-justify">This is a self-paced learning environment, allowing you to explore the entire website and complete the activities you want in whatever order or pace that suits you.<p>
+                <p class="text-justify">If you have any questions, feel free to talk to one of the friendly ANU Ambassadors.</p>
+                <p class="text-justify">When you are finished, please complete our feedback form to help improve the experience for others.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Okay, got it!</button>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="level-modal" data-backdrop="static">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title text-center">Level up</h2>
+            </div>
+            <div class="modal-body">
+                <p class="text-justify"><strong>Welcome to the ANU HCC Workshop!</strong><p>
+                <p class="text-justify">The workshop consists of several activities that you are able to play with. Whenever you complete an activity, you will gain an extra level. You can view your current level by looking at the middle of the navigation bar at the top of the screen.<p>
+                <p class="text-justify">This is a self-paced learning environment, allowing you to explore the entire website and complete the activities you want in whatever order or pace that suits you.<p>
+                <p class="text-justify">If you have any questions, feel free to talk to one of the friendly ANU Ambassadors.</p>
+                <p class="text-justify">When you are finished, please complete our feedback form to help improve the experience for others.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Continue Playing</button>
+                <a href="{% url 'home:dashboard' %}" class="btn btn-primary">Dashboard<i class="fa fa-home fa-lg fa-fw" aria-hidden="true"></i></a>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <div id="page-overlay" class="page-overlay"></div>
     <section id="ethics-overlay" class="help-overlay">
       <h1>Terms of Use</h1>
@@ -118,7 +159,16 @@ $.ajaxSetup({
           dataType: "json",
           data : { app_name : app_name},
           success: function(response) {
-            $('.navbar-fixed-top-level').html("Current Level: "+response);
+            // console.log(response.increase);
+            $('.navbar-fixed-top-level').html("Current Level: "+response.new_level);
+            if (response.increase == true) {
+                console.log("true");
+                $('#level-modal').modal();
+            } else {
+                console.log("false");
+                $('#level-modal').modal();
+            }
+            
           }
       });
     });

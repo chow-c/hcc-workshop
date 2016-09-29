@@ -151,11 +151,15 @@ def levelUp(request):
         user.workshopuser.save()
 
         new_level = user.workshopuser.get_level_display()
+        increase = True
 
+        data = { "new_level" : new_level, "increase" : increase}
         return HttpResponse(
-            json.dumps(new_level),
+            json.dumps(data),
             content_type="application/json"
         )
     else:
-
-        return redirect('home:dashboard')
+        new_level = user.workshopuser.get_level_display()
+        increase = False
+        data = { "new_level" : new_level, "increase" : increase}
+        return HttpResponse(json.dumps(data),content_type="application/json")

@@ -32,7 +32,7 @@
 				<div class="row">
 					<div class="col-md-3 col-lg-3 col-sm-3">
 						<div class="thumbnail activity-thumbnail">
-							<a href="{% url 'cybersecurity:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/dash.png' %}" alt=""></a>
+							<a href="{% url 'cybersecurity:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/cyber-thumb.png' %}" alt=""></a>
 							<div class="caption title-caption">
 								<h3>Cyber Security</h3>
 								<div class="content-caption">
@@ -44,7 +44,7 @@
 					</div>
 					<div class="col-md-3 col-lg-3 col-sm-3">
 						<div class="thumbnail activity-thumbnail">
-							<a href="{% url 'design:index' %}"><img class="app-thumbnail-img" src="http://placekitten.com/400/300" alt=""></a>
+							<a href="{% url 'design:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/hci-thumb.jpg' %}" alt=""></a>
 							<div class="caption title-caption">
 								<h3>Human Computer Interaction</h3>
 								<div class="content-caption">
@@ -119,13 +119,6 @@
 				</div>
 				<br/>
 			</section>
-			<section class="app-text-highlight">
-				<div class="text-center vertical-align">
-					<h1>Take it home</h1>
-					<p class="lead">Email your work to yourself to show it off later.</p>
-					<a class="btn btn-default btn-lg" href=""><span class="btn-primary-span">Send It</span><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-				</div>
-			</section>
 				
 {% endblock %}
 
@@ -159,16 +152,7 @@ $("#eyetracking-loader").on("click", "#eyetracking-close-btn", function() {
 $(function() {
 	// If the user hasnt visited before, force display the instructions
 	if ("{{visited}}" == "False") {
-		$('body').addClass('lock');
-        $('#page-overlay').show();
-        $('#instructions').show();
-		
-		// Allow users to click the close button to hide the instructions
-		$("#instructions").on("click", "#instructions-close-btn", function() {
-			$('body').removeClass('lock');
-            $('#instructions').hide();
-            $('#page-overlay').hide();
-        });
+		$('#instructions-modal').modal();
 	} else {
 		// If the user HAS visited, do nothing.
 	}

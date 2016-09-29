@@ -31,9 +31,9 @@
                     <a href="{% url 'home:newsletter' %}" class="navbar-newsletter" title="Subscribe">
                         <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
                     </a>
-                    <a class="navbar-dashboard" title="Help" id="help-btn">
-                    <i class="fa fa-info-circle fa-lg fa-fw" aria-hidden="true"></i>
-                </a>
+                    <a href="#" class="navbar-dashboard" title="Help" data-toggle="modal" data-target="#instructions-modal">
+                        <i class="fa fa-info-circle fa-lg fa-fw" aria-hidden="true"></i>
+                    </a>
                     <a href="{% url 'logout' %}" class="navbar-sign-out" title="Sign Out">
                         <i class="fa fa-sign-out fa-lg fa-fw" aria-hidden="true"></i>
                     </a>
