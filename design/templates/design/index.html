@@ -16,47 +16,18 @@
 		<h1 class="vertical-align animated bounceInLeft" style="color: black;">Human Computer Interaction 101</h1>
 	</div>
 	<!-- Introduction section -->
-	<div class="container">
+	<section class="container-fluid app-text-standard">
 		<p class="text-justify">Welcome to an introduction to Human Computer Interaction (HCI). You may be wondering, what is HCI? HCI is about the design, evaluation, and implementation of of computer systems that facilitates effective human use. HCI puts the human before anything else. </p>
 		<p class="text-justify">But there are A LOT of poorly designed websites and software out there, I'm sure you have encountered many! Our goal is to introduce you to some design principles that can make interfaces better for interaction, and to hopefully interest you enough to come help us fight the battle against bad interface design!</p>
 		<p class="text-justify">In this activity you will get to play some little activities that teach you some of the design principles that are fundamental in HCI. The more you play, the higher your skill level will become. See how skilled you can get and if you can beat your friends! </p> 
-	</div>
+	</section>
 
 	<section class="container-fluid app-text-highlight">
-		<h3>“A user interface is like a joke, if you have to explain it, it's not that good” ~ unknown</h3>
+		<h3 class="text-center">“A user interface is like a joke, if you have to explain it, it's not that good” ~ unknown</h3>
 	</section>
 	
-	<!-- Container for all of the activities -->
-	<section class="container activities">
-		<h2>HCI Design Principles</h2>
-		<div class="row">
-				<div class="col-sm-12 col-md-12 col-lg-12 col-centered">
-					<div class="row">
-						<div class="col-sm-3 col-md-3 col-lg-3 text-center bigger"> 
-							<a href="{% url 'design:mappings' %}">
-							<i class="fa fa-map-marker fa-5x fa-fw" aria-hidden="true"></i><h3>Mappings</h3></a>
-						</div>
-						<div class="col-sm-3 col-md-3 col-lg-3 text-center bigger"> 
-							<a href="{% url 'design:constraints' %}">
-							<i class="fa fa-ban fa-5x fa-fw" aria-hidden="true"></i><h3>Constraints</h3></a>
-						</div>
-						<div class="col-sm-3 col-md-3 col-lg-3 text-center bigger"> 
-							<a href="{% url 'design:affordances' %}">
-							<i class="fa fa-map-signs fa-5x fa-fw" aria-hidden="true"></i><h3>Affordances & Signifiers</h3></a>
-						</div>
-						<div class="col-sm-3 col-md-3 col-lg-3 text-center bigger"> 
-							<a href="{% url 'design:conceptual' %}">
-							<i class="fa fa-bicycle fa-5x fa-fw" aria-hidden="true"></i><h3>Conceptual Models</h3></a>
-						</div>
-					</div>
-				</div>
-		</div>
-
-		
-	</section>
-
 	<!-- Have students toggle images to find out what kind of subject areas HCI involves -->
-	<div class="container subject-div">
+	<div class="container-fluid app-text-standard subject-div">
 		<h2>HCI combines different subject areas... </h2>
 		<br>
 		<p>Click to find out just some of them: </p>
@@ -157,7 +128,30 @@
 		<br>
 		<p>And there is heaps more you can do with HCI! So no matter what you're interested in, HCI probably has something for you! </p>
 	</div>
+	<!-- Container for all of the activities -->
+	<section class="container-fluid app-text-standard activities">
+		<h2>HCI Design Principles</h2>
+		<div class="row text-center">
+			<div class="col-sm-4 col-md-4 col-lg-4 text-center bigger"> 
+				<a href="{% url 'design:mappings' %}">
+				<i class="fa fa-map-marker fa-5x fa-fw" aria-hidden="true"></i><h3 class="text-center">Mappings</h3></a>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4 text-center bigger"> 
+				<a href="{% url 'design:constraints' %}">
+				<i class="fa fa-ban fa-5x fa-fw" aria-hidden="true"></i><h3 class="text-center">Constraints</h3></a>
+			</div>
+			<!--<div class="col-sm-3 col-md-3 col-lg-3 text-center bigger"> 
+				<a href="{% url 'design:affordances' %}">
+				<i class="fa fa-map-signs fa-5x fa-fw" aria-hidden="true"></i><h3>Affordances & Signifiers</h3></a>
+			</div>-->
+			<div class="col-sm-4 col-md-4 col-lg-4 text-center bigger"> 
+				<a href="{% url 'design:conceptual' %}">
+				<i class="fa fa-bicycle fa-5x fa-fw" aria-hidden="true"></i><h3 class="text-center">Conceptual Models</h3></a>
+			</div>
+		</div>
 
+		
+	</section>
 
 
 {% endblock %}
