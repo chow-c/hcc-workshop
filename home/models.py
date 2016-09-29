@@ -39,7 +39,7 @@ class WorkshopUser(models.Model):
     ('9', '9 - A.I.'),
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    level = models.IntegerField(choices=LEVELS,max_length=100,default='0')
+    level = models.CharField(choices=LEVELS,max_length=100,default='0')
 
     def __unicode__(self):
         return self.user

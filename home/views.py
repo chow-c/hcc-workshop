@@ -55,18 +55,25 @@ def eyegazeinfo(request):
     return render(request,'home/eyegazeinfo.html')
 
 def dashboard(request):
-    # Check if a session variable has been set for previously visiting the dashboard
-    if request.session.get('visited',False) == True:
-        # If the variable exists, the user has visited
-        # Pass a variable to javascript to say the user has visited
-        context = {'visited' : True}
-        return render(request,'home/dashboard.html', context)
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            new_newsletter_signup = form.save()
+            return HttpResponseRedirect("/")
     else:
-        # Create the variable if it doesnt exist to say the user has visited
-        # Pass a variable to javascript to say the user has not visited (and hence display instructions)
-        request.session['visited'] = True
-        context = {'visited' : False }
-        return render(request,'home/dashboard.html', context)
+        form = NewsletterForm()
+        # Check if a session variable has been set for previously visiting the dashboard
+        if request.session.get('visited',False) == True:
+            # If the variable exists, the user has visited
+            # Pass a variable to javascript to say the user has visited
+            context = {'visited' : True, 'form' : form}
+            return render(request,'home/dashboard.html', context)
+        else:
+            # Create the variable if it doesnt exist to say the user has visited
+            # Pass a variable to javascript to say the user has not visited (and hence display instructions)
+            request.session['visited'] = True
+            context = {'visited' : False, 'form' : form }
+            return render(request,'home/dashboard.html', context)
 
 
 class About(generic.TemplateView):
