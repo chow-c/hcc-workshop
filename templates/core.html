@@ -115,7 +115,11 @@ $.ajaxSetup({
       $.ajax({
           url: 'http://'+location.host+"/level-up",
           type: 'POST',
+          dataType: "json",
           data : { app_name : app_name},
+          success: function(response) {
+            $('.navbar-fixed-top-level').html("Current Level: "+response);
+          }
       });
     });
     </script>

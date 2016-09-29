@@ -23,6 +23,7 @@ from reportlab.pdfgen import canvas
 
 from datetime import datetime
 from django.apps import apps
+import json
 
 # from weasyprint import HTML, CSS
 
@@ -146,14 +147,15 @@ def levelUp(request):
 
     if activity_path not in list_of_completes:
         new_completion = user.completedactivity_set.create(activity=activity_path)
-        user.workshopuser.level = user.completedactivity_set.count()
+        user.workshopuser.level = str(user.completedactivity_set.count()) # Must be a str 
         user.workshopuser.save()
-        return redirect('home:dashboard')
-    else:
-        return redirect('home:dashboard')
 
-    # print("count",user.completedactivity_set.count())
-    # print("old level",user.workshopuser.level)
-    # print("new level",user.workshopuser.level)
-    # print(apps)
-    # return dashboard(request)
+        new_level = user.workshopuser.get_level_display()
+
+        return HttpResponse(
+            json.dumps(new_level),
+            content_type="application/json"
+        )
+    else:
+
+        return redirect('home:dashboard')
