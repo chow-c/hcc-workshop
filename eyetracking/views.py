@@ -115,7 +115,7 @@ def image_gaze(request):
     img3_data = processGazedata(image3_gazedata)
 
     context = {"img1_data": img1_data, "img2_data": img2_data, "img3_data": img3_data}
-    return render(request,'eye-tracking/image_gaze.html', context)
+    return render(request,'eyetracking/image_gaze.html', context)
 
 def processGazedata(gazedata):
     list_for_d3 = []
@@ -131,7 +131,7 @@ def processGazedata(gazedata):
 # To display the reading tracking gif
 @login_required
 def reading_gif(request):
-    return render(request,'eye-tracking/reading_gif.html')
+    return render(request,'eyetracking/reading_gif.html')
 
 # To display the join the dots gif 
 @login_required
