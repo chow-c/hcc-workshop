@@ -117,7 +117,6 @@ def image_gaze(request):
     context = {"img1_data": img1_data, "img2_data": img2_data, "img3_data": img3_data}
     return render(request,'eye-tracking/image_gaze.html', context)
 
-@login_required
 def processGazedata(gazedata):
     list_for_d3 = []
     json1 = json.loads(gazedata)
