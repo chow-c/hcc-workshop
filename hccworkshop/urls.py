@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^cyber-security/', include('cybersecurity.urls')),
     url(r'^the-thatcher-effect/', include('thatcher.urls')),
     url(r'^experiment/infovis/', include('collection.urls')),
-    url(r'^design/', include('design.urls')),
+    url(r'^human-computer-interaction/', include('design.urls')),
     url(r'^image-manipulation/', include('image_manipulation.urls')),
     url(r'^neural-networks/', include('neural_networks.urls')),
 ]

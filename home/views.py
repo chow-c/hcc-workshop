@@ -68,13 +68,15 @@ def dashboard(request):
         if request.session.get('visited',False) == True:
             # If the variable exists, the user has visited
             # Pass a variable to javascript to say the user has visited
-            context = {'visited' : True, 'form' : form}
+            greeting = ['Welcome back, '+request.user.first_name+'!', 'Try another one '+request.user.first_name+'!', 'Hello again, '+request.user.first_name+'.', 'Hello, '+request.user.first_name+'.', 'Having fun, '+request.user.first_name+'?', 'Good Morning, '+request.user.first_name+'.', 'Nice to see you, '+request.user.first_name+'!', 'Hi there, '+request.user.first_name+'!' ]
+            context = {'visited' : True, 'form' : form, 'greeting' : greeting }
             return render(request,'home/dashboard.html', context)
         else:
             # Create the variable if it doesnt exist to say the user has visited
             # Pass a variable to javascript to say the user has not visited (and hence display instructions)
+            greeting = ['Let\'s get started, '+request.user.first_name+'!', 'Welcome, '+request.user.first_name+'!']
             request.session['visited'] = True
-            context = {'visited' : False, 'form' : form }
+            context = {'visited' : False, 'form' : form, 'greeting' : greeting }
             return render(request,'home/dashboard.html', context)
 
 

@@ -6,9 +6,11 @@ from .models import Mappings, Constraints
 from django.core.urlresolvers import reverse
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 @login_required
 def index(request):
+
     return render(request, 'design/index.html')
 
 @login_required
@@ -20,6 +22,7 @@ def mappings(request):
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
+            messages.add_message(request, messages.INFO, "Level Up")
             mform = form.save(commit=False)
             mform.user = request.user
             answer = form.cleaned_data['answer']
@@ -49,6 +52,7 @@ def constraints(request):
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
+            messages.add_message(request, messages.INFO, "Level Up")
             mform = form.save(commit=False)
             mform.user = request.user
             answer = form.cleaned_data['answer']

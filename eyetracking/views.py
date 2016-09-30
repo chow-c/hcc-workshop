@@ -23,7 +23,7 @@ def dots(request):
             eyegaze_form = form.save(commit=False)
             eyegaze_form.user = request.user
             eyegaze_form.save()
-            return HttpResponseRedirect('/eyetracking/join-the-dots-results')
+            return HttpResponseRedirect('/eye-tracking/join-the-dots/results')
     else:
         form = DotsGazeForm()
     
@@ -61,7 +61,7 @@ def reading(request):
             eyegaze_form = form.save(commit=False)
             eyegaze_form.user = request.user
             eyegaze_form.save()
-            return HttpResponseRedirect('/eyetracking/reading-analysis/results')
+            return HttpResponseRedirect('/eye-tracking/reading-analysis/results')
     else:
         form = ReadingGazeForm()
     
@@ -94,7 +94,7 @@ def image(request):
             eyegaze_form = form.save(commit=False)
             eyegaze_form.user = request.user
             eyegaze_form.save()
-            return HttpResponseRedirect('/eyetracking/image-viewing/results')
+            return HttpResponseRedirect('/eye-tracking/image-viewing/results')
     else:
         form = ImageGazeForm()
     
@@ -115,7 +115,7 @@ def image_gaze(request):
     img3_data = processGazedata(image3_gazedata)
 
     context = {"img1_data": img1_data, "img2_data": img2_data, "img3_data": img3_data}
-    return render(request,'eyetracking/image_gaze.html', context)
+    return render(request,'eye-tracking/image_gaze.html', context)
 
 @login_required
 def processGazedata(gazedata):
@@ -132,7 +132,7 @@ def processGazedata(gazedata):
 # To display the reading tracking gif
 @login_required
 def reading_gif(request):
-    return render(request,'eyetracking/reading_gif.html')
+    return render(request,'eye-tracking/reading_gif.html')
 
 # To display the join the dots gif 
 @login_required

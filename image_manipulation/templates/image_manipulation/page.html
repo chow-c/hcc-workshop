@@ -22,7 +22,7 @@
 
         {% for choice in form.answer %}
             {%  if choice.choice_label != "---------" %}
-                <p id="choice_{{ forloop.counter0 }}">{{ choice.tag }} {{ choice.choice_label }}</p>
+                <p id="choice_{{ forloop.counter0 }}">{{ choice }}</p>
             {% endif %}
          {% endfor %}
 

@@ -7,13 +7,13 @@ MAPPINGS_CHOICES = (
     ('gmaps', 'Google Maps'),
     ('spatial', 'Using Spatial Reasoning'),
     ('notspatial', 'Not Using Spatial Reasoning'),
-    ('compass', 'A compass'),
+    ('compass', 'A Compass'),
 )
 
 CONSTRAINT_CHOICES = (
     ('stopuse', 'To stop a user from using an interface.'),
     ('coins', 'To teach people what Australian $2 coins look like.'),
-    ('simplify', 'To help simplify use of an interface.'),
+    ('simplify', 'To help simplify the use of an interface.'),
 )
 
 class Mappings(models.Model):

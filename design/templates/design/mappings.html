@@ -162,45 +162,42 @@
     </div>
 
     </div>
-    <section class="container-fluid app-text-highlight">
-        <h3>Want to upskill a level?</h3>
-        <p>Just answer this question and you'll be on your to getting another skill level!</p>
-            <form action="" method="POST">
+    <section class="container-fluid app-text-highlight text-center">
+		<h1>Level Up</h1>
+
+            <form action="" method="POST" class="text-left">
             {% csrf_token %}
-            <p id="question">{{ form.answer.label }}</p>
+            <p class="lead text-center">{{ form.answer.label }}</p>
             {% for choice in form.answer %}
                 {%  if choice.choice_label != "---------" %}
-                    <p id="choice_{{ forloop.counter0 }}">{{ choice.tag }} {{ choice.choice_label }}</p>
+                    <p id="choice_{{ forloop.counter0 }}" style="margin-left: 40%">{{ choice }}</p>
                 {% endif %}
             {% endfor %}
             <p id="answer_field" class="text-center"></p>
-            <div class="container-fluid next-page text-center">
-                <button type="submit" value="Next" class="btn btn-primary btn-lg">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-            </div>
-        </form>
-    </section>
-		<section class="app-text-highlight">
-				<div class="text-center vertical-align">
-					<h1>Level Up</h1>
-					<p class="lead">You just fished yourself a new level.</p>
+				<div class="text-center vertical-align" id="level-up-area" style="display: none">
 					<button role="button" class="btn btn-default btn-lg" href="#" id="level-up"><span class="btn-primary-span">Level Up</span><i class="fa fa-level-up" aria-hidden="true"></i></a>
 				</div>
-</section>
+        </form>
+    </section>
 {% endblock %}
 
 {% block script %} 
 <script>
 $('#choice_2').click(function() {
-    $('#answer_field').html("You're correct! You're on your way to leveling up! Hit the next button now.")
+    $('#answer_field').html("You're correct! We've mapped you out a new level.");
+    $('#level-up-area').show();
 });
 $('#choice_1').click(function() {
-    $('#answer_field').html("Close but not quite, Try again!")
+    $('#answer_field').html("Close but not quite. Have another go!");
+    $('#level-up-area').hide();
 });
 $('#choice_3').click(function() {
-    $('#answer_field').html("Close but not quite, Try again!")
+    $('#answer_field').html("Close but not quite. Have another go!");
+    $('#level-up-area').hide();
 });
 $('#choice_4').click(function() {
-    $('#answer_field').html("Close but not quite, Try again!")
+    $('#answer_field').html("Close but not quite. Have another go!");
+    $('#level-up-area').hide();
 });
 
 // For controlling the light switches:
