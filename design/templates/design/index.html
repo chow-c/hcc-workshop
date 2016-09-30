@@ -155,4 +155,14 @@
 {% endblock %}
 
 {% block script %} 
+{% if messages %}
+{% for message in messages %}
+<script>
+$(function() {
+	// If the user hasnt visited before, force display the instructions
+	$('#level-modal').modal();
+});
+ </script>
+ {% endfor %}
+{% endif %}
 {% endblock %}

@@ -180,15 +180,7 @@ canvas {
     z-index: 800;
 }
 
-#question {
-    font-size: 2em;
 
-}
-
-#answer_field {
-    font-size: 2em;
-    font-weight: bold;
-}
 
 .front:hover, .back:hover, .front_coin:hover, .back_coin:hover {
     cursor: pointer;
