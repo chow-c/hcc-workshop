@@ -8,8 +8,10 @@ from django.contrib.auth.decorators import login_required
 class Index(generic.TemplateView):
     template_name = 'cybersecurity/index.html'
 
+@login_required
 def privacy(request):
     return render(request,'cybersecurity/privacy.html')
 
+@login_required
 def phishing(request):
     return render(request,'cybersecurity/phishing.html')

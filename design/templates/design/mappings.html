@@ -12,10 +12,10 @@
 {% endblock %}
 
 {% block content %} 
-    <div class="container">
+    <div class="container-fluid app-text-standard">
         <h2>Mappings</h2>
 
-        <div class="container-fluid light-demo">
+        <div>
         <p class="text-justify">Mappings are the link between what a control does and what you perceive it to do. Good mapping take advantage of the real world, of spacial and temporal analogies, so that users can easily work out what controls do what. An example that is often used is that of a light switch. Take a look at the light switch below, turn on the lights labeled A and C.</p>
         <div class="row">
             <div class="col-sm-7 col-md-7 col-lg-7 col-centered">
@@ -62,7 +62,7 @@
     <p class="text-justify">How hard did you think it was to find the right switch? If you're like most people you would have found it quite difficult and frustrating! That's because there is no logical mapping between the switches and the bulbs. No pattern in the mappings means increased time to learn which switch is for which bulb, and people have to learn from making mistakes. The best mappings are implied, making use of patterns and spatial reasoning. </p>
         </div>
 
-    <div class="container-fluid light-demo">
+    <div>
         <p class="text-justify">Try with this layout, note that this layout is often used for stove tops; have you ever turned on the wrong stove? It's probably becuase stove tops are notorious for poor spatial mapping of knobs.</p>
     
         <div class="row">
@@ -116,7 +116,7 @@
         <p class="text-justify">The difference here is that, whilst there is a pattern between the switch and the light bulbs, the way in which the switches are laid out is different from the way that the bulbs are laid out. This difference causes a lot of confusion, because once again, the designer has not taken advantage of spatial reasoning.</p>
     </div>
         
-    <div class="container-fluid light-demo">
+    <div>
         <p class="text-justify">Try again, but this time there is a clearer mapping.</p>
         <div class="row">
             <div class="col-sm-7 col-md-7 col-lg-7 col-centered">
@@ -179,6 +179,13 @@
             </div>
         </form>
     </section>
+		<section class="app-text-highlight">
+				<div class="text-center vertical-align">
+					<h1>Level Up</h1>
+					<p class="lead">You just fished yourself a new level.</p>
+					<button role="button" class="btn btn-default btn-lg" href="#" id="level-up"><span class="btn-primary-span">Level Up</span><i class="fa fa-level-up" aria-hidden="true"></i></a>
+				</div>
+</section>
 {% endblock %}
 
 {% block script %} 

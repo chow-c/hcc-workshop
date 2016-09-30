@@ -5,10 +5,13 @@ from django.core.urlresolvers import reverse
 from django.views import generic
 from .forms import ImagePageForm
 from .models import ImagePage
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
 ANSWER_LIST = ["notmanipulated", "manipulated", "notmanipulated", "manipulated", "notmanipulated", "manipulated", "manipulated", "manipulated", "manipulated"]
 
 # Create your views here.
+@login_required
 def index(request):
     request.session['image_id'] = 1
     request.session['correct'] = 0
@@ -16,6 +19,7 @@ def index(request):
 
 
 # For the join the dots app
+@login_required
 def page(request):
     if request.method == 'POST':
         form = ImagePageForm(request.POST)
@@ -40,6 +44,7 @@ def page(request):
 
     return render(request,'image_manipulation/page.html',  context )
 
+@login_required
 def results(request):
     # Retrieve the latest
     user = request.user

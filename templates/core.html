@@ -18,10 +18,64 @@
     {% block head %}{% endblock %}
   </head>
   <body>
-    <div id="page-overlay" class="page-overlay"></div>
-    <section id="ethics-overlay" class="help-overlay">
-      <h1>Terms of Use</h1>
-      <h2>Who are we?</h2>
+    <div class="modal fade" tabindex="-1" role="dialog" id="instructions-modal" data-backdrop="static">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content blue-modal">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h1 class="modal-title text-center">Welcome</h1>
+            </div>
+            <div class="modal-body">
+                <p class="text-center">You are logged in as <strong>{{ user.username }}</strong></p>
+                <p class="text-justify">This workshop consists of several different activities that each describe aspects of ICT research that the Human-Centred Computing group focus on. This is a self-paced learning environment that lets you explore the entire workshop and complete whichever activities interest you. The order and pace in which you complete each activity is completely up to you! <p>
+                <h2>Levels</h2>
+                <p class="text-justify">For every activity that you complete, you will gain a level, but you can only gain one level per activity. Your current level is always visible in the top menu bar.</p>
+            </div>
+            <div class="modal-body" style="background:#8ea7be; color: black">
+                <p class="text-center" style="font-size: 19px; padding: 10px 0">Your current level is<br><strong>{{ user.workshopuser.get_level_display }}</strong></p>
+                <p class="text-center">There are nine activities in total. What level will you be able to reach? </p>
+            </div>
+            <div class="modal-body">
+                <h2>Help and information</h2>
+                <p class="text-justify">If you have any questions at any time, feel free to talk to one of the friendly ANU Ambassadors.</p>
+                <p class="text-justify">Have fun!</p>
+             </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Okay, got it!</button>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="level-modal" data-backdrop="static">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h1 class="modal-title text-center">Congrats</h1>
+            </div>
+            <div class="modal-body">
+                <p class="text-center">You just went up one level!<p>
+            </div>
+            <div class="modal-body" style="background:#f7f7f7; color: black">
+                <p class="text-center" style="font-size: 19px; padding: 10px 0">Your new level is<br><strong>{{ user.workshopuser.get_level_display }}</strong></p>
+                <p class="text-center">There are nine activities in total. What level will you be able to reach? </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Back to this activity</button>
+                <a href="{% url 'home:dashboard' %}" class="btn btn-primary">Dashboard <i class="fa fa-home fa-lg fa-fw" aria-hidden="true"></i></a>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="terms-modal" data-backdrop="static">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content" style="color: black; text-shadow: none">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h1 class="modal-title text-center">Terms of Use</h1>
+            </div>
+            <div class="modal-body">
+                <h2>Who are we?</h2>
       <p class="text-justify">This Human Centred Computing Workshop (HCC workshop) was developed by the Research School of Computer Science in the College of Engineering and Computer Science (the College). It showcases current experiments and technologies in use by our researchers.<br>The project is led by Professor Tom Gedeon, head of the human-centred computing research area, and convenor of the ANU Bachelor of Information Technology degree.</p>
       <h2>What is the Human Centred Computing Workshop?</h2>
       <p class="text-justify">The HCC workshop is a collection of experiments derived from current research in the College. Experiments in the workshop may use one or more of many types of methodologies and technologies, which change from time to time depending on current research.<br>Our participants are people like you who have come to ANU and this HCC workshop to learn more about computer science and engineering at ANU. <br>ANU is a research-led university. The online adventure you are enjoying creates real world information that contributes to research. As you do various experiments, we collect data such as eye gaze information, questionnaire responses, survey information, and experiment outcomes. Aggregated data may be used in academic papers, theses, and publications, and may inform future research.<br>This data is used to give you feedback directly to you about your participation, and as input to data collections for individual and group researchers as part of our on-going research.</p>
@@ -47,40 +101,75 @@
       <p class="text-justify">For further requests for information or queries regarding the study, please contact Professor Tom Gedeon, Primary Investigator, via <a href="mailto:***REMOVED***@anu.edu.au">***REMOVED***@anu.edu.au</a>. </p>
       <h2>Ethics Clearance</h2>
       <p class="text-justify">The ethical aspects of this research have been approved by the ANU Human Research Ethics Committee (Protocol 2012/006). If you have any concerns or complaints about how this research has been conducted, please contact: <br><span id="ethics-contact-details"><br>Ethics Manager <br>The ANU Human Research Ethics Committee <br>The Australian National University <br>Telephone: +61 ***REMOVED*** <br>Email: <a href="***REMOVED***">***REMOVED***</a></span></p>
-      <button class="btn btn-lg btn-default" id="find-out-more-close-btn">Close</button>
-    </section>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">I accept</button>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     {% block body %}{% endblock %}
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/eyetribe.js' %}"></script>
     <script>
     $(document).ready(function() {
-        $("#help-btn").click(function() {
-            $('body').addClass('lock');
-            $('#page-overlay').show();
-            $('#instructions').show();
-        });
-
-        $("#instructions").on("click", "#instructions-close-btn", function() {
-          $('body').removeClass('lock');
-            $('#instructions').hide();
-            $('#page-overlay').hide();
-        });
-
         $("#find-out-more").click(function() {
-            $('body').addClass('lock');
-            $('#page-overlay').show();
-            $('#ethics-overlay').show();
-        });
-
-        $("#ethics-overlay").on("click", "#find-out-more-close-btn", function() {
-          $('body').removeClass('lock');
-            $('#ethics-overlay').hide();
-            $('#page-overlay').hide();
+            $('#terms-modal').modal();
         });
     });
   
+    </script>
+        <script>
+      function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+    $('#level-up').click(function() {
+      var app_name = "{{ request.path }}";
+      $.ajax({
+          url: 'http://'+location.host+"/level-up",
+          type: 'POST',
+          dataType: "json",
+          data : { app_name : app_name},
+          success: function(response) {
+            // console.log(response.increase);
+            $('.navbar-fixed-top-level').html(response.new_level);
+            if (response.increase == true) {
+                console.log("true");
+                $('#level-modal').modal();
+            } else {
+                console.log("false");
+                $('#level-modal').modal();
+            }
+            
+          }
+      });
+    });
     </script>
     {% block script %}{% endblock %}
   </body>

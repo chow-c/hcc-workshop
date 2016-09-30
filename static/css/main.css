@@ -95,6 +95,7 @@ Top Navbar
 #wrapper.toggled .navbar-fixed-top {
     left: 0px;
     width: 100%;
+    z-index: 600;
     overflow: hidden;
 }
 
@@ -136,6 +137,10 @@ Top Navbar
     transition: all 0.5s ease;
 }
 
+.navbar-fixed-top-buttons > a:hover, .navbar-fixed-top-buttons > a:focus {
+    color: #fff;
+}
+
 .navbar-sign-out, .navbar-dashboard, .navbar-newsletter {
     color:#5c5c5c;
 }
@@ -169,10 +174,9 @@ Top Navbar
 
 .navbar-fixed-top-level {
     font-family: 'mohave';
-    padding: 6px 15px;
     color: #f3f3f3;
     font-size: 2em;
-    left: 40vw;
+    left: 45vw;
     position: absolute;
 }
 /**
@@ -528,4 +532,3 @@ OTHER ACTIVITY THUMBNAILS
 	transform: translate3d(0,-140%,0);
 
 }
-

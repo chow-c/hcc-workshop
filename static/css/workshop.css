@@ -159,3 +159,8 @@ SECTIONS
 #find-out-more {
     cursor: pointer;
 }
+
+.blue-modal {
+    background: #5B81A1;
+    color: white;
+}

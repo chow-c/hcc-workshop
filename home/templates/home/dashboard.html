@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load bootstrap3 %}
 
 {% block title %}HCC Workshop | Dashboard{% endblock %}
 
@@ -23,28 +24,16 @@
 					<p class="lead">Visualise the way in which you view the screen through four different activities.</p>
 					<a class="btn btn-default btn-lg" href="{% url 'eyetracking:index' %}">Try it out</a>
 				</div>
-				</section>
-				<section id="dashboard-container-fluid" class="container-fluid">
-					<div class="text-center vertical-align">
-				<h1 class="text-center">Research Areas</h1>
-				<p class="lead">Explore some of the topics we work on.</p>
+			</section>
+			<section id="dashboard-container-fluid" class="container-fluid">
+				<div class="text-center vertical-align" style="padding-bottom: 20px">
+					<h1 class="text-center">Research Areas</h1>
+					<p class="lead">Explore some of the topics we work on.</p>
 				</div>
 				<div class="row">
 					<div class="col-md-3 col-lg-3 col-sm-3">
 						<div class="thumbnail activity-thumbnail">
-							<a href="{% url 'cybersecurity:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/cyber.png' %}" alt=""></a>
-							<div class="caption title-caption">
-								<h3>Cyber Security</h3>
-								<div class="content-caption">
-									<p>Learn about security!</p>
-								<a class="btn btn-default" href="{% url 'cybersecurity:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-lg-3 col-sm-3">
-						<div class="thumbnail activity-thumbnail">
-							<a href="{% url 'design:index' %}"><img class="app-thumbnail-img" src="http://placekitten.com/400/300" alt=""></a>
+							<a href="{% url 'design:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/hci-thumb.jpg' %}" alt=""></a>
 							<div class="caption title-caption">
 								<h3>Human Computer Interaction</h3>
 								<div class="content-caption">
@@ -56,9 +45,21 @@
 					</div>
 					<div class="col-md-3 col-lg-3 col-sm-3">
 						<div class="thumbnail activity-thumbnail">
-							<a href="{% url 'image_manipulation:index' %}"><img class="app-thumbnail-img" src="http://placekitten.com/600/400" alt=""></a>
+							<a href="{% url 'cybersecurity:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/cyber-thumb.png' %}" alt=""></a>
 							<div class="caption title-caption">
-								<h3>Image Manipulation</h3>
+								<h3>Cyber Security</h3>
+								<div class="content-caption">
+									<p>Learn about security!</p>
+								<a class="btn btn-default" href="{% url 'cybersecurity:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-lg-3 col-sm-3">
+						<div class="thumbnail activity-thumbnail">
+							<a href="{% url 'image_manipulation:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/image-manipulation-thumb.png' %}" alt=""></a>
+							<div class="caption title-caption">
+								<h3>Manipulated Images</h3>
 								<div class="content-caption">
 									<p>Can you tell if an image has been photoshopped?</p>
 								<a class="btn btn-default" href="{% url 'home:other_research' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
@@ -100,7 +101,7 @@
 								<div class="thumbnail activity-thumbnail">
 									<a href="{% url 'neural_networks:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/preview.png' %}" alt=""></a>
 									<div class="caption title-caption">
-										<h3>Artificial Neural Networks</h3>
+										<h3>Neural Networks</h3>
 										<div class="content-caption">
 											<p>See bio-inspired machine learning in action!</p>
 											<a class="btn btn-default" href="{% url 'neural_networks:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
@@ -119,14 +120,25 @@
 				</div>
 				<br/>
 			</section>
-			<section class="app-text-highlight">
+				<section class="app-text-highlight">
 				<div class="text-center vertical-align">
-					<h1>Take it home</h1>
-					<p class="lead">Email your work to yourself to show it off later.</p>
-					<a class="btn btn-default btn-lg" href=""><span class="btn-primary-span">Send It</span><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+					<h1>Want to stay up to date?</h1>
+					<p class="lead">Sign up for the ANU College of Engineering and Computer Science newsletter. <span class="small">This is completely voluntary.</span></p>
+					<form action="" method="post">
+						{% csrf_token %}
+						<div style="width: 50%; margin: 3vh auto;">
+								{{ form.email.errors }}
+								<input class="form-control" id="id_email" name="email" placeholder="Email address" title="" required="" type="email" required>
+
+						</div>
+            
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span class="btn-primary-span">Subscribe For Newsletter</span>
+                </button>
+            </form>
 				</div>
-			</section>
-				
+</section>
 {% endblock %}
 
 {% block script %}
@@ -156,14 +168,13 @@ $("#eyetracking-loader").on("click", "#eyetracking-close-btn", function() {
 });
 </script>
 <script>
-	$('body').addClass('lock');
-	$('#page-overlay').show();
-	$('#instructions').show();
-
-	$("#instructions").on("click", "#instructions-close-btn", function() {
-        $('body').removeClass('lock');
-        $('#instructions').hide();
-        $('#page-overlay').hide();
-    });
+$(function() {
+	// If the user hasnt visited before, force display the instructions
+	if ("{{visited}}" == "False") {
+		$('#instructions-modal').modal();
+	} else {
+		// If the user HAS visited, do nothing.
+	}
+});
  </script>
 {% endblock %}

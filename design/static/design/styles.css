@@ -2,7 +2,6 @@
     font-size: 3em;
     height: 35vh;
     width: 22vw;
-    color: black;
 
     /*border: 1px solid black;*/
 }
@@ -132,11 +131,6 @@ canvas {
 }
 
 
-.light-demo {
-    display: block;
-    padding: 20px;
-}
-
 .top {
     top: 15vh;
 }
@@ -194,4 +188,12 @@ canvas {
 #answer_field {
     font-size: 2em;
     font-weight: bold;
+}
+
+.front:hover, .back:hover, .front_coin:hover, .back_coin:hover {
+    cursor: pointer;
+}
+
+.grid {
+    margin: 0 auto;
 }

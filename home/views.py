@@ -21,6 +21,11 @@ from home.forms import UserCreateForm, NewsletterForm
 
 from reportlab.pdfgen import canvas
 
+from datetime import datetime
+from django.apps import apps
+import json
+
+
 # from weasyprint import HTML, CSS
 
 # def get_report(request):
@@ -50,9 +55,27 @@ class Index(generic.TemplateView):
 def eyegazeinfo(request):
     return render(request,'home/eyegazeinfo.html')
 
-@method_decorator(login_required, name='dispatch')
-class Dashboard(generic.TemplateView):
-    template_name = 'home/dashboard.html'
+@login_required
+def dashboard(request):
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            new_newsletter_signup = form.save()
+            return HttpResponseRedirect("/")
+    else:
+        form = NewsletterForm()
+        # Check if a session variable has been set for previously visiting the dashboard
+        if request.session.get('visited',False) == True:
+            # If the variable exists, the user has visited
+            # Pass a variable to javascript to say the user has visited
+            context = {'visited' : True, 'form' : form}
+            return render(request,'home/dashboard.html', context)
+        else:
+            # Create the variable if it doesnt exist to say the user has visited
+            # Pass a variable to javascript to say the user has not visited (and hence display instructions)
+            request.session['visited'] = True
+            context = {'visited' : False, 'form' : form }
+            return render(request,'home/dashboard.html', context)
 
 
 class About(generic.TemplateView):
@@ -119,5 +142,35 @@ def generate_webpage(request):
     response.write(pdf)
     return response
 
+@method_decorator(login_required, name='dispatch')
 class OtherResearch(generic.TemplateView):
     template_name = 'home/other_research.html'
+
+@login_required
+def levelUp(request):
+    user = request.user
+    activity_path = request.POST['app_name']
+
+    list_of_completes = []
+
+    for item in user.completedactivity_set.all():
+        list_of_completes.append(item.activity)
+
+    if activity_path not in list_of_completes:
+        new_completion = user.completedactivity_set.create(activity=activity_path)
+        user.workshopuser.level = str(user.completedactivity_set.count()) # Must be a str 
+        user.workshopuser.save()
+
+        new_level = user.workshopuser.get_level_display()
+        increase = True
+
+        data = { "new_level" : new_level, "increase" : increase}
+        return HttpResponse(
+            json.dumps(data),
+            content_type="application/json"
+        )
+    else:
+        new_level = user.workshopuser.get_level_display()
+        increase = False
+        data = { "new_level" : new_level, "increase" : increase}
+        return HttpResponse(json.dumps(data),content_type="application/json")

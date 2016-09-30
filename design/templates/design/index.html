@@ -16,56 +16,24 @@
 		<h1 class="vertical-align animated bounceInLeft" style="color: black;">Human Computer Interaction 101</h1>
 	</div>
 	<!-- Introduction section -->
-	<div class="container">
+	<section class="container-fluid app-text-standard">
 		<p class="text-justify">Welcome to an introduction to Human Computer Interaction (HCI). You may be wondering, what is HCI? HCI is about the design, evaluation, and implementation of of computer systems that facilitates effective human use. HCI puts the human before anything else. </p>
 		<p class="text-justify">But there are A LOT of poorly designed websites and software out there, I'm sure you have encountered many! Our goal is to introduce you to some design principles that can make interfaces better for interaction, and to hopefully interest you enough to come help us fight the battle against bad interface design!</p>
 		<p class="text-justify">In this activity you will get to play some little activities that teach you some of the design principles that are fundamental in HCI. The more you play, the higher your skill level will become. See how skilled you can get and if you can beat your friends! </p> 
-	</div>
+	</section>
 
 	<section class="container-fluid app-text-highlight">
-		<h3>“A user interface is like a joke, if you have to explain it, it's not that good” ~ unknown</h3>
+		<h3 class="text-center">“A user interface is like a joke, if you have to explain it, it's not that good” ~ unknown</h3>
 	</section>
 	
-	<!-- Container for all of the activities -->
-	<section class="container activities">
-		<h2>HCI Design Principles</h2>
-		<div class="row">
-				<div class="col-sm-12 col-md-12 col-lg-12 col-centered">
-					<div class="row">
-						<div class="col-sm-3 col-md-3 col-lg-3 text-center bigger"> 
-							<a href="{% url 'design:mappings' %}">
-							<i class="fa fa-map-marker fa-5x fa-fw" aria-hidden="true"></i><h3>Mappings</h3></a>
-						</div>
-						<div class="col-sm-3 col-md-3 col-lg-3 text-center bigger"> 
-							<a href="{% url 'design:constraints' %}">
-							<i class="fa fa-ban fa-5x fa-fw" aria-hidden="true"></i><h3>Constraints</h3></a>
-						</div>
-						<div class="col-sm-3 col-md-3 col-lg-3 text-center bigger"> 
-							<a href="{% url 'design:affordances' %}">
-							<i class="fa fa-map-signs fa-5x fa-fw" aria-hidden="true"></i><h3>Affordances & Signifiers</h3></a>
-						</div>
-						<div class="col-sm-3 col-md-3 col-lg-3 text-center bigger"> 
-							<a href="{% url 'design:conceptual' %}">
-							<i class="fa fa-bicycle fa-5x fa-fw" aria-hidden="true"></i><h3>Conceptual Models</h3></a>
-						</div>
-					</div>
-				</div>
-		</div>
-
-		
-	</section>
-
 	<!-- Have students toggle images to find out what kind of subject areas HCI involves -->
-	<div class="container subject-div">
-		<h2>HCI combines different subject areas... </h2>
-		<br>
-		<p>Click to find out just some of them: </p>
-		<br>
-		<div class="container-fluid grid">
-			<div class="row">
-				<div class="col-sm-5 col-md-5 col-lg-5 col-centered">
+	<div class="container-fluid app-text-standard subject-div">
+		<h2>Subject areas</h2>
+		<p class="text-justify">HCI is a very diverse and interesting research area. There are lots of different subjects areas that impact on, and are influenced by, HCI. In fact, there is so much you can do with HCI that no matter what you are interested in, there is something for you!</p>
+		<p class="text-center lead" style="margin: 30px auto 50px auto; width: 45%;">Can you guess some of the subject areas are involved in HCI? Click on each icon below to find out.</p>
+		<div class="grid" style="margin: 0 auto; width: 22%">
 					<div class="row">
-						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+						<div class="col-sm-4 col-md-4 col-lg-4 flipper" onclick="this.classList.toggle('flipped')">
 							<div class="front text-center">
 								<i class="fa fa-laptop fa-5x fa-fw" aria-hidden="true"></i>
 							</div>
@@ -74,7 +42,7 @@
 								<p>Computer Science</p>
 							</div>
 						</div>
-						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+						<div class="col-sm-4 col-md-4 col-lg-4 flipper" onclick="this.classList.toggle('flipped')">
 							<div class="front text-center">
 								<i class="fa fa-flask fa-5x fa-fw" aria-hidden="true"></i>
 							</div>
@@ -83,7 +51,7 @@
 								<p>Psychology</p>
 							</div>
 						</div>
-						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+						<div class="col-sm-4 col-md-4 col-lg-4 flipper" onclick="this.classList.toggle('flipped')">
 							<div class="front text-center">
 								<i class="fa fa-paint-brush fa-5x fa-fw" aria-hidden="true"></i>
 							</div>
@@ -94,7 +62,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+						<div class="col-sm-4 col-md-4 col-lg-4 flipper" onclick="this.classList.toggle('flipped')">
 							<div class="front text-center">
 								<i class="fa fa-picture-o fa-5x fa-fw" aria-hidden="true"></i>
 							</div>
@@ -103,7 +71,7 @@
 								<p>Design</p>
 							</div>
 						</div>
-						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+						<div class="col-sm-4 col-md-4 col-lg-4 flipper" onclick="this.classList.toggle('flipped')">
 							<div class="front text-center">
 								<i class="fa fa-music fa-5x fa-fw" aria-hidden="true"></i>
 							</div>
@@ -112,7 +80,7 @@
 								<p>Music</p>
 							</div>
 						</div>
-						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+						<div class="col-sm-4 col-md-4 col-lg-4 flipper" onclick="this.classList.toggle('flipped')">
 							<div class="front text-center">
 								<i class="fa fa-graduation-cap fa-5x" aria-hidden="true"></i>
 							</div>
@@ -123,7 +91,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+						<div class="col-sm-4 col-md-4 col-lg-4 flipper" onclick="this.classList.toggle('flipped')">
 							<div class="front text-center">
 								<i class="fa fa-user-secret fa-5x fa-fw" aria-hidden="true"></i>
 							</div>
@@ -132,7 +100,7 @@
 								<p>Cyber Security</p>
 							</div>
 						</div>
-						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+						<div class="col-sm-4 col-md-4 col-lg-4 flipper" onclick="this.classList.toggle('flipped')">
 							<div class="front text-center">
 								<i class="fa fa-users fa-5x fa-fw" aria-hidden="true"></i>
 							</div>
@@ -141,7 +109,7 @@
 								<p>Sociology</p>
 							</div>
 						</div>
-						<div class="col-sm-2 flipper" onclick="this.classList.toggle('flipped')">
+						<div class="col-sm-4 col-md-4 col-lg-4 flipper" onclick="this.classList.toggle('flipped')">
 							<div class="front text-center">
 								<i class="fa fa-keyboard-o fa-5x fa-fw" aria-hidden="true"></i>
 							</div>
@@ -151,13 +119,37 @@
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
 		</div>
-		<br>
-		<p>And there is heaps more you can do with HCI! So no matter what you're interested in, HCI probably has something for you! </p>
 	</div>
+	<!-- Container for all of the activities -->
+	<section class="container-fluid app-text-standard activities">
+		<h2>Design Principles</h2>
+		<p class="text-center lead" style="margin: 30px auto 50px auto; width: 45%;">Want more levels? Try out each of these activities.</p>
+		<div class="row text-center" style="width: 73%; margin: 0 auto;">
+			
+			<a href="{% url 'design:mappings' %}">
+				<div class="col-sm-4 col-md-4 col-lg-4 text-center bigger"> 
+					<i class="fa fa-map-marker fa-5x fa-fw" aria-hidden="true"></i><h3 class="text-center">Mappings</h3>
+				</div>
+			</a>
+			<a href="{% url 'design:constraints' %}">
+				<div class="col-sm-4 col-md-4 col-lg-4 text-center bigger"> 
+					<i class="fa fa-ban fa-5x fa-fw" aria-hidden="true"></i><h3 class="text-center">Constraints</h3>
+				</div>
+			</a>
+			<!--<div class="col-sm-3 col-md-3 col-lg-3 text-center bigger"> 
+				<a href="{% url 'design:affordances' %}">
+				<i class="fa fa-map-signs fa-5x fa-fw" aria-hidden="true"></i><h3>Affordances & Signifiers</h3></a>
+			</div>-->
+			<a href="{% url 'design:conceptual' %}">
+				<div class="col-sm-4 col-md-4 col-lg-4 text-center bigger"> 
+					<i class="fa fa-bicycle fa-5x fa-fw" aria-hidden="true"></i><h3 class="text-center">Conceptual Models</h3>
+				</div>
+			</a>
+		</div>
 
+		
+	</section>
 
 
 {% endblock %}

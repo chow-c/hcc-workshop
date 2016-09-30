@@ -14,21 +14,32 @@ class NewsletterSignup(models.Model):
     def __str__(self):
         return self.email
 
+class CompletedActivity(models.Model):
+    completed_date = models.DateTimeField('Date Completed',auto_now_add=True)
+    activity = models.CharField(max_length=100)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+
+    def __unicode__(self):
+        return "%s %s" % (self.user, self.activity)
+
+    class Meta:
+        ordering = ('activity',)
+
 class WorkshopUser(models.Model):
     LEVELS = (
-    ('0', 'Baby'),
-    ('1', 'Student'),
-    ('2', 'Teacher'),
-    ('3', 'Doctor'),
-    ('4', 'Professor'),
-    ('5', 'Mad Scientist'),
-    ('6', 'Superhero'),
-    ('7', 'Alien'),
-    ('8', 'Wizard'),
-    ('9', 'A.I.'),
+    ('0', '0 - Baby'),
+    ('1', '1 - Student'),
+    ('2', '2 - Teacher'),
+    ('3', '3 - Doctor'),
+    ('4', '4 - Professor'),
+    ('5', '5 - Mad Scientist'),
+    ('6', '6 - Superhero'),
+    ('7', '7 - Alien'),
+    ('8', '8 - Wizard'),
+    ('9', '9 - A.I.'),
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    level = models.CharField(choices=LEVELS,max_length=100,default=0)
+    level = models.CharField(choices=LEVELS,max_length=100,default='0')
 
     def __unicode__(self):
         return self.user

@@ -11,7 +11,7 @@
 
 /* For the image flipping section */
 .grid {
-    padding-bottom: 30px;
+    width: 980px;
 }
 
 #result-img {
