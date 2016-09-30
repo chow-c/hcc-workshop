@@ -31,14 +31,15 @@
                 {# Display a form #}
             <form action="{% url 'login' %}" method="post" class="form">
               {% csrf_token %}
-              {% bootstrap_form form %}
+              <div style="width: 50%; margin: 0 auto;">
+{% bootstrap_form form layout='inline' %}
+              </div>
                 <button type="submit" class="btn btn-primary">
                   Login
                 </button>
                 
                <input type="hidden" name="next" value="{{ next }}" />
             </form>
-            <p><a href="{#{% url 'password_reset' %}#}">Lost password?</a></p>
             {% endif %}
 
           </div>

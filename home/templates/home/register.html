@@ -31,11 +31,12 @@
                 {# Display a form #}
             <form action="{% url 'home:register' %}" method="post" class="form">
               {% csrf_token %}
-              {% bootstrap_form form %}
+              <div style="width:50%; margin: 0 auto">
+              {% bootstrap_form form layout='inline' %}
+              </div>
                 <button type="submit" class="btn btn-primary">
                   Register
                 </button>
-               <input type="hidden" name="next" value="{{ next }}" />
             </form>
             {% endif %}
 
