@@ -25,6 +25,7 @@ from datetime import datetime
 from django.apps import apps
 import json
 
+
 # from weasyprint import HTML, CSS
 
 # def get_report(request):
@@ -54,6 +55,7 @@ class Index(generic.TemplateView):
 def eyegazeinfo(request):
     return render(request,'home/eyegazeinfo.html')
 
+@login_required
 def dashboard(request):
     if request.method == 'POST':
         form = NewsletterForm(request.POST)
@@ -140,9 +142,11 @@ def generate_webpage(request):
     response.write(pdf)
     return response
 
+@method_decorator(login_required, name='dispatch')
 class OtherResearch(generic.TemplateView):
     template_name = 'home/other_research.html'
 
+@login_required
 def levelUp(request):
     user = request.user
     activity_path = request.POST['app_name']

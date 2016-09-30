@@ -1,15 +1,13 @@
 ## views.py
 from django.shortcuts import render
-from django.views import generic
 from django.views.decorators.csrf import requires_csrf_token
-
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-class Index(generic.TemplateView):
-    template_name = 'thatcher/index.html'
 
 @requires_csrf_token
+@login_required
 def index(request):
     images = [('margaret_thatcher.jpg', 'Margaret Thatcher'),
                     ('adele.jpg', 'Adele'),

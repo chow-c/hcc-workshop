@@ -4,10 +4,14 @@ from django.http import HttpResponseRedirect, HttpResponse, Http404
 from .forms import mappingsForm, constraintForm
 from .models import Mappings, Constraints
 from django.core.urlresolvers import reverse
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def index(request):
     return render(request, 'design/index.html')
 
+@login_required
 def mappings(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
@@ -32,9 +36,11 @@ def mappings(request):
 
     return render(request, 'design/mappings.html', {'form': form})
 
+@login_required
 def affordances(request):
     return render(request, 'design/affordances.html')
 
+@login_required
 def constraints(request):
         # if this is a POST request we need to process the form data
     if request.method == 'POST':
@@ -59,6 +65,6 @@ def constraints(request):
 
     return render(request, 'design/constraints.html', {'form': form})
 
-
+@login_required
 def conceptual(request):
     return render(request, 'design/conceptual.html')
