@@ -47,25 +47,7 @@
 {% endblock %}
 
 {% block content %} 
-	{% if False %}
-	<div class="background-gif" id="image-gif"></div>
-		<div class="jumbotron text-center">
-		<h1 class="vertical-align">Eye Tracking for Image Viewing</h1>
-	</div>
-	<div id="inner-container-fluid" class="container-fluid">
-		<p>Whoops! Something seems to have gone wrong. Go back to the 
-			<a href="{% url 'eyetracking:image' %}">start page</a> for the activity and 
-			make sure an <a href="https://theeyetribe.com/">EyeTribe</a> eye tracker is connected and running on this computer. 
-		</p>
-		<div class="container-fluid next-page text-center">
-			<a href="" role="button" class="btn btn-primary btn-lg">
-				<i class="fa fa-chevron-left" aria-hidden="true"></i>
-				<span class="next-btn-primary-span">Image Tracking Start Page</span>
-			</a>
-		</div>
-	</div>
-	{% else %}
- 
+
 		<div class="container">
 			<p><b>Check out your eye gaze when you looked at the image each time: </b></p>   
             <div class="text-center" id="test">
@@ -75,8 +57,13 @@
             <p id="">The gaze (dots and lines) in pink are from when you tried to guess the ages of the people.</p>
             <p id="">The gaze (dots and lines) in green are from when you tried to memorise the positions the objects in the room.</p>
 		</div>
-
-	{% endif %}
+        <section class="app-text-highlight">
+	<div class="text-center vertical-align">
+	    <h1>Level Up</h1>
+		<p class="lead">Feast your eyes on this.</p>
+		<button role="button" class="btn btn-default btn-lg" href="#" id="level-up"><span class="btn-primary-span">Level Up</span><i class="fa fa-level-up" aria-hidden="true"></i></a>
+    </div>
+</section>
 {% endblock %}
 {% block script %} 
 <script src="https://d3js.org/d3.v4.min.js"></script>
