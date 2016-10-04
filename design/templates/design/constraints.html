@@ -13,13 +13,15 @@
 {% endblock %}
 
 {% block content %} 
+    <div class="page-header">
+        <h1>HCI <small>CONSTRAINTS</small></h1>
+    </div>
     <div class="container-fluid app-text-standard">
-        <h2>Constraints</h2>
         <p class="text-justify">Constraints provide cues and limit the set of possible operations. Constraints are necessary for indicating proper use of a system.</p>
 
         <p class="text-justify">People don't remember small details when they are used to distinguishing between larger objects. It makes no sense for people to remember every little detail about every object they encounter, because that's a lot of information! In a psychology study by Bickerson & Adams (1979) it was found that in the US most people do not recognise common coins.</p> 
-        <p class="text-justify">Let's see how well you do at picking out the real Australian $2 coin. Click the coin below that you think is the real $2 coin:</p>
-
+        <p class="text-center lead">How good are you at picking out the real Australian coin? Click the coin below that you think is the real one.</p>
+        <div style="margin: 0 auto; width: 35%; padding: 30px 0">
         <div class="row">
             <div class="col-sm-2 flipper_coin" onclick="this.classList.toggle('flipped_coin')">
                 <div class="front_coin text-center">
@@ -78,19 +80,21 @@
                 </div>
             </div>
         </div>
+        </div>
             
         <p class="text-justify">How did you fare? If you're like most people you would have found this task difficult! Yet, you can most likely use money with no problems, right? So why did you find it so difficult to figure out which was the real coin? The answer is that in day to day life we don't have to distinguish between fake and real coins, we just have to distinguish between other coins. There are a lot of other differences that we use to recognise a coin in comparison to others, such as size, shape, and colour, but usually we don't distinguish coins based upon the fine details on the coins themselves.</p>
 
         <p class="text-justify">You may be wondering at this point, what does this have to do with HCI and constraints. Well this simple example is often used to demonstrate that people do not, neither do they have to, remember everything in order to perform a task. The studd we remember that's called knowledge in the head, but there is also a lot of knowledge that we can glean from the world to help us figure out how to use something - such as mappings and affordances! But constraints play a big part in forming our knowledge of the world.</p>
 
         <p class="text-justify">Constraints simplify memory of performing a task and they can be a very useful tool to designers to simplify use of a system by limiting the possible actions that can occur. Constraining possible actions means that there is less need for users to remember complicated and detailed steps, which would take time and most likely result in numerous errors. </p>
-        
-        <h3>Example</h3>
-        <p class="text-justify">Let's have a look at constraints in action, fill in the following forms and press submit for each: </p>
+    </div>
+    <section class="container-fluid app-text-standard">
+        <h2>Example</h2>
+        <p class="text-justify">To see constraints in action, fill in the following forms with dummy information and press submit for each: </p>
         <div class="row">
             <div class="col-lg-6">
                 <form name="form1">
-                    <h4>Form 1</h4>
+                    <h3>Form 1</h3>
                     <p>Your favourite number: <input type="text" id="fav_number" > <span id="error1"></span></p>
                     <p>Pick a date: <input type="text" id="date" > <span id="error2"></span></p>
                     <p>Your favourite colour: <input type="text" id="fav_colour" > <span id="error3"></span></p>
@@ -99,7 +103,7 @@
             </div>
             <div class="col-lg-6">
                 <form>
-                    <h4>Form 2</h4>
+                    <h3>Form 2</h3>
                     <p>Your favourite number: <input type="number" id="numberpicker" > <span id="error4"></span></p>
                     <p>Pick a date: <input type="text" id="datepicker"> <span id="error5"></span></p>
                     <p>Your favourite colour: <input type="color" id="colourpicker" value="#ff0000"> <span id="error6"></span></p>
@@ -108,8 +112,8 @@
             </div>
         </div>
         <br>
-        <p class="text-justify">Ok, so it is a pretty silly form but it demonstrates the power of imposing constraints! As you probably figured out, <strong>Form 2</strong> is the form that has constraints on the inputsand <strong>Form 1</strong> had no constraints on the inputs. Did you find it difficult to get the right inputs for <strong>Form 1</strong>? The answer is most likely yes. Once you filled in <strong>Form 2</strong> it was probably a lot easier to fill in <strong>Form 1</strong>, but until there it probably seemed impossible! How would one know that the number picked had to be numerical, that the date picked had to be in the format <em>yyyy/mm/dd</em>, or that the colour picked had to be in <em>hexadecimal</em> (a number system you may not have even heard of)? The designer of <strong>Form 2</strong> knew this and so constrained the possible inputs to the particular fields so that the user (you) could not possibly make an error!</p>
-    </div>
+        <p class="text-justify"><strong>Form 2</strong> on the right demonstrates the power of imposing constraints on the user. Did you find it difficult to get the right inputs for <strong>Form 1</strong>? If so, it was likely due to there being no constraints, and therefore it is almost impossible for the user to know ahead of time what format the form wants. Meanwhile, <strong>Form 2</strong> was much easier to fill in as it constrained the possible inputs to the required formats only so that users were much less likely to make errors.</p>
+    </section>
     <section class="container-fluid app-text-highlight text-center">
         		<h1>Level Up</h1>
 
