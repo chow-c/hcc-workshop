@@ -25,12 +25,10 @@ svg {
 
 {% block content %} 
 
-	<div class="background-gif" id="image-gif"></div>
-	<div class="jumbotron text-center app-splash" >
-		<h1 class="vertical-align animated bounceInLeft" >Eye Tracking for Image Viewing</h1>
-	</div>
-
-		<div class="container app-text-standard">
+    <div class="page-header">
+        <h1>Eye Tracking <small>Image Viewing</small></h1>
+    </div>
+		<div class="container-fluid app-text-standard" style="height: 70vh">
 			<p class="test-justify">When we usually look at an image, our eyes don't actually see very much of the fine details. Instead, it has been found that what we actually focus on and view in an image is dependent on the goals we have when we look at it.</p>
 			<p class="test-justify">You will be shown the same image three times, but each time you will be asked a different question. Afterward, you will be able to visualise your eye gaze to see how your eye movements varied depending on the three different goals you were given, even though the image was identical.</p>
 			<section class="text-center button-section" id="experiment-button" >
@@ -38,8 +36,8 @@ svg {
 			</section>
 		</div>
 
-		<div id="experiment_p1" class="container" >
-            <p><b>Please look at this image and when you are ready press the Next button.</b></p>   
+		<div id="experiment_p1" class="container-fluid app-text-standard" >
+            <p class="text-center lead">Please look at this image and when you are ready press the Next button.</p>   
             <div class="text-center" id="test">
 				<img id="img1" src="{% static 'eyetracking/the_visitor.jpg' %}" alt="The Visitor" />
 			</div>
@@ -53,7 +51,7 @@ svg {
 
         <!--<svg class="overlay"> </svg>-->
         <div id="experiment_p2"  class="container-fluid app-text-standard">
-            <p class="text-center"><b>Look again at the image, this time can you guess what the ages of the people in the picture are?</b></p>   
+            <p class="text-center lead">Look again at the image, this time can you guess what the ages of the people in the picture are?</p>   
             <div class="text-center"><img id="img2" src="{% static 'eyetracking/the_visitor.jpg' %}" alt="The Visitor" /></div>
 			{{ form.image2.as_hidden }}
 			<section class="text-center button-section" id="experiment-button">
@@ -61,8 +59,8 @@ svg {
 			</section>
 		</div>
 
-		<div id="experiment_p3"  class="container">
-            <p><b>Look again at the image, this time memorise the positions the objects in the room.</b></p>   
+		<div id="experiment_p3"  class="container-fluid app-text-standard">
+            <p class="text-center lead">Look again at the image, this time memorise the positions the objects in the room.</p>   
             <div class="text-center"><img src="{% static 'eyetracking/the_visitor.jpg' %}" alt="The Visitor" /></div>
 			{{ form.image3.as_hidden }}
 			<section class="text-center button-section" id="experiment-button">
