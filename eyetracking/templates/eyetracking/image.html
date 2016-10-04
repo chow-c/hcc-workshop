@@ -29,26 +29,10 @@ svg {
 	<div class="jumbotron text-center app-splash" >
 		<h1 class="vertical-align animated bounceInLeft" >Eye Tracking for Image Viewing</h1>
 	</div>
-		{% if False %}
-			<p class="test-justify">Unfortunately, no eye tracker has been detected, if you have an EyeTribe connected, check the connection through the EyeTribe software and reload this page. If you do not have an EyeTribe connected to this computer please either move to a computer with one connected, of connect one. 
-			</p>
-			<p class="test-justify">If you are interested in finding out more about the EyeTribe eye tracker please visit the EyeTribe's website: theeyetribe.com
-			</p>
-			<p class="test-justify">If you're interested in finding out more about eye tracking you can read the <a href="{% url 'home:eyegazeinfo' %}">information page</a>
-				on eye tracking.
-			</p>
-			<div class="container-fluid next-page text-center">
-        		<a href="{% url 'home:dashboard' %}" role="button" class="btn btn-primary btn-lg">
-					<i class="fa fa-home" aria-hidden="true"></i>
-					<span class="next-btn-primary-span">Dashboard</span>
-				</a>
-    		</div>
 
-		{% else %}
-
-		<div id="intro">
-			<p class="test-justify">When we view an image, we actually see very little of in fine detail. Actually, our eyes see very little in detail at any one point time. It has been found that what we look at in an image is dependent on the goals of viewing the image.</p>
-			<p class="test-justify">Using the eye tracker we can capture the different ways that we look at images. In this activity you will be shown an image three times, but given differen goals. At the end, you will be able to see the different eye movement patterns for the three goals to compare them.</p>
+		<div class="container app-text-standard">
+			<p class="test-justify">When we usually look at an image, our eyes don't actually see very much of the fine details. Instead, it has been found that what we actually focus on and view in an image is dependent on the goals we have when we look at it.</p>
+			<p class="test-justify">You will be shown the same image three times, but each time you will be asked a different question. Afterward, you will be able to visualise your eye gaze to see how your eye movements varied depending on the three different goals you were given, even though the image was identical.</p>
 			<section class="text-center button-section" id="experiment-button" >
 				<a href="#experiment_p1" id="to_pt1" role="button" class="btn btn-primary btn-lg"><span>Try it out</span><br><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 			</section>
@@ -68,8 +52,8 @@ svg {
 		</div>
 
         <!--<svg class="overlay"> </svg>-->
-        <div id="experiment_p2"  class="container">
-            <p><b>Look again at the image, this time can you guess what the ages of the people in the picture are?</b></p>   
+        <div id="experiment_p2"  class="container-fluid app-text-standard">
+            <p class="text-center"><b>Look again at the image, this time can you guess what the ages of the people in the picture are?</b></p>   
             <div class="text-center"><img id="img2" src="{% static 'eyetracking/the_visitor.jpg' %}" alt="The Visitor" /></div>
 			{{ form.image2.as_hidden }}
 			<section class="text-center button-section" id="experiment-button">
@@ -86,7 +70,6 @@ svg {
 			</section>
 		</form>
 		</div>
-		{% endif %}
 {% endblock %}
 
 {% block script %} 

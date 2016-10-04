@@ -18,20 +18,9 @@
 		<h1 class="vertical-align animated bounceInLeft" style="color: black">Eye Tracking as a Mouse Controller</h1>
 	</div>
 	
-    {% if False %}
-        <p class="text-justify">Unfortunately, no eye tracker has been detected, if you have an EyeTribe connected, check the connection through the EyeTribe software and reload this page. If you do not have an EyeTribe connected to this computer please either move to a computer with one connected, of connect one. </p>
-        <p class="text-justify">If you are interested in finding out more about the EyeTribe eye tracker please visit the EyeTribe's website: theeyetribe.com </p>
-        <p class="text-justify">If you're interested in finding out more about eye tracking you can read the <a href="{% url 'home:eyegazeinfo' %}">information page</a> on eye tracking. </p>
-        <div class="container-fluid next-page text-center">
-            <a href="{% url 'home:dashboard' %}" role="button" class="btn btn-primary btn-lg">
-                <i class="fa fa-home" aria-hidden="true"></i>
-                <span class="next-btn-primary-span">Dashboard</span>
-            </a>
-        </div>
-    {% else %}
-	<div id="intro">
-		<p class="text-justify">An eye tracker is a device that captures where you are looking. It has a lot of applications in human computer interaction research and practice. You may have already completed the join the dots activity where the eye tracker recorded where you are looking and this was then plotted on the screen for you to see. Another use of eye tracking is its use as a method of input to the computer. This is of special importance when considering disabled people who may not be able to move thier hand and therefore not be able to control a mouse or keyboard.</p>
-        <p class="text-justify">In this activity you will control an object on the screen with your eyes. The goal will be to move the object into a target location - a bit like moving a mouse cursor onto a button!</p> 
+	<div class="container app-text-standard">
+		<p class="text-justify">Eye tracking can be used as a method of input for a computer. This might be particularly useful for people with disabilities or injuries, such as during cases where they are unable to operate a mouse with their hands.</p>
+        <p class="text-justify">In this activity you will control a circle with your eyes. Your goal will be to move that circle into the square.</p> 
 		<section class="text-center button-section" id="experiment-button">
 			<a id="start" href="#experiment" role="button" class="btn btn-primary btn-lg"><span>Try it out</span><br><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 		</section>
@@ -45,7 +34,6 @@
         </div>  
 	</div>
 
-    {% endif %}
     </div>
 {% endblock %}
 
@@ -79,7 +67,7 @@ $(function() {
                 changeColour(b);
                 var map = d3.select("#experiment");
                 var div = map.append("div")
-                            .html("Great job! The board will redraw again, except this time your target will be moving and  you'll be timed.")
+                            .html("Great job! Let's try again, but this time the target will be moving!")
                             .attr("class","text");    
                 var button = map.append("a")
                                 .attr("href","#experiment_pt2")
