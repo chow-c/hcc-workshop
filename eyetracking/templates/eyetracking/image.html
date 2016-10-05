@@ -45,7 +45,7 @@ svg {
 			{% csrf_token %}
 			{{ form.image1.as_hidden }}
 			<section class="text-center button-section" id="experiment-button">
-				<a href="#experiment_p2" role="button" id="to_pt2" class="btn btn-primary btn-lg"><span>Next</span><br><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+				<a href="#experiment_p2" role="button" id="to_pt2" class="btn btn-primary btn-lg"><span>Next</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 			</section>
 		</div>
 
@@ -55,12 +55,12 @@ svg {
             <div class="text-center"><img id="img2" src="{% static 'eyetracking/the_visitor.jpg' %}" alt="The Visitor" /></div>
 			{{ form.image2.as_hidden }}
 			<section class="text-center button-section" id="experiment-button">
-				<a href="#experiment_p3" role="button" id="to_pt3" class="btn btn-primary btn-lg"><span>Next</span><br><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+				<a href="#experiment_p3" role="button" id="to_pt3" class="btn btn-primary btn-lg"><span>Next</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 			</section>
 		</div>
 
 		<div id="experiment_p3"  class="container-fluid app-text-standard">
-            <p class="text-center lead">Look again at the image, this time memorise the positions the objects in the room.</p>   
+            <p class="text-center lead">Look again at the image, this time memorise the positions of the objects in the room.</p>   
             <div class="text-center"><img src="{% static 'eyetracking/the_visitor.jpg' %}" alt="The Visitor" /></div>
 			{{ form.image3.as_hidden }}
 			<section class="text-center button-section" id="experiment-button">

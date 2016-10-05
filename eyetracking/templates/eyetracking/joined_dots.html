@@ -5,37 +5,23 @@
 
 {% block head %} 
 <link rel="stylesheet" href="{% static 'eyetracking/styles.css' %}">
+<style>
+	body {
+		overflow: scroll;
+	}
+</style>
 {% endblock %}
 
 {% block app-breadcrumbs %}
     <li><a href="{% url 'eyetracking:index' %}">Eye Tracking</a></li>
 	<li><a href="{% url 'eyetracking:join-the-dots' %}">Join the dots</a></li>
-	<li class="active">With my eye gaze</li>
+	<li class="active">Results</li>
 {% endblock %}
 
 {% block content %} 
-	{% if False %}
-	<div class="background-gif"></div>
-		<div class="jumbotron text-center">
-		<h1 class="vertical-align">Join the dots... with my eye gaze!</h1>
-	</div>
-	<div id="inner-container-fluid" class="container-fluid">
-		<p>Whoops! Something seems to have gone wrong. Go back to the 
-			<a href="{% url 'join_the_dots:index' %}">start page</a> for the activity and 
-			make sure an <a href="https://theeyetribe.com/">EyeTribe</a> eye tracker is connected and running on this computer. 
-		</p>
-		<div class="container-fluid next-page text-center">
-			<a href="{% url 'join_the_dots:eyegaze' %}" role="button" class="btn btn-primary btn-lg">
-				<i class="fa fa-chevron-left" aria-hidden="true"></i>
-				<span class="next-btn-primary-span">Reading Tracking Start Page</span>
-			</a>
-		</div>
-	</div>
-	{% else %}
 	<div class="container-fluid " >
 	<div id="showgaze" class="container">
 		<div id="map"></div>
-
 	</div>
 	</div>
 	<section class="app-text-highlight">
@@ -45,7 +31,6 @@
 		<button role="button" class="btn btn-default btn-lg" href="#" id="level-up"><span class="btn-primary-span">Level Up</span><i class="fa fa-level-up" aria-hidden="true"></i></a>
     </div>
 </section>
-	{% endif %}
 {% endblock %}
 {% block script %} 
 <script src="https://d3js.org/d3.v4.min.js"></script>

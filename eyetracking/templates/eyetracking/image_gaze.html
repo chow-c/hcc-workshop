@@ -38,24 +38,29 @@
 }
 
 </style>
+<style>
+	body {
+		overflow: scroll;
+	}
+</style>
 {% endblock %}
 
 {% block app-breadcrumbs %}
 	<li><a href="{% url 'eyetracking:index' %}">Eye Tracking</a></li>
     <li><a href="{% url 'eyetracking:image-viewing' %}">Images</a></li>
-	<li class="active">My eye gaze</li>
+	<li class="active">Results</li>
 {% endblock %}
 
 {% block content %} 
 
-		<div class="container">
-			<p><b>Check out your eye gaze when you looked at the image each time: </b></p>   
+		<div class="container-fluid app-text-standard">
+			<p class="text-center lead">Check out your eye gaze when you looked at the image each time: </p>   
             <div class="text-center" id="test">
 				<img id="img1" src="{% static 'eyetracking/the_visitor.jpg' %}" alt="The Visitor" />
 			</div>
-            <p id="">The gaze (dots and lines) in blue are from when you looked at the image first.</p>
-            <p id="">The gaze (dots and lines) in pink are from when you tried to guess the ages of the people.</p>
-            <p id="">The gaze (dots and lines) in green are from when you tried to memorise the positions the objects in the room.</p>
+            <p class="text-center lead">Blue is when you could freely look at the image.</p>
+            <p class="text-center lead">Red is when you were looking at the people to try and guess their ages.</p>
+            <p class="text-center lead">Green is when you were looking at the objects to try and memorise their position.</p>
 		</div>
         <section class="app-text-highlight">
 	<div class="text-center vertical-align">
