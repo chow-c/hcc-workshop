@@ -12,44 +12,26 @@
 {% endblock %}
 
 {% block content %} 
-	<div class="background-gif" id="reading-gif"></div>
-	<div class="jumbotron text-center app-splash">
-		<h1 class="vertical-align animated bounceInLeft" style="color: black;">Eye Tracking for Reading Analysis</h1>
-	</div>
-		{% if False %}
-			<p class="text-justify">Unfortunately, no eye tracker has been detected, if you have an EyeTribe
-				 connected, check the connection through the EyeTribe software and reload this page. If you 
-				do not have an EyeTribe connected to this computer 
-				please either move to a computer with one connected, of connect one. 
+    <div class="page-header">
+        <h1>Eye Tracking <small>Reading Analysis</small></h1>
+    </div>
+
+		<div class="container-fluid app-text-standard" style="height: 70vh">
+			<p class="text-justify">Using eye trackers, we can capture the different eye movements we make when we read. There are many specific characteristics of eye gaze during reading. 
 			</p>
-			<p class="text-justify">If you are interested in finding out more about the EyeTribe eye tracker please visit the
-				EyeTribe's website: theeyetribe.com
+			<p class="text-justify">In this activity, you will read a small paragraph of text in order to visualise your eye gaze during reading.
 			</p>
-			<p class="text-justify">If you're interested in finding out more about eye tracking you can read the <a href="{% url 'home:eyegazeinfo' %}">information page</a>
-				on eye tracking.
-			</p>
-			<div class="container-fluid next-page text-center">
-        		<a href="{% url 'home:dashboard' %}" role="button" class="btn btn-primary btn-lg">
-					<i class="fa fa-home" aria-hidden="true"></i>
-					<span class="next-btn-primary-span">Dashboard</span>
-				</a>
-    		</div>
-		{% else %}
-		<div id="intro" class="container-fluid">
-			<p class="text-justify">Our eyes move in very specific way when we read. Our eyes actually see very little in detail at any one point time. So our eyes are constantly on the move to see the visual field and compose a full picture of our environment. The movements are characterised by short pauses, termed fixations, where fine detail vision is taken in. The eye then rapidly jumps to the next point of fixation, these jumps are termed saccades. 
-			</p>
-			<p class="text-justify">Using the eye tracker we can capture these fixations and saccades. Would you like to see how you read?
-			</p>
+			<br>
 			<section class="text-center">
 				<a id="start" href="#experiment" role="button" class="btn btn-primary btn-lg"><span>Try it out</span><br><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 			</section>
 		</div>
 			
-		<div id="experiment" class="container reading-experiment">
+		<div id="experiment" class="container-fluid reading-experiment">
 			<div class="experiment-text">
 				Right now your eye movements are being tracked. This allows us to see what you are looking at 
 				and analyse your reading behaviour. When you click the next button you will be able to see 
-				which part of this page you were looking at, as well as how you read this text. The circles are
+				which part of this page you were looking at, as well as how you read this text. The circles are 
 				where your eyes took in visual information, these are termed fixations. The lines between the 
 				circles are called saccades, this is when your eye moves rapidly to another point of fixation.	
 			</div>
@@ -62,7 +44,6 @@
 			</form>
 			<p></p>
 		</div>
-	{% endif %}
 {% endblock %}
 
 {% block script %} 

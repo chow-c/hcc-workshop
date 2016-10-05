@@ -10,7 +10,14 @@ services:
       depends_on:
         - "db"
         - "redis"
+    data:
+      image: busybox
+      command: "true"
+      volumes:
+        - ./data:/var/lib/postgresql/data
     db:
       image: postgres
+      volumes_from:
+        - data
     redis:
       image: redis

@@ -81,7 +81,7 @@ body {
 #map, #map2 {
     border: 2px #555 dashed;
     width: 90vw;
-    height: 90vh;
+    height: 80vh;
 }
 
 .text {
@@ -161,11 +161,5 @@ circle {
 }
 .experiment-images {
     display: inline-block;
-}
-
-#experiment_p1, #experiment_p2, #experiment_p3 {
-    height: 100vh;
-    width: 100%;
-    padding: 70px 0 0 0;
 }
 

@@ -16,34 +16,40 @@
 <div class="jumbotron text-center app-splash">
     <h1 class="vertical-align animated bounceInLeft">Eye Tracking</h1>
 </div>
-<section class="app-text-standard">
-    <p class="text-justify">Eye tracking involves measuring what a person is looking at and an eye tracker is the device used for making these measurements. The first eye tracker was actually invented to analyse how we read. Since then psychologists have thoroughly studied the reading process. You’ve already read a passage that briefly describes this research, and your eye gaze was recorded as you read.</p>
-    <p class="text-justify">An eye tracker is a device that captures where you are looking. It has a lot of applications in human centred computing research and practice. One use is to simply record eye gaze to see where a user has looked, and another is to use eye tracking as a method of input to the computer. The latter use is of special importance when considering disabled people who may not be able to move their hand and therefore not be able to control a mouse or keyboard.</p> 
+<section class="app-text-standard container-fluid   ">
+    <p class="text-justify">Eye tracking involves measuring what a person is looking at. The first eye tracker was actually invented to analyse how we read. Since then, psychologists have thoroughly studied the reading process.</p>
+    <p class="text-justify">An eye tracker is a device that captures where you are looking. It has a lot of applications in human centred computing research and in practice. One use is to simply record eye gaze to see where a user has looked, and another is to use eye tracking as a method of input to the computer. The latter use is of special importance when considering disabled people who may not be able to move their hand and therefore not be able to control a mouse or keyboard.</p> 
 </section>
-<section class="app-text-standard">
-    <h2>Why do our eye movements look like this?</h2>
-    <p>Humans essentially have two type of vision - detailed and peripheral. Detailed vision is when details of a vision scene are actually encoded and is the reason we can do tasks such as reading, driving, watching TV, playing sport, etc. When you look at something the centre of your gaze is where the detailed visual information is encoded. The visual detail drops very rapidly as you move away from the centre of gaze. You can see an example of this in Figure 1.</p>
+<section class="app-text-standard container-fluid">
+    <h2>Eye movements</h2>
+    <p class="text-justify">Humans essentially have two type of vision - detailed and peripheral. Detailed vision is when details of a vision scene are actually encoded and is the reason we can do tasks such as reading, driving, watching TV, and playing sport. When you look at something the centre of your gaze is where the detailed visual information is encoded. The visual detail drops very rapidly as you move away from the centre of gaze. Take a look at an example of this in the picture below.</p>
     <div class="text-center">
-        <img src="{% static 'home/images/visualAcuity.gif' %}" width="600" alt="Example of visual acuity">
+    <img src="{% static 'home/images/visualAcuity.gif' %}" alt="Example of visual acuity" style="padding: 20px 0;">
     </div>
-    <p style="text-align:center;margin-top:0px;">Figure 1</p>
-    <p>As a result, the eye is always moving so that the centre of gaze can be directed to different parts of the 
+    <div class="row">
+    <div class="text-justify col-sm-8 col-md-8 col-lg-8">
+    <p class="text-justify">As a result, the eye is always moving so that the centre of gaze can be directed to different parts of the 
     visual stimulus so that visual scene can be put together in the brain. This means we read text in a very specific way,
-    which is illustrated in Figure 2.</p>
-    <div class="text-center">
+    which is illustrated in the picture to the right. If you try out the <em>Eye Tracking for Reading Analysis</em> activity, you will be able to see your own reading pattern.</p>
+    <p class="text-justify">In more technical terms, the centre of gaze is called a <strong>fixation</strong> and is where the eye remains (relatively) still to take in visual information. And a <strong>saccade</strong> is the rapid movement that transports the eye to another fixation. Little to no visual information is encoded during saccades. The image to the right visually illustrates fixations and saccades; the dots are the fixations and the lines between the fixations are the saccades.</p>
+    </div>
+    <div class="text-center col-sm-4 col-md-4 col-lg-4">
         <img src="{% static 'home/images/illustration.png' %}" width="400" alt="Example of fixations on text">
     </div>
-    <p style="text-align:center;margin-top:0px;">Figure 2</p>
-    <p>In more technical terms, the centre of gaze is called a <strong>fixation</strong> and is where the eye remains (relatively) still to take in visual information. And a <strong>saccade</strong> is the rapid movement that transports the eye to another fixation. Little to no visual information is encoded during saccades. Figure 2 visually illustrates fixations and saccades; the dots are the fixations and the lines between the fixations are the saccades.</p>
-    <div class="text-center">
-        <img src="{% static 'home/images/figure1.png' %}" width="200" alt="Example to show we do not read every word">
     </div>
-    <p style="text-align:center;margin-top:0px;">Figure 3</p>
-    <p>So did you fixate on every word? As mentioned above, it has been found that when reading English, people often do not fixate on every word. That means we don’t actually see every single word when we read. Check out Figure 2 again, did you see the second “of”? Most people don’t! You can also see in Figure 3 that not all words are fixated, yet others are fixated more than once. The way in which we read can be related to the difficulty of the text as well as your understanding of the text.</p>
+    </section>
+    <section class="container-fluid app-text-standard">
+    <div class="text-center">
+        <img src="{% static 'home/images/figure1.png' %}" width="250" alt="Example to show we do not read every word" style="padding-bottom: 20px">
+    </div>
+    <p class="text-center"><strong>Read the text in the triangle above. Did you fixate on every word?</strong></p>
+    <p class="text-justify">It has been found that when reading English, people often do not fixate on every single word that they read. That means we often don’t actually <em>see</em> every single word when we read. Take another look at the triangle above, but this time read every word carefully. Did you notice the second 'of'? If you didn't, don't worry, as most people don't! This is one of the nuances of visual perception, and is something that eye tracking can help us study.</p>
 </section>
 <section class="app-text-standard">
     <div class="text-center">
         <h1>Activities</h1>
+        <p class="lead">Great! Now you're prepared to tackle the activities and see it all for yourself.</p>
+        <p class="lead">Remember, these activities only work from the Eye Tracking stations being run by ANU Ambassadors.</p>
     </div>
     <div class="row">
         <div class="col-xs-3 col-md-3 col-lg-3 inner-eye">
@@ -96,13 +102,6 @@
     have the ability to use their hands which restricts their use of computers. They could use their eyes to control a 
     mouse or input keyboard commands!</p>
 </section>
-<section class="app-text-highlight">
-	<div class="text-center vertical-align">
-	    <h1>Level Up</h1>
-		<p class="lead">Feast your eyes on this.</p>
-		<button role="button" class="btn btn-default btn-lg" href="#" id="level-up"><span class="btn-primary-span">Level Up</span><i class="fa fa-level-up" aria-hidden="true"></i></a>
-    </div>
-</section>
 {% endblock %}
 {% block script %} 
 <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -122,7 +121,7 @@ $(document).ready(function() {
         };
         
         testSocket.onerror = function() {
-            setTimeout(function() {$('#eyetracking-loader').html('<h1>Not Found</h1><br><p>These activities are only available at the eyetracking workstations.<br><br>Please try again or talk to one of the ANU workshop instructors.<br><br></p><button class="btn btn-default btn-lg" id="eyetracking-close-btn">Close</button>');},5000);
+            setTimeout(function() {$('#eyetracking-loader').html('<h1>Not Found</h1><br><p>These activities are only available at the eyetracking workstations.<br><br>Head over to one of the ANU Ambassadors to complete these activities.<br><br></p><button class="btn btn-default btn-lg" id="eyetracking-close-btn">Close</button>');},5000);
         };
 
     });

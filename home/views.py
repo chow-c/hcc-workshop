@@ -68,7 +68,7 @@ def dashboard(request):
         if request.session.get('visited',False) == True:
             # If the variable exists, the user has visited
             # Pass a variable to javascript to say the user has visited
-            greeting = ['Welcome back, '+request.user.first_name+'!', 'Try another one '+request.user.first_name+'!', 'Hello again, '+request.user.first_name+'.', 'Hello, '+request.user.first_name+'.', 'Having fun, '+request.user.first_name+'?', 'Good Morning, '+request.user.first_name+'.', 'Nice to see you, '+request.user.first_name+'!', 'Hi there, '+request.user.first_name+'!' ]
+            greeting = ['Welcome back, '+request.user.first_name+'!', 'Try another one, '+request.user.first_name+'!', 'Hello again, '+request.user.first_name+'.', 'Hello, '+request.user.first_name+'.', 'Having fun, '+request.user.first_name+'?', 'Good Morning, '+request.user.first_name+'.', 'Nice to see you, '+request.user.first_name+'!', 'Hi there, '+request.user.first_name+'!' ]
             context = {'visited' : True, 'form' : form, 'greeting' : greeting }
             return render(request,'home/dashboard.html', context)
         else:

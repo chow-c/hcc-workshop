@@ -54,7 +54,7 @@
                 <h1 class="modal-title text-center">Congrats</h1>
             </div>
             <div class="modal-body">
-                <p class="text-center">You just went up one level!<p>
+                <p class="text-center" id="level-up-body">You just went up one level!<p>
             </div>
             <div class="modal-body" style="background:#f7f7f7; color: black">
                 <p class="text-center" style="font-size: 19px; padding: 10px 0">Your new level is<br><strong><span id="new-level-span">{{ user.workshopuser.get_level_display }}</span></strong></p>
@@ -165,6 +165,8 @@ $.ajaxSetup({
                 $('#level-modal').modal();
             } else {
                 console.log("false");
+                $('#level-modal').find('.modal-title').text("Wait a minute...");
+                $('#level-up-body').html("You can only get one level from this activity. <br><br>It doesn't hurt to try though, as hacking (in a legal and ethical manner) is something we would encourage from young and enthusiastic computer scientists.")
                 $('#level-modal').modal();
             }
             

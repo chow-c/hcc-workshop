@@ -132,11 +132,14 @@
   });
 
   $('#rotate_back_button').click(function() {
-    $('#image_field').addClass('unrotated');
-    $('#image_field').toggleClass('rotated');
+    
+          $('#image_field').addClass('unrotated');
+      $('#image_field').addClass('rotated');
 
     $('#rotate_button').removeClass('disabled');
     $('#rotate_back_button').addClass('disabled');
+    $('#thatcher-level-up').show();
+
   })
 
   $('#save_button').click(function() {
