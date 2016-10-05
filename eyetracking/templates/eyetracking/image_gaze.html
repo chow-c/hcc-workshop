@@ -40,7 +40,7 @@
 </style>
 <style>
 	body {
-		overflow: scroll;
+		overflow-y: scroll;
 	}
 </style>
 {% endblock %}
@@ -58,9 +58,7 @@
             <div class="text-center" id="test">
 				<img id="img1" src="{% static 'eyetracking/the_visitor.jpg' %}" alt="The Visitor" />
 			</div>
-            <p class="text-center lead">Blue is when you could freely look at the image.</p>
-            <p class="text-center lead">Red is when you were looking at the people to try and guess their ages.</p>
-            <p class="text-center lead">Green is when you were looking at the objects to try and memorise their position.</p>
+            <p class="text-center lead"><span style="color: blue">Blue</span> is when you could freely look at the image. <br><span style="color: pink">Red</span>is when you were looking at the people to try and guess their ages. <br><span style="color: green">Green</span> is when you were looking at the objects to try and memorise their position.</p>
 		</div>
         <section class="app-text-highlight">
 	<div class="text-center vertical-align">
