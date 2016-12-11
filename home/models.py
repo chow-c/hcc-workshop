@@ -37,6 +37,12 @@ class WorkshopUser(models.Model):
     ('7', '7 - Alien'),
     ('8', '8 - Wizard'),
     ('9', '9 - A.I.'),
+    ('10','10 - '),
+    ('11','11 - '),
+    ('12','12 - '),
+    ('13','13 - '),
+    ('14','14 - '),
+    ('15','15 - '),
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     level = models.CharField(choices=LEVELS,max_length=100,default='0')
