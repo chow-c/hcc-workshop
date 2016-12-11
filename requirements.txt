@@ -4,5 +4,5 @@ reportlab
 django-import-export
 weasyprint
 pdfkit
-weasyprint
 django-bootstrap3
+gunicorn
