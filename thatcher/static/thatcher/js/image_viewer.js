@@ -131,16 +131,16 @@
     $('#rotate_back_button').removeClass('disabled');
   });
 
-  $('#rotate_back_button').click(function() {
-    
-          $('#image_field').addClass('unrotated');
-      $('#image_field').addClass('rotated');
-
-    $('#rotate_button').removeClass('disabled');
-    $('#rotate_back_button').addClass('disabled');
+$('#rotate_back_button').click(function() {
+    $('#image_field').addClass('unrotated');
+    $('#image_field').removeClass('rotated');
     $('#thatcher-level-up').show();
-
+    $('#rotate_button').removeClass('disabled');
+    $(this).addClass('disabled');
+    
   })
+
+
 
   $('#save_button').click(function() {
     if (lockedIn && !saved) {
