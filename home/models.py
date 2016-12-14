@@ -29,14 +29,17 @@ class WorkshopUser(models.Model):
     LEVELS = (
     ('0', '0 - Baby'),
     ('1', '1 - Student'),
-    ('2', '2 - Teacher'),
-    ('3', '3 - Doctor'),
-    ('4', '4 - Professor'),
-    ('5', '5 - Mad Scientist'),
-    ('6', '6 - Superhero'),
-    ('7', '7 - Alien'),
-    ('8', '8 - Wizard'),
-    ('9', '9 - A.I.'),
+    ('2', '2 - Master'),
+    ('3', '3 - Teacher'),
+    ('4', '4 - Researcher'),
+    ('5', '5 - Doctor'),
+    ('6', '6 - Professor'),
+    ('7', '7 - Astronaut'),
+    ('8', '8 - Mad Scientist'),
+    ('9', '9 - Superhero'),
+    ('10','10 - Alien'),
+    ('11','11 - Wizard'),
+    ('12','12 - A.I.'),
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     level = models.CharField(choices=LEVELS,max_length=100,default='0')
