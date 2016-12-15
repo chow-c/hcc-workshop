@@ -36,7 +36,7 @@ services:
         - "15672:15672"
     worker:
       build: .
-      command: bash -c "sleep 10 && celery worker -A hccworkshop.celeryconf -Q default -n default@%h"
+      command: bash -c "sleep 10 && celery -A hccworkshop worker -l info"
       volumes:
         - .:/code
       links:
