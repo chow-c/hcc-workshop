@@ -6,3 +6,4 @@ weasyprint
 pdfkit
 django-bootstrap3
 gunicorn
+celery[redis]

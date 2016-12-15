@@ -3,7 +3,7 @@ services:
     nginx:
       image: nginx:latest
       ports:
-        - "8000:8000"
+        - "1234:8000"
       volumes:
         - .:/code
         - ./config/nginx:/etc/nginx/conf.d
@@ -21,7 +21,27 @@ services:
       depends_on:
         - "db"
         - "redis"
+        - "rabbit"
     db:
       image: postgres
     redis:
       image: redis
+    rabbit:
+      image: rabbitmq
+      environment:
+        - RABBITMQ_DEFAULT_USER=admin
+        - RABBITMQ_DEFAULT_PASS=admin
+      ports:
+        - "5672:5672"
+        - "15672:15672"
+    worker:
+      build: .
+      command: bash -c "sleep 10 && celery worker -A hccworkshop.celeryconf -Q default -n default@%h"
+      volumes:
+        - .:/code
+      links:
+        - "db"
+        - "redis"
+        - "rabbit"
+      depends_on:
+        - "rabbit"
