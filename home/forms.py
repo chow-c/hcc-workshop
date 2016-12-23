@@ -14,8 +14,8 @@ class UserCreateForm(UserCreationForm):
 
     def save(self, commit=True):
         user = super(UserCreateForm, self).save(commit=False)
-        user.first_name = self.cleaned_data["first_name"]
-        user.last_name = self.cleaned_data["last_name"]
+        user.first_name = self.cleaned_data["first_name"].replace(" ","") # Remove all white space
+        user.last_name = self.cleaned_data["last_name"].replace(" ","") # Remove all white space
         
         temp_username = user.first_name.lower() + "." +user.last_name.lower()
 
