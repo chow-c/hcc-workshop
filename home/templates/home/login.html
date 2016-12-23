@@ -1,6 +1,7 @@
 {% extends "core.html" %}
 {% load staticfiles %}
 {% load bootstrap3 %}
+{% load crispy_forms_tags %}
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'home/css/cover.css' %}" />
 {% endblock %}
@@ -33,6 +34,8 @@
               {% csrf_token %}
               <div style="width: 50%; margin: 0 auto;">
                 {% bootstrap_form form layout='inline' %}
+                {#% crispy form %#}
+
               </div>
                 <button type="submit" class="btn btn-primary">
                   Login

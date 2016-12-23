@@ -6,3 +6,4 @@ weasyprint
 pdfkit
 weasyprint
 django-bootstrap3
+django-crispy-forms
