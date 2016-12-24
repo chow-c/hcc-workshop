@@ -55,9 +55,9 @@ $lol = $("#LOL");
 $("#id_first_name, #id_last_name").keyup(function () {
     $lol.html(function () {
         return $('#id_first_name').map(function () {
-            return this.value.toLowerCase()
+            return this.value.toLowerCase().replace(" ","")
         }).get()+"."+$('#id_last_name').map(function () {
-            return this.value.toLowerCase()
+            return this.value.toLowerCase().replace(" ","")
         }).get();
     })
 });

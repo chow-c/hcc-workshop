@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 
 from home.models import NewsletterSignup
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Layout, Fieldset, Div, HTML
@@ -58,3 +58,17 @@ class NewsletterForm(forms.ModelForm):
     class Meta:
         model = NewsletterSignup
         fields = ['email']
+
+class LoginForm(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super(LoginForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'user-login-form'
+        self.helper.form_method = 'POST'
+        self.helper.form_action = 'login'
+        self.helper.form_show_labels = False
+        self.helper.add_input(Submit('submit','Submit'))
+        self.helper.layout = Layout(
+            PrependedText('username', '<i class="fa fa-user" aria-hidden="true"></i>', placeholder="firstname.lastname"),
+            PrependedText('password', '<i class="fa fa-lock" aria-hidden="true"></i>', placeholder="Password"),
+        )
