@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Layout, Fieldset, Div, HTML
-from crispy_forms.bootstrap import Field, Alert
+from crispy_forms.bootstrap import Field, Alert, PrependedText
 
 class UserCreateForm(UserCreationForm):
     first_name = forms.CharField(required=True)
@@ -44,14 +44,13 @@ class UserCreateForm(UserCreationForm):
             self.helper.add_input(Submit('submit', 'Submit'))
             self.helper.layout = Layout(
                 Fieldset('Username',
-                    HTML('<p>Your username will be:</p>'),
-                    HTML('<p id="LOL"><strong></strong></p>'),
-                    Field('first_name', placeholder='First Name',),
-                    Field('last_name', placeholder='Last Name'),),
+                    PrependedText('first_name', '<i class="fa fa-user" aria-hidden="true"></i>', placeholder='First Name',),
+                    PrependedText('last_name', '<i class="fa fa-user-o" aria-hidden="true"></i>', placeholder='Last Name'),
+                    HTML('<p class="col-lg-6">Your username will be:</p><p id="LOL" class="col-lg-6"><strong></strong></p>'),),
                 Fieldset('Password',
                     Alert("Passwords <strong>must</strong> be at least 8 characters long."),
-                    Field('password1', placeholder='Password'),
-                    Field('password2', placeholder='Re-enter password'))
+                    PrependedText('password1',  '<i class="fa fa-lock" aria-hidden="true"></i>', placeholder='Password'),
+                    PrependedText('password2',  '<i class="fa fa-lock" aria-hidden="true"></i>', placeholder='Re-enter password'))
             )
 
 
