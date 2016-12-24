@@ -43,6 +43,7 @@ class WorkshopUser(models.Model):
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     level = models.CharField(choices=LEVELS,max_length=100,default='0')
+    ethics_approval = models.BooleanField(default=False)
 
     def __unicode__(self):
         return self.user
