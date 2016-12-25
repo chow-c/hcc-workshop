@@ -1,3 +1,5 @@
+import json
+
 from django.shortcuts import render
 from django.views import generic
 from django.views.generic.edit import CreateView
@@ -21,9 +23,8 @@ from home.forms import UserCreateForm, NewsletterForm
 
 from reportlab.pdfgen import canvas
 
-from datetime import datetime
 from django.apps import apps
-import json
+
 
 
 # from weasyprint import HTML, CSS
@@ -64,20 +65,43 @@ def dashboard(request):
             return HttpResponseRedirect("/")
     else:
         form = NewsletterForm()
+
+        # Create list of all the apps that they've finished
+        list_of_completes = []
+        for item in request.user.completedactivity_set.all():
+            list_of_completes.append(item.activity)
+
         # Check if a session variable has been set for previously visiting the dashboard
-        if request.session.get('visited',False) == True:
+        if request.session.get('visited', False) is True:
             # If the variable exists, the user has visited
             # Pass a variable to javascript to say the user has visited
-            greeting = ['Welcome back, '+request.user.first_name+'!', 'Try another one, '+request.user.first_name+'!', 'Hello again, '+request.user.first_name+'.', 'Hello, '+request.user.first_name+'.', 'Having fun, '+request.user.first_name+'?', 'Good Morning, '+request.user.first_name+'.', 'Nice to see you, '+request.user.first_name+'!', 'Hi there, '+request.user.first_name+'!' ]
-            context = {'visited' : True, 'form' : form, 'greeting' : greeting }
-            return render(request,'home/dashboard.html', context)
+            greeting = ['Welcome back, ' + request.user.first_name + '!',
+                        'Try another one, ' + request.user.first_name + '!',
+                        'Hello again, ' + request.user.first_name + '.',
+                        'Hello, ' + request.user.first_name + '.',
+                        'Having fun, ' + request.user.first_name + '?',
+                        'Good Morning, ' + request.user.first_name + '.',
+                        'Nice to see you, ' + request.user.first_name + '!',
+                        'Hi there, ' + request.user.first_name + '!'
+                       ]
+            context = {
+                'visited' : True, 'form' : form,
+                'greeting' : greeting,
+                'completes' : list_of_completes}
+            return render(request, 'home/dashboard.html', context)
         else:
             # Create the variable if it doesnt exist to say the user has visited
-            # Pass a variable to javascript to say the user has not visited (and hence display instructions)
-            greeting = ['Let\'s get started, '+request.user.first_name+'!', 'Welcome, '+request.user.first_name+'!']
+            # Pass a variable to javascript to say the user has not visited
+            # (and hence display instructions)
+            greeting = [
+                'Let\'s get started, ' + request.user.first_name + '!',
+                'Welcome, ' + request.user.first_name + '!']
             request.session['visited'] = True
-            context = {'visited' : False, 'form' : form, 'greeting' : greeting }
-            return render(request,'home/dashboard.html', context)
+            context = {
+                'visited' : False, 'form' : form,
+                'greeting' : greeting,
+                'completes' : list_of_completes}
+            return render(request, 'home/dashboard.html', context)
 
 
 class About(generic.TemplateView):
