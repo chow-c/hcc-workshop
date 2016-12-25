@@ -45,8 +45,8 @@ class WorkshopUser(models.Model):
     level = models.CharField(choices=LEVELS,max_length=100,default='0')
     ethics_approval = models.BooleanField(default=False)
 
-    def __unicode__(self):
-        return self.user
+    def __str__(self):
+        return self.user.username
 
 def create_workshop_user(sender, instance, created, **kwargs):
     if created:
