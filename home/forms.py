@@ -46,7 +46,7 @@ class UserCreateForm(UserCreationForm):
                 Fieldset('Username',
                     PrependedText('first_name', '<i class="fa fa-user" aria-hidden="true"></i>', placeholder='First Name',),
                     PrependedText('last_name', '<i class="fa fa-user-o" aria-hidden="true"></i>', placeholder='Last Name'),
-                    HTML('<p class="col-lg-6">Your username will be:</p><p id="LOL" class="col-lg-6"><strong></strong></p>'),),
+                    HTML('<p class="col-lg-6"><i class="fa fa-id-card-o" aria-hidden="true"></i>&nbsp;&nbsp;Your username will be: </p><p id="LOL" class="col-lg-6"><strong></strong></p>'),),
                 Fieldset('Password',
                     Alert("Passwords <strong>must</strong> be at least 8 characters long."),
                     PrependedText('password1',  '<i class="fa fa-lock" aria-hidden="true"></i>', placeholder='Password'),

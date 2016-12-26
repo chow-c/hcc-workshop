@@ -575,9 +575,7 @@ OTHER ACTIVITY THUMBNAILS
     transition: transform 0.4s;
 }
 
-.caption a {
-    /*position: absolute;*/
-    position: relative;
-    bottom: 10%;
-    left: 70%;
+/* Sets the thumbnail image to be faded green if they have completed it */
+.fade-image {
+    -webkit-filter: sepia(1) opacity(0.5);
 }

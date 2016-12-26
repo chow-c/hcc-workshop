@@ -37,40 +37,75 @@
 		</div>
 		<div class="col-md-3 col-lg-3 col-sm-3">
 			<div class="thumbnail activity-thumbnail">
-				<a href="{% url 'cybersecurity:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/cyber-thumb.png' %}" alt=""></a>
+				<a href="{% url 'cybersecurity:index' %}">
+					<img class="app-thumbnail-img {% if '/cyber-security/phishing' in completes %}fade-image{% endif %}" src="{% static 'home/images/cyber-thumb.png' %}" alt="">
+				</a>
 				<div class="caption title-caption">
 					<h3>Cyber Security</h3>
 					<div class="content-caption">
 						<p>It's more than just a buzzword.</p>
-						<a class="btn btn-default" href="{% url 'cybersecurity:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+						<a class="btn btn-default" href="{% url 'cybersecurity:index' %}">
+							<span class="btn-primary-span">
+								{% if '/cyber-security/phishing' in completes %}
+								Completed
+							</span>
+							<i class="fa fa-check" aria-hidden="true"></i>
+								{% else %}
+								Launch
+							</span>
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								{% endif %}
+						</a>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="col-md-3 col-lg-3 col-sm-3">
 			<div class="thumbnail activity-thumbnail">
-				<a href="{% url 'image_manipulation:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/image-manipulation-thumb.png' %}" alt=""></a>
+				<a href="{% url 'image_manipulation:index' %}">
+					<img class="app-thumbnail-img {% if '/image-manipulation/results/' in completes %}fade-image{% endif %}" src="{% static 'home/images/image-manipulation-thumb.png' %}" alt="">
+				</a>
 				<div class="caption title-caption">
 					<h3>Manipulated Images</h3>
 					<div class="content-caption">
 						<p>Can you tell if an image has been photoshopped?</p>
-						<a class="btn btn-default" href="{% url 'image_manipulation:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+						<a class="btn btn-default" href="{% url 'image_manipulation:index' %}">
+							<span class="btn-primary-span">
+								{% if '/image-manipulation/results/' in completes %}
+								Completed
+							</span>
+							<i class="fa fa-check" aria-hidden="true"></i>
+								{% else %}
+								Launch
+							</span>
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								{% endif %}
+						</a>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="col-md-3 col-lg-3 col-sm-3">
 			<div class="thumbnail activity-thumbnail">
-				<a href="{% url 'home:other_research' %}"><img class="app-thumbnail-img" src="{% static 'home/images/other-thumb.jpg' %}" alt=""></a>
+				<a href="{% url 'home:other_research' %}">
+					<img class="app-thumbnail-img {% if '/other-research' in completes %}fade-image{% endif %}" src="{% static 'home/images/other-thumb.jpg' %}" alt="">
+				</a>
 				<div class="caption title-caption">
-					{% if '/other-research' in completes %}
-					<h3>FINISHED</h3>
-					{% else %}
 					<h3>Other Research</h3>
-					{% endif %}
 					<div class="content-caption">
 						<p>See some of our other toys.</p>
-						<a class="btn btn-default" href="{% url 'home:other_research' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+						<a class="btn btn-default" href="{% url 'home:other_research' %}">
+							<span class="btn-primary-span">
+								{% if '/other-research' in completes %}
+								Completed
+							</span>
+							<i class="fa fa-check" aria-hidden="true"></i>
+								{% else %}
+								Launch
+							</span>
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								{% endif %}
+						</a>
 					</div>
 				</div>
 			</div>
@@ -90,24 +125,50 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="thumbnail activity-thumbnail">
-						<a href="{% url 'thatcher:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/thatcher.png' %}" alt=""></a>
+						<a href="{% url 'thatcher:index' %}">
+							<img class="app-thumbnail-img {% if '/the-thatcher-effect/' in completes %}fade-image{% endif %}" src="{% static 'home/images/thatcher.png' %}" alt="">
+						</a>
 						<div class="caption title-caption">
 							<h3>The Thatcher Effect</h3>
 							<div class="content-caption">
 								<p>Trick your brain!</p>
-								<a class="btn btn-default" href="{% url 'thatcher:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+								<a class="btn btn-default" href="{% url 'thatcher:index' %}">
+									<span class="btn-primary-span">
+										{% if '/the-thatcher-effect/' in completes %}
+										Completed
+									</span>
+									<i class="fa fa-check" aria-hidden="true"></i>
+										{% else %}
+										Launch
+									</span>
+									<i class="fa fa-chevron-right" aria-hidden="true"></i>
+										{% endif %}
+								</a>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="thumbnail activity-thumbnail">
-						<a href="{% url 'neural_networks:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/preview.png' %}" alt=""></a>
+						<a href="{% url 'neural_networks:index' %}">
+							<img class="app-thumbnail-img {% if '/neural-networks/' in completes %}fade-image{% endif %}" src="{% static 'home/images/preview.png' %}" alt="">
+						</a>
 						<div class="caption title-caption">
 							<h3>Neural Networks</h3>
 							<div class="content-caption">
 								<p>See bio-inspired machine learning in action!</p>
-								<a class="btn btn-default" href="{% url 'neural_networks:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+								<a class="btn btn-default" href="{% url 'neural_networks:index' %}">
+									<span class="btn-primary-span">
+										{% if '/neural-networks/' in completes %}
+										Completed
+									</span>
+									<i class="fa fa-check" aria-hidden="true"></i>
+										{% else %}
+										Launch
+									</span>
+									<i class="fa fa-chevron-right" aria-hidden="true"></i>
+										{% endif %}
+								</a>
 							</div>
 						</div>
 					</div>
