@@ -43,7 +43,7 @@ class UserCreateForm(UserCreationForm):
             self.helper.form_show_labels = False
             self.helper.add_input(Submit('submit', 'Submit'))
             self.helper.layout = Layout(
-                Fieldset('Username',
+                Fieldset('<span style="text-align: left">Username</span><span style="font-size: 0.4em; position: relative; left: 35%;">Already have an account? <a href="{% url "login" %}" style="text-decoration: underline;" >Log in instead.</a></span>',
                     PrependedText('first_name', '<i class="fa fa-user" aria-hidden="true"></i>', placeholder='First Name',),
                     PrependedText('last_name', '<i class="fa fa-user-o" aria-hidden="true"></i>', placeholder='Last Name'),
                     HTML('<p class="col-lg-6"><i class="fa fa-id-card-o" aria-hidden="true"></i>&nbsp;&nbsp;Your username will be: </p><p id="LOL" class="col-lg-6"><strong></strong></p>'),),
