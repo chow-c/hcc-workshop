@@ -14,7 +14,7 @@ from home.models import WorkshopUser
 class WorkshopUserInline(admin.StackedInline):
     model = WorkshopUser
     can_delete = False
-    readonly_fields = ('level','ethics_approval',)
+    readonly_fields = ('level', 'ethics_approval', )
     verbose_name_plural = 'Workshop User'
 
 class CompletedActivityInline(admin.StackedInline):
@@ -30,8 +30,8 @@ class UserAdmin(BaseUserAdmin):
         return obj.workshopuser.ethics_approval
     get_ethics.admin_order_field = 'workshopuser'
     get_ethics.short_description = 'Has Ethics Approval'
-    list_display = ('username', 'first_name', 'last_name', 'email','last_login','get_ethics')
-    inlines = (WorkshopUserInline,CompletedActivityInline,)
+    list_display = ('username', 'first_name', 'last_name', 'email', 'last_login', 'get_ethics')
+    inlines = (WorkshopUserInline, CompletedActivityInline,)
 
 def export_csv(modeladmin, request, queryset):
     import csv

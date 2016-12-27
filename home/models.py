@@ -9,15 +9,15 @@ from django.db.models.signals import post_save
 class NewsletterSignup(models.Model):
 
     email = models.EmailField()
-    signup_date = models.DateTimeField('Date Signed Up',auto_now_add=True)
+    signup_date = models.DateTimeField('Date Signed Up', auto_now_add=True)
 
     def __str__(self):
         return self.email
 
 class CompletedActivity(models.Model):
-    completed_date = models.DateTimeField('Date Completed',auto_now_add=True)
+    completed_date = models.DateTimeField('Date Completed', auto_now_add=True)
     activity = models.CharField(max_length=100)
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.user.username
@@ -46,7 +46,6 @@ class WorkshopUser(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     level = models.CharField(choices=LEVELS, max_length=100, default='0')
     ethics_approval = models.BooleanField(default=False)
-    
 
     def __str__(self):
         return self.user.username
@@ -59,4 +58,4 @@ def create_workshop_user(sender, instance, created, **kwargs):
     if created:
         WorkshopUser.objects.create(user=instance)
 
-post_save.connect(create_workshop_user,sender=User)
+post_save.connect(create_workshop_user, sender=User)

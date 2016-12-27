@@ -43,9 +43,9 @@ from django.apps import apps
 
 # Create your views here.
 class Index(generic.TemplateView):
-    
+
     template_name = 'home/index.html'
-    
+
     def dispatch(self, request, *args, **kwargs):
         # check if user is already logged in
         if request.user.is_authenticated():
@@ -54,7 +54,7 @@ class Index(generic.TemplateView):
             return super(Index, self).dispatch(request, *args, **kwargs)
 
 def eyegazeinfo(request):
-    return render(request,'home/eyegazeinfo.html')
+    return render(request, 'home/eyegazeinfo.html')
 
 @login_required
 def dashboard(request):
@@ -122,7 +122,7 @@ def register(request):
             new_user = form.save()
             new_user = authenticate(username=new_user.username,
                                     password=form.cleaned_data['password1'],
-                                    )
+                                   )
             login(request, new_user)
             return HttpResponseRedirect("/dashboard")
     else:
@@ -184,13 +184,13 @@ def levelUp(request):
 
     if activity_path not in list_of_completes:
         new_completion = user.completedactivity_set.create(activity=activity_path)
-        user.workshopuser.level = str(user.completedactivity_set.count()) # Must be a str 
+        user.workshopuser.level = str(user.completedactivity_set.count()) # Must be a str
         user.workshopuser.save()
 
         new_level = user.workshopuser.get_level_display()
         increase = True
 
-        data = { "new_level" : new_level, "increase" : increase}
+        data = {"new_level" : new_level, "increase" : increase}
         return HttpResponse(
             json.dumps(data),
             content_type="application/json"
@@ -198,5 +198,5 @@ def levelUp(request):
     else:
         new_level = user.workshopuser.get_level_display()
         increase = False
-        data = { "new_level" : new_level, "increase" : increase}
-        return HttpResponse(json.dumps(data),content_type="application/json")
+        data = {"new_level" : new_level, "increase" : increase}
+        return HttpResponse(json.dumps(data), content_type="application/json")
