@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^image-manipulation/', include('image_manipulation.urls')),
     url(r'^neural-networks/', include('neural_networks.urls')),
     url(r'^experiment/infovis/', include('collection.urls')),
+    url(r'^surveys/', include('surveys.urls')),
 ]
 
 admin.site.site_header = 'HCC Workshop Administration'

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} 
+	HCC Workshop | {{ survey.name }}
+{% endblock %}
+
+{% block app-breadcrumbs %}
+<li class="active">{{ survey.name }}</li>
+{% endblock %}
+
+{% block head %} 
+{% endblock %}
+
+{% block content %}
+<section class="jumbotron">
+	<h1 class="vertical-align animated bounceInLeft">{{ survey.name }}</h1>
+</section>
+<section class="container-fluid app-text-standard">
+	<p class="text-justify">{{ survey.description }}</p>
+</section>
+<section class="container-fluid app-text-standard">
+	<ul>
+	{% for question in survey.question_set.all %}
+		<li>{{ question.question_text }}</li>
+	{% endfor %}
+	</ul>
+</section>
+{% endblock %}
+
+{% block script %} 
+    <script type="text/javascript" src="{% static 'thatcher/js/image_viewer.js' %}"></script>
+{% endblock %}

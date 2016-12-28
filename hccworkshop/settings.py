@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '***REMOVED***'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'image_manipulation.apps.ImageManipulationConfig',
     'bootstrap3',
     'neural_networks.apps.NeuralNetworksConfig',
+    'surveys.apps.SurveysConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
