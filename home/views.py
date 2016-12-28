@@ -105,7 +105,7 @@ def dashboard(request):
 
 
 class About(generic.TemplateView):
-    
+
     template_name = 'home/about.html'
 
     def dispatch(self, request, *args, **kwargs):
@@ -142,8 +142,6 @@ def newsletter(request):
     return render(request, "home/newsletter.html", {
         'form': form,
     })
-
-    return render(request, 'home/newsletter.html')
 
 def generate_webpage(request):
     # Create the HttpResponse object with the appropriate PDF headers.
