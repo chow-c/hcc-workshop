@@ -22,7 +22,7 @@
 <section class="container-fluid app-text-standard">
 	<ul>
 	{% for survey in surveys %}
-		<li>{{ survey.name }}</li>
+		<li><a href="{% url 'detail' survey.id %}">{{ survey.name }}</a></li>
 	{% endfor %}
 	</ul>
 </section>

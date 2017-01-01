@@ -1,4 +1,5 @@
 import datetime
+import uuid
 
 from django.db import models
 from django.utils import timezone
@@ -40,12 +41,13 @@ class Question(models.Model):
     question_type = models.CharField(max_length=200, choices=QUESTION_TYPES, default=TEXT)
     question_text = models.TextField()
     required = models.BooleanField()
+    order = models.PositiveSmallIntegerField(blank=True, null=True)
 
     def __str__(self):
         return self.question_text
 
 class Response(models.Model):
-    
+    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     survey = models.ForeignKey(Survey, on_delete=models.CASCADE)

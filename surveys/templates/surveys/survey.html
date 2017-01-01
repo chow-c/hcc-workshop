@@ -16,16 +16,14 @@
 <section class="jumbotron">
 	<h1 class="vertical-align animated bounceInLeft">{{ survey.name }}</h1>
 </section>
-<section class="container-fluid app-text-standard">
+<section class="container-fluid app-text-highlight">
 	<p class="text-justify">{{ survey.description }}</p>
 </section>
 <section class="container-fluid app-text-standard">
-	<ul>
 	{% for question in survey.question_set.all %}
-		<li>{{ question.question_text }}</li>
+		{{ question.question_text }}
 		{{ form }}
 	{% endfor %}
-	</ul>
 </section>
 {% endblock %}
 
