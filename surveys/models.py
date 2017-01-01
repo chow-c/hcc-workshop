@@ -9,7 +9,8 @@ def get_default_expiry():
 
 # Create your models here.
 class Survey(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    author = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     publish_date = models.DateTimeField('date published', auto_now_add=True)
     start_date = models.DateTimeField('date survey goes live', default=timezone.now)
     end_date = models.DateTimeField('date survey closes', default=get_default_expiry)
@@ -44,7 +45,8 @@ class Question(models.Model):
         return self.question_text
 
 class Response(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     survey = models.ForeignKey(Survey, on_delete=models.CASCADE)
     response = models.TextField()

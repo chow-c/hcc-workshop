@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 
-from .forms import ResponseForm
+# from .forms import ResponseForm
 from .models import Survey
 
 def index(request):
