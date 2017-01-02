@@ -4,7 +4,8 @@
 
 {% block title %}HCC Workshop | Dashboard{% endblock %}
 
-{% block head %}	
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/dashboard.css' %}" />
 {% endblock %}
 
 {% block menu %}
@@ -40,7 +41,7 @@
 				<a href="{% url 'cybersecurity:index' %}">
 					<img class="app-thumbnail-img {% if '/cyber-security/phishing' in completes %}fade-image{% endif %}" src="{% static 'home/images/cyber-thumb.png' %}" alt="">
 				</a>
-				<div class="caption title-caption">
+				<div class="caption title-caption {% if '/cyber-security/phishing' in completes %}fade-text{% endif %}">
 					<h3>Cyber Security</h3>
 					<div class="content-caption">
 						<p>It's more than just a buzzword.</p>
@@ -65,7 +66,7 @@
 				<a href="{% url 'image_manipulation:index' %}">
 					<img class="app-thumbnail-img {% if '/image-manipulation/results/' in completes %}fade-image{% endif %}" src="{% static 'home/images/image-manipulation-thumb.png' %}" alt="">
 				</a>
-				<div class="caption title-caption">
+				<div class="caption title-caption {% if '/image-manipulation/results/' in completes %}fade-text{% endif %}">
 					<h3>Manipulated Images</h3>
 					<div class="content-caption">
 						<p>Can you tell if an image has been photoshopped?</p>
@@ -90,7 +91,7 @@
 				<a href="{% url 'home:other_research' %}">
 					<img class="app-thumbnail-img {% if '/other-research' in completes %}fade-image{% endif %}" src="{% static 'home/images/other-thumb.jpg' %}" alt="">
 				</a>
-				<div class="caption title-caption">
+				<div class="caption title-caption {% if '/other-research' in completes %}fade-text{% endif %}">
 					<h3>Other Research</h3>
 					<div class="content-caption">
 						<p>See some of our other toys.</p>
@@ -128,7 +129,7 @@
 						<a href="{% url 'thatcher:index' %}">
 							<img class="app-thumbnail-img {% if '/the-thatcher-effect/' in completes %}fade-image{% endif %}" src="{% static 'home/images/thatcher.png' %}" alt="">
 						</a>
-						<div class="caption title-caption">
+						<div class="caption title-caption {% if '/the-thatcher-effect/' in completes %}fade-text{% endif %}">
 							<h3>The Thatcher Effect</h3>
 							<div class="content-caption">
 								<p>Trick your brain!</p>
@@ -153,7 +154,7 @@
 						<a href="{% url 'neural_networks:index' %}">
 							<img class="app-thumbnail-img {% if '/neural-networks/' in completes %}fade-image{% endif %}" src="{% static 'home/images/preview.png' %}" alt="">
 						</a>
-						<div class="caption title-caption">
+						<div class="caption title-caption {% if '/neural-networks/' in completes %}fade-text{% endif %}">
 							<h3>Neural Networks</h3>
 							<div class="content-caption">
 								<p>See bio-inspired machine learning in action!</p>
