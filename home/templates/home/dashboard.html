@@ -13,137 +13,196 @@
 {% block app-title %}Dashboard {% endblock %}
 
 {% block content %}
- 
-            <div class="jumbotron dash-splash text-left">
-				<h1 class="animated slideInUp">{{ greeting|random }}</h1>
-				<p>Click any of the activities to get started.</p>
+ <div class="jumbotron dash-splash text-left">
+	<h1 class="animated slideInUp">{{ greeting|random }}</h1>
+	<p>Click any of the activities to get started.</p>
+</div>
+<section id="dashboard-container-fluid" class="container-fluid">
+	<div class="text-center vertical-align" style="padding-bottom: 20px">
+		<h1 class="text-center">Research Areas</h1>
+		<p class="lead">Explore some of the topics we work on.</p>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-lg-3 col-sm-3">
+			<div class="thumbnail activity-thumbnail">
+				<a href="{% url 'design:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/hci-thumb.jpg' %}" alt=""></a>
+				<div class="caption title-caption">
+					<h3>Human Computer Interaction</h3>
+					<div class="content-caption">
+						<p>Learn some of the basics.</p>
+						<a class="btn btn-default" href="{% url 'design:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+					</div>
+				</div>
 			</div>
-			<section id="dashboard-container-fluid" class="container-fluid">
-				<div class="text-center vertical-align" style="padding-bottom: 20px">
-					<h1 class="text-center">Research Areas</h1>
-					<p class="lead">Explore some of the topics we work on.</p>
-				</div>
-				<div class="row">
-					<div class="col-md-3 col-lg-3 col-sm-3">
-						<div class="thumbnail activity-thumbnail">
-							<a href="{% url 'design:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/hci-thumb.jpg' %}" alt=""></a>
-							<div class="caption title-caption">
-								<h3>Human Computer Interaction</h3>
-								<div class="content-caption">
-									<p>Learn some of the basic theory behind what we study!</p>
-								<a class="btn btn-default" href="{% url 'design:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-lg-3 col-sm-3">
-						<div class="thumbnail activity-thumbnail">
-							<a href="{% url 'cybersecurity:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/cyber-thumb.png' %}" alt=""></a>
-							<div class="caption title-caption">
-								<h3>Cyber Security</h3>
-								<div class="content-caption">
-									<p>Learn about security!</p>
-								<a class="btn btn-default" href="{% url 'cybersecurity:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-lg-3 col-sm-3">
-						<div class="thumbnail activity-thumbnail">
-							<a href="{% url 'image_manipulation:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/image-manipulation-thumb.png' %}" alt=""></a>
-							<div class="caption title-caption">
-								<h3>Manipulated Images</h3>
-								<div class="content-caption">
-									<p>Can you tell if an image has been photoshopped?</p>
-								<a class="btn btn-default" href="{% url 'image_manipulation:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-lg-3 col-sm-3">
-						<div class="thumbnail activity-thumbnail">
-							<a href="{% url 'home:other_research' %}"><img class="app-thumbnail-img" src="{% static 'home/images/other-thumb.jpg' %}" alt=""></a>
-							<div class="caption title-caption">
-								<h3>Other Research</h3>
-								<div class="content-caption">
-									<p>See what else we do!</p>
-								<a class="btn btn-default" href="{% url 'home:other_research' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-								</div>
-							</div>
-						</div>
+		</div>
+		<div class="col-md-3 col-lg-3 col-sm-3">
+			<div class="thumbnail activity-thumbnail">
+				<a href="{% url 'cybersecurity:index' %}">
+					<img class="app-thumbnail-img {% if '/cyber-security/phishing' in completes %}fade-image{% endif %}" src="{% static 'home/images/cyber-thumb.png' %}" alt="">
+				</a>
+				<div class="caption title-caption">
+					<h3>Cyber Security</h3>
+					<div class="content-caption">
+						<p>It's more than just a buzzword.</p>
+						<a class="btn btn-default" href="{% url 'cybersecurity:index' %}">
+							<span class="btn-primary-span">
+								{% if '/cyber-security/phishing' in completes %}
+								Completed
+							</span>
+							<i class="fa fa-check" aria-hidden="true"></i>
+								{% else %}
+								Launch
+							</span>
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								{% endif %}
+						</a>
 					</div>
 				</div>
-			</section>
-			<section id="eyetracker-activities" class="container-fluid" style="border-bottom: 1px solid #f7f7f7">
-				<div class="text-center vertical-align eyegaze-title">
-					<h1>Eye Tracking</h1>
-					<p class="lead">Visualise the way in which you view the screen through four different activities.</p>
-					<a class="btn btn-default btn-lg" href="{% url 'eyetracking:index' %}">Try it out</a>
+			</div>
+		</div>
+		<div class="col-md-3 col-lg-3 col-sm-3">
+			<div class="thumbnail activity-thumbnail">
+				<a href="{% url 'image_manipulation:index' %}">
+					<img class="app-thumbnail-img {% if '/image-manipulation/results/' in completes %}fade-image{% endif %}" src="{% static 'home/images/image-manipulation-thumb.png' %}" alt="">
+				</a>
+				<div class="caption title-caption">
+					<h3>Manipulated Images</h3>
+					<div class="content-caption">
+						<p>Can you tell if an image has been photoshopped?</p>
+						<a class="btn btn-default" href="{% url 'image_manipulation:index' %}">
+							<span class="btn-primary-span">
+								{% if '/image-manipulation/results/' in completes %}
+								Completed
+							</span>
+							<i class="fa fa-check" aria-hidden="true"></i>
+								{% else %}
+								Launch
+							</span>
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								{% endif %}
+						</a>
+					</div>
 				</div>
-			</section>
-			<section class="container-fluid app-text-standard">
-                <div class="row">
-					<div class="col-md-6">
-						<div class="row">
-							<div class="col-md-6">
-								<div class="thumbnail activity-thumbnail">
-									<a href="{% url 'thatcher:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/thatcher.png' %}" alt=""></a>
-									<div class="caption title-caption">
-										<h3>The Thatcher Effect</h3>
-										<div class="content-caption">
-											<p>Trick your brain!</p>
-											<a class="btn btn-default" href="{% url 'thatcher:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="thumbnail activity-thumbnail">
-									<a href="{% url 'neural_networks:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/preview.png' %}" alt=""></a>
-									<div class="caption title-caption">
-										<h3>Neural Networks</h3>
-										<div class="content-caption">
-											<p>See bio-inspired machine learning in action!</p>
-											<a class="btn btn-default" href="{% url 'neural_networks:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-										</div>
-									</div>
-								</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-lg-3 col-sm-3">
+			<div class="thumbnail activity-thumbnail">
+				<a href="{% url 'home:other_research' %}">
+					<img class="app-thumbnail-img {% if '/other-research' in completes %}fade-image{% endif %}" src="{% static 'home/images/other-thumb.jpg' %}" alt="">
+				</a>
+				<div class="caption title-caption">
+					<h3>Other Research</h3>
+					<div class="content-caption">
+						<p>See some of our other toys.</p>
+						<a class="btn btn-default" href="{% url 'home:other_research' %}">
+							<span class="btn-primary-span">
+								{% if '/other-research' in completes %}
+								Completed
+							</span>
+							<i class="fa fa-check" aria-hidden="true"></i>
+								{% else %}
+								Launch
+							</span>
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								{% endif %}
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="eyetracker-activities" class="container-fluid" style="border-bottom: 1px solid #f7f7f7">
+	<div class="text-center vertical-align eyegaze-title">
+		<h1>Eye Tracking</h1>
+		<p class="lead">Visualise the way in which you view the screen through four different activities.</p>
+		<a class="btn btn-default btn-lg" href="{% url 'eyetracking:index' %}">Try it out</a>
+	</div>
+</section>
+<section class="container-fluid app-text-standard">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="thumbnail activity-thumbnail">
+						<a href="{% url 'thatcher:index' %}">
+							<img class="app-thumbnail-img {% if '/the-thatcher-effect/' in completes %}fade-image{% endif %}" src="{% static 'home/images/thatcher.png' %}" alt="">
+						</a>
+						<div class="caption title-caption">
+							<h3>The Thatcher Effect</h3>
+							<div class="content-caption">
+								<p>Trick your brain!</p>
+								<a class="btn btn-default" href="{% url 'thatcher:index' %}">
+									<span class="btn-primary-span">
+										{% if '/the-thatcher-effect/' in completes %}
+										Completed
+									</span>
+									<i class="fa fa-check" aria-hidden="true"></i>
+										{% else %}
+										Launch
+									</span>
+									<i class="fa fa-chevron-right" aria-hidden="true"></i>
+										{% endif %}
+								</a>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6">
-						<div class="text-center vertical-align">
-						<h1>Bonus Activities</h1>
-						<p class="lead">Gain those extra levels.</p>
+				</div>
+				<div class="col-md-6">
+					<div class="thumbnail activity-thumbnail">
+						<a href="{% url 'neural_networks:index' %}">
+							<img class="app-thumbnail-img {% if '/neural-networks/' in completes %}fade-image{% endif %}" src="{% static 'home/images/preview.png' %}" alt="">
+						</a>
+						<div class="caption title-caption">
+							<h3>Neural Networks</h3>
+							<div class="content-caption">
+								<p>See bio-inspired machine learning in action!</p>
+								<a class="btn btn-default" href="{% url 'neural_networks:index' %}">
+									<span class="btn-primary-span">
+										{% if '/neural-networks/' in completes %}
+										Completed
+									</span>
+									<i class="fa fa-check" aria-hidden="true"></i>
+										{% else %}
+										Launch
+									</span>
+									<i class="fa fa-chevron-right" aria-hidden="true"></i>
+										{% endif %}
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
-				<br/>
-			</section>
-				<section class="app-text-highlight">
-				<div class="text-center vertical-align">
-					<h1>Want to stay up to date?</h1>
-					<p class="lead">Sign up for the ANU College of Engineering and Computer Science newsletter. <span class="small">This is completely voluntary.</span></p>
-					<form action="" method="post">
-						{% csrf_token %}
-						<div style="width: 50%; margin: 3vh auto;">
-						{% bootstrap_form form layout='inline' %}
-
-						</div>
-            
-                <button type="submit" class="btn btn-primary">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <span class="btn-primary-span">Subscribe For Newsletter</span>
-                </button>
-            </form>
-				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="text-center vertical-align">
+				<h1>Bonus Activities</h1>
+				<p class="lead">Gain those extra levels.</p>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="app-text-highlight">
+	<div class="text-center vertical-align">
+		<h1>Want to stay up to date?</h1>
+		<p class="lead">Sign up for the ANU College of Engineering and Computer Science newsletter. <span class="small">This is completely voluntary.</span></p>
+		<form action="" method="post">
+			{% csrf_token %}
+			<div style="width: 50%; margin: 3vh auto;">
+				{% bootstrap_form form layout='inline' %}
+			</div>
+			<button type="submit" class="btn btn-primary">
+				<i class="fa fa-envelope" aria-hidden="true"></i>
+                <span class="btn-primary-span">Subscribe For Newsletter</span>
+			</button>
+		</form>
+	</div>
 </section>
 {% endblock %}
 
 {% block script %}
 <script>
-
-
 $("#eyetracking-btn").click(function() {
 	$('#page-overlay').show();
 	$('#eyetracking-loader').show();

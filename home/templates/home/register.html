@@ -1,6 +1,7 @@
 {% extends "core.html" %}
 {% load staticfiles %}
 {% load bootstrap3 %}
+{% load crispy_forms_tags %}
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'home/css/cover.css' %}" />
 {% endblock %}
@@ -16,7 +17,6 @@
                   <li><a href="{% url 'home:about' %}">About</a></li>
                   <li><a href="{% url 'login' %}">Login</a></li>
                   <li class="active"><a href="{% url 'home:register' %}">Register</a></li>
-                  <li><a href="{% url 'home:newsletter' %}">Subscribe</a></li>
                 </ul>
               </nav>
             </div>
@@ -29,19 +29,9 @@
               <p><a href="{% url 'home:dashboard' %}">Click here to go to your dashboard.</a></p>
               {% else %}
                 {# Display a form #}
-            <form action="{% url 'home:register' %}" method="post" class="form">
-              {% csrf_token %}
-              <div style="width:50%; margin: 0 auto; clear: both">
-                 {% bootstrap_form form layout='inline' %}
-                     {% for error in errors %}
-        {{ error }}{% if not forloop.last %}<br>{% endif %}
-    {% endfor %}
+                <div style="width: 50%; margin: 0 auto;">
+              {% crispy form %}
               </div>
-               
-                <button type="submit" class="btn btn-primary" style="clear: both">
-                  Register
-                </button>
-            </form>
             {% endif %}
 
           </div>
@@ -61,7 +51,15 @@
 
 {% block script %}
 <script>
-  {% if form.errors %}
-  {% endif %}
-  </script>
+$lol = $("#LOL");
+$("#id_first_name, #id_last_name").keyup(function () {
+    $lol.html(function () {
+        return $('#id_first_name').map(function () {
+            return this.value.toLowerCase().replace(" ","")
+        }).get()+"."+$('#id_last_name').map(function () {
+            return this.value.toLowerCase().replace(" ","")
+        }).get();
+    })
+});
+</script>
 {% endblock %}

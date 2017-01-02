@@ -1,6 +1,7 @@
 {% extends "core.html" %}
 {% load staticfiles %}
 {% load bootstrap3 %}
+{% load crispy_forms_tags %}
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'home/css/cover.css' %}" />
 {% endblock %}
@@ -14,32 +15,23 @@
               <nav>
                 <ul class="nav masthead-nav">
                   <li><a href="{% url 'home:about' %}">About</a></li>
-                  <li class="active"><a href="{% url 'login' %}">Login</a></li>
+                  <li class="active"><a href="{#% url 'login' %#}">Login</a></li>
                   <li><a href="{% url 'home:register' %}">Register</a></li>
-                  <li><a href="{% url 'home:newsletter' %}">Subscribe</a></li>
                 </ul>
               </nav>
             </div>
           </div>
           <div class="inner cover">
             <h1 style="font-size: 10vh">Login</h1>
-            <br>
+
             {% if user.is_authenticated %}
               <p>You are already logged in!</p>
               <p><a href="{% url 'home:dashboard' %}">Click here to go to your dashboard.</a></p>
               {% else %}
                 {# Display a form #}
-            <form action="{% url 'login' %}" method="post" class="form">
-              {% csrf_token %}
               <div style="width: 50%; margin: 0 auto;">
-{% bootstrap_form form layout='inline' %}
+                {% crispy form %}
               </div>
-                <button type="submit" class="btn btn-primary">
-                  Login
-                </button>
-                
-               <input type="hidden" name="next" value="{{ next }}" />
-            </form>
             {% endif %}
 
           </div>

@@ -15,13 +15,12 @@
                   <li><a href="{% url 'home:about' %}">About</a></li>
                   <li><a href="{% url 'login' %}">Login</a></li>
                   <li><a href="{% url 'home:register' %}">Register</a></li>
-                  <li><a href="{% url 'home:newsletter' %}">Subscribe</a></li>
                 </ul>
               </nav>
             </div>
           </div>
           <div class="inner cover">
-            <h2>Goodbye!</h2>
+            <h1 style="font-size: 10vh">Goodbye</h1>
 
             {% if user.is_authenticated %}
               <p>You are still logged in!</p>

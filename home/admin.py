@@ -9,21 +9,29 @@ from django.contrib.auth.models import User
 
 from home.models import WorkshopUser
 
-# Define an inline admin descriptor for Employee model
+# Define an inline admin descriptor for Workshop User model
 # which acts a bit like a singleton
 class WorkshopUserInline(admin.StackedInline):
     model = WorkshopUser
     can_delete = False
-    verbose_name_plural = 'workshopUser'
+    readonly_fields = ('level', 'ethics_approval', )
+    verbose_name_plural = 'Workshop User'
 
 class CompletedActivityInline(admin.StackedInline):
     model = CompletedActivity
     can_delete = False
-    verbose_name_plural = 'completedActivity'
+    readonly_fields = ('activity',)
+    verbose_name = 'Completed Activity'
+    verbose_name_plural = ' Completed Activities'
 
 # Define a new User admin
 class UserAdmin(BaseUserAdmin):
-    inlines = (WorkshopUserInline, CompletedActivityInline)
+    def get_ethics(self, obj):
+        return obj.workshopuser.ethics_approval
+    get_ethics.admin_order_field = 'workshopuser'
+    get_ethics.short_description = 'Has Ethics Approval'
+    list_display = ('username', 'first_name', 'last_name', 'email', 'last_login', 'get_ethics')
+    inlines = (WorkshopUserInline, CompletedActivityInline,)
 
 def export_csv(modeladmin, request, queryset):
     import csv

@@ -178,3 +178,8 @@ body {
     width: 1000px;
   }
 }
+
+legend {
+  color: white;
+  text-align: left;
+}

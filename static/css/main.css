@@ -365,15 +365,15 @@ DASHBOARD STYLES
 */
 
 #dashboard-container-fluid {
-    padding: 80px 60px 0 60px;
+    padding: 80px 60px;
     background: #f7f7f7;
 }
 
-.thumbnail {
+/*.thumbnail {
     border: none;
     background: #fff;
     padding: 0;
-}
+}*/
 
 #eyetracker-activities.container-fluid {
     padding: 100px 60px;
@@ -488,7 +488,7 @@ transform:translatey(0);
 OTHER ACTIVITY THUMBNAILS
 =================================
 */
-
+/*
 
 .app-thumbnail-img {
     -webkit-transition: -webkit-transform 0.35s;
@@ -531,4 +531,51 @@ OTHER ACTIVITY THUMBNAILS
     -webkit-transform: translate3d(0,-140%,0);
 	transform: translate3d(0,-140%,0);
 
+}*/
+
+.thumbnail {
+    border: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow-y: hidden;
+    height: calc(100%+5em);
+}
+
+.app-thumbnail-img {
+    max-width: 100%;
+    height: 85%;
+    display: block;
+    position: relative;
+    transition: transform 0.4s;
+}
+
+.thumbnail:hover .app-thumbnail-img {
+    transform: translateY(-50px);
+}
+
+.caption {
+    display: block;
+    /*position: absolute;*/
+    background: #fff;
+    padding-top: 0;
+    height: 5em;
+    width: 100%;
+    top: 0;
+    /*transform: translateY(85%);*/
+    transition: transform 0.4s;
+}
+
+.caption h3 {
+    margin-top: 0;
+}
+.thumbnail:hover .caption {
+    opacity: 1;
+    transform: translateY(-50px);
+    transition: transform 0.4s;
+}
+
+/* Sets the thumbnail image to be faded green if they have completed it */
+.fade-image {
+    -webkit-filter: sepia(1) opacity(0.5);
 }
