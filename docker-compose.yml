@@ -1,20 +1,47 @@
 version: "2"
 services:
-    web:
-      build: .
-      command: bash -c "sleep 4 && python ./manage.py makemigrations && python ./manage.py migrate && python ./manage.py runserver 0.0.0.0:8000"
+    nginx:
+      image: nginx:latest
+      ports:
+        - "1234:8000"
       volumes:
         - .:/code
-      ports:
-        - "8000:8000"
+        - ./config/nginx:/etc/nginx/conf.d
+        - /static:/static
+      depends_on: 
+        - web
+    web:
+      build: .
+      command: bash -c "sleep 4 && python ./manage.py makemigrations && python ./manage.py migrate && gunicorn hccworkshop.wsgi -b 0.0.0.0:8000"
+      volumes:
+        - .:/code
+        - /static:/static
+      expose:
+        - "8000"
       depends_on:
         - "db"
         - "redis"
+        - "rabbit"
     db:
       image: postgres
-      volumes:
-        - pgdata:/var/lib/postgresql/data
     redis:
       image: redis
-volumes:
-  pgdata:
+    rabbit:
+      image: rabbitmq
+      environment:
+        - RABBITMQ_DEFAULT_USER=admin
+        - RABBITMQ_DEFAULT_PASS=admin
+      ports:
+        - "5672:5672"
+        - "15672:15672"
+    worker:
+      build: .
+      command: bash -c "sleep 10 && celery -A hccworkshop worker -l info"
+      volumes:
+        - .:/code
+      links:
+        - "db"
+        - "redis"
+        - "rabbit"
+      depends_on:
+        - "rabbit"

@@ -4,6 +4,7 @@ reportlab
 django-import-export
 weasyprint
 pdfkit
-weasyprint
 django-bootstrap3
 django-crispy-forms
+gunicorn
+celery[redis]
