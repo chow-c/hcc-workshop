@@ -13,6 +13,8 @@ urlpatterns = [
     # url(r'^pdf$', views.get_report, name='pdf'),
     url(r'^eyegazeinfo/$', views.eyegazeinfo, name='eyegazeinfo'),
     url(r'^newsletter$', views.newsletter, name='newsletter'),
-    url(r'^other-research$', views.OtherResearch.as_view(), name='other_research'),
+    # url(r'^other-research$', views.OtherResearch.as_view(), name='other_research'),
+    url(r'^ecg$', views.ecg.as_view(), name='ecg'),
+    url(r'^eeg$', views.eeg.as_view(), name='eeg'),
     url(r'^level-up$', views.levelUp, name='levelup'),
 ]

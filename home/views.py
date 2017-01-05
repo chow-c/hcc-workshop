@@ -170,6 +170,14 @@ def generate_webpage(request):
 class OtherResearch(generic.TemplateView):
     template_name = 'home/other_research.html'
 
+@method_decorator(login_required, name='dispatch')
+class eeg(generic.TemplateView):
+    template_name = 'home/eeg.html'
+
+@method_decorator(login_required, name='dispatch')
+class ecg(generic.TemplateView):
+    template_name = 'home/ecg.html'
+
 @login_required
 def levelUp(request):
     user = request.user
