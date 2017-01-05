@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '***REMOVED***'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'neural_networks.apps.NeuralNetworksConfig',
     'crispy_forms',
+    'surveys.apps.SurveysConfig',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
