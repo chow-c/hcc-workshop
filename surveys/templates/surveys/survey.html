@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-
+{% load crispy_forms_tags %}
 {% block title %} 
 	HCC Workshop | {{ survey.name }}
 {% endblock %}
@@ -20,10 +20,8 @@
 	<p class="text-justify">{{ survey.description }}</p>
 </section>
 <section class="container-fluid app-text-standard">
-	{% for question in survey.question_set.all %}
-		{{ question.question_text }}
-		{{ form }}
-	{% endfor %}
+
+	{% crispy form %}
 </section>
 {% endblock %}
 
