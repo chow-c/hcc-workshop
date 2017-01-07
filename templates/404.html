@@ -1,10 +1,44 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/cover.css' %}" />
+{% endblock %}
 {% block body %}
-    <div class="jumbotron text-left">
-        <h1>Oops! Something went wrong</h1>
-        <p>Sometimes mistakes can happen when users and computers interact. By studying computer science at ANU, you can work toward reducing the impact of these errors.</p>
-        <p>Click here to return back to your dashboard.</p>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand"><a href="{% url 'home:index' %}">ANU HCC Workshop</a></h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li><a href="{% url 'home:about' %}">About</a></li>
+                  <li><a href="{% url 'login' %}">Login</a></li>
+                  <li><a href="{% url 'home:register' %}">Register</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="inner cover">
+            <h1 style="font-size: 8vh">Oops! Something went wrong.</h1>
+                <img class="" src="{% static '/images/404.svg' %}" alt="404 Page Not Found" width=250>
+              <p class="lead">Sometimes mistakes can happen when users and computers interact.</p>
+              <p class="lead">By studying computer science at ANU, you can work toward reducing the impact of these errors.</p>
+              <p><a href="{% url 'home:dashboard' %}">Click here to return to your dashboard.</a></p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <small>By logging in and using this system, you agree to have your data used for research purposes. <a href="#">Find out more.</a></small>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
+{% endblock %}
+
+{% block script %}
 {% endblock %}
