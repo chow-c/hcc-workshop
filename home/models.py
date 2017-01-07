@@ -8,6 +8,11 @@ from django.db.models.signals import post_save
 # Create your models here.
 class NewsletterSignup(models.Model):
 
+    first_name = models.CharField(max_length=30, null=True, blank=False)
+    last_name = models.CharField(max_length=30, null=True, blank=False)
+    school = models.CharField(max_length=50, null=True, blank=False)
+    year = models.CharField(max_length=50, null=True, blank=False)
+    area_of_interest = models.CharField(max_length=100, null=True, blank=False)
     email = models.EmailField()
     signup_date = models.DateTimeField('Date Signed Up', auto_now_add=True)
 

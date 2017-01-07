@@ -136,12 +136,13 @@ def newsletter(request):
         form = NewsletterForm(request.POST)
         if form.is_valid():
             new_newsletter_signup = form.save()
-            return HttpResponseRedirect("/")
+            return redirect('home:dashboard')
     else:
-        form = NewsletterForm()
-    return render(request, "home/newsletter.html", {
-        'form': form,
-    })
+        prepop = {'first_name' : request.user.first_name, 'last_name' : request.user.last_name}
+        form = NewsletterForm(initial=prepop)
+        return render(request, "home/newsletter.html", {
+            'form': form,
+        })
 
 def generate_webpage(request):
     # Create the HttpResponse object with the appropriate PDF headers.

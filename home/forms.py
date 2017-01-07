@@ -65,14 +65,47 @@ class UserCreateForm(UserCreationForm):
                                    placeholder='Password'),
                      PrependedText('password2',
                                    '<i class="fa fa-lock" aria-hidden="true"></i>',
-                                   placeholder='Re-enter password'))
+                                   placeholder='Re-enter password')),
+            Field('')
             )
 
 
 class NewsletterForm(forms.ModelForm):
     class Meta:
         model = NewsletterSignup
-        fields = ['email']
+        exclude = []
+
+    def __init__(self, *args, **kwargs):
+        super(NewsletterForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'newsletter-form'
+        self.helper.form_method = 'POST'
+        self.helper.form_action = 'newsletter'
+        self.helper.form_show_labels = False
+        self.helper.error_text_inline = False
+        self.helper.html5_required = False
+        self.helper.add_input(Submit('submit', 'Subscribe'))
+        self.helper.layout = Layout(
+            HTML('<p class="text-center">All fields are required.</p>'),
+            PrependedText('first_name',
+                          '<i class="fa fa-user" aria-hidden="true"></i>',
+                          placeholder='First Name'),
+            PrependedText('last_name',
+                          '<i class="fa fa-user" aria-hidden="true"></i>',
+                          placeholder='Last Name'),
+            PrependedText('email',
+                          '<i class="fa fa-envelope" aria-hidden="true"></i>',
+                          placeholder='Email'),
+            PrependedText('school',
+                          '<i class="fa fa-building" aria-hidden="true"></i>',
+                          placeholder='School'),
+            PrependedText('year',
+                          '<i class="fa fa-graduation-cap" aria-hidden="true"></i>',
+                          placeholder='Year of study'),
+            PrependedText('area_of_interest',
+                          '<i class="fa fa-star" aria-hidden="true"></i>',
+                          placeholder='Area of interest (eg: Engineering or Computer Science)'),
+        )
 
 class LoginForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
