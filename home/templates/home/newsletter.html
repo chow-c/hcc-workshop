@@ -1,51 +1,63 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% load bootstrap3 %}
+{% load crispy_forms_tags %}
+
+{% block title %}HCC Workshop | ANU CECS Newsletter {% endblock %}
+
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'home/css/cover.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/newsletter.css' %}" />
 {% endblock %}
-{% block body %}
-    <div class="site-wrapper">
-      <div class="background-gif"></div>
-      <div class="site-wrapper-inner">
-        <div class="cover-container">
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand"><a href="{% url 'home:index' %}">ANU HCC Workshop</a></h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li><a href="{% url 'home:about' %}">About</a></li>
-                  <li><a href="{% url 'login' %}">Login</a></li>
-                  <li><a href="{% url 'home:register' %}">Register</a></li>
-                  <li class="active"><a href="{% url 'home:newsletter' %}">Subscribe</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-          <div class="inner cover">
-            <h1 class="cover-heading" style="font-size: 10vh">Interested in Engineering or<br>Computer Science?</h1>
-            <p class="lead"><small>Enter your email address in order to receive communication from the<br>ANU College of Engineering and Computer Science</small></p>
-            <br>
-                {# Display a form #}
-            <form action="" method="post">
-              {% csrf_token %}
-              <div style="width: 50%; margin: 0 auto;">
-{% bootstrap_form form layout='inline' %}
-              </div>
-                <button type="submit" class="btn btn-primary">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <span class="btn-primary-span">Subscribe For Newsletter</span>
-                </button>
-            </form>
 
-          </div>
+{% block app-breadcrumbs %}
+<li class="active">ANU CECS Newsletter</li>
+{% endblock %}
 
-          <div class="mastfoot">
-          </div>
+{% block content %}
+<section class="container-fluid app-text-standard">
+  <h1 class="text-center" style="color: black">ANU CECS Newsletter</h1>
+  <div style="width: 50%; margin: 50px auto;" class="text-center">
+    {% crispy form %}
+  </div>
+</section>
+{% endblock %}
 
-        </div>
+{% block script %}
+<script>
+function isElementInViewport(elem) {
+    var $elem = $(elem);
 
-      </div>
+    // Get the scroll position of the page.
+    var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html');
+    var viewportTop = $(scrollElem).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
 
-    </div>
+    // Get the position of the element on the page.
+    var elemTop = Math.round( $elem.offset().top );
+    var elemBottom = elemTop + $elem.height();
+
+    return ((elemTop < viewportBottom) && (elemBottom > viewportTop));
+}
+
+// Check if it's time to start the animation.
+function checkAnimation() {
+    var $elem = $('.thumbnail > .fa');
+    var $trigger = $('.app-text-highlight')
+    // If the animation has already been started
+    if ($elem.hasClass('animated bounceInUp')) return;
+
+    if (isElementInViewport($trigger)) {
+        // Start the animation
+        $elem.each(function(index) {
+            $(this).delay(100*index).queue(function() {
+                $(this).addClass('animated bounceInUp').removeClass('opaque-icon').dequeue();
+            });
+        });
+    }
+}
+
+// Capture scroll events
+$(window).scroll(function(){
+    checkAnimation();
+});
+</script>
 {% endblock %}

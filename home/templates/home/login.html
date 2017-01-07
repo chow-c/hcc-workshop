@@ -1,6 +1,5 @@
 {% extends "core.html" %}
 {% load staticfiles %}
-{% load bootstrap3 %}
 {% load crispy_forms_tags %}
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'home/css/cover.css' %}" />
@@ -28,7 +27,6 @@
               <p>You are already logged in!</p>
               <p><a href="{% url 'home:dashboard' %}">Click here to go to your dashboard.</a></p>
               {% else %}
-                {# Display a form #}
               <div style="width: 50%; margin: 0 auto;">
                 {% crispy form %}
               </div>

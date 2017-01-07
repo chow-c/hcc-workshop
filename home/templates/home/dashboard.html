@@ -188,16 +188,10 @@
 	<div class="text-center vertical-align">
 		<h1>Want to stay up to date?</h1>
 		<p class="lead">Sign up for the ANU College of Engineering and Computer Science newsletter. <span class="small">This is completely voluntary.</span></p>
-		<form action="" method="post">
-			{% csrf_token %}
-			<div style="width: 50%; margin: 3vh auto;">
-				{% bootstrap_form form layout='inline' %}
-			</div>
-			<button type="submit" class="btn btn-primary">
-				<i class="fa fa-envelope" aria-hidden="true"></i>
-                <span class="btn-primary-span">Subscribe For Newsletter</span>
-			</button>
-		</form>
+		<a href="{% url 'home:newsletter' %}" class="btn btn-primary">
+			<i class="fa fa-envelope" aria-hidden="true"></i>
+			<span class="btn-primary-span">Subscribe For Newsletter</span>
+		</a>
 	</div>
 </section>
 {% endblock %}
