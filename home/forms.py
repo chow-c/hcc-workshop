@@ -86,7 +86,7 @@ class NewsletterForm(forms.ModelForm):
         self.helper.html5_required = False
         self.helper.add_input(Submit('submit', 'Subscribe'))
         self.helper.layout = Layout(
-            HTML('<p class="text-center">All fields are required.</p>'),
+            HTML('<p class="text-center">Great! We need just a bit more information.</p>'),
             PrependedText('first_name',
                           '<i class="fa fa-user" aria-hidden="true"></i>',
                           placeholder='First Name'),

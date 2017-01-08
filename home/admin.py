@@ -30,8 +30,10 @@ class UserAdmin(BaseUserAdmin):
         return obj.workshopuser.ethics_approval
     get_ethics.admin_order_field = 'workshopuser'
     get_ethics.short_description = 'Has Ethics Approval'
-    list_display = ('username', 'first_name', 'last_name', 'email', 'last_login', 'get_ethics')
+    list_display = ('username', 'first_name', 'last_name', 'email', 'last_login', 'date_joined', 'get_ethics')
     inlines = (WorkshopUserInline, CompletedActivityInline,)
+    ordering = ('-last_login',)
+    readonly_fields = ('date_joined', 'last_login')
 
 def export_csv(modeladmin, request, queryset):
     import csv
