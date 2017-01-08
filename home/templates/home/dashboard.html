@@ -16,12 +16,12 @@
 {% block content %}
  <div class="jumbotron dash-splash text-left">
 	<h1 class="animated slideInUp">{{ greeting|random }}</h1>
-	<p>Click any of the activities to get started.</p>
+	<p>Click any of the activities to get started</p>
 </div>
-<section id="dashboard-container-fluid" class="container-fluid">
+<section class="app-text-standard container-fluid">
 	<div class="text-center vertical-align" style="padding-bottom: 20px">
 		<h1 class="text-center">Research Areas</h1>
-		<p class="lead">Explore some of the topics we work on.</p>
+		<p class="lead">Explore some of the topics we work on</p>
 	</div>
 	<div class="row">
 		<div class="col-md-3 col-lg-3 col-sm-3">
@@ -113,10 +113,16 @@
 		</div>
 	</div>
 </section>
+<section id="dashboard-container-fluid" class="container-fluid">
+	<div class="text-center vertical-align eyegaze-title">
+		<h1>Devices</h1>
+		<p class="lead">Test the gadgets and technology</p>
+	</div>
+</section>
 <section id="eyetracker-activities" class="container-fluid" style="border-bottom: 1px solid #f7f7f7">
 	<div class="text-center vertical-align eyegaze-title">
 		<h1>Eye Tracking</h1>
-		<p class="lead">Visualise the way in which you view the screen through four different activities.</p>
+		<p class="lead">Visualise the way in which you view the screen</p>
 		<a class="btn btn-default btn-lg" href="{% url 'eyetracking:index' %}">Try it out</a>
 	</div>
 </section>
@@ -179,7 +185,7 @@
 		<div class="col-md-6">
 			<div class="text-center vertical-align">
 				<h1>Bonus Activities</h1>
-				<p class="lead">Gain those extra levels.</p>
+				<p class="lead">Gain some extra levels</p>
 			</div>
 		</div>
 	</div>
