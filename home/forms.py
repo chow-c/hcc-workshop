@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Layout, Fieldset, Div, HTML
-from crispy_forms.bootstrap import Field, Alert, PrependedText
+from crispy_forms.bootstrap import Field, Alert, PrependedText, InlineRadios
 
 class UserCreateForm(UserCreationForm):
     first_name = forms.CharField(required=True)
@@ -123,4 +123,43 @@ class LoginForm(AuthenticationForm):
             PrependedText('password',
                           '<i class="fa fa-lock" aria-hidden="true"></i>',
                           placeholder="Password"),
+        )
+
+class EreaderForm(forms.Form):
+
+    LIKERT = ((1, 'One'), (2, 'Two'), (3, 'Three'), (4, 'Four'), (5, 'Five'))
+
+    device_label = forms.CharField()
+    turn_on = forms.ChoiceField(choices=LIKERT, label="Turn on the device.")
+    find_document = forms.ChoiceField(choices=LIKERT, label="Find an eBook on the device starting with the letter M or N.")
+    open_document = forms.ChoiceField(choices=LIKERT, label="Open one of these eBooks.")
+    navigate_to_paragraph = forms.ChoiceField(choices=LIKERT, label="Find the second sentence of the third paragraph in the eBook.")
+    increase_font = forms.ChoiceField(choices=LIKERT, label="Increase the font on the eReader.")
+    readability = forms.ChoiceField(choices=LIKERT, label="How readable is the text?.")
+    improve = forms.CharField(widget = forms.Textarea(), label="What would you improve on this eReader?")
+    likes = forms.CharField(widget = forms.Textarea(), label="What do you like about this eReader?")
+    dislikes = forms.CharField(widget = forms.Textarea(), label="What do you dislike about this eReader?")
+    comments = forms.CharField(widget = forms.Textarea(), label="Other comments and notes.")
+
+    def __init__(self, *args, **kwargs):
+        super(EreaderForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'ereader-form'
+        self.helper.form_method = 'POST'
+        self.helper.form_action = ''
+        self.helper.form_show_labels = True
+        self.helper.layout = Layout(
+            Field('device_label', placeholder="eg: A or K"),
+            HTML('<p class="text-justify">For each of the below actions, rate the experience from 1 (Very Bad) to 5 (Very Good).</p>'),
+            InlineRadios('turn_on'),
+            InlineRadios('find_document'),
+            InlineRadios('open_document'),
+            InlineRadios('navigate_to_paragraph'),
+            InlineRadios('increase_font'),
+            InlineRadios('readability'),
+            HTML('<p class="text-justify">For each of the below questions, note down your thoughts.</p>'),
+            Field('improve', rows=2),
+            Field('likes', rows=2),
+            Field('dislikes', rows=2),
+            Field('comments', rows=2),
         )

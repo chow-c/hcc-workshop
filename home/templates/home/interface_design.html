@@ -2,52 +2,56 @@
 {% load staticfiles %}
 
 {% block title %} 
-HCC Workshop | Driving Simulator
+HCC Workshop | Interface Design
 {% endblock %}
 
 {% block app-breadcrumbs %}
-<li class="active">Driving Simulator</li>
+<li class="active">Interface Design</li>
 {% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'home/css/other-research.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/signals.css' %}">
 {% endblock %}
 
-{% block content %} 
-    <div class="background-gif"></div>
-    <div class="jumbotron text-center app-splash">
-		<h1 class="vertical-align animated bounceInLeft" style="color: black">Driving Simulator</h1>
-	</div>
-	<section class="container-fluid app-text-other">
-		<h2 class="vertical-align">Gestures and Body Movement</h2>
-		<p class="text-justify">The Human Centred Computing (HCC) research group at ANU collects a wide range of psychophysiological data from participants as they carry out various tasks similar to those which you have been doing today. One of the main sources of signal that is used in our research is electrocardiography, which is the process of recording the electrical acitivity of the heart.</p>
-		<p>By measuring this heart rate activity, we can calculate measures such as heart rate variability - the time interval between heartbeats - or the change in heart rate - the number of heart contractions. We are able to feed this raw data into intelligent computational algorithms such as neural networks or other statistical models in order to make inferences about a person's mood, behaviour or comprehension when performing computer based tasks. As humans and machines interact hundreds of times in our daily lives, it is becoming increasingly important to find ways in which machines can understand humans in order to make these interactions easier.</p>
-		<p>Alert! What are psychophysiological signals? <br>These are your physiological and physical responses to psychological and cognitive processes. Put simply we measure heart rate, brain waves, eye movements, skin temperature, pupil dilation, accelerometer data, and much more. We analyse this data to make inferences about the psychological and cognitive processes that are occuring, such as reading comprehension, visual inspection of images, or whether you think an email is spam or not. </p>
+{% block content %}
+<div class="content-container">
+	<section class="titlebar">
+		<h1 class="vertical-align animated bounceInLeft">Interface Design</h1>
 	</section>
-	<section class="container-fluid app-text-standard">
-		<h2 class="vertical-align">Collecting gesture and body movement data</h2>
-		<div class="row">
-			<div class="col-md-8">
-				<p class="text-justify">Measuring psychophysiological signals requires a number of specialist devices. To collect ECG and GSR data, the Human Centred Computing research group uses an Empatica E4. Built by a startup out of Massachusetts Institute of Technology in Cambridge, USA, the Empatica E4 is a portable wristband that collects research-grade data, including ECG in the form of HRV, and GSR. </p>
-				<p>We have a number of Empatica E4 devices available for you to try on and use. The E4s pair with an iOS device to allow researchers to visualise and stream data in real time. Please approach the Empatica E4 station to try on one of these devices.</p>
-				<p>Use an iOS device? Tired of waiting? Install the free Empatica application, approach an instructor and try it out on your own iOS device!</p>
-			</div>
-			<div class="col-md-4 text-center">
-				<img src="{% static 'home/images/e4.png' %}" alt="e4" width="40%"/>
-			</div>
-		</div>	
-		<div class="text-center" style="margin-top:40px">
-			<img src="{% static 'home/images/empatica_results.png' %}" alt="empatica_results" width="60%"/>
-		</div>		
+	<section class="main-content wide">
+		<h2>Before you get started</h2>
+		<p class="text-justify">Have you completed the Human Computer Interaction (HCI) activity yet? If no, we recommend you have a go at that activity first. This activity is HCI in action and will give you a chance to practice those skills. </p>
 	</section>
-	<section class="app-text-highlight">
-		<div class="text-center vertical-align">
-			<h1>Level Up</h1>
-			<p class="lead">Read all of that? Here's another level.</p>
-			<button role="button" class="btn btn-default btn-lg" href="#" id="level-up"><span class="btn-primary-span">Level Up</span><i class="fa fa-level-up" aria-hidden="true"></i></a>
+	<section class="main-content">
+		<h2>What we do</h2>
+		<p class="text-justify">The Human Centred Computing group is largely concerned with developing better user interactions. The most common user interaction is through a user interface. Interface design is important. So it investigating what makes a good design. </p> 
+		<p class="text-justify">We conduct user studies to reveal what makes interfaces good and what makes them bad! User studies are where an experimenter records how users interact with interfaces and what the users thought about the interface. This is also called usability testing. </p>
+		<p class="text-justify">There are many different types of usability tests. If you have completed any of the eye tracking activities then you have actually been a part of a laboratory style experiment. Another type moderated and unmoderated tests. </p>
+		<p class="text-justify">Unmoderated tests are tests given to participants where the experimenter is not present. A very common example are satisfaction surveys. Moderated tests are where the experimenter interacts with the participant. Unlike in laboratory studies, the user is able to speak freely to the experimenter. </p>
+		<p class="text-justify">In this activity you will get to have a play with some eReaders using a moderated user study. In doing so, you will be experiencing their interfaces. </p>
+		<h2>Why we do it</h2>
+		<p class="text-justify">Interfaces are everywhere, from this workshop, the browser this workshop is running in, the operating system on this computer, and the computer itself. They are everywhere. They are everywhere because they are your way of interacting with technology. The interface is like the eyes, ears, and mouth of the technology. That is, the only way to get information in and out! </p>
+		<p class="text-justify">Often the technology is immensely complex. The user interface is your only way of understanding and interacting with it. So as you can probably guess, it is pretty important! Here's the thing though, they are often designed really badly. Have a quick think about a device you have used lately and you either couldn't figure out how to use it, or it was infuriating to use. What about a website you've seen that was just too complicated or counterintuitive, so you left to find another option. That's why we investigate these interfaces. We can report on what works and what doesn't, and hopefully soon all interfaces will be user friendly and fun.</p>
+		<h2 class="vertical-align">Collecting data</h2>
+		<p class="text-justify">There is a lot of different data that can be collected from usability tests. One important type are satisfaction levels, which are usually nominal data. We can apply statistical tools to check for differences in types of interfaces. </p>
+		<p class="text-justify">A lot of qualitative data is also recorded. This data is your comments and thoughts about the interface. We can't use statistics to analyse this data, but it sure is useful in providing insight into what people like and don't like. </p>
+		<p class="text-justify">There is also a lot of other data that we collect, such as quantitative data. This kind of data includes task completion rates, time to complete, and error rates. Statistical tools can be used to analyse how good an interface is.</p>
+	</section>
+	<section class="sidebar text-center">
+		<div class="sidebar-info-title">
+			<i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
+		</div>
+		<div class="sidebar-content">
+			<h3>What is user experience (UX) design?</h3>
+			<p class="text-justify">Interface design is part of a broader area of expertise, user experience (UX) design. This is a growing topic, with companies and governments recognising the importance of keeping users happy. UX design is the process of increasing user satisfaction by making products with good usability and accessibility. <br>UX design uses HCI, but goes further to design all aspects of a product with the user at the centre of design. This includes any interactions, the design and aesthetics, information architecture, and much more. </p>
+		</div>
+		<div class="sidebar-content">
+			<h2 class="activity-highlight">Activity</h2>
+			<p>Evaluate the interfaces of e-readers</p>
+			<a href="{% url 'home:ereader-activity' %}" class="btn btn-primary btn-lg">Get started</a>
 		</div>
 	</section>
-
+</div>
 {% endblock %}
 {% block script %} 
 	

@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^driving-simulator$', views.driving_simulator.as_view(), name='driving-simulator'),
     url(r'^driving-simulator/driving-activity$', views.driving_activity, name='driving-activity'),
     url(r'^interface-design$', views.interface_design.as_view(), name='interface-design'),
+    url(r'^interface-design/evaluating-ereader-interfaces$', views.ereader_activity, name='ereader-activity'),
     url(r'^level-up$', views.levelUp, name='levelup'),
 ]

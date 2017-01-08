@@ -19,7 +19,7 @@ from django.conf import settings
 
 from django.template.loader import get_template
 
-from home.forms import UserCreateForm, NewsletterForm
+from home.forms import UserCreateForm, NewsletterForm, EreaderForm
 
 from reportlab.pdfgen import canvas
 
@@ -204,6 +204,15 @@ def driving_activity(request):
 @method_decorator(login_required, name='dispatch')
 class interface_design(generic.TemplateView):
     template_name = 'home/interface_design.html'
+
+@login_required
+def ereader_activity(request):
+
+    form = EreaderForm()
+    list_of_completes = get_completes(request)
+    context = {'completes' : list_of_completes, 'form' : form}
+
+    return render(request, 'home/ereader-activity.html', context)
 
 @login_required
 def ecg_activity(request):
