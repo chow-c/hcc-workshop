@@ -49,7 +49,7 @@ class WorkshopUser(models.Model):
         ('12', '12 - Superhero'),
         ('13', '13 - Advanced Alien'),
         ('14', '14 - Wizard'),
-        ('15', '15 - A.I.'),
+        ('15', '15 - Supercomputer'),
         ('16', '16 - Skynet'),
         ('17', '17 - Unicorn'),
     )
