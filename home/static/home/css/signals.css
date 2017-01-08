@@ -52,3 +52,7 @@
     background-color:#5B81A1; 
     color: white; 
 }
+
+.activity-highlight {
+    color: rgba(153, 48, 57, 1);
+}
