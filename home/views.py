@@ -193,6 +193,14 @@ def eeg_activity(request):
 class driving_simulator(generic.TemplateView):
     template_name = 'home/driving_simulator.html'
 
+@login_required
+def driving_activity(request):
+
+    list_of_completes = get_completes(request)
+    context = {'completes' : list_of_completes}
+
+    return render(request, 'home/driving-activity.html', context)
+
 @method_decorator(login_required, name='dispatch')
 class interface_design(generic.TemplateView):
     template_name = 'home/interface_design.html'
@@ -224,6 +232,14 @@ def eda_activity(request):
 @method_decorator(login_required, name='dispatch')
 class gestures(generic.TemplateView):
     template_name = 'home/gestures.html'
+
+@login_required
+def gestures_activity(request):
+
+    list_of_completes = get_completes(request)
+    context = {'completes' : list_of_completes}
+
+    return render(request, 'home/gestures-activity.html', context)
 
 @login_required
 def levelUp(request):

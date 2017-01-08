@@ -56,3 +56,11 @@
 .activity-highlight {
     color: rgba(153, 48, 57, 1);
 }
+
+#driving-answer {
+    margin: 16px 0;
+}
+
+#driving-hidden {
+    display: none;
+}

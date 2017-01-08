@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} 
+HCC Workshop | Gestures and Body Movement | Using the Myo Armband
+{% endblock %}
+
+{% block app-breadcrumbs %}
+<li><a href="{% url 'home:gestures' %}">Gestures and Body Movement</a></li>
+<li class="active">Using the Myo Armband</li>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'home/css/signals.css' %}">
+{% endblock %}
+
+{% block content %} 
+<div class="content-container">
+	<section class="titlebar">
+		<h1 class="vertical-align animated bounceInLeft">Using the Myo Armband</h1>
+	</section>
+	<section class="main-content">
+		<p class="lead text-center">In this activity, you will be able to use the Myo Armband to perform gesture commands on a PowerPoint presentation.</p>
+		<h2>Initial Setup</h2>
+		<p class="text-justify">The Myo Armband will only work with the laptop to which it is connected via a Bluetooth dongle. Please approach the Myo Armband workstation to try this activity.</p>
+		<p class="text-justify"><strong>There is only one Myo Armband available, so if it is already occupied, you may need to attempt another activity. Alternatively, you can watch your friends and cheer them on!</strong></p>
+		<h2><span class="activity-highlight">Activity: </span>Calibration</h2>
+		<p class="text-justify">Like many devices monitoring user behaviour, the Myo Armband needs to be calibrated for every person to enable it to work at its best. Can you think of why this might be the case? <a href="">Hint.</a></p>
+		<p class="text-justify">Launch the Myo Armband calibration sequence. Work through the instructions to calibrate the Myo to recognise your gestures and body movements.</p>
+		<h2><span class="activity-highlight">Activity: </span>Gesture Control in a PowerPoint Presentation</h2>
+		<p class="text-justify">Now that you are calibrated, switch over to the open PowerPoint presentation in order to try out the gestures.</p>
+	</section>
+	<section class="sidebar text-center">
+		<div class="sidebar-info-title">
+			<i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true"></i>
+		</div>
+		<div class="sidebar-content">
+			<h2>Be courteous</h2>
+			<p>In the interests of fairness, be kind to your colleagues and don't spend <em>too</em> much time using the Myo Armband.</p>
+		</div>
+		{% if '/driving-simulator/driving-activity' not in completes %}
+		<div class="sidebar-content sidebar-level">
+			<h2>Level Up</h2>
+			<p>The gesture for more levels is holding your hands in the air</p>
+			<button role="button" class="btn btn-default btn-lg btn-level" href="#" id="level-up"><span class="btn-primary-span">Level Up</span><i class="fa fa-level-up" aria-hidden="true"></i></button>
+		</div>
+		{% endif %}
+	</section>
+</div>
+{% endblock %}
+
+{% block script %} 
+<script>
+$(document).ready(function () {
+	$('#driving-sim-yes').one("click", function() {
+		if($(this).hasClass('link-clicked')) {
+                return;
+            }
+		$(this).addClass('btn-primary');
+		$('#driving-hidden').show();
+		$('.driving-sim-button').addClass('link-clicked');
+		$('#driving-answer').html("Thats too bad; driving a real car is probably easier.<br>Just incase, let's go over the instructions for the driving simulator real quick.");
+	});
+	$('#driving-sim-no').one("click", function() {
+		if($(this).hasClass('link-clicked')) {
+                return;
+            }
+		$(this).addClass('btn-primary');
+		$('#driving-hidden').show();
+		$('.driving-sim-button').addClass('link-clicked');
+		$('#driving-answer').html("Not to worry, we've had kids drive this thing.<br>Just incase, let's go over the instructions for the driving simulator real quick.");
+	});
+	$('#driving-sim-mario').one("click", function() {
+		if($(this).hasClass('link-clicked')) {
+                return;
+            }
+		$(this).addClass('btn-primary');
+		$('#driving-hidden').show();
+		$('.driving-sim-button').addClass('link-clicked');
+		$('#driving-answer').html("Well there's no Rainbow Road on this one, so probably not. <br>Just incase, let's go over the instructions for the driving simulator real quick.");
+	});
+});
+</script>
+{% endblock %}

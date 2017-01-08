@@ -10,45 +10,35 @@ HCC Workshop | Driving Simulator
 {% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'home/css/other-research.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/signals.css' %}">
 {% endblock %}
 
 {% block content %} 
-    <div class="background-gif"></div>
-    <div class="jumbotron text-center app-splash">
-		<h1 class="vertical-align animated bounceInLeft" style="color: black">Driving Simulator</h1>
-	</div>
-	<section class="container-fluid app-text-other">
-		<h2 class="vertical-align">Gestures and Body Movement</h2>
-		<p class="text-justify">The Human Centred Computing (HCC) research group at ANU collects a wide range of psychophysiological data from participants as they carry out various tasks similar to those which you have been doing today. One of the main sources of signal that is used in our research is electrocardiography, which is the process of recording the electrical acitivity of the heart.</p>
-		<p>By measuring this heart rate activity, we can calculate measures such as heart rate variability - the time interval between heartbeats - or the change in heart rate - the number of heart contractions. We are able to feed this raw data into intelligent computational algorithms such as neural networks or other statistical models in order to make inferences about a person's mood, behaviour or comprehension when performing computer based tasks. As humans and machines interact hundreds of times in our daily lives, it is becoming increasingly important to find ways in which machines can understand humans in order to make these interactions easier.</p>
-		<p>Alert! What are psychophysiological signals? <br>These are your physiological and physical responses to psychological and cognitive processes. Put simply we measure heart rate, brain waves, eye movements, skin temperature, pupil dilation, accelerometer data, and much more. We analyse this data to make inferences about the psychological and cognitive processes that are occuring, such as reading comprehension, visual inspection of images, or whether you think an email is spam or not. </p>
+<div class="content-container">
+	<section class="titlebar">
+		<h1 class="vertical-align animated bounceInLeft">Driving Simulator</h1>
 	</section>
-	<section class="container-fluid app-text-standard">
-		<h2 class="vertical-align">Collecting gesture and body movement data</h2>
-		<div class="row">
-			<div class="col-md-8">
-				<p class="text-justify">Measuring psychophysiological signals requires a number of specialist devices. To collect ECG and GSR data, the Human Centred Computing research group uses an Empatica E4. Built by a startup out of Massachusetts Institute of Technology in Cambridge, USA, the Empatica E4 is a portable wristband that collects research-grade data, including ECG in the form of HRV, and GSR. </p>
-				<p>We have a number of Empatica E4 devices available for you to try on and use. The E4s pair with an iOS device to allow researchers to visualise and stream data in real time. Please approach the Empatica E4 station to try on one of these devices.</p>
-				<p>Use an iOS device? Tired of waiting? Install the free Empatica application, approach an instructor and try it out on your own iOS device!</p>
-			</div>
-			<div class="col-md-4 text-center">
-				<img src="{% static 'home/images/e4.png' %}" alt="e4" width="40%"/>
-			</div>
-		</div>	
-		<div class="text-center" style="margin-top:40px">
-			<img src="{% static 'home/images/empatica_results.png' %}" alt="empatica_results" width="60%"/>
-		</div>		
+	<section class="main-content">
+		<h2>What we do</h2>
+		<p class="text-justify">One of the interesting research projects undertaken by members of the Human Centred Computing (HCC) research group involves the use of <strong><em>driving simulators</em></strong>. Aside from being a lot of fun, driving simulators are common in human-centred research fields for monitoring driver behavior, performance, and attention. In the HCC group, we look particularly at computational models for collecting and analysing user data whilst in scenarios similar to driving, as well as ways to mimic or improve the ways in which people drive.</p>
+		<div class="text-center" style="margin: 16px auto">
+			<img src="{% static 'home/images/car-0.jpg' %}" alt="empatica_results" width="872"/>
+		</div>
+		<h2>Why we do it</h2>
+		<p class="text-justify">Driving is a complex human activity requiring coordination, attention, and quick decision-making. It can often be highly stressful too. Our researchers are interested in identifying when drivers are potentially cognitively-impaired through computational models. This would be beneficial for improving driver safety, such as in influencing driver training programs, or for improving in-car technology. With self-driving cars a reality, it is not too difficult to imagine a time when your car recognises how you are feeling, and could provide some level of comfort or understanding. Ultimately, research in this area may assist in the move toward self-driving cars, with intelligent algorithms being able to mimic the places where drivers look within their field of vision, react to obstructions, and follow road rules.</p>
+		<h2>What data can we collect?</h2>
+		<p class="text-justify">The driving simulator is a perfect example of a <em>scenario</em> in which we collect data. It serves as a context or situation that we are helping to contribute toward. In a research setting, we would collect a range of psychophysiological signals from users, such as eye gaze, heart rate activity, electrodermal activity, neural activity, facial expressions and movement data. We would also perform accurate time-keeping, and enlist screen recording in order to pair our user data up with what they were doing. The computational models we use are very fast and allow us to chew through large volumes of different data, therefore we tend to collect as much data as practical. </p>
+		<p class="text-justify">In this activity, we will not be performing any data collection. You will simply be able to try out the car simulator for yourself.</p>
 	</section>
-	<section class="app-text-highlight">
-		<div class="text-center vertical-align">
-			<h1>Level Up</h1>
-			<p class="lead">Read all of that? Here's another level.</p>
-			<button role="button" class="btn btn-default btn-lg" href="#" id="level-up"><span class="btn-primary-span">Level Up</span><i class="fa fa-level-up" aria-hidden="true"></i></a>
+	<section class="sidebar text-center">
+		<div class="sidebar-content">
+			<h2 class='activity-highlight'>Activity</h2>
+			<p>Borrow the keys and take our car sim for a spin</p>
+			<a href="{% url 'home:driving-activity' %}" class="btn btn-primary btn-lg">Get started</a>
 		</div>
 	</section>
-
+</div>
 {% endblock %}
+
 {% block script %} 
-	
 {% endblock %}

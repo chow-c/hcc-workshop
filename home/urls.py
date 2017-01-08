@@ -21,7 +21,9 @@ urlpatterns = [
     url(r'^eda$', views.eda.as_view(), name='eda'),
     url(r'^eda/empatica-eda-activity$', views.eda_activity, name='eda-activity'),
     url(r'^gestures$', views.gestures.as_view(), name='gestures'),
+    url(r'^gestures/gestures-activity$', views.gestures_activity, name='gestures-activity'),
     url(r'^driving-simulator$', views.driving_simulator.as_view(), name='driving-simulator'),
+    url(r'^driving-simulator/driving-activity$', views.driving_activity, name='driving-activity'),
     url(r'^interface-design$', views.interface_design.as_view(), name='interface-design'),
     url(r'^level-up$', views.levelUp, name='levelup'),
 ]
