@@ -88,16 +88,43 @@
 		</div>
 		<div class="col-md-3 col-lg-3 col-sm-3">
 			<div class="thumbnail activity-thumbnail">
-				<a href="{% url 'home:other_research' %}">
-					<img class="app-thumbnail-img {% if '/other-research' in completes %}fade-image{% endif %}" src="{% static 'home/images/other-thumb.jpg' %}" alt="">
+				<a href="{% url 'home:eeg' %}">
+					<img class="app-thumbnail-img {% if '/eeg' in completes %}fade-image{% endif %}" src="{% static 'home/images/other-thumb.jpg' %}" alt="">
 				</a>
-				<div class="caption title-caption {% if '/other-research' in completes %}fade-text{% endif %}">
-					<h3>Other Research</h3>
+				<div class="caption title-caption {% if '/eeg' in completes %}fade-text{% endif %}">
+					<h3>Electroencephalography</h3>
 					<div class="content-caption">
-						<p>See some of our other toys.</p>
-						<a class="btn btn-default" href="{% url 'home:other_research' %}">
+						<p>Takes brain effort just to say.</p>
+						<a class="btn btn-default" href="{% url 'home:eeg' %}">
 							<span class="btn-primary-span">
-								{% if '/other-research' in completes %}
+								{% if '/eeg' in completes %}
+								Completed
+							</span>
+							<i class="fa fa-check" aria-hidden="true"></i>
+								{% else %}
+								Launch
+							</span>
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								{% endif %}
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row" style="padding-top: 50px">
+		<div class="col-md-3 col-lg-3 col-sm-3">
+			<div class="thumbnail activity-thumbnail">
+				<a href="{% url 'home:ecg' %}">
+					<img class="app-thumbnail-img {% if '/ecg' in completes %}fade-image{% endif %}" src="{% static 'home/images/ecg-thumb.jpg' %}" alt="">
+				</a>
+				<div class="caption title-caption {% if '/ecg' in completes %}fade-text{% endif %}">
+					<h3>Electrocardiography</h3>
+					<div class="content-caption">
+						<p>Watch your heartbeat race.</p>
+						<a class="btn btn-default" href="{% url 'home:ecg' %}">
+							<span class="btn-primary-span">
+								{% if '/ecg' in completes %}
 								Completed
 							</span>
 							<i class="fa fa-check" aria-hidden="true"></i>
