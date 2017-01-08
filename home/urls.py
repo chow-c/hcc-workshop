@@ -16,5 +16,7 @@ urlpatterns = [
     # url(r'^other-research$', views.OtherResearch.as_view(), name='other_research'),
     url(r'^ecg$', views.ecg.as_view(), name='ecg'),
     url(r'^eeg$', views.eeg.as_view(), name='eeg'),
+    url(r'^eda$', views.eda.as_view(), name='eda'),
+    url(r'^gestures$', views.gestures.as_view(), name='gestures'),
     url(r'^level-up$', views.levelUp, name='levelup'),
 ]

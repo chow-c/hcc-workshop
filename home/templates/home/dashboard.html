@@ -44,7 +44,7 @@
 				<div class="caption title-caption {% if '/cyber-security/phishing' in completes %}fade-text{% endif %}">
 					<h3>Cyber Security</h3>
 					<div class="content-caption">
-						<p>It's more than just a buzzword.</p>
+						<p>More than just a buzzword.</p>
 						<a class="btn btn-default" href="{% url 'cybersecurity:index' %}">
 							<span class="btn-primary-span">
 								{% if '/cyber-security/phishing' in completes %}
@@ -88,6 +88,39 @@
 		</div>
 		<div class="col-md-3 col-lg-3 col-sm-3">
 			<div class="thumbnail activity-thumbnail">
+				<a href="{% url 'neural_networks:index' %}">
+					<img class="app-thumbnail-img {% if '/neural-networks/' in completes %}fade-image{% endif %}" src="{% static 'home/images/preview.png' %}" alt="">
+				</a>
+				<div class="caption title-caption {% if '/neural-networks/' in completes %}fade-text{% endif %}">
+					<h3>Neural Networks</h3>
+					<div class="content-caption">
+						<p>Machine learning inspired by your brain.</p>
+						<a class="btn btn-default" href="{% url 'neural_networks:index' %}">
+							<span class="btn-primary-span">
+								{% if '/neural-networks/' in completes %}
+								Completed
+							</span>
+							<i class="fa fa-check" aria-hidden="true"></i>
+								{% else %}
+								Launch
+							</span>
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								{% endif %}
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="dashboard-container-fluid" class="container-fluid">
+	<div class="text-center vertical-align eyegaze-title">
+		<h1>Measurements and devices</h1>
+		<p class="lead">Test the gadgets and technology</p>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-lg-3 col-sm-3">
+			<div class="thumbnail activity-thumbnail">
 				<a href="{% url 'home:eeg' %}">
 					<img class="app-thumbnail-img {% if '/eeg' in completes %}fade-image{% endif %}" src="{% static 'home/images/other-thumb.jpg' %}" alt="">
 				</a>
@@ -111,8 +144,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="row" style="padding-top: 50px">
 		<div class="col-md-3 col-lg-3 col-sm-3">
 			<div class="thumbnail activity-thumbnail">
 				<a href="{% url 'home:ecg' %}">
@@ -138,12 +169,56 @@
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
-<section id="dashboard-container-fluid" class="container-fluid">
-	<div class="text-center vertical-align eyegaze-title">
-		<h1>Devices</h1>
-		<p class="lead">Test the gadgets and technology</p>
+		<div class="col-md-3 col-lg-3 col-sm-3">
+			<div class="thumbnail activity-thumbnail">
+				<a href="{% url 'home:gestures' %}">
+					<img class="app-thumbnail-img {% if '/gestures' in completes %}fade-image{% endif %}" src="{% static 'home/images/gesture-thumb.jpg' %}" alt="">
+				</a>
+				<div class="caption title-caption {% if '/gestures' in completes %}fade-text{% endif %}">
+					<h3>Gestures and Body movement</h3>
+					<div class="content-caption">
+						<p>These are not the droids you are looking for.</p>
+						<a class="btn btn-default" href="{% url 'home:gestures' %}">
+							<span class="btn-primary-span">
+								{% if '/gestures' in completes %}
+								Completed
+							</span>
+							<i class="fa fa-check" aria-hidden="true"></i>
+								{% else %}
+								Launch
+							</span>
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								{% endif %}
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-lg-3 col-sm-3">
+			<div class="thumbnail activity-thumbnail">
+				<a href="{% url 'home:eda' %}">
+					<img class="app-thumbnail-img {% if '/eda' in completes %}fade-image{% endif %}" src="{% static 'home/images/gsr-thumb.jpg' %}" alt="">
+				</a>
+				<div class="caption title-caption {% if '/eda' in completes %}fade-text{% endif %}">
+					<h3>Electrodermal activity</h3>
+					<div class="content-caption">
+						<p>Do you sweat when you're nervous?</p>
+						<a class="btn btn-default" href="{% url 'home:eda' %}">
+							<span class="btn-primary-span">
+								{% if '/eda' in completes %}
+								Completed
+							</span>
+							<i class="fa fa-check" aria-hidden="true"></i>
+								{% else %}
+								Launch
+							</span>
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								{% endif %}
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
 <section id="eyetracker-activities" class="container-fluid" style="border-bottom: 1px solid #f7f7f7">
@@ -169,31 +244,6 @@
 								<a class="btn btn-default" href="{% url 'thatcher:index' %}">
 									<span class="btn-primary-span">
 										{% if '/the-thatcher-effect/' in completes %}
-										Completed
-									</span>
-									<i class="fa fa-check" aria-hidden="true"></i>
-										{% else %}
-										Launch
-									</span>
-									<i class="fa fa-chevron-right" aria-hidden="true"></i>
-										{% endif %}
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="thumbnail activity-thumbnail">
-						<a href="{% url 'neural_networks:index' %}">
-							<img class="app-thumbnail-img {% if '/neural-networks/' in completes %}fade-image{% endif %}" src="{% static 'home/images/preview.png' %}" alt="">
-						</a>
-						<div class="caption title-caption {% if '/neural-networks/' in completes %}fade-text{% endif %}">
-							<h3>Neural Networks</h3>
-							<div class="content-caption">
-								<p>See bio-inspired machine learning in action!</p>
-								<a class="btn btn-default" href="{% url 'neural_networks:index' %}">
-									<span class="btn-primary-span">
-										{% if '/neural-networks/' in completes %}
 										Completed
 									</span>
 									<i class="fa fa-check" aria-hidden="true"></i>

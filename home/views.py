@@ -179,6 +179,14 @@ class eeg(generic.TemplateView):
 class ecg(generic.TemplateView):
     template_name = 'home/ecg.html'
 
+@method_decorator(login_required, name='dispatch')
+class eda(generic.TemplateView):
+    template_name = 'home/eda.html'
+
+@method_decorator(login_required, name='dispatch')
+class gestures(generic.TemplateView):
+    template_name = 'home/gestures.html'
+
 @login_required
 def levelUp(request):
     user = request.user
