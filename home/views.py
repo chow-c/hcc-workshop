@@ -56,6 +56,14 @@ class Index(generic.TemplateView):
 def eyegazeinfo(request):
     return render(request, 'home/eyegazeinfo.html')
 
+def get_completes(request):
+     # Create list of all the apps that they've finished
+    list_of_completes = []
+    for item in request.user.completedactivity_set.all():
+        list_of_completes.append(item.activity)
+
+    return list_of_completes
+
 @login_required
 def dashboard(request):
     if request.method == 'POST':
@@ -67,9 +75,7 @@ def dashboard(request):
         form = NewsletterForm()
 
         # Create list of all the apps that they've finished
-        list_of_completes = []
-        for item in request.user.completedactivity_set.all():
-            list_of_completes.append(item.activity)
+        list_of_completes = get_completes(request)
 
         # Check if a session variable has been set for previously visiting the dashboard
         if request.session.get('visited', False) is True:
@@ -175,6 +181,30 @@ class OtherResearch(generic.TemplateView):
 class eeg(generic.TemplateView):
     template_name = 'home/eeg.html'
 
+@login_required
+def eeg_activity(request):
+
+    list_of_completes = get_completes(request)
+    context = {'completes' : list_of_completes}
+
+    return render(request, 'home/eeg-activity.html', context)
+
+@method_decorator(login_required, name='dispatch')
+class driving_simulator(generic.TemplateView):
+    template_name = 'home/driving_simulator.html'
+
+@method_decorator(login_required, name='dispatch')
+class interface_design(generic.TemplateView):
+    template_name = 'home/interface_design.html'
+
+@login_required
+def ecg_activity(request):
+
+    list_of_completes = get_completes(request)
+    context = {'completes' : list_of_completes}
+
+    return render(request, 'home/ecg-activity.html', context)
+
 @method_decorator(login_required, name='dispatch')
 class ecg(generic.TemplateView):
     template_name = 'home/ecg.html'
@@ -182,6 +212,14 @@ class ecg(generic.TemplateView):
 @method_decorator(login_required, name='dispatch')
 class eda(generic.TemplateView):
     template_name = 'home/eda.html'
+
+@login_required
+def eda_activity(request):
+
+    list_of_completes = get_completes(request)
+    context = {'completes' : list_of_completes}
+
+    return render(request, 'home/eda-activity.html', context)
 
 @method_decorator(login_required, name='dispatch')
 class gestures(generic.TemplateView):

@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block title %} 
-	HCC Workshop | Electroencephalography 
+HCC Workshop | Electroencephalography 
 {% endblock %}
 
 {% block app-breadcrumbs %}
@@ -10,37 +10,45 @@
 {% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'home/css/other-research.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/signals.css' %}">
 {% endblock %}
 
 {% block content %} 
-    <div class="background-gif"></div>
-    <div class="jumbotron text-center app-splash">
-		<h1 class="vertical-align animated bounceInLeft" style="color: black">Electroencephalography</h1>
-	</div>
-	<section class="container-fluid app-text-other">
-		<h2 class="vertical-align">Electroencephalography</h2>
-		<p class="text-justify">The Human Centred Computing (HCC) research group at ANU collects a wide range of psychophysiological data from participants as they carry out various tasks similar to those which you have been doing today. One of the main sources of signal that is used in our research is electroencephalography, which is the process of recording the electrical acitivity of the brain.
-		<p>By measuring this brain activity, we can can feed it into intelligent computational algorithms such as neural networks or other statistical models in order to make inferences about a person's mental processes when performing computer based tasks. As humans and machines interact hundreds of times in our daily lives, it is becoming increasingly important to find ways in which machines can understand humans in order to make these interactions easier. </p>
-		<p>Alert! What are psychophysiological signals? <br>These are your physiological and physical responses to psychological and cognitive processes. Put simply we measure heart rate, brain waves, eye movements, skin temperature, pupil dilation, accelerometer data, and much more. We analyse this data to make inferences about the psychological and cognitive processes that are occuring, such as reading comprehension, visual inspection of images, or whether you think an email is spam or not. </p>
+<div class="content-container">
+	<section class="titlebar">
+		<h1 class="vertical-align animated bounceInLeft">Electroencephalography</h1>
 	</section>
-	<section class="container-fluid app-text-standard">
+	<section class="main-content">
+		<h2>What we do</h2>
+		<p class="text-justify">The Human Centred Computing (HCC) research group at ANU collects a wide range of psychophysiological data from participants as they carry out various tasks similar to those which you have been doing today. One of the main sources of signal that is used in our research is <strong><em>electroencephalography</em></strong>, which is the process of recording the electrical acitivity of the brain.</p>
+		<h2>Why we do it</h2>
+		<p class="text-justify">By measuring this brain activity, we can can feed it into intelligent computational algorithms such as neural networks or other statistical models in order to make inferences about a person's mental processes when performing computer based tasks. As humans and machines interact hundreds of times in our daily lives, it is becoming increasingly important to find ways in which machines can understand humans in order to make these interactions easier. </p>
 		<h2 class="vertical-align">Collecting and visualising EEG data</h2>
-		
 		<p class="text-justify">Measuring psychophysiological signals requires a number of specialist devices. To collect EEG data, the Human Centred Computing research group uses an Emotiv Insight. The Insight is a portable headpiece that collects 5 Channel EEG data without the need for conductive gels or saline solutions. The device simply sits on a user's head with the electrodes touching the scalp, and data can be recorded without extensive preparation or difficulty.</p>
 		<p>We have an Emotiv Insight device available for you to try on and use. The Insight pairs with an iOS device to allow researchers to visualise and stream data in real time. Please approach the Emotiv Insight station to try on this device.</p>
-		<div class="text-center"><img src="{% static 'home/images/emotiv_insight.jpg' %}" alt="emotive insight" width="400"/>&nbsp;&nbsp;&nbsp;<img src="{% static 'home/images/emotiv_data.png' %}" alt="emotiv data" width="600"/></div>
-
+		<div class="text-center"><img src="{% static 'home/images/emotiv_insight.jpg' %}" alt="emotive insight" width="400"/>&nbsp;&nbsp;&nbsp;<img src="{% static 'home/images/emotiv_data.png' %}" alt="emotiv data" width="872"/></div>
 	</section>
-		<section class="app-text-highlight">
-				<div class="text-center vertical-align">
-					<h1>Level Up</h1>
-					<p class="lead">Read all of that? Here's another level.</p>
-					<button role="button" class="btn btn-default btn-lg" href="#" id="level-up"><span class="btn-primary-span">Level Up</span><i class="fa fa-level-up" aria-hidden="true"></i></a>
-				</div>
-</section>
-
+	<section class="sidebar text-center">
+		<div class="sidebar-info-title">
+			<i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
+		</div>
+		<div class="sidebar-content">
+			<h3>What are psychophysiological signals?</h3>
+			<p>These are your physiological and physical responses to psychological and cognitive processes. Put simply we measure heart rate, brain waves, eye movements, skin temperature, pupil dilation, accelerometer data, and much more. We analyse this data to make inferences about the psychological and cognitive processes that are occuring, such as reading comprehension, visual inspection of images, or whether you think an email is spam or not. </p>
+		</div>
+		<div class="sidebar-content">
+			<h2>Activity</h2>
+			<p>Monitor and visualise your own EEG data</p>
+			<a href="{% url 'home:eeg-activity' %}" class="btn btn-primary btn-lg">Get started</a>
+		</div>
+		<div class="sidebar-content sidebar-level">
+			<h2>Level Up</h2>
+			<p>Electroencephalevelup.</p>
+			<button role="button" class="btn btn-default btn-lg btn-level" href="#" id="level-up"><span class="btn-primary-span">Level Up</span><i class="fa fa-level-up" aria-hidden="true"></i></button>
+		</div>
+	</section>
+</div>
 {% endblock %}
+
 {% block script %} 
-	
 {% endblock %}

@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} 
+HCC Workshop | Using the Empatica E4 for ECG
+{% endblock %}
+
+{% block app-breadcrumbs %}
+<li><a href="{% url 'home:ecg' %}">Electrocardiography</a></li>
+<li class="active">Using the Empatica E4 for ECG</li>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'home/css/signals.css' %}">
+{% endblock %}
+
+{% block content %} 
+<div class="content-container">
+	<section class="titlebar">
+		<h1 class="vertical-align animated bounceInLeft">Using the Empatica E4 for ECG</h1>
+	</section>
+	<section class="main-content">
+		<p class="lead text-center">In this activity, you will be able to use an Empatica E4 on yourself in order to visualise your ECG activity.</p>
+		<h2>Initial Setup</h2>
+		<p class="text-justify">You will need:
+			<ul>
+				<li>An iPad</li>
+				<li>An Empatica E4</li>
+			</ul>
+			A number of these devices will be available at the front of the room. Feel free to grab both an iPad and an E4 and take it back to your workstation.</p>
+		<p class="text-justify"><strong>There are only a limited number of devices available, so you may need to attempt another activity in the meantime.</strong></p>
+		<p class="text-justify">You can complete this activity individually. You can also work with your colleagues in order to compare how your heart rate activity might be different to theirs.</p>
+		<h2>Putting the E4 on</h2>
+		<p class="text-justify"></p>
+		<h2>Pairing the devices</h2>
+		<p class="text-justify">Once the Empatica E4 is firmly secured to your wrist, you need to pair the device to the iPad.</p>
+		<div class="row">
+			<div class="col-sm-8 col-md-8 col-lg-8">
+				<ol>
+					<li>
+						<h4>Launch the Empatica Realtime application</h4>
+						<p class="text-justify">Launch the application by touching the EmpaticaRT icon on the iPad. It should be on the third home screen.</p>
+					</li>
+					<li>
+						<h4>Prepare the E4</h4>
+						<p class="text-justify">Hold down the button on the Empatica E4 for 3 seconds. When a light turns on, this indicates that the E4 is in pairing mode.</p>
+					</li>
+					<li>
+						<h4>Start A New Session</h4>
+						<p class="text-justify">Touch Start A New Session. The app will now search for nearby devices in pairing mode. Select the Empatica E4 device as it appears in the selection list. If nothing happens, ensure the iPad's bluetooth is turned on.</p>
+					</li>
+					<li>
+						<h4>Off you go!</h4>
+						<p class="text-justify">You are paired and all set.</p>
+					</li>
+				</ol>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4"></div>
+		</div>
+		<h2>Viewing your ECG</h2>
+		<p class="text-justify">You can now see your heart rate being tracked in real time.</p>
+		<h2>Control your heart rate</h2>
+		<p class="text-justify">Try controlling your heart rate. </p>
+		<h2>Cleaning Up</h2>
+		<p class="text-justify"></p>
+	</section>
+	<section class="sidebar text-center">
+		<div class="sidebar-info-title">
+			<i class="fa fa-question-circle fa-3x" aria-hidden="true"></i>
+		</div>
+		<div class="sidebar-content">
+			<h2>Using iOS?<br>Tired of waiting?</h2>
+			<p>Install the free Empatica Realtime application from the App Store and view your ECG on your own device!</p>
+			<p>Just ask an Instructor for an E4.</p>
+		</div>
+		{% if '/eda' in completes %}
+		<div class="sidebar-info-title">
+			<i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true"></i>
+		</div>
+		<div class="sidebar-content">
+			<h2>Be courteous</h2>
+			<p>Once finished with this activity, please return the iPad and Empatica E4 devices to the front for your colleagues to try.</p>
+		</div>
+		{% else %}
+		<div class="sidebar-info-title">
+			<i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
+		</div>
+		<div class="sidebar-content">
+			<h2>Hold on!</h2>
+			<p>The Empatica E4s also collect EDA data. Hold on to the iPad and E4 in order to learn about EDA.</p>
+			<a href="{% url 'home:eda' %}" class="btn btn-default btn-lg">Go to EDA</a>
+		</div>
+		{% endif %}
+		{% if '/ecg/empatica-ecg-activity' not in completes %}
+		<div class="sidebar-content sidebar-level">
+			<h2>Level Up</h2>
+			<p>Is your heart racing now?</p>
+			<button role="button" class="btn btn-default btn-lg btn-level" href="#" id="level-up"><span class="btn-primary-span">Level Up</span><i class="fa fa-level-up" aria-hidden="true"></i></button>
+		</div>
+		{% endif %}
+	</section>
+</div>
+{% endblock %}
+
+{% block script %} 
+{% endblock %}

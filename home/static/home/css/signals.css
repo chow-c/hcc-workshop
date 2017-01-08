@@ -1,0 +1,54 @@
+.content-container {
+    width: 1248px;
+    margin: 16px auto; 
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.titlebar {
+    display: block; 
+    width: 1248px; 
+    padding: 16px
+}
+
+.main-content {
+    padding: 16px; 
+    margin: 16px; 
+    width: 904px; 
+    background-color: white;
+}
+
+.sidebar {
+    padding: 16px;
+    margin: 0; 
+    width: 312px; 
+    display: flex; 
+    flex-direction: column
+}
+
+.sidebar-info-title {
+    background-color: #d1d1d1; 
+    padding: 16px;
+}
+
+.sidebar-content {
+    background-color: white; 
+    padding: 0 16px 16px 16px; 
+    margin-bottom: 32px
+}
+
+.sidebar-level {
+    margin-bottom: 0;
+}
+
+.btn-level {
+    background-color:#5B81A1; 
+    color: white; 
+    border-color: #5B81A1
+}
+
+.wide {
+    width: 1248px;
+    background-color:#5B81A1; 
+    color: white; 
+}

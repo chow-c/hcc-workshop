@@ -24,7 +24,7 @@
 		<p class="lead">Explore some of the topics we work on</p>
 	</div>
 	<div class="row">
-		<div class="col-md-3 col-lg-3 col-sm-3">
+		<div class="col-md-4 col-lg-4 col-sm-4">
 			<div class="thumbnail activity-thumbnail">
 				<a href="{% url 'design:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/hci-thumb.jpg' %}" alt=""></a>
 				<div class="caption title-caption">
@@ -36,7 +36,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-3 col-lg-3 col-sm-3">
+		<div class="col-md-4 col-lg-4 col-sm-4">
 			<div class="thumbnail activity-thumbnail">
 				<a href="{% url 'cybersecurity:index' %}">
 					<img class="app-thumbnail-img {% if '/cyber-security/phishing' in completes %}fade-image{% endif %}" src="{% static 'home/images/cyber-thumb.png' %}" alt="">
@@ -61,7 +61,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-3 col-lg-3 col-sm-3">
+		<div class="col-md-4 col-lg-4 col-sm-4">
 			<div class="thumbnail activity-thumbnail">
 				<a href="{% url 'image_manipulation:index' %}">
 					<img class="app-thumbnail-img {% if '/image-manipulation/results/' in completes %}fade-image{% endif %}" src="{% static 'home/images/image-manipulation-thumb.png' %}" alt="">
@@ -86,7 +86,59 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-3 col-lg-3 col-sm-3">
+	</div>
+	<div class="row" style="margin-top: 50px">
+		<div class="col-md-4 col-lg-4 col-sm-4">
+			<div class="thumbnail activity-thumbnail">
+				<a href="{% url 'home:driving-simulator' %}">
+					<img class="app-thumbnail-img {% if '/driving-simulator' in completes %}fade-image{% endif %}" src="{% static 'home/images/driving-thumb.jpg' %}" alt="">
+				</a>
+				<div class="caption title-caption {% if '/driving-simulator' in completes %}fade-text{% endif %}">
+					<h3>Driving Simulator</h3>
+					<div class="content-caption">
+						<p>Safety in the era of self-driving cars.</p>
+						<a class="btn btn-default" href="{% url 'home:driving-simulator' %}">
+							<span class="btn-primary-span">
+								{% if '/driving-simulator' in completes %}
+								Completed
+							</span>
+							<i class="fa fa-check" aria-hidden="true"></i>
+								{% else %}
+								Launch
+							</span>
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								{% endif %}
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 col-lg-4 col-sm-4">
+			<div class="thumbnail activity-thumbnail">
+				<a href="{% url 'home:interface-design' %}">
+					<img class="app-thumbnail-img {% if '/interface-design' in completes %}fade-image{% endif %}" src="{% static 'home/images/interface-design-thumb.jpg' %}" alt="">
+				</a>
+				<div class="caption title-caption {% if '/interface-design' in completes %}fade-text{% endif %}">
+					<h3>Interface Design</h3>
+					<div class="content-caption">
+						<p>The design of everyday things.</p>
+						<a class="btn btn-default" href="{% url 'home:interface-design' %}">
+							<span class="btn-primary-span">
+								{% if '/interface-design' in completes %}
+								Completed
+							</span>
+							<i class="fa fa-check" aria-hidden="true"></i>
+								{% else %}
+								Launch
+							</span>
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								{% endif %}
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 col-lg-4 col-sm-4">
 			<div class="thumbnail activity-thumbnail">
 				<a href="{% url 'neural_networks:index' %}">
 					<img class="app-thumbnail-img {% if '/neural-networks/' in completes %}fade-image{% endif %}" src="{% static 'home/images/preview.png' %}" alt="">
@@ -122,7 +174,7 @@
 		<div class="col-md-3 col-lg-3 col-sm-3">
 			<div class="thumbnail activity-thumbnail">
 				<a href="{% url 'home:eeg' %}">
-					<img class="app-thumbnail-img {% if '/eeg' in completes %}fade-image{% endif %}" src="{% static 'home/images/other-thumb.jpg' %}" alt="">
+					<img class="app-thumbnail-img {% if '/eeg' in completes %}fade-image{% endif %}" src="{% static 'home/images/eeg-thumb.jpg' %}" alt="">
 				</a>
 				<div class="caption title-caption {% if '/eeg' in completes %}fade-text{% endif %}">
 					<h3>Electroencephalography</h3>
@@ -202,7 +254,7 @@
 				<div class="caption title-caption {% if '/eda' in completes %}fade-text{% endif %}">
 					<h3>Electrodermal activity</h3>
 					<div class="content-caption">
-						<p>Do you sweat when you're nervous?</p>
+						<p>What does your sweat say about you?</p>
 						<a class="btn btn-default" href="{% url 'home:eda' %}">
 							<span class="btn-primary-span">
 								{% if '/eda' in completes %}
@@ -230,9 +282,9 @@
 </section>
 <section class="container-fluid app-text-standard">
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-12">
 					<div class="thumbnail activity-thumbnail">
 						<a href="{% url 'thatcher:index' %}">
 							<img class="app-thumbnail-img {% if '/the-thatcher-effect/' in completes %}fade-image{% endif %}" src="{% static 'home/images/thatcher.png' %}" alt="">
@@ -259,7 +311,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-8">
 			<div class="text-center vertical-align">
 				<h1>Bonus Activities</h1>
 				<p class="lead">Gain some extra levels</p>
