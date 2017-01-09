@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %} 
+HCC Workshop | Interface Design | Evaluating eReader interfaces
+{% endblock %}
+
+{% block app-breadcrumbs %}
+<li><a href="{% url 'home:interface-design' %}">Interface Design</a></li>
+<li class="active">Evaluating eReader interfaces</li>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'home/css/signals.css' %}">
+{% endblock %}
+
+{% block content %} 
+<div class="content-container">
+	<section class="titlebar">
+		<h1 class="vertical-align animated bounceInLeft">Evaluating eReader interfaces</h1>
+	</section>
+	<section class="main-content">
+		<p class="lead text-center">In this activity, you will be able to compare a variety of different eReaders to evaluate the pros and cons of various interface features.</p>
+		<h2>Getting started</h2>
+		<p class="text-justify">In this activity you will perform a simple evaluation of a user interface of some eReaders. Although it is a simple evaluation, it demonstrates some key concepts:
+			<ul>
+				<li>this is a moderated user study - a technique widely used in UX research.</li>
+				<li>you will compare 2 devices - this is like A/B testing, a key technique used to compare different interfaces. </li>
+			</ul>
+		This activity will also give you the opportunity to be an experimenter and a participant!</p>
+		<p class="text-justify">This is a simplified version of user study that ANU researchers conducted. The study was conducted over several years and compared 20+ eReaders.</p>
+		<h2>Initial Setup</h2>
+		<p class="text-justify">You will need:
+			<ul>
+				<li>Two eReaders</li>
+			</ul>
+			A number of eReaders will be available at the front of the room. Feel free to grab one at a time and take it back to your workstation.</p>
+		<p class="text-justify"><strong>There are only a limited number of devices available, so if there are no devices free, you may need to attempt another activity in the meantime.</strong></p>
+		<p class="text-justify">You can complete this activity individually. You can also work with your friends in order to compare multiple devices simultaneously. You could even take turns being researchers and participants.</p>
+		<h2><span class="activity-highlight">Activity: </span>Evaluate the First eReader Interface</h2>
+		<p class="text-justify">Follow the below instructions and take notes for each.</p>
+		{% crispy form %}
+		<p class="text-justify">Exit back to the main menu, and switch off the eReader. Return it to the front of the room and take a different one.</p>
+		<h2><span class="activity-highlight">Activity: </span>Evaluate the Second eReader Interface</h2>
+		<p class="text-justify">Follow the below instructions and take notes for each.</p>
+		{% crispy form %}
+		<p class="text-justify">On the eReader, exit back to the main menu, and switch it off. Return it to the front of the room.</p>
+		<h2><span class="activity-highlight">Activity: </span>Comparison and Wrapup</h2>
+		<p class="text-justify">Take a look back at your thoughts for both eReaders. Based on the data you collected, which eReader interface do you think is easier to use?</p>
+		<p class="text-justify">Which eReader device did you personally prefer? Discuss with a friend; do they share the same opinion?</p>
+	</section>
+	<section class="sidebar text-center">
+		<div class="sidebar-info-title">
+			<i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true"></i>
+		</div>
+		<div class="sidebar-content">
+			<h2>Be courteous</h2>
+			<p class="text-justify">In the interests of fairness, be kind to your colleagues and don't hold on to multiple eReader devices at once.</p>
+			<p class="text-justify">Return the first eReader device before you pick up the second.</p>
+		</div>
+		{% if '/interface-design/evaluating-ereader-interfaces' not in completes %}
+		<div class="sidebar-content sidebar-level">
+			<h2>Level Up</h2>
+			<p>Now <em>that's</em> a good interface</p>
+			<button role="button" class="btn btn-default btn-lg btn-level" href="#" id="level-up"><span class="btn-primary-span">Level Up</span><i class="fa fa-level-up" aria-hidden="true"></i></button>
+		</div>
+		{% endif %}
+	</section>
+</div>
+{% endblock %}
+
+{% block script %} 
+<script>
+$(document).ready(function () {
+	$('#driving-sim-yes').one("click", function() {
+		if($(this).hasClass('link-clicked')) {
+                return;
+            }
+		$(this).addClass('btn-primary');
+		$('#driving-hidden').show();
+		$('.driving-sim-button').addClass('link-clicked');
+		$('#driving-answer').html("Thats too bad; driving a real car is probably easier.<br>Just incase, let's go over the instructions for the driving simulator real quick.");
+	});
+	$('#driving-sim-no').one("click", function() {
+		if($(this).hasClass('link-clicked')) {
+                return;
+            }
+		$(this).addClass('btn-primary');
+		$('#driving-hidden').show();
+		$('.driving-sim-button').addClass('link-clicked');
+		$('#driving-answer').html("Not to worry, we've had kids drive this thing.<br>Just incase, let's go over the instructions for the driving simulator real quick.");
+	});
+	$('#driving-sim-mario').one("click", function() {
+		if($(this).hasClass('link-clicked')) {
+                return;
+            }
+		$(this).addClass('btn-primary');
+		$('#driving-hidden').show();
+		$('.driving-sim-button').addClass('link-clicked');
+		$('#driving-answer').html("Well there's no Rainbow Road on this one, so probably not. <br>Just incase, let's go over the instructions for the driving simulator real quick.");
+	});
+});
+</script>
+{% endblock %}

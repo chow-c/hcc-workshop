@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} 
+HCC Workshop | Driving Simulator
+{% endblock %}
+
+{% block app-breadcrumbs %}
+<li class="active">Driving Simulator</li>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'home/css/signals.css' %}">
+{% endblock %}
+
+{% block content %} 
+<div class="content-container">
+	<section class="titlebar">
+		<h1 class="vertical-align animated bounceInLeft">Driving Simulator</h1>
+	</section>
+	<section class="main-content">
+		<h2>What we do</h2>
+		<p class="text-justify">One of the interesting research projects undertaken by members of the Human Centred Computing (HCC) research group involves the use of <strong><em>driving simulators</em></strong>. Aside from being a lot of fun, driving simulators are common in human-centred research fields for monitoring driver behavior, performance, and attention. In the HCC group, we look particularly at computational models for collecting and analysing user data whilst in scenarios similar to driving, as well as ways to mimic or improve the ways in which people drive.</p>
+		<div class="text-center" style="margin: 16px auto">
+			<img src="{% static 'home/images/car-0.jpg' %}" alt="empatica_results" width="872"/>
+		</div>
+		<h2>Why we do it</h2>
+		<p class="text-justify">Driving is a complex human activity requiring coordination, attention, and quick decision-making. It can often be highly stressful too. Our researchers are interested in identifying when drivers are potentially cognitively-impaired through computational models. This would be beneficial for improving driver safety, such as in influencing driver training programs, or for improving in-car technology. With self-driving cars a reality, it is not too difficult to imagine a time when your car recognises how you are feeling, and could provide some level of comfort or understanding. Ultimately, research in this area may assist in the move toward self-driving cars, with intelligent algorithms being able to mimic the places where drivers look within their field of vision, react to obstructions, and follow road rules.</p>
+		<h2>What data can we collect?</h2>
+		<p class="text-justify">The driving simulator is a perfect example of a <em>scenario</em> in which we collect data. It serves as a context or situation that we are helping to contribute toward. In a research setting, we would collect a range of psychophysiological signals from users, such as eye gaze, heart rate activity, electrodermal activity, neural activity, facial expressions and movement data. We would also perform accurate time-keeping, and enlist screen recording in order to pair our user data up with what they were doing. The computational models we use are very fast and allow us to chew through large volumes of different data, therefore we tend to collect as much data as practical. </p>
+		<p class="text-justify">In this activity, we will not be performing any data collection. You will simply be able to try out the car simulator for yourself.</p>
+	</section>
+	<section class="sidebar text-center">
+		<div class="sidebar-content">
+			<h2 class='activity-highlight'>Activity</h2>
+			<p>Borrow the keys and take our car sim for a spin</p>
+			<a href="{% url 'home:driving-activity' %}" class="btn btn-primary btn-lg">Get started</a>
+		</div>
+	</section>
+</div>
+{% endblock %}
+
+{% block script %} 
+{% endblock %}

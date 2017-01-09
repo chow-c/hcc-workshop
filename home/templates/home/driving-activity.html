@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} 
+HCC Workshop | Driving Simulator | Using the Driving Simulator
+{% endblock %}
+
+{% block app-breadcrumbs %}
+<li><a href="{% url 'home:driving-simulator' %}">Driving Simulator</a></li>
+<li class="active">Using the Driving Simulator</li>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'home/css/signals.css' %}">
+{% endblock %}
+
+{% block content %} 
+<div class="content-container">
+	<section class="titlebar">
+		<h1 class="vertical-align animated bounceInLeft">Using the Driving Simulator</h1>
+	</section>
+	<section class="main-content">
+		<p class="lead text-center">In this activity, you will be able to play with the driving simulator.</p>
+		<p class="text-justify"><strong>There is only one driving simulator available, so if it is already occupied, you may need to attempt another activity. Alternatively, you can go watch your friends and cheer them on!</strong></p>
+		<h2>Pre-race Checklist</h2>
+		<p class="text-center">Have you ever driven a real car?</p>
+		<div class="text-center">
+			<button class="btn btn-lg driving-sim-button" id="driving-sim-yes">Yes</button>
+			<button class="btn btn-lg driving-sim-button" id="driving-sim-no">No</button>
+			<button class="btn btn-lg driving-sim-button" id="driving-sim-mario">Does Mario Kart count?</button>
+		</div>
+		<p id="driving-answer" class="text-center lead"></p>
+		<div id="driving-hidden">
+		<h2>Controls</h2>
+		<p class="text-justify">Familiarise yourself with the controls.</p>
+		<div class="text-center" style="margin: 16px auto">
+			<img src="{% static 'home/images/car-1.png' %}" alt="empatica_results" width="285"/>
+			<img src="{% static 'home/images/car-2.png' %}" alt="empatica_results" width="285"/>
+			<img src="{% static 'home/images/car-3.png' %}" alt="empatica_results" width="285"/>
+		</div>
+		<h2>HCC Crash Course in Driving</h2>
+		<p class="text-justify">
+			<ol>
+				<li>
+					<h4>Engage the brake</h4>
+					<p class="text-justify">Place your foot firmly on the brake pedal. Do not remove it until step 5.</p>
+				</li>
+				<li>
+					<h4>Start the car</h4>
+					<p class="text-justify">Start the ignition by pushing the ignition button once. The ignition icon will disappear from the dashboard onscreen.</p>
+				</li>
+				<li>
+					<h4>Remove the handbrake</h4>
+					<p class="text-justify">Take off the handbrake by pressing the handbrake button once. The handbrake icon will disappear from the dashboard onscreen.</p>
+				</li>
+				<li>
+					<h4>Put the car into gear</h4>
+					<p class="text-justify">
+						We are driving an <strong>automatic</strong>. Tap the gear knob down toward you three times to move from Park (P) to Drive (D). The gear display onscreen will change.
+					</p>
+				</li>
+				<li>
+					<h4>Drive</h4>
+					<p class="text-justify">Release the brake pedal, engage the accelerator and steer as required.</p>
+				</li>
+			</ol>
+		</p>
+		<h2><span class="activity-highlight">Activity: </span>Test Drive</h2>
+		<p class="text-justify">You're all set! Take the car for a leisurely drive, but try not to hurt too many pedestrians.</p>
+		</div>
+	</section>
+	<section class="sidebar text-center">
+		<div class="sidebar-info-title">
+			<i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true"></i>
+		</div>
+		<div class="sidebar-content">
+			<h2>Be courteous</h2>
+			<p>In the interests of fairness, be kind to your colleagues and don't spend <em>too</em> much time on the simulator.</p>
+		</div>
+		{% if '/driving-simulator/driving-activity' not in completes %}
+		<div class="sidebar-content sidebar-level">
+			<h2>Level Up</h2>
+			<p>Drive those levels higher</p>
+			<button role="button" class="btn btn-default btn-lg btn-level" href="#" id="level-up"><span class="btn-primary-span">Level Up</span><i class="fa fa-level-up" aria-hidden="true"></i></button>
+		</div>
+		{% endif %}
+	</section>
+</div>
+{% endblock %}
+
+{% block script %} 
+<script>
+$(document).ready(function () {
+	$('#driving-sim-yes').one("click", function() {
+		if($(this).hasClass('link-clicked')) {
+                return;
+            }
+		$(this).addClass('btn-primary');
+		$('#driving-hidden').show();
+		$('.driving-sim-button').addClass('link-clicked');
+		$('#driving-answer').html("Thats too bad; driving a real car is probably easier.<br>Just incase, let's go over the instructions for the driving simulator real quick.");
+	});
+	$('#driving-sim-no').one("click", function() {
+		if($(this).hasClass('link-clicked')) {
+                return;
+            }
+		$(this).addClass('btn-primary');
+		$('#driving-hidden').show();
+		$('.driving-sim-button').addClass('link-clicked');
+		$('#driving-answer').html("Not to worry, we've had kids drive this thing.<br>Just incase, let's go over the instructions for the driving simulator real quick.");
+	});
+	$('#driving-sim-mario').one("click", function() {
+		if($(this).hasClass('link-clicked')) {
+                return;
+            }
+		$(this).addClass('btn-primary');
+		$('#driving-hidden').show();
+		$('.driving-sim-button').addClass('link-clicked');
+		$('#driving-answer').html("Well there's no Rainbow Road on this one, so probably not. <br>Just incase, let's go over the instructions for the driving simulator real quick.");
+	});
+});
+</script>
+{% endblock %}

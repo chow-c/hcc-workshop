@@ -6,7 +6,7 @@ def send_email():
 
     subject, from_email, to = 'TestTemplate', 'ANU HCC Workshop <***REMOVED***>', '***REMOVED***'
 
-    text_content = 'Test'
+    text_content = 'Test2'
 
     html_content = render_to_string('home/email_test.html')
 

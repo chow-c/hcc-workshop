@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} 
+HCC Workshop | Using the Empatica E4 for ECG
+{% endblock %}
+
+{% block app-breadcrumbs %}
+<li><a href="{% url 'home:ecg' %}">Electrocardiography</a></li>
+<li class="active">Using the Empatica E4 for ECG</li>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'home/css/signals.css' %}">
+{% endblock %}
+
+{% block content %} 
+<div class="content-container">
+	<section class="titlebar">
+		<h1 class="vertical-align animated bounceInLeft">Using the Empatica E4 for ECG</h1>
+	</section>
+	<section class="main-content">
+		<p class="lead text-center">In this activity, you will be able to use an Empatica E4 on yourself in order to visualise your ECG activity.</p>
+		<div class="text-center" style="margin: 16px 0">
+			<img src="{% static 'home/images/e4-00.jpg' %}" alt="empatica_results" width="872"/>
+		</div>
+		<h2>Initial Setup</h2>
+		<p class="text-justify">You will need:
+			<ul>
+				<li>An iPad</li>
+				<li>An Empatica E4</li>
+			</ul>
+			A number of these devices will be available at the front of the room. Feel free to grab both an iPad and an E4 and take it back to your workstation.</p>
+		<p class="text-justify"><strong>There are only a limited number of devices available, so if there are no devices free, you may need to attempt another activity in the meantime.</strong></p>
+		<p class="text-justify">You can complete this activity individually. You can also work with your colleagues in order to compare how your heart rate activity might be different to theirs.</p>
+		<h2>Putting the E4 on</h2>
+		<p class="text-justify">
+			<div class="row">
+				<div class="col-sm-8 col-md-8 col-lg-8">
+					<ol>
+						<li>
+							<h4>Place the E4 on your wrist</h4>
+							<p class="text-justify">You can choose whichever wrist you like. The single button is usually placed so that it is on the same side as your little pinky finger. The E4 should sit snug just next to your wrist joint.</p>
+						</li>
+						<li>
+							<h4>Secure the strap</h4>
+							<p class="text-justify">Wrap the strap around your wrist and secure both connections. Ensure that the strap is firm, but not too tight so that it hurts you.</p>
+						</li>
+					</ol>
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4">
+					<div class="text-center" style="margin: 16px auto">
+						<img src="{% static 'home/images/e4-0.jpg' %}" alt="empatica_results" width="250"/>
+					</div>
+				</div>
+			</div>
+		</p>
+		<h2>Pairing the devices</h2>
+		<p class="text-justify">Once the Empatica E4 is firmly secured to your wrist, you need to pair the device to the iPad.</p>
+		<div class="row">
+			<div class="col-sm-8 col-md-8 col-lg-8">
+				<ol>
+					<li>
+						<h4>Launch the Empatica Realtime application</h4>
+						<p class="text-justify">Launch the application by touching the EmpaticaRT icon on the iPad. It should be on the third home screen.</p>
+					</li>
+					<li>
+						<h4>Prepare the E4</h4>
+						<p class="text-justify">Hold down the button on the Empatica E4 for 3 seconds. When a green light starts blinking, this indicates that the E4 is in pairing mode.</p>
+					</li>
+					<li>
+						<h4>Start A New Session</h4>
+						<p class="text-justify">Touch Start A New Session. The app will now search for nearby devices in pairing mode. Select the Empatica E4 device as it appears in the selection list. If nothing happens at first, try starting a new session again.</p>
+					</li>
+					<li>
+						<h4>Off you go!</h4>
+						<p class="text-justify">Once the pair is successful, the app will re-direct you to the Real Time Streaming.</p>
+					</li>
+				</ol>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<div class="text-center" style="margin: 16px 0">
+					<img src="{% static 'home/images/e4-1.jpg' %}" alt="empatica_results" width="180"/>
+				</div>
+				<div class="text-center" style="margin: 16px 0">
+					<img src="{% static 'home/images/e4-2.jpg' %}" alt="empatica_results" width="180"/>
+				</div>
+				<div class="text-center" style="margin: 16px 0">
+					<img src="{% static 'home/images/e4-3.jpg' %}" alt="empatica_results" width="180"/>
+				</div>
+			</div>
+		</div>
+		<h2><span class="activity-highlight">Activity: </span>Viewing your ECG</h2>
+		<p class="text-justify">You can now see your heart rate being tracked in real time! Fascinating.</p>
+		<div class="text-center" style="margin: 16px 0">
+			<img src="{% static 'home/images/ecg-viewing.jpg' %}" alt="empatica_results" width="872"/>
+		</div>
+		<p class="text-justify">Of course, you may have noticed that the screen doesn't actually say electrocardiography or ECG anywhere. Which one of the displayed metrics is ECG?</p>
+		<div class="text-center">
+			<button class="btn btn-lg driving-sim-button" id="ecg-eda">Electrodermal activity</button>
+			<button class="btn btn-lg driving-sim-button" id="ecg-bvp">Blood Volume Pulse</button>
+			<button class="btn btn-lg driving-sim-button" id="ecg-temp">~35.00 &deg;C</button>
+		</div>
+		<p id="driving-answer" class="lead text-center"></p>
+		<p class="text-justify">Using your fingers, pinch in and out in order to zoom and change the temporal resolution.</p>
+		<div id="driving-hidden">
+			<h2><span class="activity-highlight">Activity: </span>Control your heart rate</h2>
+			<p class="text-justify">Now that you can visualise your heart rate, you can try to control it much easier. Observe your BVP on the iPad, and take a note of its current level.</p>
+			<p class="text-justify"><strong>Take deep, slow breaths. Breathe in over four seconds, then out for four seconds. Do this repeatedly for a minute.</strong></p>
+			<p class="text-justify">Observe your BVP now. Have you noticed any large change? Try to find other ways in which you can visibly alter your heart rate. Close your eyes, and in your head, go to your happy place.Think about serene waterfalls and puppies and slow walks on the beach and... you get the idea.</p>
+			<p class="text-justify">Research has shown that being able to see your own psychophysiological signals allows you to control your own body much more effectively. This is known as biofeedback. Can you think of any applications for this type of research?</p>
+			<h2>Cleaning Up</h2>
+			<p class="text-justify">Once you've had enough, take the E4 off your wrist and hold down the button for 2 seconds. Turn off the iPad screen for the next person.</p>
+		</div>
+	</section>
+	<section class="sidebar text-center">
+		<div class="sidebar-info-title">
+			<i class="fa fa-question-circle fa-3x" aria-hidden="true"></i>
+		</div>
+		<div class="sidebar-content">
+			<h2>Using iOS?<br>Tired of waiting?</h2>
+			<p>Install the free Empatica Realtime application from the App Store and view your ECG on your own device!</p>
+			<p>Just ask an Instructor for an E4.</p>
+		</div>
+		{% if '/eda/empatica-eda-activity' in completes %}
+		<div class="sidebar-info-title">
+			<i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true"></i>
+		</div>
+		<div class="sidebar-content">
+			<h2>Be courteous</h2>
+			<p>Once finished with this activity, please return the iPad and Empatica E4 devices to the front for your colleagues to try.</p>
+		</div>
+		{% else %}
+		<div class="sidebar-info-title">
+			<i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
+		</div>
+		<div class="sidebar-content">
+			<h2>Hold on!</h2>
+			<p>The Empatica E4s also collect EDA data. Hold on to the iPad and E4 in order to learn about EDA.</p>
+			<a href="{% url 'home:eda' %}" class="btn btn-default btn-lg">Go to EDA</a>
+		</div>
+		{% endif %}
+		{% if '/ecg/empatica-ecg-activity' not in completes %}
+		<div class="sidebar-content sidebar-level">
+			<h2>Level Up</h2>
+			<p>Is your heart racing now?</p>
+			<button role="button" class="btn btn-default btn-lg btn-level" href="#" id="level-up"><span class="btn-primary-span">Level Up</span><i class="fa fa-level-up" aria-hidden="true"></i></button>
+		</div>
+		{% endif %}
+	</section>
+</div>
+{% endblock %}
+
+{% block script %} 
+<script>
+$(document).ready(function () {
+	$('#ecg-eda').one("click", function() {
+		if($(this).hasClass('link-clicked')) {
+                return;
+            }
+		$(this).addClass('btn-primary');
+		$('#driving-hidden').show();
+		$('.driving-sim-button').addClass('link-clicked');
+		$('#driving-answer').html("Close! That one is actually referring to the conductance of your skin. You can learn more about it on the EDA activity!");
+	});
+	$('#ecg-bvp').one("click", function() {
+		if($(this).hasClass('link-clicked')) {
+                return;
+            }
+		$(this).addClass('btn-primary');
+		$('#driving-hidden').show();
+		$('.driving-sim-button').addClass('link-clicked');
+		$('#driving-answer').html("That's right! Blood Volume Pulse, or BVP, is one technique to calculate your heart rate activity! It is very similar to electrocardiography.");
+	});
+	$('#ecg-temp').one("click", function() {
+		if($(this).hasClass('link-clicked')) {
+                return;
+            }
+		$(this).addClass('btn-primary');
+		$('#driving-hidden').show();
+		$('.driving-sim-button').addClass('link-clicked');
+		$('#driving-answer').html("Nope, this one is your skin temperature! The E4 is able to detect a range of signals simultaneously.");
+	});
+});
+</script>
+{% endblock %}

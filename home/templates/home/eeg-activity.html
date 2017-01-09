@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} 
+HCC Workshop | Using the Emotiv Insight
+{% endblock %}
+
+{% block app-breadcrumbs %}
+<li><a href="{% url 'home:eeg' %}">Electroencephalography</a></li>
+<li class="active">Using the Emotiv Insight</li>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'home/css/signals.css' %}">
+{% endblock %}
+
+{% block content %} 
+<div class="content-container">
+	<section class="titlebar">
+		<h1 class="vertical-align animated bounceInLeft">Using the Emotiv Insight</h1>
+	</section>
+	<section class="main-content wide text-center warning">
+		<h2>This activity is currently unavailable.</h2>
+		<p class="lead">Sorry, as these devices are used in current research projects, <br>unfortunately no devices were available for demonstration today.</p>
+	</section>
+	<section class="main-content">
+		<p class="lead text-center">In this activity, you will be able to use an Emotiv Insight on yourself in order to visualise your EEG activity.</p>
+	</section>
+	<!--	<h2>Initial Setup</h2>
+		<p class="text-justify">You will need:
+			<ul>
+				<li>An iPad</li>
+				<li>An Empatica E4</li>
+			</ul>
+			A number of these devices will be available at the front of the room. Feel free to grab both an iPad and an E4 and take it back to your workstation.</p>
+		<p><strong>There are only a limited number of devices available, so you may need to attempt another activity in the meantime.</strong></p>
+		<p>You can complete this activity individually. You can also work with your colleagues in order to compare how your heart rate activity might be different to theirs.</p>
+		<h2>Putting the E4 on</h2>
+		<p class="text-justify"></p>
+		<h2>Pairing the iPad</h2>
+		<p class="text-justify">If its not already open, launch the Empatica Realtime application.</p>
+		<h2>Viewing your ECG</h2>
+		<p class="text-justify">You can now see your heart rate being tracked in real time.</p>
+		<h2>Controlling your heart rate</h2>
+		<p class="text-justify">Try controlling your heart rate. </p>
+		<h2>Cleaning Up</h2>
+		<p class="text-justify"></p>
+	</section>-->
+	<section class="sidebar text-center">
+		<!--<div class="sidebar-info-title">
+			<i class="fa fa-question-circle fa-3x" aria-hidden="true"></i>
+		</div>
+		<div class="sidebar-content">
+			<h2>Using iOS?<br>Tired of waiting?</h2>
+			<p>Install the free Empatica Realtime application from the App Store and view your ECG on your own device!</p>
+			<p>Just ask an Instructor for an E4.</p>
+		</div>-->
+		<!--{% if '/eda' in completes %}
+		<div class="sidebar-info-title">
+			<i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true"></i>
+		</div>
+		<div class="sidebar-content">
+			<h2>Be courteous</h2>
+			<p>Once finished with this activity, please return the iPad and Empatica E4 devices to the front for your colleagues to try.</p>
+		</div>
+		{% else %}-->
+		<!--<div class="sidebar-info-title">
+			<i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
+		</div>
+		<div class="sidebar-content">
+			<h2>Hold on!</h2>
+			<p>The Empatica E4s also collect EDA data. Hold on to the iPad and E4 in order to learn about EDA.</p>
+			<a href="{% url 'home:eda' %}" class="btn btn-default btn-lg">Go to EDA</a>
+		</div>-->
+		<!--{% endif %}-->
+		{% if '/eeg/emotiv-activity' not in completes %}
+		<div class="sidebar-content sidebar-level">
+			<h2>Level Up</h2>
+			<p>Have a level anyway</p>
+			<button role="button" class="btn btn-default btn-lg btn-level" href="#" id="level-up"><span class="btn-primary-span">Level Up</span><i class="fa fa-level-up" aria-hidden="true"></i></button>
+		</div>
+		{% endif %}
+	</section>
+</div>
+{% endblock %}
+
+{% block script %} 
+{% endblock %}

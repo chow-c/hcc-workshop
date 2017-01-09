@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} 
+HCC Workshop | Interface Design
+{% endblock %}
+
+{% block app-breadcrumbs %}
+<li class="active">Interface Design</li>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'home/css/signals.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+	<section class="titlebar">
+		<h1 class="vertical-align animated bounceInLeft">Interface Design</h1>
+	</section>
+	<section class="main-content wide">
+		<h2>Before you get started</h2>
+		<p class="text-justify">Have you completed the Human Computer Interaction (HCI) activity?</p>
+		<p class="text-justify">It is recommended that you complete the Human Computer Interaction (HCI) activity before you start this one. This activity is HCI in action and will give you a chance to practice those skills. <a href="{% url 'design:index' %}">Click here to go to the HCI activity first.</a></p>
+	</section>
+	<section class="main-content">
+		<h2>What we do</h2>
+		<p class="text-justify">The Human Centred Computing (HCC) research group is largely concerned with developing better user interactions. The most common user interaction is through a user interface. Interface design is important, so a lot of effort goes in to investigating what makes a good design. </p> 
+		<p class="text-justify">We conduct user studies to reveal what makes interfaces good and what makes them bad. User studies are where an experimenter records how users interact with interfaces and what the users thought about the interface. This is also called <strong><em>usability testing</em></strong>. </p>
+		<p class="text-justify">There are many different types of usability tests. If you have completed any of the eye tracking activities then you have actually been a part of a laboratory style experiment. Another types include moderated and unmoderated tests. </p>
+		<p class="text-justify">Unmoderated tests are given to participants where the experimenter is not present. A very common example are satisfaction surveys that you might complete after using a company's product or service. Moderated tests are where the experimenter interacts with the participant. Unlike in laboratory studies, the user is able to speak freely to the experimenter. </p>
+		<p class="text-justify">In this activity you will get to have a play with some eReaders using a moderated user study. In doing so, you will be experiencing their interfaces, and developing your own judgements as to how <em>usable</em> the devices really are. </p>
+		<h2>Why we do it</h2>
+		<p class="text-justify">Interfaces are everywhere, from this workshop, the browser this workshop is running in, the operating system on this computer, and the computer itself. They are everywhere. A user interface forms the basis for how humans interact with computers. It is like the eyes, ears, and mouth of the technology. Sometimes, it is the only way to get information in and out! </p>
+		<p class="text-justify">Often the technology is immensely complex, and the user interface is your only way of understanding and interacting with it. So as you can probably guess, it is pretty important, yet they are often designed really poorly. Have a think about a device you have used lately that you either couldn't figure out how to use, or it was just infuriating. What about a website you've seen that was just too complicated or counterintuitive, so you left to find another option. These are the types of reasons why the HCC research group  investigates these interfaces. We can report on what works and what doesn't, in the hopes of improving future devices and interfaces to be more user friendly.</p>
+		<h2 class="vertical-align">Collecting data</h2>
+		<p class="text-justify">There is a lot of different data that can be collected from usability tests. One important type are satisfaction levels, which are usually nominal data. We can apply statistical tools to check for differences in types of interfaces. </p>
+		<p class="text-justify">A lot of qualitative data is also recorded. This data is your comments and thoughts about the interface. We can't use statistics to analyse this data, but it sure is useful in providing insight into what people like and don't like. </p>
+		<p class="text-justify">There is also a lot of other data that we collect, such as quantitative data. This kind of data includes task completion rates, time to complete, and error rates. Statistical tools can be used to analyse how good an interface is.</p>
+	</section>
+	<section class="sidebar text-center">
+		<div class="sidebar-info-title">
+			<i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
+		</div>
+		<div class="sidebar-content">
+			<h3>What is user experience (UX) design?</h3>
+			<p class="text-justify">Interface design is part of a broader area of expertise, user experience (UX) design. This is a growing topic, with companies and governments recognising the importance of keeping users happy. UX design is the process of increasing user satisfaction by making products with good usability and accessibility. <br>UX design uses HCI, but goes further to design all aspects of a product with the user at the centre of design. This includes any interactions, the design and aesthetics, information architecture, and much more. </p>
+		</div>
+		<div class="sidebar-content">
+			<h2 class="activity-highlight">Activity</h2>
+			<p>Evaluate the interfaces of e-readers</p>
+			<a href="{% url 'home:ereader-activity' %}" class="btn btn-primary btn-lg">Get started</a>
+		</div>
+	</section>
+</div>
+{% endblock %}
+{% block script %} 
+	
+{% endblock %}

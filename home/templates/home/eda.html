@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} 
+HCC Workshop | Electrodermal Activity
+{% endblock %}
+
+{% block app-breadcrumbs %}
+<li class="active">Electrodermal Activity</li>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'home/css/signals.css' %}">
+{% endblock %}
+
+{% block content %} 
+<div class="content-container">
+	<section class="titlebar">
+		<h1 class="vertical-align animated bounceInLeft">Electrodermal Activity</h1>
+	</section>
+	<section class="main-content">
+		<h2>What we do</h2>
+		<p class="text-justify">The Human Centred Computing (HCC) research group at ANU collects a wide range of psychophysiological data from participants as they carry out various tasks similar to those which you have been doing today. One of the main sources of signal that is used in our research is <strong>electrodermal activity (EDA)</strong>, which is the change in electrical conductivity of the skin.</p>
+		<h2>Why we do it</h2>
+		<p class="text-justify">Also referred to as galvanic skin response (GSR) or skin conductance, the changes in the level of sweat is controlled by your sympathetic nervous system. Neural activity affects sweat gland permeability, which can be observed as changes in the resistance of the skin to a small electrical current, or as differences in the electrical potential between different parts of the skin. Computational models can detect these changes, and use the data to infer a change in arousal or mental activity. We use these inferences to make judgements about the difficulty, excitement and enjoyment of computer-based tasks.</p>
+		<h2 class="vertical-align">Collecting and visualising ECG data</h2>
+		<p class="text-justify">Measuring psychophysiological signals requires a number of specialist devices. To collect ECG and GSR data, the Human Centred Computing research group uses an Empatica E4. Built by a startup out of Massachusetts Institute of Technology in Cambridge, USA, the Empatica E4 is a portable wristband that collects research-grade data, including EDA. You can think of it as a fancy version of the range of fitness health trackers available on the market, such as a fitbit.</p>
+		<p>In this activity, we have a number of Empatica E4 devices available for you to try on and use. The E4s pair with an iOS device to allow researchers to visualise and stream data in real time. </p>
+		<p>The graph below is a sample of the output of the E4 devices. The E4 collects GSR, ECG and also accelerometer data. Can you tell which of the graphs below correspond to each? </p>
+		<div class="text-center" style="margin: 50px 0">
+			<!--<img src="{% static 'home/images/e4.png' %}" alt="e4" width="40%"/>-->
+			<img src="{% static 'home/images/empatica_results.png' %}" alt="empatica_results" width="872"/>
+		</div>
+	</section>
+	<section class="sidebar text-center">
+		<div class="sidebar-info-title">
+			<i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
+		</div>
+		<div class="sidebar-content">
+			<h3>What are psychophysiological signals?</h3>
+			<p>These are your physiological and physical responses to psychological and cognitive processes. Put simply we measure heart rate, brain waves, eye movements, skin temperature, pupil dilation, accelerometer data, and much more. We analyse this data to make inferences about the psychological and cognitive processes that are occuring, such as reading comprehension, visual inspection of images, or whether you think an email is spam or not. </p>
+		</div>
+		<div class="sidebar-content">
+			<h2 class="activity-highlight">Activity</h2>
+			<p>Monitor and visualise your own EDA data</p>
+			<a href="{% url 'home:eda-activity' %}" class="btn btn-primary btn-lg">Get started</a>
+		</div>
+	</section>
+	<section class="main-content wide">
+		<h2 class="lead text-center">When you're ready, start the activity on the side bar to the right.</h2>
+	</section>
+</div>
+{% endblock %}
+
+{% block script %} 
+{% endblock %}
