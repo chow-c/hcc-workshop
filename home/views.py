@@ -201,9 +201,12 @@ def driving_activity(request):
 
     return render(request, 'home/driving-activity.html', context)
 
-@method_decorator(login_required, name='dispatch')
-class interface_design(generic.TemplateView):
-    template_name = 'home/interface_design.html'
+@login_required
+def interface_design(request):
+    list_of_completes = get_completes(request)
+    context = {'completes' : list_of_completes}
+
+    return render(request, 'home/interface_design.html', context)
 
 @login_required
 def ereader_activity(request):

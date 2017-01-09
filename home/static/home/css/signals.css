@@ -1,3 +1,4 @@
+
 .content-container {
     width: 1248px;
     margin: 16px auto; 
@@ -67,4 +68,12 @@
 
 .asteriskField {
     display: none;
+}
+
+.warning {
+    background-color: rgba(153, 48, 57, 1);
+}
+
+#content {
+    background-color: #f7f7f7;
 }

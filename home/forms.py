@@ -127,7 +127,7 @@ class LoginForm(AuthenticationForm):
 
 class EreaderForm(forms.Form):
 
-    LIKERT = ((1, 'One'), (2, 'Two'), (3, 'Three'), (4, 'Four'), (5, 'Five'))
+    LIKERT = ((1, 'Very Hard'), (2, 'Hard'), (3, 'Neutral'), (4, 'Easy'), (5, 'Very Easy'))
 
     device_label = forms.CharField()
     turn_on = forms.ChoiceField(choices=LIKERT, label="Turn on the device.")
@@ -150,7 +150,7 @@ class EreaderForm(forms.Form):
         self.helper.form_show_labels = True
         self.helper.layout = Layout(
             Field('device_label', placeholder="eg: A or K"),
-            HTML('<p class="text-justify">For each of the below actions, rate the experience from 1 (Very Bad) to 5 (Very Good).</p>'),
+            HTML('<p class="text-justify">For each of the below actions, rate the experience from 1 (Very Hard) to 5 (Very Easy).</p>'),
             InlineRadios('turn_on'),
             InlineRadios('find_document'),
             InlineRadios('open_document'),

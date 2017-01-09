@@ -26,12 +26,23 @@
 	<div class="row">
 		<div class="col-md-4 col-lg-4 col-sm-4">
 			<div class="thumbnail activity-thumbnail">
-				<a href="{% url 'design:index' %}"><img class="app-thumbnail-img" src="{% static 'home/images/hci-thumb.jpg' %}" alt=""></a>
-				<div class="caption title-caption">
+				<a href="{% url 'design:index' %}"><img class="app-thumbnail-img {% if '/human-computer-interaction/mappings/' in completes and '/human-computer-interaction/constraints/' in completes and '/human-computer-interaction/conceptual-model/' in completes %}fade-image{% endif %}" src="{% static 'home/images/hci-thumb.jpg' %}" alt=""></a>
+				<div class="caption title-caption {% if '/human-computer-interaction/mappings/' in completes and '/human-computer-interaction/constraints/' in completes and '/human-computer-interaction/conceptual-model/' in completes %}fade-text{% endif %}">
 					<h3>Human Computer Interaction</h3>
 					<div class="content-caption">
 						<p>Learn some of the basics.</p>
-						<a class="btn btn-default" href="{% url 'design:index' %}"><span class="btn-primary-span">Launch</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+						<a class="btn btn-default" href="{% url 'design:index' %}">
+							<span class="btn-primary-span">
+								{% if '/human-computer-interaction/mappings/' in completes and '/human-computer-interaction/constraints/' in completes and '/human-computer-interaction/conceptual-model/' in completes %}
+								Completed
+							</span>
+							<i class="fa fa-check" aria-hidden="true"></i>
+								{% else %}
+								Launch
+							</span>
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								{% endif %}
+						</a>
 					</div>
 				</div>
 			</div>
@@ -91,15 +102,15 @@
 		<div class="col-md-4 col-lg-4 col-sm-4">
 			<div class="thumbnail activity-thumbnail">
 				<a href="{% url 'home:driving-simulator' %}">
-					<img class="app-thumbnail-img {% if '/driving-simulator' in completes %}fade-image{% endif %}" src="{% static 'home/images/driving-thumb.jpg' %}" alt="">
+					<img class="app-thumbnail-img {% if '/driving-simulator/driving-activity' in completes %}fade-image{% endif %}" src="{% static 'home/images/driving-thumb.jpg' %}" alt="">
 				</a>
-				<div class="caption title-caption {% if '/driving-simulator' in completes %}fade-text{% endif %}">
+				<div class="caption title-caption {% if '/driving-simulator/driving-activity' in completes %}fade-text{% endif %}">
 					<h3>Driving Simulator</h3>
 					<div class="content-caption">
 						<p>Safety in the era of self-driving cars.</p>
 						<a class="btn btn-default" href="{% url 'home:driving-simulator' %}">
 							<span class="btn-primary-span">
-								{% if '/driving-simulator' in completes %}
+								{% if '/driving-simulator/driving-activity' in completes %}
 								Completed
 							</span>
 							<i class="fa fa-check" aria-hidden="true"></i>
@@ -116,15 +127,15 @@
 		<div class="col-md-4 col-lg-4 col-sm-4">
 			<div class="thumbnail activity-thumbnail">
 				<a href="{% url 'home:interface-design' %}">
-					<img class="app-thumbnail-img {% if '/interface-design' in completes %}fade-image{% endif %}" src="{% static 'home/images/interface-design-thumb.jpg' %}" alt="">
+					<img class="app-thumbnail-img {% if '/interface-design/evaluating-ereader-interfaces' in completes %}fade-image{% endif %}" src="{% static 'home/images/interface-design-thumb.jpg' %}" alt="">
 				</a>
-				<div class="caption title-caption {% if '/interface-design' in completes %}fade-text{% endif %}">
+				<div class="caption title-caption {% if '/interface-design/evaluating-ereader-interfaces' in completes %}fade-text{% endif %}">
 					<h3>Interface Design</h3>
 					<div class="content-caption">
 						<p>The design of everyday things.</p>
 						<a class="btn btn-default" href="{% url 'home:interface-design' %}">
 							<span class="btn-primary-span">
-								{% if '/interface-design' in completes %}
+								{% if '/interface-design/evaluating-ereader-interfaces' in completes %}
 								Completed
 							</span>
 							<i class="fa fa-check" aria-hidden="true"></i>
@@ -174,15 +185,15 @@
 		<div class="col-md-3 col-lg-3 col-sm-3">
 			<div class="thumbnail activity-thumbnail">
 				<a href="{% url 'home:eeg' %}">
-					<img class="app-thumbnail-img {% if '/eeg' in completes %}fade-image{% endif %}" src="{% static 'home/images/eeg-thumb.jpg' %}" alt="">
+					<img class="app-thumbnail-img {% if '/eeg/emotiv-activity' in completes %}fade-image{% endif %}" src="{% static 'home/images/eeg-thumb.jpg' %}" alt="">
 				</a>
-				<div class="caption title-caption {% if '/eeg' in completes %}fade-text{% endif %}">
+				<div class="caption title-caption {% if '/eeg/emotiv-activity' in completes %}fade-text{% endif %}">
 					<h3>Electroencephalography</h3>
 					<div class="content-caption">
 						<p>Takes brain effort just to say.</p>
 						<a class="btn btn-default" href="{% url 'home:eeg' %}">
 							<span class="btn-primary-span">
-								{% if '/eeg' in completes %}
+								{% if '/eeg/emotiv-activity' in completes %}
 								Completed
 							</span>
 							<i class="fa fa-check" aria-hidden="true"></i>
@@ -224,15 +235,15 @@
 		<div class="col-md-3 col-lg-3 col-sm-3">
 			<div class="thumbnail activity-thumbnail">
 				<a href="{% url 'home:gestures' %}">
-					<img class="app-thumbnail-img {% if '/gestures' in completes %}fade-image{% endif %}" src="{% static 'home/images/gesture-thumb.jpg' %}" alt="">
+					<img class="app-thumbnail-img {% if '/gestures/gestures-activity' in completes %}fade-image{% endif %}" src="{% static 'home/images/gesture-thumb.jpg' %}" alt="">
 				</a>
-				<div class="caption title-caption {% if '/gestures' in completes %}fade-text{% endif %}">
+				<div class="caption title-caption {% if '/gestures/gestures-activity' in completes %}fade-text{% endif %}">
 					<h3>Gestures and Body movement</h3>
 					<div class="content-caption">
 						<p>These are not the droids you are looking for.</p>
 						<a class="btn btn-default" href="{% url 'home:gestures' %}">
 							<span class="btn-primary-span">
-								{% if '/gestures' in completes %}
+								{% if '/gestures/gestures-activity' in completes %}
 								Completed
 							</span>
 							<i class="fa fa-check" aria-hidden="true"></i>
@@ -249,15 +260,15 @@
 		<div class="col-md-3 col-lg-3 col-sm-3">
 			<div class="thumbnail activity-thumbnail">
 				<a href="{% url 'home:eda' %}">
-					<img class="app-thumbnail-img {% if '/eda' in completes %}fade-image{% endif %}" src="{% static 'home/images/gsr-thumb.jpg' %}" alt="">
+					<img class="app-thumbnail-img {% if '/eda/empatica-eda-activity' in completes %}fade-image{% endif %}" src="{% static 'home/images/gsr-thumb.jpg' %}" alt="">
 				</a>
-				<div class="caption title-caption {% if '/eda' in completes %}fade-text{% endif %}">
+				<div class="caption title-caption {% if '/eda/empatica-eda-activity' in completes %}fade-text{% endif %}">
 					<h3>Electrodermal activity</h3>
 					<div class="content-caption">
 						<p>What does your sweat say about you?</p>
 						<a class="btn btn-default" href="{% url 'home:eda' %}">
 							<span class="btn-primary-span">
-								{% if '/eda' in completes %}
+								{% if '/eda/empatica-eda-activity' in completes %}
 								Completed
 							</span>
 							<i class="fa fa-check" aria-hidden="true"></i>

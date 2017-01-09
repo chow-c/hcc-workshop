@@ -93,25 +93,22 @@ HCC Workshop | Using the Empatica E4 for ECG
 			<img src="{% static 'home/images/ecg-viewing.jpg' %}" alt="empatica_results" width="872"/>
 		</div>
 		<p class="text-justify">Of course, you may have noticed that the screen doesn't actually say electrocardiography or ECG anywhere. Which one of the displayed metrics is ECG?</p>
-		<div class="row">
-			<div class="col-sm-4 col-md-4 col-lg-4">
-				<button class="btn btn-lg">Electrodermal activity</button>
-			</div>
-			<div class="col-sm-4 col-md-4 col-lg-4">
-				<button class="btn btn-lg">Blood Volume Pulse</button>
-			</div>
-			<div class="col-sm-4 col-md-4 col-lg-4">
-				<button class="btn btn-lg">~35.00 &deg;C</button>
-			</div>
+		<div class="text-center">
+			<button class="btn btn-lg driving-sim-button" id="ecg-eda">Electrodermal activity</button>
+			<button class="btn btn-lg driving-sim-button" id="ecg-bvp">Blood Volume Pulse</button>
+			<button class="btn btn-lg driving-sim-button" id="ecg-temp">~35.00 &deg;C</button>
 		</div>
+		<p id="driving-answer" class="lead text-center"></p>
 		<p class="text-justify">Using your fingers, pinch in and out in order to zoom and change the temporal resolution.</p>
-		<h2><span class="activity-highlight">Activity: </span>Control your heart rate</h2>
-		<p class="text-justify">Now that you can visualise your heart rate, you can try to control it much easier. Observe your BVP on the iPad, and take a note of its current level.</p>
-		<p class="text-justify"><strong>Take deep, slow breaths. Breathe in over four seconds, then out for four seconds. Do this repeatedly for a minute.</strong></p>
-		<p class="text-justify">Observe your BVP now. Have you noticed any large change? Try to find other ways in which you can visibly alter your heart rate. Close your eyes, and in your head, go to your happy place.Think about serene waterfalls and puppies and slow walks on the beach and... you get the idea.</p>
-		<p class="text-justify">Research has shown that being able to see your own psychophysiological signals allows you to control your own body much more effectively. This is known as biofeedback. Can you think of any applications for this type of research?</p>
-		<h2>Cleaning Up</h2>
-		<p class="text-justify">Once you've had enough, take the E4 off your wrist and hold down the button for 2 seconds. Turn off the iPad screen for the next person.</p>
+		<div id="driving-hidden">
+			<h2><span class="activity-highlight">Activity: </span>Control your heart rate</h2>
+			<p class="text-justify">Now that you can visualise your heart rate, you can try to control it much easier. Observe your BVP on the iPad, and take a note of its current level.</p>
+			<p class="text-justify"><strong>Take deep, slow breaths. Breathe in over four seconds, then out for four seconds. Do this repeatedly for a minute.</strong></p>
+			<p class="text-justify">Observe your BVP now. Have you noticed any large change? Try to find other ways in which you can visibly alter your heart rate. Close your eyes, and in your head, go to your happy place.Think about serene waterfalls and puppies and slow walks on the beach and... you get the idea.</p>
+			<p class="text-justify">Research has shown that being able to see your own psychophysiological signals allows you to control your own body much more effectively. This is known as biofeedback. Can you think of any applications for this type of research?</p>
+			<h2>Cleaning Up</h2>
+			<p class="text-justify">Once you've had enough, take the E4 off your wrist and hold down the button for 2 seconds. Turn off the iPad screen for the next person.</p>
+		</div>
 	</section>
 	<section class="sidebar text-center">
 		<div class="sidebar-info-title">
@@ -122,7 +119,7 @@ HCC Workshop | Using the Empatica E4 for ECG
 			<p>Install the free Empatica Realtime application from the App Store and view your ECG on your own device!</p>
 			<p>Just ask an Instructor for an E4.</p>
 		</div>
-		{% if '/eda' in completes %}
+		{% if '/eda/empatica-eda-activity' in completes %}
 		<div class="sidebar-info-title">
 			<i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true"></i>
 		</div>
@@ -152,4 +149,35 @@ HCC Workshop | Using the Empatica E4 for ECG
 {% endblock %}
 
 {% block script %} 
+<script>
+$(document).ready(function () {
+	$('#ecg-eda').one("click", function() {
+		if($(this).hasClass('link-clicked')) {
+                return;
+            }
+		$(this).addClass('btn-primary');
+		$('#driving-hidden').show();
+		$('.driving-sim-button').addClass('link-clicked');
+		$('#driving-answer').html("Close! That one is actually referring to the conductance of your skin. You can learn more about it on the EDA activity!");
+	});
+	$('#ecg-bvp').one("click", function() {
+		if($(this).hasClass('link-clicked')) {
+                return;
+            }
+		$(this).addClass('btn-primary');
+		$('#driving-hidden').show();
+		$('.driving-sim-button').addClass('link-clicked');
+		$('#driving-answer').html("That's right! Blood Volume Pulse, or BVP, is one technique to calculate your heart rate activity! It is very similar to electrocardiography.");
+	});
+	$('#ecg-temp').one("click", function() {
+		if($(this).hasClass('link-clicked')) {
+                return;
+            }
+		$(this).addClass('btn-primary');
+		$('#driving-hidden').show();
+		$('.driving-sim-button').addClass('link-clicked');
+		$('#driving-answer').html("Nope, this one is your skin temperature! The E4 is able to detect a range of signals simultaneously.");
+	});
+});
+</script>
 {% endblock %}
