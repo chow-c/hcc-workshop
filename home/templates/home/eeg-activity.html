@@ -19,64 +19,98 @@ HCC Workshop | Using the Emotiv Insight
 	<section class="titlebar">
 		<h1 class="vertical-align animated bounceInLeft">Using the Emotiv Insight</h1>
 	</section>
-	<section class="main-content wide text-center warning">
+	<!--<section class="main-content wide text-center warning">
 		<h2>This activity is currently unavailable.</h2>
 		<p class="lead">Sorry, as these devices are used in current research projects, <br>unfortunately no devices were available for demonstration today.</p>
-	</section>
+	</section>-->
 	<section class="main-content">
 		<p class="lead text-center">In this activity, you will be able to use an Emotiv Insight on yourself in order to visualise your EEG activity.</p>
-	</section>
-	<!--	<h2>Initial Setup</h2>
+		<div class="text-center" style="margin: 16px 0">
+			<img src="{% static 'home/images/eeg-00.jpg' %}" alt="Emotiv Insight and iPad" width="872"/>
+		</div>
+		<h2>Initial Setup</h2>
 		<p class="text-justify">You will need:
 			<ul>
-				<li>An iPad</li>
-				<li>An Empatica E4</li>
+				<li>An iPad (<span style="color: red"><strong>Hint:</strong> Use the iPad mini with the green cover!</span>)</li>
+				<li>The Emotiv Insight</li>
 			</ul>
-			A number of these devices will be available at the front of the room. Feel free to grab both an iPad and an E4 and take it back to your workstation.</p>
-		<p><strong>There are only a limited number of devices available, so you may need to attempt another activity in the meantime.</strong></p>
-		<p>You can complete this activity individually. You can also work with your colleagues in order to compare how your heart rate activity might be different to theirs.</p>
-		<h2>Putting the E4 on</h2>
-		<p class="text-justify"></p>
-		<h2>Pairing the iPad</h2>
-		<p class="text-justify">If its not already open, launch the Empatica Realtime application.</p>
-		<h2>Viewing your ECG</h2>
-		<p class="text-justify">You can now see your heart rate being tracked in real time.</p>
-		<h2>Controlling your heart rate</h2>
-		<p class="text-justify">Try controlling your heart rate. </p>
-		<h2>Cleaning Up</h2>
-		<p class="text-justify"></p>
-	</section>-->
-	<section class="sidebar text-center">
-		<!--<div class="sidebar-info-title">
-			<i class="fa fa-question-circle fa-3x" aria-hidden="true"></i>
+			These devices will be available at the front of the room. </p>
+		<p><strong>There is only one of these devices available, so if it is not free, you may need to attempt another activity in the meantime.</strong></p>
+		<p>You can complete this activity individually. You can also work with your colleagues in order to compare how your brain wave activity might be different to theirs.</p>
+		<h2>Putting the Insight on</h2>
+		<p class="text-justify">
+			<div class="row">
+				<div class="col-sm-8 col-md-8 col-lg-8">
+					<ol>
+						<li>
+							<h4>Place the Insight on your head</h4>
+							<p class="text-justify">The large bulky part should sit above your <strong>left</strong> ear. The small part that extends underneath the Emotiv logo sits on the bone just behind your ear.</p>
+						</li>
+						<li>
+							<h4>Adjust the front electrodes</h4>
+							<p class="text-justify">The two front electrodes should be approximately three finger-widths above your eyes.</p>
+						</li>
+					</ol>
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4">
+					<!--<div class="text-center" style="margin: 16px auto">
+						<img src="{% static 'home/images/e4-0.jpg' %}" alt="empatica_results" width="250"/>
+					</div>-->
+				</div>
+			</div>
+		</p>
+		<h2>Pairing the devices</h2>
+		<p class="text-justify">Once the Emotiv is on your head, you need to pair the device to the iPad.</p>
+		<div class="row">
+			<div class="col-sm-8 col-md-8 col-lg-8">
+				<ol>
+					<li>
+						<h4>Launch the MyEmotiv application</h4>
+						<p class="text-justify">Launch the application by touching the MyEmotiv icon on the iPad. It should be on the third home screen.</p>
+					</li>
+					<li>
+						<h4>Prepare the E4</h4>
+						<p class="text-justify">Make sure the Emotiv Insight is turned on. Press the button near the logo.</p>
+					</li>
+					<li>
+						<h4>Start A New Session</h4>
+						<p class="text-justify">In the application, press the blinking black question mark icon and select the available headset. You may need to select the icon again to calibrate the device.</p>
+					</li>
+					<li>
+						<h4>Off you go!</h4>
+						<p class="text-justify">Once you have a reasonable contact quality (greater than 85% should do it), hit Begin to start visualising. </p>
+					</li>
+				</ol>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<div class="text-center" style="margin: 16px 0">
+					<img src="{% static 'home/images/eeg-1.jpg' %}" alt="empatica_results" width="180"/>
+				</div>
+				<div class="text-center" style="margin: 16px 0">
+					<img src="{% static 'home/images/eeg-2.jpg' %}" alt="empatica_results" width="180"/>
+				</div>
+				<div class="text-center" style="margin: 16px 0">
+					<img src="{% static 'home/images/eeg-3.jpg' %}" alt="empatica_results" width="180"/>
+				</div>
+			</div>
 		</div>
-		<div class="sidebar-content">
-			<h2>Using iOS?<br>Tired of waiting?</h2>
-			<p>Install the free Empatica Realtime application from the App Store and view your ECG on your own device!</p>
-			<p>Just ask an Instructor for an E4.</p>
-		</div>-->
-		<!--{% if '/eda' in completes %}
+			<h2><span class="activity-highlight">Activity: </span>Control your brain activity</h2>
+			<p class="text-justify">Visualise your brain activity while thinking about different things. Do you notice any difference in the activations?.</p>
+			<h2>Cleaning Up</h2>
+			<p class="text-justify">Once you've had enough, take the Insight off and press the button on the device to turn it off. Turn off the iPad screen for the next person.</p>
+	</section>
+	<section class="sidebar text-center">
 		<div class="sidebar-info-title">
 			<i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true"></i>
 		</div>
 		<div class="sidebar-content">
 			<h2>Be courteous</h2>
-			<p>Once finished with this activity, please return the iPad and Empatica E4 devices to the front for your colleagues to try.</p>
+			<p>Once finished with this activity, please return the iPad and Emotiv Insight device to the front for your colleagues to try.</p>
 		</div>
-		{% else %}-->
-		<!--<div class="sidebar-info-title">
-			<i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
-		</div>
-		<div class="sidebar-content">
-			<h2>Hold on!</h2>
-			<p>The Empatica E4s also collect EDA data. Hold on to the iPad and E4 in order to learn about EDA.</p>
-			<a href="{% url 'home:eda' %}" class="btn btn-default btn-lg">Go to EDA</a>
-		</div>-->
-		<!--{% endif %}-->
 		{% if '/eeg/emotiv-activity' not in completes %}
 		<div class="sidebar-content sidebar-level">
 			<h2>Level Up</h2>
-			<p>Have a level anyway</p>
+			<p>No brain power required.</p>
 			<button role="button" class="btn btn-default btn-lg btn-level" href="#" id="level-up"><span class="btn-primary-span">Level Up</span><i class="fa fa-level-up" aria-hidden="true"></i></button>
 		</div>
 		{% endif %}
