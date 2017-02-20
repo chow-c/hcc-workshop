@@ -3,7 +3,7 @@ services:
     nginx:
       image: nginx:latest
       ports:
-        - "1234:8000"
+        - "80:8000"
       volumes:
         - .:/code
         - ./config/nginx:/etc/nginx/conf.d
@@ -23,7 +23,7 @@ services:
         - "redis"
         - "rabbit"
       environment:
-        - DEBUG=False
+        - DEBUG=0
     db:
       image: postgres
     redis:
