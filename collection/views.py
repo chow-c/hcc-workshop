@@ -76,14 +76,14 @@ def start(request, pid):
     request.session['pid'] = pid
     request.session['seq'] = seq
     request.session['counter'] = counter
-    print('NEW EXPERIMENT STARTED for participant {} at {}'.format(pid, datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+    # print('NEW EXPERIMENT STARTED for participant {} at {}'.format(pid, datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
     return render(request, 'collection/start.html')
 
 
 # The generic experiment page lists the next question in the list, displays the image associated to that question, and records the eye gaze data from the participant, then saves their answers and eye gaze to the db before showing the participant the next question in the list
 def page(request):
     if request.method == 'POST':
-        print('PAGE SUBMITTED at', datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+        # print('PAGE SUBMITTED at', datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
         # create a form instance and populate it with data from the request:
         form = experimentForm(request.POST)
         #print(form)
@@ -107,33 +107,33 @@ def page(request):
         seq = request.session.get('seq')
         
         q_sequence = seq['question_order']
-        with open('zakir_debug_log.txt', 'a') as f:
-            f.write('\n\n===={}===='.format(pid))
-            f.write('\nCurrent time is {}'.format(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
-            f.write('\nseq: {}'.format(seq))
-            f.write('\nq_sequence: {}'.format(q_sequence))
-            f.write('\nsequence length: {}'.format(len(q_sequence)))
-            f.write('\ncounter: {}'.format(request.session.get('counter')))
-        print('New page loaded at', datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-        print('q_sequence:', q_sequence, '\nsequence length:', len(q_sequence))
+        # with open('zakir_debug_log.txt', 'a') as f:
+        #     f.write('\n\n===={}===='.format(pid))
+        #     f.write('\nCurrent time is {}'.format(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+        #     f.write('\nseq: {}'.format(seq))
+        #     f.write('\nq_sequence: {}'.format(q_sequence))
+        #     f.write('\nsequence length: {}'.format(len(q_sequence)))
+        #     f.write('\ncounter: {}'.format(request.session.get('counter')))
+        # print('New page loaded at', datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+        # print('q_sequence:', q_sequence, '\nsequence length:', len(q_sequence))
         try:
             question_id = q_sequence.pop(0)
         except:
             return HttpResponseRedirect(reverse('end'))
         i_sequence = seq['image_order']
-        print('i_sequence:', i_sequence)
+        # print('i_sequence:', i_sequence)
         request.session['seq']['question_order'] = q_sequence
         count = request.session.get('counter')
-        print('count:', count)
+        # print('count:', count)
         if count < 6 :
             image_suffix = IMAGES_SUFFIX[0]
         else:
             question_id = question_id + 6
             image_suffix = IMAGES_SUFFIX[1]
         # Get the question object
-        print('question_id:', question_id)
+        # print('question_id:', question_id)
         question = get_object_or_404(Questions, pk=question_id)
-        print('question:', question.question_text, question.image_ref, question.id, question.question_number)
+        # print('question:', question.question_text, question.image_ref, question.id, question.question_number)
         image_prefix = str(question.image_ref)
         # Get image information
         image = image_prefix + image_suffix
@@ -143,12 +143,12 @@ def page(request):
         request.session['counter'] = count + 1
         # Pass back to template for rendering
         context = {'question': question, 'image': image, 'form':form}
-        print('context:', context)
+        # print('context:', context)
     return render(request, 'collection/page.html', context)
 
 
 # Final page of the experiment 
 def end(request):
-    print('EXPERIMENT ENDED for participant {} at {}'.format(request.session['pid'], datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+    # print('EXPERIMENT ENDED for participant {} at {}'.format(request.session['pid'], datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
     request.session.flush()
     return render(request, 'collection/end.html')

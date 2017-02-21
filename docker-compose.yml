@@ -12,7 +12,7 @@ services:
         - "db"
         - "redis"
       environment:
-        - LOL_DEBUG=True
+        - DEBUG=True
     db:
       image: postgres
     redis:
