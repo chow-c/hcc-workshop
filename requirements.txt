@@ -8,3 +8,4 @@ django-bootstrap3
 django-crispy-forms
 gunicorn
 celery[redis]
+pandas
