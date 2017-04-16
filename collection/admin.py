@@ -16,15 +16,20 @@ from django.utils.encoding import smart_str
 from .models import Questionnaire, ExperimentPage, Questions, Sequences
 
 def export_questionaire(modeladmin, request, queryset):
+    files = []
     participants = []
     for obj in queryset:
         try:
             participants.append(obj)
             df = pd.concat(participants, ignore_index=True)
 
+            df.to_csv('{}.csv'.format(datetime.datetime.now().strftime('%Y%m%d_%H%M')))
+            files.append('{}_{}.csv'.format(obj.pid, obj.question_number))
+            
             with tempfile.SpooledTemporaryFile() as tmp:
                 with zipfile.ZipFile(tmp, 'w', zipfile.ZIP_DEFLATED) as archive:
-                    archive.write(df.to_csv('test.csv'))
+                    for file in files:
+                        archive.write(file)
                 # Reset file pointer
                 tmp.seek(0)
                 # Write file data to response
