@@ -9,13 +9,32 @@ import json
 import pandas as pd
 from pandas.io.json import json_normalize
 import datetime
+import csv
+from django.utils.encoding import smart_str
 
 # Register your models here.
 from .models import Questionnaire, ExperimentPage, Questions, Sequences
 
+def export_questionaire(modeladmin, request, queryset):
+    participants = []
+    for obj in queryset:
+        try:
+            participants.append(obj)
+            df = pd.concat(participants, ignore_index=True)
+
+            with tempfile.SpooledTemporaryFile() as tmp:
+                with zipfile.ZipFile(tmp, 'w', zipfile.ZIP_DEFLATED) as archive:
+                    archive.write(df.to_csv('test.csv'))
+                # Reset file pointer
+                tmp.seek(0)
+                # Write file data to response
+                response = HttpResponse(tmp.read(), content_type='application/zip')
+                response['Content-Disposition'] = 'attachment; filename={}.zip'.format(datetime.datetime.now().strftime('%Y%m%d_%H%M'))
+                return response
+        except:
+            print('Error')
+
 def export_csv(modeladmin, request, queryset):
-    import csv
-    from django.utils.encoding import smart_str
 
     files = []
     
@@ -70,6 +89,7 @@ class QuestionnaireAdmin(ImportExportModelAdmin):
     resource_class = QuestionnaireResource
     list_display = ('id','timestamp')
     readonly_fields = ('id','timestamp', 'age', 'gender', 'education', 'major', 'language', 'vision')
+    actions = [export_questionaire]
 
 # for importing and exporting the experiment data
 class SequencesResource(resources.ModelResource):
