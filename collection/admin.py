@@ -16,28 +16,29 @@ from django.utils.encoding import smart_str
 from .models import Questionnaire, ExperimentPage, Questions, Sequences
 
 def export_questionaire(modeladmin, request, queryset):
-    files = []
-    participants = []
-    for obj in queryset:
-        participants.append((obj.id, obj.timestamp, obj.age, obj.gender, obj.education, obj.major, obj.language, obj.vision))
-    
-    df = pd.concat(participants, ignore_index=True)
+    try:
+        files = []
+        participants = []
+        for obj in queryset:
+            participants.append((obj.id, obj.timestamp, obj.age, obj.gender, obj.education, obj.major, obj.language, obj.vision))
+        
+        df = pd.concat(participants, ignore_index=True)
 
-    df.to_csv('{}.csv'.format(datetime.datetime.now().strftime('%Y%m%d_%H%M')))
-    files.append('{}_{}.csv'.format(obj.pid, obj.question_number))
-            
-    with tempfile.SpooledTemporaryFile() as tmp:
-        with zipfile.ZipFile(tmp, 'w', zipfile.ZIP_DEFLATED) as archive:
-            for file in files:
-                archive.write(file)
-        # Reset file pointer
-        tmp.seek(0)
-        # Write file data to response
-        response = HttpResponse(tmp.read(), content_type='application/zip')
-        response['Content-Disposition'] = 'attachment; filename={}.zip'.format(datetime.datetime.now().strftime('%Y%m%d_%H%M'))
-        return response
-except:
-    print('Error')
+        df.to_csv('{}.csv'.format(datetime.datetime.now().strftime('%Y%m%d_%H%M')))
+        files.append('{}_{}.csv'.format(obj.pid, obj.question_number))
+                
+        with tempfile.SpooledTemporaryFile() as tmp:
+            with zipfile.ZipFile(tmp, 'w', zipfile.ZIP_DEFLATED) as archive:
+                for file in files:
+                    archive.write(file)
+            # Reset file pointer
+            tmp.seek(0)
+            # Write file data to response
+            response = HttpResponse(tmp.read(), content_type='application/zip')
+            response['Content-Disposition'] = 'attachment; filename={}.zip'.format(datetime.datetime.now().strftime('%Y%m%d_%H%M'))
+            return response
+    except:
+        print("Error!")
 
 def export_csv(modeladmin, request, queryset):
 
