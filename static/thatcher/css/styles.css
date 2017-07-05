@@ -1,0 +1,83 @@
+
+#image_field {
+    position        : relative; /* lets us use position: absolute on children */
+    overflow        : hidden;
+    height          : 600px;
+    width           : 450px;
+    margin-right    : auto;
+    margin-left     : auto;
+    background-size : 450px 600px;
+}
+
+#image_field.rotated {
+    transform : rotate(180deg);
+    transition-property : transform;
+    transition-duration : 0.3s;
+}
+
+#image_field.unrotated {
+    transition-property : transform;
+    transition-duration : 0.3s;
+}
+
+#image_field > div {
+    position      : absolute;
+    border-radius : 50% 50%;
+}
+
+#image_field > div.selection {
+    background-color : rgba(91, 129, 161, 0.3);
+    border           : 1px solid #5B81A1;
+}
+
+#image_field > div.rotated {
+    background-image : inherit;
+    background-size  : inherit;
+    transform        : rotate(180deg);
+}
+
+#buttons {
+    margin-top    : 20px;
+    margin-bottom : 20px;
+    text-align    : center;
+}
+
+#buttons > div.disabled {
+    display : none;
+}
+
+#image_chooser {
+    display       : flex;
+    width         : 450px;
+    margin-top    : 0;
+    margin-right  : auto;
+    margin-bottom : 0;
+    margin-left   : auto;
+    padding       : 0;
+}
+
+#image_chooser > li {
+    display         : inline-block;
+    cursor: pointer;
+    height          : 43px;
+    width           : 32.142857143px;
+    opacity         : 0.5;
+    background-size : 100% 100%;
+    list-style-type : none;
+}
+
+#image_chooser > li.selected {
+    opacity : 1.0;
+}
+
+#image_description {
+    text-align: center;
+}
+
+.thatcher-instructions {
+
+}
+
+.thatcher-image {
+    
+}

@@ -20,7 +20,7 @@ Q_SEQUENCES = [[1, 2, 6, 3, 5, 4],
                 [6, 1, 5, 2, 4, 3]]
 
 # Latin Square for order balancing the 3 image types
-I_SEQUENCE = [[1,2],[2,3],[3,1]]
+I_SEQUENCE = [[2,1],[3,2],[1,3]]
 
 # Find the sequence with the lowest tally count, add 1 to the count and return to the sequence
 def find_lowest_sequence():
@@ -127,8 +127,8 @@ def page(request):
         # print('count:', count)
         if count < 6 :
             image_suffix = IMAGES_SUFFIX[0]
-        else:
             question_id = question_id + 6
+        else:
             image_suffix = IMAGES_SUFFIX[1]
         # Get the question object
         # print('question_id:', question_id)
