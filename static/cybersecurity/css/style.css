@@ -1,0 +1,65 @@
+.extra {
+    /* background: rgba(153, 48, 57, 1);
+    color: white; */
+    padding: 50px 80px;
+}
+
+.cloud {
+    padding: 20px 40px;
+}
+
+.phishing-intro {
+    height: calc(80vh - 50px); 
+}
+
+#phishing-experiment {
+    background: #EBEBEB;
+    height: 100vh;
+    margin: 0;
+    padding-top: 80px;
+}
+
+#svg-cloud {
+    fill:white;
+    stroke: black;
+    stroke-width:1;
+    stroke-linejoin:round;
+    top: 100%;
+}
+
+.background-gif {
+    background:url('../images/cover2.gif');
+    background-size: cover;
+}
+
+.thumbnail {
+    background: transparent;
+}
+
+.opaque-icon {
+    opacity: 0;
+}
+
+span.phishing-header {
+    position: relative;
+    left: 50px;
+}
+
+.phishing-highlight {
+    background: rgba(255,255,153,1);
+    transition: background-color .8s ease-in-out;
+}
+
+.phishing-fade-out {
+    background: rgba(100,100,100,0.5);
+    transition: background-color .8s ease-in-out;
+}
+
+#phishing-items-left-one, #phishing-items-left-two {
+    font-size: 10vh;
+}
+
+.phishing-one {
+    height: calc(100vh);
+    padding-top: 20vh;
+}

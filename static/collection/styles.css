@@ -1,0 +1,22 @@
+label {
+    font-weight: normal !important;
+}
+
+.experiment {
+    padding-top: 5vh;
+}
+
+#question {
+    font-size:medium;
+}
+
+#countdown {
+    color: red;
+    font-size:large;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+img {
+    padding-bottom: 20px
+}
