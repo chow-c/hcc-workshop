@@ -3,7 +3,7 @@ The HCC Workshop is an interactive web application that showcases research under
 Students and staff can develop and contribute toward new applications, host experiments to collect data, and promote research ideas.
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.  
-A step-by-step tutorial is available at ***REMOVED***.
+A step-by-step tutorial is available at [this link](***REMOVED***).
 ### Prerequisites
 The workshop is built using Django 1.10.1, Bootstrap 3.3.7, HTML 5, CSS 3, and jQuery 3.1.1. All requirements are contained in the requirements.txt file which will be used during installation. We recommend working with Docker when setting up a development environment for the workshop.  
 ### Installation
