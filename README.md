@@ -1,3 +1,6 @@
+| 📁 This project has been archived. |
+| -------------------------------------- |
+
 # HCC Workshop
 The HCC Workshop is an interactive web application that showcases research undertaken by the Human Centred Computing research group within the Research School of Computer Science at The Australian National University.
 Students and staff can develop and contribute toward new applications, host experiments to collect data, and promote research ideas.
